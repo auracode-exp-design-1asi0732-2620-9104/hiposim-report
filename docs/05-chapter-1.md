@@ -34,7 +34,7 @@
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/06-chapter-1/startup-profile/team-member-profiles/giusephi-carlos.png"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/giusephi-carlos.png"
       alt="Profile photo of Giusephi Carlos"
       width="70%"
       style="border-radius: 10px;">
@@ -45,13 +45,13 @@
         <b>Student code:</b> U202224867
       </p>
       <p>
-        <b>Age:</b> 00
+        <b>Age:</b> 21
       </p>
       <p>
         <b>Degree:</b> Software engineering
       </p>
       <p>
-        <b>About me:</b> I ...
+        <b>About me:</b> I am studying Software Engineering at UPC. I have always been fascinated by the evolution of technology and its impact on everyday life, which motivated me to pursue this career. Throughout my studies, I have developed technical skills in web development and software engineering, working with technologies such as HTML, CSS, JavaScript, Vue.js, Vite, C#, ASP.NET Core, Git, and GitHub. I also have experience applying version control practices, working with RESTful APIs, and creating technical documentation using Markdown. In addition to my technical knowledge, I consider myself a responsible, adaptable, and collaborative person with strong problem-solving and continuous learning skills. In my free time, I enjoy playing video games, which also helps me develop strategic thinking and creativity. My main goal is to continue improving my analytical thinking, software design skills, and programming abilities in order to develop efficient and well-structured software solutions.
       </p>
     </td>
   </tr>
