@@ -1,0 +1,12 @@
+# **Chapter I: Introduction**
+## **1.1. Startup Profile**
+### **1.1.1. Startup Description**
+### **1.1.2. Team Member Profiles**
+## **1.2. Solution Profile**
+### **1.2.1. Background and Problem Statement**
+### **1.2.2. Lean UX Process**
+#### **1.2.2.1. Lean UX Problem Statements**
+#### **1.2.2.2. Lean UX Assumptions**
+#### **1.2.2.3. Lean UX Hypothesis Statements**
+#### **1.2.2.4. Lean UX Canvas**
+## **1.3. Target Segments**
