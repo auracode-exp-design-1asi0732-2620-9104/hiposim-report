@@ -233,6 +233,8 @@ Preguntas Específicas
 
 ### **2.2.2. Interview Recording**
 
+# Segmento 1: Comprador de Primera Vivienda:
+
 <table>
     <colgroup></colgroup>
     <thead>
@@ -243,24 +245,24 @@ Preguntas Específicas
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td></td>
+            <td>Vitaly</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td></td>
+            <td>Baca Arturo</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td></td>
+            <td>25 años</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td></td>
+            <td>Lurín, Lima*</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/img/chapter-ii/vitaly-baca.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -273,15 +275,15 @@ Preguntas Específicas
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>0:00 min</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>8:13 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>Vitaly trabaja como analista de marketing hace 4 años y evalúa junto a su pareja, desde hace 6 meses, la compra de un departamento como primera vivienda. Se informa principalmente por celular, a través de redes sociales (TikTok, Instagram), la web de BCP —banco con el que ya tiene una relación previa— y recomendaciones de amigos y su padre. Su principal frustración es que cada banco muestra únicamente su propia información, lo que dificulta comparar, y que términos como el TCEA no le resultan claros: sabe que representa el costo real del crédito más allá de la tasa anunciada, pero no sabría calcularlo. Ha usado el simulador de Interbank (a través de su padre) y no confía en que sea objetivo, ya que percibe que cada banco muestra la información que más le conviene. Para comparar bancos, replicó manualmente los resultados de cada simulador en una hoja de cálculo. Conocía el Nuevo Crédito Mivivienda pero no sabía si calificaba, y se enteró del Bono del Buen Pagador hace poco por un amigo. Antes de acercarse a un banco, necesita saber el costo total del crédito y si califica para algún beneficio estatal. Estaría dispuesto a ingresar sus datos financieros en una herramienta independiente para simular, siempre que no le exija crear cuenta de inmediato ni derive en llamadas comerciales; además, le interesaría guardar y comparar 2-3 escenarios y exportar un reporte en PDF para decidir junto con su pareja.</td>
         </tr>
     </tbody>
 </table>
@@ -392,7 +394,200 @@ Preguntas Específicas
     </tbody>
 </table>
 
+# Segmento 2: Administrador de Producto
+
+<table>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="#" target="_blank">
+                [pendiente]
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="#" target="_blank">
+                [pendiente]
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="#" target="_blank">
+                [pendiente]
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
 ### **2.2.3. Interview Analysis**
+
+A partir de las entrevistas realizadas al segmento Comprador de Primera Vivienda, se identifican patrones comunes y particularidades relevantes para la definición del arquetipo de usuario. Dado que este análisis se basa en 2 entrevistas correspondientes al avance de este entregable, los hallazgos se presentan en términos cualitativos; se recomienda ampliar la muestra al mínimo de 5-6 entrevistas indicado en la sección 2.2.2 antes de la entrega final.
+
+#### Análisis de características objetivas y subjetivas
+
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas al segmento Comprador de Primera Vivienda. Se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente y la definición del arquetipo de usuario. Dado que este análisis se basa en 2 entrevistas (Vitaly Bacacamargo Arturo y Camila Fernández Ríos) correspondientes al avance de este entregable, los hallazgos se presentan como una primera aproximación cualitativa; se recomienda ampliar la muestra al mínimo de 5-6 entrevistas indicado en la sección 2.2.2 antes de la entrega final.
+
+**Segmento 1: Comprador de Primera Vivienda**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que la búsqueda de una primera vivienda es un proceso activo y sostenido en el tiempo: el 100% de los entrevistados se encuentra evaluando la compra desde hace 3 a 6 meses y cuenta con empleo formal estable de 4 a 6 años, lo que valida el criterio de acceso a crédito definido para este segmento. Asimismo, el 100% combina más de un canal para informarse (web bancaria, redes sociales o foros, y recomendaciones cercanas), y el 100% ha utilizado al menos un simulador hipotecario de un banco (Interbank, BCP o Scotiabank). En cuanto al dispositivo principal de consulta, se observa una división pareja: el 50% se informa principalmente desde el celular, mientras que el 50% restante utiliza laptop, lo que sugiere que HipoSim debe ofrecer una experiencia consistente en ambos formatos.
+
+A nivel subjetivo, el 100% de los entrevistados manifestó baja confianza en la objetividad de los simuladores bancarios, aunque por razones distintas: la mitad percibe un sesgo comercial hacia la entidad, mientras que la otra mitad percibe falta de transparencia en costos adicionales como seguros y gastos notariales. De igual forma, el 100% no logra comprender con claridad el TCEA —el 50% lo asocia correctamente con el costo real del crédito sin saber calcularlo, mientras que el 50% restante lo confunde directamente con la tasa de interés simple—, y el 100% desconocía con certeza si calificaba para algún beneficio estatal antes de la entrevista. Además, el 100% recurre actualmente a comparaciones manuales entre bancos (hojas de cálculo o revisión pestaña por pestaña) ante la ausencia de una herramienta que centralice esta información.
+
+En conjunto, se observa que el Comprador de Primera Vivienda busca disponer de información confiable e independiente sobre el costo real de un crédito hipotecario y los beneficios estatales a los que podría acceder, antes de comprometerse con una entidad financiera específica.
+
+<br>
+
+<div align="center"><img src="../assets/img/chapter-ii/comprador-charts-image.png" width="900"></div>
+
+<br>
+
+##### Conclusiones y Definición de Arquetipos
+
+A partir del análisis realizado, se define el siguiente perfil de usuario (User Persona):
+
+*Arquetipo: "El Comprador Primerizo"*
+
+**Característica principal:** Persona de 25 a 35 años, con empleo formal estable de al menos 4 años, que investiga activamente la compra de su primera vivienda combinando canales digitales y recomendaciones cercanas, sin depender de una sola entidad o simulador.
+
+**Necesidad principal:** Comprender el costo real total de un crédito hipotecario y conocer con certeza si califica para beneficios estatales como el Bono del Buen Pagador o el Nuevo Crédito Mivivienda, antes de acercarse formalmente a un banco.
+
+**Principal dificultad:** La información disponible está fragmentada y sesgada hacia cada entidad financiera, lo que lo obliga a comparar manualmente y le genera desconfianza sobre si realmente está viendo la mejor opción disponible.
+
+
 ## **2.3. Needfinding**
 ### **2.3.1. User Personas**
 ### **2.3.2. User Task Matrix**
