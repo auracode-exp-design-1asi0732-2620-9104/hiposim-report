@@ -112,25 +112,15 @@
 <tr>
   <td style="text-align: center; width: 40%; vertical-align: center;">
     <img
-    src="../assets/06-chapter-1/startup-profile/team-member-profiles/franco-lopez.jpeg"
+    src="../assets/06-chapter-1/startup-profile/team-member-profiles/franco-lopez.png"
     alt="Profile photo of Franco Lopez"
     width="70%"
     style="border-radius: 10px;">
   </td>
   <td style="text-align: justify; width: 60%; vertical-align: top;">
-    <h2>Lopez Roman, Franco Mauricio</h2>
-    <p>
-      <b>Student code:</b> U202315890
-    </p>
-    <p>
-      <b>Age:</b> 00
-    </p>
-    <p>
-      <b>Degree:</b> Software engineering
-    </p>
-    <p>
-      <b>About me:</b> I ...
-    </p>
+    Franco Mauricio López Roman - (U202315890) - Ingeniería de Software
+<br><br>
+Soy estudiante de la carrera de Ingeniería de Software dentro de la Universidad Peruana de Ciencias Aplicadas. Tengo experiencia con proyectos que incluyen C++, Python, HTML, CSS, MongoDB; con algunos conocimientos en javascript, typescript y java. Me considero una persona responsable y comprometida, que da su mayor esfuerzo para el proyecto, con una comunicación para el trabajo en equipo.
   </td>
 </tr>
 
