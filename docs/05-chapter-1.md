@@ -112,7 +112,7 @@
 <tr>
   <td style="text-align: center; width: 40%; vertical-align: center;">
     <img
-    src="../assets/06-chapter-1/startup-profile/team-member-profiles/franco-lopez.png"
+    src="../assets/05-chapter-1/startup-profile/team-member-profiles/franco-lopez.jpg"
     alt="Profile photo of Franco Lopez"
     width="70%"
     style="border-radius: 10px;">
