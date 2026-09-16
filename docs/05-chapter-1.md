@@ -86,7 +86,7 @@
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/06-chapter-1/startup-profile/team-member-profiles/jhoan-janampa.jpeg"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/Jhoan_janampa.jpg"
       alt="Profile photo of Jhoan Janampa"
       width="70%"
       style="border-radius: 10px;">
@@ -97,13 +97,15 @@
         <b>Student code:</b> U202323319
       </p>
       <p>
-        <b>Age:</b> 00
+        <b>Age:</b> 20
       </p>
       <p>
         <b>Degree:</b> Software engineering
       </p>
       <p>
-        <b>About me:</b> I ...
+        <b>About me:</b> I am a seventh-cycle Software Engineering student at UPC. I have technical knowledge in frontend development with Angular and Vue.js, version control management with Git and GitFlow, and REST API consumption. I also hold certifications in Scrum/agile methodologies, which allows me to contribute both on the technical side and in team organization.
+
+I can contribute to the project with my experience in web development, good collaborative work practices (GitFlow, version control), and my focus on keeping the team organized to meet quality deliverables within established deadlines.
       </p>
     </td>
   </tr>
