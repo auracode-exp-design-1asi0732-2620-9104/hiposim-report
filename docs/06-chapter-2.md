@@ -590,6 +590,15 @@ A partir del análisis realizado, se define el siguiente perfil de usuario (User
 
 ## **2.3. Needfinding**
 ### **2.3.1. User Personas**
+
+En esta sección se presentan los User Personas definidos para HipoSim a partir de la información recopilada durante las entrevistas realizadas a los segmentos de dueños primerizos, y administradores de producto. Estos perfiles sintetizan sus principales características, objetivos, necesidades, motivaciones, frustraciones y comportamientos, permitiendo comprender mejor a los usuarios objetivo y orientar el diseño de la solución hacia sus necesidades reales.
+
+# Segmento 1: Comprador de primera vivienda
+
+ <img src="../assets/06-chapter-2/user-persona-segmento-1.png">
+
+ # Segmento 2: Administrador de Producto
+
 ### **2.3.2. User Task Matrix**
 ### **2.3.3. User Journey Mapping**
 ### **2.3.4. Empathy Mapping**
