@@ -56,11 +56,55 @@ On iOS, layout follows Apple's Human Interface Guidelines for structure and gest
 
 On Android, both structure and visual styling follow Material Design guidelines natively: bottom navigation bar, a Floating Action Button (FAB) for the primary "New simulation" action from the history screen, and Material elevation/shadow conventions for cards (scenario comparison) and the results sheet.
 ## **4.2. Information Architecture**
+
+This section defines how content is organized across the Landing Page, the Web Application and the Mobile Application so that Visitantes, Compradores and Administradores can find what they need with minimal effort, directly supporting the three-role scope defined in Chapter I.
+
 ### **4.2.1. Organization Systems**
+
+- **Hierarchical organization** is applied to the Landing Page (Home → Product → Benefits → About/Terms) and to the Administrador's configuration screen (Base parameters → Usage metrics), since both group content by topic importance rather than by sequence.
+- **Sequential (step-by-step) organization** is applied to the simulation flow itself, the product's core task: client data → property data → credit parameters (amount, TEA/TNA, term, grace period) → results (amortization schedule, NPV/IRR/TCEA, applicable state benefits). This mirrors how a real mortgage evaluation is done and avoids overwhelming a first-time user with every input field at once.
+- **Matrix organization** is applied to the scenario comparator, where 2-3 saved simulations are laid out side by side against the same set of financial indicators (rows), so a Comprador can compare like-for-like.
+
+Content is categorized primarily **by audience** (Visitante content on the Landing Page vs. Comprador content behind login vs. Administrador content in the configuration panel), and secondarily **by topic** within the Landing Page (product overview, state benefits explainer, competitors/independence pitch, Terms and Conditions).
+
 ### **4.2.2. Labeling Systems**
-### **4.2.3. SEO Tags and Meta Tag**
+
+Navigation labels are kept short, in plain language, and consistent between web and mobile:
+
+| Label | Refers to |
+|---|---|
+| Simular | Start/continue a new credit simulation |
+| Comparar | Scenario comparator (2-3 saved simulations) |
+| Historial | List of previously saved simulations |
+| Beneficios | Explanation of Bono del Buen Pagador / Mivivienda and eligibility |
+| Exportar / Compartir | PDF export and read-only shareable link for a simulation |
+| Configuración | Administrador's base-parameters screen (rates, BBP %, Mivivienda ranges) |
+
+Labels intentionally avoid internal/technical terms (e.g., "TCEA" is always paired with a short plain-language explanation the first time it appears in a given screen) so that a first-time buyer with no financial background is not lost in domain jargon that Chapter II's interviews showed users do not reliably understand.
+
+### **4.2.3. SEO Tags and Meta Tags**
+
+| Page | Title | Meta Description | Keywords | Author |
+|---|---|---|---|---|
+| Landing — Home | HipoSim \| Independent Mortgage Credit Simulator in Peru | Simulate your mortgage credit for free, compare real conditions and discover state benefits like Bono del Buen Pagador before talking to a bank. | mortgage simulator Peru, crédito hipotecario, TCEA, Bono del Buen Pagador, Mivivienda | HipoSim / AuraCode |
+| Landing — Benefits | HipoSim \| Bono del Buen Pagador and Nuevo Crédito Mivivienda Explained | Find out if you qualify for state mortgage benefits and how much they reduce your real credit cost. | Bono del Buen Pagador, Nuevo Crédito Mivivienda, subsidio vivienda Perú | HipoSim / AuraCode |
+| Web App — Simulator | HipoSim \| Start Your Mortgage Simulation | Enter your income and the property you want to buy to see your real mortgage cost, amortization schedule and TCEA. | simulador hipotecario, cuota hipotecaria, amortización francesa | HipoSim / AuraCode |
+
 ### **4.2.4. Searching Systems**
+
+Given the intentionally small dataset a single Comprador manages (a handful of saved simulations, per the "un poco más de alcance" scope defined in Chapter I), HipoSim does not implement a general-purpose full-text search. Instead, it offers lightweight **filtering** where it adds real value:
+
+- **Historial**: filter by date range and by property type, so a user revisiting the tool after weeks can find a specific past simulation without scrolling.
+- **Comparador**: selection is done by picking directly from the (already short) list of saved simulations, not by search.
+
+This decision keeps the product aligned with the "Simplest Useful Thing" principle referenced for the course's experimentation phase (Chapter VIII), avoiding investment in a searching system the segment does not need at this scale.
+
 ### **4.2.5. Navigation Systems**
+
+- **Landing Page (Visitante)**: persistent top navigation bar (Home, Product, Benefits, Terms) plus a persistent "Simular ahora" call-to-action that lets a Visitante try the basic simulator without registering, consistent with the Visitante role defined in Chapter I.
+- **Web Application (Comprador)**: left/side navigation (desktop) collapsing into a top drawer (mobile web) with Simular, Historial, Comparar as primary destinations; a breadcrumb-style step indicator inside the simulation wizard shows progress across its four steps.
+- **Native Mobile Application**: bottom tab bar with the same primary destinations (Simular, Historial, Comparar, Perfil), following each platform's own convention as described in 4.1.3.
+- **Administrador**: a single, separate configuration entry point (not exposed to Compradores), reachable after an Administrador login, containing the parameters screen and the basic usage-metrics dashboard.
 ## **4.3. Landing Page UI Design**
 ### **4.3.1. Landing Page Wireframe**
 ### **4.3.2. Landing Page Mock-up**
