@@ -1,4 +1,7 @@
 # **Chapter IV: Product Design**
+
+This chapter presents the Software Architecture & Design proposal for HipoSim, translating the User Stories and the Impact Map identified in Chapter III into concrete design decisions: the visual style system shared across all products, the information architecture that organizes content for each role, the UX/UI design for the Landing Page, the Web Application and the Mobile Application, and the technical design of the solution — Domain-Driven Software Architecture, Object-Oriented Design and Database Design.
+
 ## **4.1. Style Guidelines**
 ### **4.1.1. General Style Guidelines**
 ### **4.1.2. Web Style Guidelines**
