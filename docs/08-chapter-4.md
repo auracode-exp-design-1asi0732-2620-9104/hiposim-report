@@ -161,7 +161,29 @@ Within the RESTful Web API container, components are organized by responsibility
   <img src="../assets/08-chapter-4/domain-driven-software-architecture/components-diagram.png" alt="HipoSim RESTful API Components Diagram" width="750">
 </div>
 ## **4.9. Software Object-Oriented Design**
+
 ### **4.9.1. Class Diagrams**
+
+The class design below reflects the core domain entities implied by the product scope in Chapter I (client data, property data, simulation parameters, financial results, state benefits, scenario comparison, admin parameters), independent of any specific persistence technology. This diagram was generated from a Diagram-as-Code source (kept alongside the image in `assets/08-chapter-4/software-object-oriented-design/`) as a working draft; the team will formalize it in **LucidChart**, as mandated by the course's technology constraints.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="HipoSim Class Diagram" width="900">
+</div>
+
 ### **4.9.2. Class Dictionary**
+
+| Class | Key Attributes | Key Methods | Description |
+|---|---|---|---|
+| `User` | Id, FullName, Email, PasswordHash, Role | Register(), Login() | Base account shared by Buyer and Administrator, differentiated by role as defined in Chapter I. |
+| `Buyer` | MonthlyIncome, AvailableSavings | — | Registered first-time homebuyer (Comprador); can own Simulations and ScenarioComparisons. |
+| `Administrator` | — | UpdateBaseParameters(), ViewUsageMetrics() | Internal team member who maintains AdminParameter values and monitors basic usage metrics. |
+| `Property` | Price, Currency, Type | — | The home being evaluated in a Simulation (price, currency, property type). |
+| `Simulation` | LoanAmount, AnnualRate, RateType, TermInMonths, GracePeriodMonths, GraceType | Calculate() | Encapsulates one credit simulation's input parameters and triggers the French-method calculation ported from AutoFinance Pro. |
+| `AmortizationEntry` | Period, Installment, Interest, Amortization, RemainingBalance | — | One row of the French amortization schedule produced by a Simulation. |
+| `FinancialIndicatorResult` | Npv, Irr, Tcea | — | The NPV, IRR and TCEA indicators computed for a Simulation. |
+| `StateBenefit` | Name, DiscountPercentage, MinPropertyPrice, MaxPropertyPrice | EvaluateEligibility() | Represents Bono del Buen Pagador or Nuevo Crédito Mivivienda, and whether a given Simulation qualifies. |
+| `ScenarioComparison` | CreatedAt | AddSimulation() | Groups 2-3 Simulations of the same Buyer for side-by-side comparison. |
+| `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produces the exportable PDF and the read-only shareable link for one Simulation. |
+| `AdminParameter` | Key, Value, UpdatedAt | — | A single configurable base parameter (reference rate, Bono del Buen Pagador %, Mivivienda range) maintained by an Administrator. |
 ## **4.10. Database Design**
 ### **4.10.1. Relational/Non-Relational Database Diagram**
