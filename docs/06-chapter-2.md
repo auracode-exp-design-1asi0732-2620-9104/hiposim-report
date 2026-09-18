@@ -631,7 +631,45 @@ En esta sección se presentan los User Personas definidos para HipoSim a partir 
 <img src="../assets/06-chapter-2/user-persona-segmento-2.png">
 
 ### **2.3.2. User Task Matrix**
+
+La matriz de tareas de usuario permite identificar, para cada segmento, las principales tareas que realiza en relación con el problema que HipoSim busca resolver, junto con la frecuencia con la que las realiza y la importancia que tienen para él. Esta información, derivada de las entrevistas realizadas, sirve como base para priorizar las funcionalidades del producto.
+
+#### Segmento 1: Comprador de Primera Vivienda
+
+| # | Tarea | Frecuencia | Importancia |
+|---|-------|------------|-------------|
+| 1 | Buscar información sobre créditos hipotecarios en distintos canales (redes sociales, webs bancarias, recomendaciones) | Alta | Alta |
+| 2 | Simular una cuota de crédito en el simulador de un banco | Media | Alta |
+| 3 | Comparar manualmente los resultados de distintos simuladores bancarios (ej. en una hoja de cálculo) | Media | Alta |
+| 4 | Verificar si califica para el Bono del Buen Pagador o el Nuevo Crédito Mivivienda | Baja | Alta |
+| 5 | Entender el TCEA y el costo total del crédito | Baja | Alta |
+| 6 | Comparar distintos escenarios de simulación (cuota inicial, plazo) | Media | Alta |
+| 7 | Guardar los resultados de una simulación | Media | Media |
+| 8 | Exportar o compartir un reporte de la simulación con su pareja o familia | Baja | Media |
+| 9 | Consultar y decidir junto a su pareja o familia | Media | Alta |
+| 10 | Acercarse formalmente a un banco a solicitar el crédito | Baja | Alta |
+
+#### Segmento 2: Administrador
+
+| # | Tarea | Frecuencia | Importancia |
+|---|-------|------------|-------------|
+| 1 | Consultar fuentes oficiales (SBS, Fondo Mivivienda/Ministerio de Vivienda) | Alta | Alta |
+| 2 | Validar que una fuente sea oficial, vigente y aplicable al tipo de crédito correspondiente | Alta | Alta |
+| 3 | Actualizar tasas de interés (nominal/efectiva) en el sistema | Media | Alta |
+| 4 | Actualizar porcentajes y rangos del Bono del Buen Pagador / Nuevo Crédito Mivivienda | Baja | Alta |
+| 5 | Registrar un cambio en el panel (nuevo valor, fecha de vigencia, documento de respaldo, observación) | Media | Alta |
+| 6 | Previsualizar el impacto de un cambio en una simulación de ejemplo antes de publicarlo | Media | Alta |
+| 7 | Aprobar o rechazar un cambio propuesto por otro editor | Media | Alta |
+| 8 | Revisar el historial de modificaciones de un parámetro | Media | Media |
+| 9 | Revertir un cambio publicado en caso de error | Baja | Alta |
+| 10 | Monitorear métricas de uso del simulador (simulaciones realizadas, conversión, abandono) | Media | Media |
+| 11 | Atender alertas de cambios normativos o de fuentes oficiales | Media | Alta |
+| 12 | Exportar el historial de cambios para fines de auditoría | Baja | Media |
+
 ### **2.3.3. User Journey Mapping**
+
+
+
 ### **2.3.4. Empathy Mapping**
 ### **2.3.5. As-is Scenario Mapping**
 ## **2.4. Ubiquitous Language**
