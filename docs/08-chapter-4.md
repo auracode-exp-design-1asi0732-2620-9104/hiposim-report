@@ -186,4 +186,11 @@ The class design below reflects the core domain entities implied by the product 
 | `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produces the exportable PDF and the read-only shareable link for one Simulation. |
 | `AdminParameter` | Key, Value, UpdatedAt | — | A single configurable base parameter (reference rate, Bono del Buen Pagador %, Mivivienda range) maintained by an Administrator. |
 ## **4.10. Database Design**
+
 ### **4.10.1. Relational/Non-Relational Database Diagram**
+
+A relational model (PostgreSQL) is proposed, consistent with the Class Design in 4.9 and with the original AutoFinance Pro database. This diagram was generated from a Diagram-as-Code source (kept alongside the image in `assets/08-chapter-4/database-design/`) as a working draft; the team will formalize it in **LucidChart / Vertabelo**, as mandated by the course's technology constraints.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/database-design/er-diagram.png" alt="HipoSim Relational Database Diagram" width="900">
+</div>
