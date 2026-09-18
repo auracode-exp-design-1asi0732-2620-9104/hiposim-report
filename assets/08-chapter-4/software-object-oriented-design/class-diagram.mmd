@@ -1,0 +1,96 @@
+classDiagram
+  class User {
+    +Guid Id
+    +string FullName
+    +string Email
+    +string PasswordHash
+    +UserRole Role
+    +Register()
+    +Login()
+  }
+
+  class Buyer {
+    +decimal MonthlyIncome
+    +decimal AvailableSavings
+  }
+
+  class Administrator {
+    +UpdateBaseParameters(AdminParameter)
+    +ViewUsageMetrics()
+  }
+
+  class Property {
+    +Guid Id
+    +decimal Price
+    +string Currency
+    +PropertyType Type
+  }
+
+  class Simulation {
+    +Guid Id
+    +Guid BuyerId
+    +decimal LoanAmount
+    +decimal AnnualRate
+    +RateType RateType
+    +int TermInMonths
+    +int GracePeriodMonths
+    +GraceType GraceType
+    +DateTime CreatedAt
+    +Calculate()
+  }
+
+  class AmortizationEntry {
+    +int Period
+    +decimal Installment
+    +decimal Interest
+    +decimal Amortization
+    +decimal RemainingBalance
+  }
+
+  class FinancialIndicatorResult {
+    +decimal Npv
+    +decimal Irr
+    +decimal Tcea
+  }
+
+  class StateBenefit {
+    +Guid Id
+    +string Name
+    +decimal DiscountPercentage
+    +decimal MinPropertyPrice
+    +decimal MaxPropertyPrice
+    +EvaluateEligibility(Simulation) bool
+  }
+
+  class ScenarioComparison {
+    +Guid Id
+    +Guid BuyerId
+    +DateTime CreatedAt
+    +AddSimulation(Simulation)
+  }
+
+  class SimulationReport {
+    +Guid Id
+    +Guid SimulationId
+    +string ShareableLinkToken
+    +GeneratePdf() byte[]
+  }
+
+  class AdminParameter {
+    +Guid Id
+    +string Key
+    +decimal Value
+    +DateTime UpdatedAt
+  }
+
+  User <|-- Buyer
+  User <|-- Administrator
+  Buyer "1" --> "0..*" Simulation : owns
+  Simulation "1" --> "1" Property : references
+  Simulation "1" --> "1..*" AmortizationEntry : produces
+  Simulation "1" --> "1" FinancialIndicatorResult : produces
+  Simulation "0..*" --> "0..*" StateBenefit : applies
+  Buyer "1" --> "0..*" ScenarioComparison : creates
+  ScenarioComparison "1" --> "2..3" Simulation : groups
+  Simulation "1" --> "0..1" SimulationReport : exports
+  Administrator "1" --> "0..*" AdminParameter : maintains
