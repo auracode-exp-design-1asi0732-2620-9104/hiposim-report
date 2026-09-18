@@ -123,9 +123,43 @@ This decision keeps the product aligned with the "Simplest Useful Thing" princip
 ### **4.6.4. Web Applications User Flow Diagrams**
 ## **4.7. Web Applications Prototyping**
 ## **4.8. Domain-Driven Software Architecture**
+
+This section proposes the software architecture for HipoSim using the **C4 Model** (Context, Container, Component), built on top of the User Stories and Impact Map from Chapter III and the checklist scope defined in Chapter I. Diagrams below were generated from Diagram-as-Code sources (kept alongside the images in `assets/08-chapter-4/domain-driven-software-architecture/`) as a working draft; the team will formalize the final versions in **Structurizr** (C4 Model), as mandated by the course's technology constraints, before the next delivery.
+
 ### **4.8.1. Software Architecture Context Diagram**
+
+At the context level, three actors interact with a single software system, **HipoSim Platform**, with no real external system integration in the current scope (no real banking integration, no real payment gateway — consistent with what is explicitly out of scope, per Chapter I):
+
+<div align="center">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/context-diagram.png" alt="HipoSim System Context Diagram" width="800">
+</div>
+
 ### **4.8.2. Software Architecture Container Diagrams**
+
+At the container level, the platform is decomposed into the products defined in Chapter I's technical scope checklist: a static Landing Page, a Vue-based Web Application, a Native Mobile Application, a single shared RESTful API, and a relational database.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/container-diagram.png" alt="HipoSim Container Diagram" width="700">
+</div>
+
 ### **4.8.3. Software Architecture Components Diagrams**
+
+Within the RESTful Web API container, components are organized by responsibility, keeping the financial domain logic isolated from transport/persistence concerns:
+
+| Component | Responsibility |
+|---|---|
+| `AuthController` / `AuthService` | Registration and login for Comprador and Administrador; role-based authorization |
+| `SimulationController` / `SimulationService` | Orchestrates a simulation request: validates input, calls the Financial Engine and the Benefits Engine, persists results |
+| `ScenarioController` / `ScenarioService` | Saves, retrieves and groups simulations into 2-3-way scenario comparisons |
+| `ReportController` / `ReportGenerationService` | Generates the exportable PDF and the read-only shareable link for a simulation |
+| `AdminController` / `AdminParameterService` | CRUD for base parameters (reference rates, Bono del Buen Pagador %, Mivivienda ranges) and exposes basic usage metrics |
+| `FinancialEngine` | Domain logic ported from the original AutoFinance Pro project: French amortization method, rate conversion, grace periods, NPV/IRR/TCEA calculation |
+| `BenefitsEngine` | Evaluates Bono del Buen Pagador / Nuevo Crédito Mivivienda eligibility and its effect on the simulation, based on Administrador-configured parameters |
+| `Repositories` (per aggregate) | Persistence access to PostgreSQL via Entity Framework Core |
+
+<div align="center">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/components-diagram.png" alt="HipoSim RESTful API Components Diagram" width="750">
+</div>
 ## **4.9. Software Object-Oriented Design**
 ### **4.9.1. Class Diagrams**
 ### **4.9.2. Class Dictionary**
