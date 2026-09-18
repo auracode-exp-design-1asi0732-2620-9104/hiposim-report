@@ -1,0 +1,98 @@
+erDiagram
+  USERS ||--o{ SIMULATIONS : owns
+  USERS ||--o{ SCENARIO_COMPARISONS : creates
+  USERS ||--o{ ADMIN_PARAMETERS : maintains
+  PROPERTIES ||--o{ SIMULATIONS : "referenced by"
+  SIMULATIONS ||--o{ AMORTIZATION_SCHEDULE : produces
+  SIMULATIONS ||--|| FINANCIAL_INDICATORS : produces
+  SIMULATIONS ||--o| SIMULATION_REPORTS : exports
+  SCENARIO_COMPARISONS ||--o{ SCENARIO_COMPARISON_ITEMS : groups
+  SIMULATIONS ||--o{ SCENARIO_COMPARISON_ITEMS : "included in"
+  SIMULATIONS ||--o{ SIMULATION_BENEFITS : applies
+  STATE_BENEFITS ||--o{ SIMULATION_BENEFITS : "applied to"
+
+  USERS {
+    uuid id PK
+    string full_name
+    string email
+    string password_hash
+    string role
+    timestamp created_at
+  }
+
+  PROPERTIES {
+    uuid id PK
+    decimal price
+    string currency
+    string type
+  }
+
+  SIMULATIONS {
+    uuid id PK
+    uuid buyer_id FK
+    uuid property_id FK
+    decimal loan_amount
+    decimal annual_rate
+    string rate_type
+    int term_in_months
+    int grace_period_months
+    string grace_type
+    timestamp created_at
+  }
+
+  AMORTIZATION_SCHEDULE {
+    uuid id PK
+    uuid simulation_id FK
+    int period
+    decimal installment
+    decimal interest
+    decimal amortization
+    decimal remaining_balance
+  }
+
+  FINANCIAL_INDICATORS {
+    uuid id PK
+    uuid simulation_id FK
+    decimal npv
+    decimal irr
+    decimal tcea
+  }
+
+  STATE_BENEFITS {
+    uuid id PK
+    string name
+    decimal discount_percentage
+    decimal min_property_price
+    decimal max_property_price
+  }
+
+  SIMULATION_BENEFITS {
+    uuid simulation_id FK
+    uuid benefit_id FK
+  }
+
+  SCENARIO_COMPARISONS {
+    uuid id PK
+    uuid buyer_id FK
+    timestamp created_at
+  }
+
+  SCENARIO_COMPARISON_ITEMS {
+    uuid comparison_id FK
+    uuid simulation_id FK
+  }
+
+  SIMULATION_REPORTS {
+    uuid id PK
+    uuid simulation_id FK
+    string shareable_link_token
+    timestamp generated_at
+  }
+
+  ADMIN_PARAMETERS {
+    uuid id PK
+    uuid administrator_id FK
+    string key
+    decimal value
+    timestamp updated_at
+  }
