@@ -668,7 +668,15 @@ La matriz de tareas de usuario permite identificar, para cada segmento, las prin
 
 ### **2.3.3. User Journey Mapping**
 
+Esta sección presenta el recorrido que actualmente realiza cada User Persona para cumplir su objetivo, sin contar con una solución como HipoSim. Permite identificar las etapas, puntos de contacto, dificultades y emociones que atraviesa a lo largo de su proceso.
 
+### Segmento 1: Comprador de primera vivienda
+
+<img src="../assets/06-chapter-2/journey-mapping-segmento-1.png">
+
+### Segmento 2: Administrador de Producto
+
+<img src="../assets/06-chapter-2/journey-mapping-segmento-2.png">
 
 ### **2.3.4. Empathy Mapping**
 ### **2.3.5. As-is Scenario Mapping**
