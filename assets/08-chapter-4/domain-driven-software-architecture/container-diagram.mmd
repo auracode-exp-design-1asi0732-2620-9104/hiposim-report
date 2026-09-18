@@ -1,0 +1,29 @@
+C4Container
+  title HipoSim - Container Diagram
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+
+  Person(visitor, "Visitante")
+  Person(buyer, "Comprador")
+  Person(admin, "Administrador")
+
+  System_Boundary(hiposim, "HipoSim Platform") {
+    Container(landing, "Landing Page", "HTML5, CSS3, JavaScript", "Public product information and basic simulator entry point")
+    Container(webapp, "Frontend Web Application", "Vue + PrimeVue", "Simulation, history, comparator, export, admin configuration UI")
+    Container(mobileapp, "Native Mobile Application", "Android / iOS", "Full simulator, history, comparator, export UI")
+    Container(api, "RESTful Web API", "ASP.NET Core / C#", "Financial engine, business rules, authentication, documented via OpenAPI/Swagger")
+    ContainerDb(db, "Database", "PostgreSQL", "Users, simulations, scenarios, benefits, admin parameters, usage metrics")
+  }
+
+  Rel(visitor, landing, "Visits")
+  Rel(buyer, webapp, "Uses")
+  Rel(buyer, mobileapp, "Uses")
+  Rel(admin, webapp, "Configures")
+  Rel(landing, api, "Basic simulation, no save")
+  Rel(webapp, api, "REST/JSON")
+  Rel(mobileapp, api, "REST/JSON")
+  Rel(api, db, "Reads/Writes SQL")
+
+  UpdateRelStyle(visitor, landing, $offsetX="-30", $offsetY="-10")
+  UpdateRelStyle(buyer, webapp, $offsetX="10", $offsetY="-25")
+  UpdateRelStyle(buyer, mobileapp, $offsetX="30", $offsetY="10")
+  UpdateRelStyle(admin, webapp, $offsetX="-90", $offsetY="-60")

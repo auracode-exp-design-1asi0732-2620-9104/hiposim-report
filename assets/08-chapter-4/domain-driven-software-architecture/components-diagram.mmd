@@ -1,0 +1,21 @@
+flowchart TB
+  subgraph API["RESTful Web API (ASP.NET Core)"]
+    Auth[AuthController/Service]
+    Sim[SimulationController/Service]
+    Scen[ScenarioController/Service]
+    Rep[ReportController/Service]
+    Admin[AdminController/Service]
+    FinEngine[FinancialEngine]
+    BenEngine[BenefitsEngine]
+    Repo[Repositories]
+  end
+
+  Sim --> FinEngine
+  Sim --> BenEngine
+  Sim --> Repo
+  Scen --> Repo
+  Rep --> Repo
+  Admin --> Repo
+  Auth --> Repo
+  BenEngine --> Admin
+  Repo --> DB[(PostgreSQL)]

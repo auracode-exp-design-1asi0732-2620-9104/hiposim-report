@@ -1,0 +1,17 @@
+C4Context
+  title HipoSim - System Context Diagram
+  UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+
+  Person(visitor, "Visitante", "Anonymous website visitor")
+  Person(buyer, "Comprador", "Registered first-time homebuyer")
+  Person(admin, "Administrador", "Internal team member maintaining base parameters")
+
+  System(hiposim, "HipoSim Platform", "Web, mobile and landing page mortgage credit simulator")
+
+  Rel(visitor, hiposim, "Browses info, tries basic simulator")
+  Rel(buyer, hiposim, "Simulates, saves and compares scenarios")
+  Rel(admin, hiposim, "Configures parameters, views metrics")
+
+  UpdateRelStyle(visitor, hiposim, $offsetY="-40")
+  UpdateRelStyle(buyer, hiposim, $offsetX="20", $offsetY="10")
+  UpdateRelStyle(admin, hiposim, $offsetY="40")
