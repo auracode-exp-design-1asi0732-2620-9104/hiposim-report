@@ -262,14 +262,14 @@ Preguntas Específicas
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/vitaly-baca.png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/vitaly-baca-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAF5AyST2rQSp1Vf_9zuk_9AaycEdJysPCj3KbCrMCFYoU?e=wSeJ4W&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #1 - segmento 1
             </a>
             </td>
         </tr>
@@ -315,7 +315,7 @@ Preguntas Específicas
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -397,50 +397,56 @@ Preguntas Específicas
 # Segmento 2: Administrador de Producto
 
 <table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td></td>
+            <td>Carlos</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td></td>
+            <td>Mendoza Ríos</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td></td>
+            <td>50</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td></td>
+            <td>San Miguel</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/carlos-mendoza-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAKtbbSWlxbTasU9NmG1xyzAQXK_8J5hF1RC25yCku2iHo?e=sgcwsZ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #1 - segmento 2
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>0:00</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>15:32</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>
+                Carlos Mendoza Ríos (50 años) es administrador de productos digitales, responsable de centralizar y supervisar la información que alimenta el simulador: identifica cambios en tasas y condiciones de programas estatales, actualiza los datos y verifica que se apliquen correctamente. Usa como fuentes la SBS, las páginas oficiales de los bancos y el Fondo Mivivienda/Ministerio de Vivienda, revisando la información semanalmente pese a la actual estabilidad de tasas. Trabaja principalmente desde su laptop corporativa, con acceso a paneles de administración, tablas y documentos oficiales. Su mayor dificultad no es el cambio del dato en sí, sino verificar que la fuente sea oficial y confiable, que el valor corresponda al tipo de crédito y fecha correctos, e interpretar lenguaje técnico o normativo (a veces requiere apoyo legal). Entre los parámetros que mantiene están las tasas de interés (nominal y efectiva), los porcentajes y límites del Bono del Buen Pagador, los rangos de vivienda para el Nuevo Crédito Mivivienda, los montos de financiamiento, la cuota inicial mínima, los plazos, periodos de gracia, costos administrativos, seguros y comisiones. Ve como principal riesgo de un dato desactualizado que el usuario obtenga una simulación incorrecta, pierda confianza en la herramienta, o que se genere un riesgo reputacional y fuga de clientes. Espera que un panel de administración lo guíe en un proceso controlado (parámetros por categoría, historial de cada valor, vista previa del impacto en una simulación de ejemplo, validaciones de formato/rango, aprobación para cambios críticos), y le interesa monitorear métricas como simulaciones completadas, tasa de conversión hacia guardar/exportar/compartir, parámetros más usados y abandono por etapa. Propone niveles de acceso diferenciados (consulta, editor, aprobador) y solo confiaría en el sistema si cuenta con confirmación detallada, una simulación de prueba tras cada actualización y opción de reversión rápida. La funcionalidad que más le facilitaría el trabajo es un centro de administración con alertas de cambios en fuentes oficiales y un historial completo de modificaciones con opción de comparar y restaurar versiones.
+            </td>
         </tr>
     </tbody>
 </table>
@@ -449,7 +455,7 @@ Preguntas Específicas
     <colgroup></colgroup>
     <thead>
         <tr>
-            <th colspan="2">Entrevista #3<br></th>
+            <th colspan="2">Entrevista #2<br></th>
         </tr>
     </thead>
     <tbody>
@@ -575,6 +581,22 @@ En conjunto, se observa que el Comprador de Primera Vivienda busca disponer de i
 
 <br>
 
+**Segmento 2: Administrador**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que el mantenimiento de los parámetros del simulador es una labor que exige rigurosidad y trazabilidad frente a fuentes oficiales. El 100% de los entrevistados consulta exclusivamente fuentes oficiales y verificables —SBS y Fondo Mivivienda/Ministerio de Vivienda— para actualizar tasas y beneficios estatales, y el 100% utiliza laptop como herramienta principal de trabajo, aunque un 50% complementa esta labor con el celular para recibir alertas fuera de horario. Respecto a la frecuencia de revisión, se observa una diferencia: el 50% revisa la información semanalmente pese a la actual estabilidad de tasas, mientras que el 50% restante lo hace de forma quincenal, salvo que se active una alerta urgente. Asimismo, el 100% mantiene un conjunto de parámetros equivalente: tasas de interés, porcentajes del Bono del Buen Pagador y rangos del Nuevo Crédito Mivivienda.
+
+A nivel subjetivo, el 100% coincide en que la mayor dificultad no está en modificar el valor dentro del sistema, sino en verificar la vigencia y confiabilidad de la fuente y en interpretar un lenguaje técnico o normativo que en ocasiones requiere apoyo legal. Respecto al riesgo de un dato desactualizado, se observan énfasis distintos: el 50% lo asocia principalmente con la pérdida de confianza del usuario final y el riesgo reputacional del producto, mientras que el 50% restante enfatiza el riesgo regulatorio y legal frente a organismos supervisores. El 100% espera que el panel de administración organice los parámetros por categoría, muestre el historial de cada valor y permita una vista previa del impacto antes de publicar un cambio, y el 100% solo confiaría en el sistema si cuenta con confirmación detallada, una opción de reversión rápida y niveles de acceso diferenciados (consulta, editor, aprobador).
+
+En conjunto, se observa que el Administrador busca centralizar y documentar la actualización de parámetros financieros y estatales del simulador, reduciendo la dependencia de hojas de cálculo y comunicaciones dispersas, y asegurando que cada cambio quede respaldado, aprobado y sea reversible.
+
+<br>
+
+<div align="center"><img src="../assets/img/chapter-ii/administrador-charts-image.png" width="900"></div>
+
+<br>
+
 ##### Conclusiones y Definición de Arquetipos
 
 A partir del análisis realizado, se define el siguiente perfil de usuario (User Persona):
@@ -587,6 +609,13 @@ A partir del análisis realizado, se define el siguiente perfil de usuario (User
 
 **Principal dificultad:** La información disponible está fragmentada y sesgada hacia cada entidad financiera, lo que lo obliga a comparar manualmente y le genera desconfianza sobre si realmente está viendo la mejor opción disponible.
 
+*Arquetipo: "El administrados de parámetros"*
+
+**Característica principal:** Profesional de 35 a 50 años responsable de mantener actualizados y conformes a la normativa vigente los parámetros financieros y estatales del simulador, trabajando con fuentes oficiales y, en ocasiones, coordinando con áreas técnicas o legales.
+
+**Necesidad principal:** Contar con un panel de administración estructurado y trazable que permita actualizar parámetros con historial, validaciones, vista previa de impacto y niveles de aprobación, sin depender de hojas de cálculo o comunicaciones dispersas.
+
+**Principal dificultad:** Verificar la vigencia y confiabilidad de cada fuente oficial e interpretar lenguaje técnico o normativo, garantizando que cada cambio quede debidamente documentado y aprobado antes de publicarse, dado el riesgo reputacional y regulatorio de un dato desactualizado.
 
 ## **2.3. Needfinding**
 ### **2.3.1. User Personas**
