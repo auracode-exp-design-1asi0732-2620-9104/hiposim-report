@@ -66,7 +66,7 @@
   <tr style="page-break-inside: avoid;">
     <td style="text-align: center; width: 32%; vertical-align: middle; border: 1px solid #CBD5E1; padding: 14px; background-color: #F8FAFC;">
       <img
-      src="../assets/05-chapter-1/startup-profile/team-member-profiles/joaquín-daga.png"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/joaquin-daga.jpg"
       alt="Foto de perfil de Joaquín Daga"
       width="70%"
       style="border-radius: 10px; max-width: 180px; height: auto;">
@@ -77,13 +77,13 @@
         <strong>Código de estudiante:</strong> U202219829
       </p>
       <p style="margin: 6px 0;">
-        <strong>Edad:</strong> 00
+        <strong>Edad:</strong> 21
       </p>
       <p style="margin: 6px 0;">
         <strong>Carrera:</strong> Ingeniería de Software
       </p>
       <p style="margin: 6px 0;">
-        <strong>Sobre mí:</strong> Yo ...
+       <strong>Sobre mí:</strong> Estudio Ingeniería de Software en la UPC y tengo un gran interés por el desarrollo de soluciones tecnológicas que permitan resolver problemas de manera eficiente. A lo largo de mi formación académica he adquirido conocimientos en desarrollo web, programación, bases de datos, arquitectura de software y control de versiones, trabajando con tecnologías como Java, C#, .NET, Spring Boot, Vue.js, Angular, JavaScript, SQL, Git y GitHub. También he participado en proyectos colaborativos aplicando metodologías ágiles, diseño de software y buenas prácticas de desarrollo. Me considero una persona responsable, perseverante y comprometida con el trabajo en equipo, con disposición para aprender nuevas tecnologías y mejorar continuamente mis habilidades. Mi objetivo es fortalecer mis conocimientos en ingeniería y desarrollo de software para diseñar e implementar soluciones escalables, mantenibles y orientadas a las necesidades de los usuarios.
       </p>
     </td>
   </tr>
