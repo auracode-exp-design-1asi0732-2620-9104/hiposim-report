@@ -1,6 +1,8 @@
 # **Chapter III: Requirements Specification**
 ## **3.1. To-Be Scenario Mapping**
 
+El To-Be Scenario Mapping describe la experiencia futura e ideal de los usuarios al utilizar HipoSim. A diferencia del escenario actual (As-Is), donde predomina la frustración por la desinformación y el trabajo manual, este nuevo recorrido refleja un proceso fluido, centralizado y transparente. (Diseñado para ser modelado en UXPressia).
+
 **Segmento 1: Comprador de Primera Vivienda (Hernesto)**
 
 > ![Wireframe — Landing Page](../assets/07-chapter-3/1.png)
