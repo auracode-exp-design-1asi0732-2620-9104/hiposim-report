@@ -172,21 +172,164 @@ Esta decisión mantiene al producto alineado con el principio "Simplest Useful T
 - **Administrador**: un único punto de entrada de configuración, separado (no expuesto a los Compradores), accesible tras el inicio de sesión del Administrador, que contiene la pantalla de parámetros y el panel básico de métricas de uso.
 
 ## **4.3. Landing Page UI Design**
+
+Esta sección presenta el diseño UX/UI del Landing Page, el punto de entrada del Visitante definido en el Capítulo I. Su estructura sigue la organización jerárquica y el sistema de navegación descritos en 4.2 (Inicio, Producto, Beneficios, Términos, más el CTA persistente "Simular ahora"), y aplica los tokens visuales del Style Guide (4.1) sin depender de PrimeVue, ya que el Landing Page se construye con HTML5/CSS3/JavaScript puro.
+
 ### **4.3.1. Landing Page Wireframe**
+
+<div align="center">
+  <img src="../assets/08-chapter-4/landing-page-ui-design/wireframes/desktop.png" alt="Wireframe del Landing Page (desktop)" width="850">
+  &nbsp;&nbsp;
+  <img src="../assets/08-chapter-4/landing-page-ui-design/wireframes/mobile.png" alt="Wireframe del Landing Page (mobile)" width="220">
+</div>
+
+El wireframe organiza el contenido en siete bloques secuenciales: hero con el simulador interactivo embebido (sin necesidad de registro previo), explicación del flujo en 4 pasos, comparación frente a los simuladores bancarios tradicionales, explicación de los subsidios estatales (BBP y Mivivienda), un bloque de funcionalidades avanzadas que incentiva la creación de cuenta gratuita, el banner de conversión final y el footer con navegación legal y de soporte. En mobile, el simulador interactivo del hero se apila debajo del titular y los pasos pasan de una grilla de 4 columnas a un listado vertical, conforme a los breakpoints definidos en 4.1.2.
+
 ### **4.3.2. Landing Page Mock-up**
+
+<div align="center">
+  <img src="../assets/08-chapter-4/landing-page-ui-design/mock-ups/desktop.png" alt="Mock-up del Landing Page (desktop)" width="850">
+  &nbsp;&nbsp;
+  <img src="../assets/08-chapter-4/landing-page-ui-design/mock-ups/mobile.png" alt="Mock-up del Landing Page (mobile)" width="220">
+</div>
+
+El mock-up aplica la paleta de marca sobre la estructura validada en el wireframe: el verde azulado (`#0E5C63`) enmarca el widget del simulador y la sección de transparencia frente a bancos, el ámbar (`#F5A524`) se reserva exclusivamente para el CTA principal "Simular ahora" (repetido en el navbar, el hero y el banner final, pero como única acción destacada por pantalla), y el turquesa (`#3AAFA9`) resalta los datos de apoyo (ahorro estimado, badges de confianza "100% Independiente", "Regulación SBS referencial"). El bloque comparativo "HipoSim vs. Simuladores Bancarios Tradicionales" traduce visualmente el análisis competitivo del Capítulo II, usando el color de error (`#D64545`) para las limitaciones de los bancos y el de éxito (`#2E9E6B`) para los diferenciales de HipoSim.
 ## **4.4. Mobile Applications UX/UI Design**
+
+Esta sección presenta el diseño UX/UI de la aplicación móvil nativa para el Comprador, cubriendo dos pantallas críticas del flujo: el registro contextual que se activa justo después de que el usuario ve el resultado de su simulación (no antes, en coherencia con la regla de acceso sin login definida en el Capítulo I), y la pantalla de resultados que conecta la simulación con las inmobiliarias disponibles.
+
 ### **4.4.1. Mobile Applications Wireframes**
+
+Los wireframes de baja fidelidad a continuación validan la estructura y jerarquía de contenido antes de aplicar la marca visual de HipoSim.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/mobile-applications-ux-ui-design/wireframes/results-wireframe.png" alt="Wireframe de la pantalla de Resultados del Crédito (mobile)" width="320">
+  <img src="../assets/08-chapter-4/mobile-applications-ux-ui-design/wireframes/registration-wireframe.png" alt="Wireframe de la pantalla de Registro Contextual (mobile)" width="320">
+</div>
+
+- **Resultados del Crédito**: expone primero la cuota mensual y el TCEA calculados por el motor financiero, seguidos del subsidio estatal aplicado (Bono del Buen Pagador), el desglose de la cuota (capital, interés, seguros) y el cronograma inicial de amortización, antes de ofrecer la conexión con inmobiliarias — reforzando que el valor (la simulación) se entrega primero.
+- **Registro Contextual**: se activa desde el botón "Enviar cotización a inmobiliarias" de la pantalla de resultados y mantiene visible un resumen de la cotización ya calculada, para que el usuario entienda por qué se le pide crear una cuenta en ese momento específico.
+
 ### **4.4.2. Mobile Applications Wireflow Diagrams**
+
+El wireflow conecta las pantallas del flujo del Comprador diseñadas en 4.4.1 y 4.4.3, mostrando la navegación entre ellas y el punto exacto donde se activa el Registro Contextual.
+
+```mermaid
+flowchart LR
+    A[Simulador · Datos del cliente] --> B[Simulador · Datos de la vivienda]
+    B --> C[Simulador · Parámetros del crédito]
+    C --> D[Resultados del Crédito]
+    D -->|Enviar cotización a inmobiliarias| E[Registro Contextual]
+    D -->|Guardar / Exportar PDF| D
+    E -->|Cuenta creada| F[Lista de Inmobiliarias]
+    F -->|Seleccionar inmobiliaria| G[Detalle de Inmobiliaria]
+    G -->|Enviar mi cotización| H[Confirmación de envío]
+    H --> I[Historial de simulaciones y cotizaciones]
+```
+
 ### **4.4.3. Mobile Applications Mock-ups**
+
+Los mock-ups de alta fidelidad aplican la paleta, tipografía y componentes definidos en 4.1.1 y 4.1.3 sobre la estructura validada en los wireframes.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/mobile-applications-ux-ui-design/mock-ups/results-mockup.png" alt="Mock-up de la pantalla de Resultados del Crédito (mobile)" width="320">
+  <img src="../assets/08-chapter-4/mobile-applications-ux-ui-design/mock-ups/registration-mockup.png" alt="Mock-up de la pantalla de Registro Contextual (mobile)" width="320">
+</div>
+
+En el mock-up de Resultados, el TCEA y la cuota mensual se destacan en ámbar (`#F5A524`), siguiendo la regla de acento único definida en el Style Guide, mientras que el subsidio estatal aplicado se resalta con el color de éxito (`#2E9E6B`) para transmitir un beneficio ya confirmado. El botón "Enviar cotización a inmobiliarias" reutiliza el mismo acento ámbar como único llamado a la acción de la pantalla, coherente con la restricción de un solo uso de ámbar por vista.
+
 ### **4.4.4. Mobile Applications User Flow Diagrams**
+
+A diferencia del wireflow, el diagrama de flujo de usuario representa las decisiones del Comprador en abstracto, sin atarse a pantallas específicas — en particular, la regla de acceso definida en el Capítulo I: el simulador es libre y el login solo se pide al intentar enviar una cotización.
+
+```mermaid
+flowchart TD
+    Start([Visitante abre la app]) --> Sim[Completa el Simulador]
+    Sim --> Res[Ve Resultados del Crédito]
+    Res --> Dec1{¿Quiere enviar cotización<br/>a inmobiliarias?}
+    Dec1 -- No --> End1([Guarda / Exporta PDF y sale])
+    Dec1 -- Sí --> Dec2{¿Tiene sesión iniciada?}
+    Dec2 -- Sí --> List[Ve lista de Inmobiliarias]
+    Dec2 -- No --> Reg[Registro Contextual]
+    Reg --> Dec3{¿Registro exitoso?}
+    Dec3 -- No --> Reg
+    Dec3 -- Sí --> List
+    List --> Sel[Selecciona una Inmobiliaria]
+    Sel --> Send[Envía su cotización]
+    Send --> Conf([Confirmación de envío])
+    Conf --> Hist[Consulta su Historial de cotizaciones]
+```
 ## **4.5. Mobile Applications Prototyping**
 ### **4.5.1. Android Mobile Applications Prototyping**
 ### **4.5.2. iOS Mobile Applications Prototyping**
 ## **4.6. Web Applications UX/UI Design**
+
+Esta sección presenta el diseño UX/UI de la Web Application para el rol Inmobiliaria (cliente principal de la plataforma), cubriendo la Bandeja de Leads e Interesados y la Ficha de Detalle de un Lead — las dos pantallas centrales de su flujo de trabajo diario.
+
 ### **4.6.1. Web Applications Wireframes**
+
+<div align="center">
+  <img src="../assets/08-chapter-4/web-applications-ux-ui-design/wireframes/leads-inbox-wireframe.png" alt="Wireframe de la Bandeja de Leads e Interesados (desktop)" width="900">
+</div>
+
+<div align="center">
+  <img src="../assets/08-chapter-4/web-applications-ux-ui-design/wireframes/lead-detail-wireframe.png" alt="Wireframe de la Ficha de Detalle de un Lead (desktop)" width="900">
+</div>
+
+- **Bandeja de Leads e Interesados**: organiza el contenido en tres niveles, de arriba hacia abajo: KPIs operativos (leads nuevos, en contacto, calificados a BBP, pipeline proyectado), filtros de búsqueda (nombre/DNI, estado, distrito, solo con Bono BBP) y la tabla de prospectos, siguiendo la organización jerárquica definida en 4.2.1.
+- **Ficha de Detalle de un Lead**: agrupa los datos del solicitante, su capacidad financiera y ratios de aprobación, la simulación certificada por HipoSim (cuota, TCEA, composición de la cuota inicial), el match de inventario de la inmobiliaria y la bitácora de interacciones tipo CRM, de modo que el asesor comercial pueda evaluar y contactar al prospecto sin salir de la pantalla.
+
 ### **4.6.2. Web Applications Wireflow Diagrams**
+
+El wireflow conecta las pantallas del panel de Inmobiliaria diseñadas en 4.6.1 y 4.6.3, incluyendo las pantallas complementarias del checklist de navegación definido en 4.2.5 (Dashboard, Mi Inmobiliaria, Notificaciones, Configuración).
+
+```mermaid
+flowchart LR
+    A[Login Inmobiliaria] --> B[Dashboard]
+    B --> C[Bandeja de Leads e Interesados]
+    C -->|Ver Ficha| D[Detalle del Lead]
+    D -->|Contactar WhatsApp / Llamar| D
+    D -->|Cambiar estado| D
+    D -->|Presentar propiedad a Lead| D
+    D -->|Reasignar Lead Comercial| C
+    B --> E[Mi Inmobiliaria]
+    B --> F[Notificaciones]
+    F -->|Atender ahora| D
+    B --> G[Configuración]
+```
+
 ### **4.6.3. Web Applications Mock-ups**
+
+<div align="center">
+  <img src="../assets/08-chapter-4/web-applications-ux-ui-design/mock-ups/leads-inbox-mockup.png" alt="Mock-up de la Bandeja de Leads e Interesados (desktop)" width="900">
+</div>
+
+<div align="center">
+  <img src="../assets/08-chapter-4/web-applications-ux-ui-design/mock-ups/lead-detail-mockup.png" alt="Mock-up de la Ficha de Detalle de un Lead (desktop)" width="900">
+</div>
+
+Los mock-ups aplican el sistema de componentes de PrimeVue sobre la estructura validada en los wireframes: el verde azulado (`#0E5C63`) organiza la navegación y la tarjeta de simulación certificada, el turquesa (`#3AAFA9`) resalta el TCEA y los indicadores secundarios, y el ámbar (`#F5A524`) se reserva para las alertas de leads nuevos sin atender y el botón "Nueva Propuesta" — sin reutilizarse en ningún otro elemento de la pantalla, conforme a la regla de acento único.
+
 ### **4.6.4. Web Applications User Flow Diagrams**
+
+El diagrama de flujo de usuario representa el ciclo de decisión diario de la Inmobiliaria frente a un lead, desde que revisa el Dashboard hasta que actualiza el estado del prospecto.
+
+```mermaid
+flowchart TD
+    Start([Inmobiliaria inicia sesión]) --> Dash[Revisa Dashboard]
+    Dash --> Notif{¿Hay leads nuevos<br/>sin atender?}
+    Notif -- Sí --> Open[Abre Bandeja de Leads]
+    Notif -- No --> Wait[Espera notificación]
+    Open --> Sel[Selecciona un Lead]
+    Sel --> View[Revisa Ficha del Lead:<br/>capacidad financiera + simulación]
+    View --> Dec{¿Califica y hay match<br/>de inventario disponible?}
+    Dec -- Sí --> Contact[Contacta al Lead<br/>WhatsApp / Llamada]
+    Dec -- No --> Reassign[Reasigna o descarta el Lead]
+    Contact --> Update[Actualiza el estado del Lead]
+    Update --> Close{¿Se concretó la venta?}
+    Close -- Sí --> Closed([Estado: Cerrado / Separación])
+    Close -- No --> Open
+```
 ## **4.7. Web Applications Prototyping**
 ## **4.8. Domain-Driven Software Architecture**
 
