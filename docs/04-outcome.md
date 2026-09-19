@@ -84,7 +84,8 @@
         AV1
       </i></b>
       <br>
-         During AV1, I...
+         En el av1 desarrolle el planteamiento del problema junto al Lean UX Canva, y realice entrevistas y sus respectivos análisis para ambos segmentos objetivo junto a sus respectivos graficos: user persona, empathy map. As Is scenario, etc.
+
       <br><br>
         ------------------------------------
       <br><br>
@@ -175,7 +176,7 @@
         AV1
       </i></b>
       <br>
-         During AV1, I...
+         Use técnicas de análisis para el desarrollo del problema y su Canva, hice uso del discernimiento de contextos para la selección de ideas y criterios en base a las entrevistas realizadas
       <br><br>
         ------------------------------------
       <br><br>
