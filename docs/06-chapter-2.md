@@ -679,5 +679,14 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 <img src="../assets/06-chapter-2/journey-mapping-segmento-2.png">
 
 ### **2.3.4. Empathy Mapping**
+
+### Segmento 1: Comprador de primera vivienda
+
+<img src="../assets/06-chapter-2/empathy-map-segmento-1.png">
+
+### Segmento 2: Administrador de Producto
+
+<img src="../assets/06-chapter-2/empathy-map-segmento-2.png">
+
 ### **2.3.5. As-is Scenario Mapping**
 ## **2.4. Ubiquitous Language**
