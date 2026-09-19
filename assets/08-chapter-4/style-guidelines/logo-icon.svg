@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="HipoSim icon">
+  <rect width="64" height="64" rx="15" fill="#0E5C63"/>
+  <path d="M32 9 L55 28 H49 V52 H15 V28 H9 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="21" y="41" width="6" height="7" rx="1.5" fill="#0E5C63"/>
+  <rect x="29" y="36" width="6" height="12" rx="1.5" fill="#3AAFA9"/>
+  <rect x="37" y="30" width="6" height="18" rx="1.5" fill="#F5A524"/>
+</svg>

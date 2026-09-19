@@ -8,33 +8,97 @@ Esta sección establece un lenguaje visual compartido y centralizado para todos 
 
 ### **4.1.1. General Style Guidelines**
 
-**Branding.** El nombre del producto, HipoSim, comunica directamente sus dos rasgos definitorios: "Hipo-" (hipotecario) indica el dominio, y "-Sim" indica la naturaleza de la herramienta: un simulador, no un banco. El logo y el wordmark (ver Capítulo II, análisis competitivo) evitan cualquier asociación visual con una entidad financiera específica, reforzando la propuesta de valor central del producto: la independencia frente a cualquier banco.
+A continuación se presentan las pautas generales de estilo que guiarán la identidad visual de HipoSim, asegurando coherencia, claridad y una experiencia de navegación fluida para todos los usuarios. Las decisiones se apoyan en los principios de Material Design y buscan transmitir confianza, transparencia y cercanía, atributos clave para un producto que acompaña una decisión financiera de largo plazo.
 
-**Tono de comunicación.** Debido a que HipoSim aborda una decisión financiera de alto impacto para personas con poca o ninguna experiencia previa en créditos, el tono se calibra deliberadamente para generar confianza sin intimidar al usuario:
+---
 
-| Dimensión | Posición adoptada | Justificación |
+**Colors**
+
+Se ha seleccionado una paleta de cinco colores que representa la identidad de HipoSim. Los colores fueron elegidos para transmitir confianza y estabilidad (propias del ámbito financiero), sin caer en los azules y verdes corporativos que hoy identifican a los bancos que ofrecen simuladores hipotecarios (BCP, Interbank), reforzando así el mensaje de independencia del producto. El ámbar aporta la calidez asociada al hogar y se reserva para los puntos de acción.
+
+| Color | Hex | Rol en la interfaz |
 |---|---|---|
-| Divertido ↔ Serio | Tiende a **Serio**, con lenguaje cercano | Los términos hipotecarios (TCEA, periodo de gracia, amortización) son inherentemente técnicos; el tono no debe trivializar un compromiso financiero de 15 a 20 años. |
-| Formal ↔ Casual | **Semiformal** | Lo bastante formal para transmitir credibilidad en las cifras financieras, y lo bastante casual para no sonar como texto legal bancario. |
-| Respetuoso ↔ Irreverente | **Respetuoso** | El usuario está tomando por primera vez una decisión de alta ansiedad; no hay espacio para la ironía ni el sarcasmo en los textos. |
-| Entusiasta ↔ Sereno | Tiende a **Sereno** | El diferenciador del producto es la transparencia y la claridad tranquila, no el entusiasmo ni la persuasión basada en urgencia. |
+| Verde azulado | `#0E5C63` | Color principal. Transmite confianza, estabilidad y seriedad financiera. Se usa en navegación, encabezados y botones primarios. |
+| Turquesa | `#3AAFA9` | Color secundario. Complementa al principal aportando frescura y claridad. Se usa en gráficos, iconos y elementos de apoyo. |
+| Ámbar | `#F5A524` | Color de acento. Aporta calidez y energía, atrayendo la atención en los puntos clave (por ejemplo, "Simular ahora" y el resaltado del TCEA). |
+| Gris pizarra | `#5F6B76` | Color neutro. Se usa en textos secundarios, bordes y elementos deshabilitados, manteniendo el equilibrio visual. |
+| Blanco | `#FFFFFF` | Fondo base. Brinda claridad y limpieza, permitiendo que los demás colores destaquen. |
 
-**Tipografía.** La escala tipográfica sigue los type tokens de Material Design 3 (Display, Headline, Title, Body, Label), utilizando una única familia sans-serif humanista (Roboto, la tipografía por defecto incluida en el tema Material de PrimeVue) en todos los productos, para mantener legibles en pantallas pequeñas los datos numéricos (tasas de interés, montos en moneda, porcentajes de TCEA).
+<div align="center">
+  <img src="../assets/08-chapter-4/style-guidelines/color-palette.png" alt="Paleta de colores de HipoSim" width="800">
+</div>
 
-**Colores.** La paleta separa el color de marca del color semántico o de estado, en línea con los roles de color de Material Design:
+Como apoyo a la paleta principal, la interfaz utiliza un color de texto principal (`#1F2933`) y colores de estado para los mensajes al usuario:
 
-| Rol | Uso |
-|---|---|
-| Primary | Navegación, CTAs principales ("Simular ahora", "Guardar simulación") |
-| Secondary / Accent | Elementos destacados dentro de la vista de resultados (por ejemplo, el resaltado del TCEA) |
-| Success | Estados de confirmación (el beneficio aplica, simulación guardada) |
-| Warning | Alertas no bloqueantes (por ejemplo, TCEA por encima de un umbral configurado, según la notificación in-app definida en el Capítulo I) |
-| Error | Errores de validación de formularios |
-| Neutral / Surface | Fondos, tarjetas, divisores |
+| Estado | Hex | Uso |
+|---|---|---|
+| Éxito | `#2E9E6B` | Confirmaciones (simulación guardada, el beneficio estatal aplica). |
+| Advertencia | `#F5A524` | Alertas no bloqueantes (por ejemplo, TCEA por encima del umbral configurado). Reutiliza el ámbar de acento. |
+| Error | `#D64545` | Errores de validación de formularios. |
 
-Las combinaciones de color para texto y elementos interactivos deben cumplir las **relaciones de contraste WCAG AA**, en línea con el requisito de Accesibilidad (a11y) descrito más adelante en este capítulo.
+Todas las combinaciones de texto y fondo deben cumplir la relación de contraste **WCAG AA** (mínimo 4.5:1 para texto normal). En particular, el texto sobre `#0E5C63` y `#5F6B76` es blanco, mientras que el texto sobre el turquesa `#3AAFA9` y el ámbar `#F5A524` es siempre el color oscuro `#1F2933`.
 
-**Espaciado.** Se utiliza una cuadrícula base de 8px (estándar de Material Design) para todas las decisiones de espaciado, padding y dimensionamiento de componentes, a fin de mantener la alineación consistente entre los archivos de diseño en Figma y las implementaciones en PrimeVue y nativas.
+---
+
+**Branding**
+
+El branding de HipoSim define la identidad visual de la marca con el objetivo de comunicar de forma inmediata su propuesta de valor: ayudar a compradores de primera vivienda a entender, de manera independiente y transparente, cuánto costará realmente su crédito hipotecario antes de acercarse a un banco.
+
+El nombre combina "Hipo-" (hipotecario), que indica el dominio, y "-Sim", que indica la naturaleza de la herramienta: un simulador, no un banco. El logotipo integra dos ideas en un mismo símbolo: una casa, que representa la primera vivienda, y tres barras ascendentes en su interior, que representan la simulación y el cronograma de pagos. La última barra se destaca en ámbar, en referencia al resultado clave que el usuario busca: el costo real de su crédito. El wordmark separa visualmente "Hipo" (verde azulado) y "Sim" (ámbar), y se acompaña del descriptor "Simulador hipotecario" para dejar claro desde el primer contacto qué es el producto.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/style-guidelines/logo-hiposim.png" alt="Logotipo de HipoSim" width="500">
+</div>
+
+El ícono (sin el wordmark) se utiliza en espacios reducidos como el favicon, el ícono de la aplicación móvil y los avatares.
+
+<div align="center">
+  <img src="../assets/08-chapter-4/style-guidelines/logo-icon.png" alt="Ícono de HipoSim" width="120">
+</div>
+
+Los archivos fuente del logotipo en formato vectorial (`logo-hiposim.svg` y `logo-icon.svg`) se conservan en `assets/08-chapter-4/style-guidelines/`.
+
+---
+
+**Typography**
+
+La tipografía principal seleccionada para el Landing Page y la Web Application es **Poppins** para encabezados y **Roboto** para el cuerpo de texto. Poppins, una sans-serif geométrica, aporta un carácter moderno y cercano que refuerza el wordmark de la marca; Roboto, la tipografía por defecto del tema Material de PrimeVue, garantiza una lectura clara de párrafos y, sobre todo, de datos numéricos (tasas de interés, montos, porcentajes de TCEA) incluso en pantallas pequeñas.
+
+El tamaño y el peso tipográfico varían según el nivel jerárquico del contenido y el tipo de dispositivo utilizado:
+
+| Elemento | Tipografía | Peso | Tamaño |
+|---|---|---|---|
+| Encabezado principal (H1) | Poppins | Bold (700) | 40-56 px |
+| Subtítulos (H2, H3) | Poppins | SemiBold (600) | 24-32 px |
+| Texto destacado | Roboto | Medium (500) | 18-20 px |
+| Texto de párrafo / cuerpo | Roboto | Regular (400) | 16-18 px |
+| Texto secundario | Roboto | Regular (400) | 14 px |
+| Cifras clave (cuota, TCEA) | Poppins | SemiBold (600) | 32-48 px |
+| Botón principal | Roboto | Medium (500) | 16 px |
+| Botón secundario | Roboto | Medium (500) | 14 px |
+
+---
+
+**Spacing**
+
+El espaciado garantiza armonía visual y legibilidad en todas las secciones de la plataforma. Se utiliza un sistema de espaciado basado en múltiplos de 8 px (8, 16, 24, 32, 40...) para mantener consistencia y orden en todos los componentes, y para que los diseños de Figma coincidan con las implementaciones en PrimeVue y en las aplicaciones nativas.
+
+| Elemento | Escritorio | Móvil |
+|---|---|---|
+| Separación entre secciones principales | 80-96 px | 48-64 px |
+| Separación entre elementos dentro de una sección | 24-40 px | 16-24 px |
+| Separación entre campos de un formulario | 16-24 px | 16 px |
+| Separación entre tarjetas (por ejemplo, comparador de escenarios) | 24 px | 16 px |
+| Separación entre imagen y texto | 24-40 px | 16-24 px |
+
+---
+
+**Tone of Voice**
+
+Los tonos de comunicación definen cómo se dirige HipoSim a cada rol, con el objetivo de generar confianza, transmitir la propuesta de valor con claridad y lograr que los usuarios se sientan acompañados en una decisión financiera importante. En términos generales, el tono es **serio pero cercano**, **semiformal**, **respetuoso** y **sereno**: HipoSim debe sonar como un asesor confiable que explica, no como un vendedor que persigue una conversión.
+
+- **Visitante y Comprador de primera vivienda:** se utiliza un lenguaje claro, sin jerga financiera innecesaria, que explica cada término técnico (como TCEA o periodo de gracia) la primera vez que aparece. El tono es tranquilizador y orientado a la transparencia, ya que estas personas toman por primera vez una decisión de alto impacto y desconfían de la información que muestran los bancos. Se evita la ironía, el sarcasmo y la presión por urgencia.
+- **Administrador:** se emplea un lenguaje directo, preciso y funcional, centrado en la tarea de mantener actualizados los parámetros del simulador (tasas de referencia, porcentaje del Bono del Buen Pagador, rangos de Mivivienda). El tono es neutro y orientado a la acción, con mensajes de confirmación y de error explícitos para evitar cambios accidentales sobre valores que afectan a todas las simulaciones.
 
 ### **4.1.2. Web Style Guidelines**
 

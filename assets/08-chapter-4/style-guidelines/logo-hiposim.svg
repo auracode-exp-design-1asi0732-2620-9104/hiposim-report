@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" width="840" height="220" role="img" aria-label="HipoSim logo">
+  <g transform="translate(6,8)">
+    <rect width="94" height="94" rx="22" fill="#0E5C63"/>
+    <g transform="scale(1.4688)">
+      <path d="M32 9 L55 28 H49 V52 H15 V28 H9 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="21" y="41" width="6" height="7" rx="1.5" fill="#0E5C63"/>
+      <rect x="29" y="36" width="6" height="12" rx="1.5" fill="#3AAFA9"/>
+      <rect x="37" y="30" width="6" height="18" rx="1.5" fill="#F5A524"/>
+    </g>
+  </g>
+  <text x="118" y="66" font-family="Poppins, 'Segoe UI', Arial, sans-serif" font-size="56" font-weight="700" letter-spacing="-1">
+    <tspan fill="#0E5C63">Hipo</tspan><tspan fill="#F5A524">Sim</tspan>
+  </text>
+  <text x="121" y="91" font-family="Poppins, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="500" letter-spacing="3.2" fill="#5F6B76">SIMULADOR HIPOTECARIO</text>
+</svg>
