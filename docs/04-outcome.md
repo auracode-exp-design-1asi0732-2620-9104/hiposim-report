@@ -1,33 +1,38 @@
 # **Student Outcome**
 
 <p style="text-align: justify;">
-  The course contributes to compliance with the ABET Student Outcome:
+  El curso contribuye al cumplimiento del Student Outcome ABET:
 </p>
 
 > ABET – EAC - Student Outcome 4
 
 <p style="text-align: justify;">
-  <b>Criterion:</b> The ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and social contexts.
+  <b>Criterion:</b> La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos ambientales y sociales.
 </p>
 
-<table style="width: 100%; border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse; table-layout: fixed; margin: auto;">
+  <colgroup>
+    <col style="width: 25%;">
+    <col style="width: 50%;">
+    <col style="width: 25%;">
+  </colgroup>
   <!-- ROW 0 -->
   <tr>
-    <th style="text-align: center; width: 25%;">Specific Criterion</th>
-    <th style="text-align: center; width: 40%;">Actions Performed</th>
-    <th style="text-align: center; width: 35%;">Conclusions</th>
+    <th style="border: 1px solid #777; padding: 10px; text-align: center; vertical-align: middle;">Criterio específico</th>
+    <th style="border: 1px solid #777; padding: 10px; text-align: center; vertical-align: middle;">Acciones realizadas</th>
+    <th style="border: 1px solid #777; padding: 10px; text-align: center; vertical-align: middle;">Conclusiones</th>
   </tr>
   
   <!-- ROW 1 -->
   <tr>
     <!-- COLUMN 1 -->
-    <td style="text-align: justify; vertical-align: top;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b>
-        4.c.1 Recognizes ethical and professional responsibility in software engineering situations.
+        4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software
       </b>
     </td>
     <!-- COLUMN 2 -->
-    <td style="text-align: justify;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b>
         Bautista Rivera, Jose Diego
       </b>
@@ -38,7 +43,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Carlos Lavado, Ever Giusephi
@@ -50,7 +55,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
         <b>
           Daga Chávez, Joaquín Leonardo
@@ -62,7 +67,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Janampa Gutierrez, Jhoan Darner
@@ -74,7 +79,7 @@
       <br>
          During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Lopez Roman, Franco Mauricio
@@ -86,7 +91,7 @@
       <br>
          En el av1 desarrolle el planteamiento del problema junto al Lean UX Canva, y realice entrevistas y sus respectivos análisis para ambos segmentos objetivo junto a sus respectivos graficos: user persona, empathy map. As Is scenario, etc.
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Olivares Lao, Gustavo Alonso
@@ -98,8 +103,9 @@
       <br>
         During AV1, I...
       <br><br>
+    </td>
     <!-- COLUMN 3 -->
-    <td style="text-align: justify; vertical-align: top;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b><i>
         AV1
       </i></b>
@@ -112,13 +118,13 @@
   <!-- ROW 2 -->
   <tr>
     <!-- COLUMN 1 -->
-    <td style="text-align: justify; vertical-align: top;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b>
-        4.c.2 Makes informed judgments considering the impact of software engineering solutions in global, economic, environmental, and social contexts.
+        4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales
       </b>
     </td>
     <!-- COLUMN 2 -->
-    <td style="text-align: justify;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b>
         Bautista Rivera, Jose Diego
       </b>
@@ -129,7 +135,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Carlos Lavado, Ever Giusephi
@@ -141,7 +147,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
         <b>
           Daga Chávez, Joaquín Leonardo
@@ -153,7 +159,7 @@
       <br>
         During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Janampa Gutierrez, Jhoan Darner
@@ -165,7 +171,7 @@
       <br>
          During AV1, I...
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Lopez Roman, Franco Mauricio
@@ -177,7 +183,7 @@
       <br>
          Use técnicas de análisis para el desarrollo del problema y su Canva, hice uso del discernimiento de contextos para la selección de ideas y criterios en base a las entrevistas realizadas
       <br><br>
-        ------------------------------------
+      <hr>
       <br><br>
       <b>
         Olivares Lao, Gustavo Alonso
@@ -189,8 +195,9 @@
       <br>
         During AV1, I...
       <br><br>
+    </td>
     <!-- COLUMN 3 -->
-    <td style="text-align: justify; vertical-align: top;">
+    <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
       <b><i>
         AV1
       </i></b>
