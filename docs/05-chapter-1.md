@@ -19,13 +19,15 @@
         <b>Código de estudiante:</b> U202310949
       </p>
       <p>
-        <b>Edad:</b> 00
+        <b>Edad:</b> 20
       </p>
       <p>
         <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>Sobre mí:</b> Yo ...
+        <b>Sobre mí:</b> Soy estudiante de Ingeniería de Software en la UPC. Cuento con conocimientos técnicos en desarrollo frontend con Vue, HTML, CSS y JavaScript, en desarrollo backend con C#, ASP.NET Core y APIs REST, y en diseño y manejo de bases de datos. También tengo experiencia en control de versiones con Git y GitFlow, y en la elaboración de documentación técnica.
+
+Puedo contribuir al proyecto con una visión integral del desarrollo de software, desde la interfaz de usuario hasta el servicio y la base de datos que la respaldan, además de buenas prácticas de trabajo colaborativo y de documentación para mantener el proyecto ordenado y trazable.
       </p>
     </td>
   </tr>
