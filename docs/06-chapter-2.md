@@ -577,7 +577,10 @@ En conjunto, se observa que el Comprador de Primera Vivienda busca disponer de i
 
 <br>
 
-<div align="center"><img src="../assets/img/chapter-ii/comprador-charts-image.png" width="900"></div>
+<div align="center">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-1-1.png" width="400">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-1-2.png" width="400">
+</div>
 
 <br>
 
@@ -593,7 +596,10 @@ En conjunto, se observa que el Administrador busca centralizar y documentar la a
 
 <br>
 
-<div align="center"><img src="../assets/img/chapter-ii/administrador-charts-image.png" width="900"></div>
+<div align="center">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-2-1.png" width="400">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-2-2.png" width="400">
+</div>
 
 <br>
 
