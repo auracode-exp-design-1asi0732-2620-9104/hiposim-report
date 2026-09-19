@@ -1,31 +1,31 @@
-# **Chapter I: Introduction**
+# **Capítulo I: Introducción**
 ## **1.1. Startup Profile**
-### **1.1.1. Startup Description**
-### **1.1.2. Team Member Profiles**
+### **1.1.1. Descripción de la Startup**
+### **1.1.2. Perfiles de integrantes del equipo**
 
 <table style="width: 100%;">
   <!-- MEMBER 1 -->
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/06-chapter-1/startup-profile/team-member-profiles/jose-bautista.png"
-      alt="Profile photo of Jose Bautista"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/jose-bautista.png"
+      alt="Foto de perfil de Jose Bautista"
       width="70%"
       style="border-radius: 10px;">
     </td>
     <td style="text-align: justify; width: 60%; vertical-align: top;">
       <h2>Bautista Rivera, Jose Diego</h2>
       <p>
-        <b>Student code:</b> U202310949
+        <b>Código de estudiante:</b> U202310949
       </p>
       <p>
-        <b>Age:</b> 00
+        <b>Edad:</b> 00
       </p>
       <p>
-        <b>Degree:</b> Software engineering
+        <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>About me:</b> I ...
+        <b>Sobre mí:</b> Yo ...
       </p>
     </td>
   </tr>
@@ -35,23 +35,23 @@
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
       src="../assets/05-chapter-1/startup-profile/team-member-profiles/giusephi-carlos.png"
-      alt="Profile photo of Giusephi Carlos"
+      alt="Foto de perfil de Giusephi Carlos"
       width="70%"
       style="border-radius: 10px;">
     </td>
     <td style="text-align: justify; width: 60%; vertical-align: top;">
       <h2>Carlos Lavado, Ever Giusephi</h2>
       <p>
-        <b>Student code:</b> U202224867
+        <b>Código de estudiante:</b> U202224867
       </p>
       <p>
-        <b>Age:</b> 21
+        <b>Edad:</b> 21
       </p>
       <p>
-        <b>Degree:</b> Software engineering
+        <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>About me:</b> I am studying Software Engineering at UPC. I have always been fascinated by the evolution of technology and its impact on everyday life, which motivated me to pursue this career. Throughout my studies, I have developed technical skills in web development and software engineering, working with technologies such as HTML, CSS, JavaScript, Vue.js, Vite, C#, ASP.NET Core, Git, and GitHub. I also have experience applying version control practices, working with RESTful APIs, and creating technical documentation using Markdown. In addition to my technical knowledge, I consider myself a responsible, adaptable, and collaborative person with strong problem-solving and continuous learning skills. In my free time, I enjoy playing video games, which also helps me develop strategic thinking and creativity. My main goal is to continue improving my analytical thinking, software design skills, and programming abilities in order to develop efficient and well-structured software solutions.
+        <b>Sobre mí:</b> Estudio Ingeniería de Software en la UPC. Siempre me ha fascinado la evolución de la tecnología y su impacto en la vida cotidiana, lo que me motivó a seguir esta carrera. A lo largo de mis estudios he desarrollado habilidades técnicas en desarrollo web e ingeniería de software, trabajando con tecnologías como HTML, CSS, JavaScript, Vue.js, Vite, C#, ASP.NET Core, Git y GitHub. También tengo experiencia aplicando prácticas de control de versiones, trabajando con APIs RESTful y elaborando documentación técnica en Markdown. Además de mis conocimientos técnicos, me considero una persona responsable, adaptable y colaborativa, con gran capacidad de resolución de problemas y aprendizaje continuo. En mi tiempo libre disfruto jugar videojuegos, lo que también me ayuda a desarrollar el pensamiento estratégico y la creatividad. Mi objetivo principal es seguir mejorando mi pensamiento analítico, mis habilidades de diseño de software y de programación para desarrollar soluciones de software eficientes y bien estructuradas.
       </p>
     </td>
   </tr>
@@ -60,24 +60,24 @@
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/06-chapter-1/startup-profile/team-member-profiles/joaquín-daga.png"
-      alt="Profile photo of Joaquín Daga"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/joaquín-daga.png"
+      alt="Foto de perfil de Joaquín Daga"
       width="70%"
       style="border-radius: 10px;">
     </td>
     <td style="text-align: justify; width: 60%; vertical-align: top;">
       <h2>Daga Chávez, Joaquín Leonardo</h2>
       <p>
-        <b>Student code:</b> U202219829
+        <b>Código de estudiante:</b> U202219829
       </p>
       <p>
-        <b>Age:</b> 00
+        <b>Edad:</b> 00
       </p>
       <p>
-        <b>Degree:</b> Software engineering
+        <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>About me:</b> I ...
+        <b>Sobre mí:</b> Yo ...
       </p>
     </td>
   </tr>
@@ -87,25 +87,25 @@
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
       src="../assets/05-chapter-1/startup-profile/team-member-profiles/Jhoan_janampa.jpg"
-      alt="Profile photo of Jhoan Janampa"
+      alt="Foto de perfil de Jhoan Janampa"
       width="70%"
       style="border-radius: 10px;">
     </td>
     <td style="text-align: justify; width: 60%; vertical-align: top;">
       <h2>Janampa Gutierrez, Jhoan Darner</h2>
       <p>
-        <b>Student code:</b> U202323319
+        <b>Código de estudiante:</b> U202323319
       </p>
       <p>
-        <b>Age:</b> 20
+        <b>Edad:</b> 20
       </p>
       <p>
-        <b>Degree:</b> Software engineering
+        <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>About me:</b> I am a seventh-cycle Software Engineering student at UPC. I have technical knowledge in frontend development with Angular and Vue.js, version control management with Git and GitFlow, and REST API consumption. I also hold certifications in Scrum/agile methodologies, which allows me to contribute both on the technical side and in team organization.
+        <b>Sobre mí:</b> Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Cuento con conocimientos técnicos en desarrollo frontend con Angular y Vue.js, gestión de control de versiones con Git y GitFlow, y consumo de APIs REST. También tengo certificaciones en metodologías ágiles y Scrum, lo que me permite aportar tanto en el aspecto técnico como en la organización del equipo.
 
-I can contribute to the project with my experience in web development, good collaborative work practices (GitFlow, version control), and my focus on keeping the team organized to meet quality deliverables within established deadlines.
+Puedo contribuir al proyecto con mi experiencia en desarrollo web, buenas prácticas de trabajo colaborativo (GitFlow, control de versiones) y mi enfoque en mantener al equipo organizado para cumplir con entregables de calidad dentro de los plazos establecidos.
       </p>
     </td>
   </tr>
@@ -115,7 +115,7 @@ I can contribute to the project with my experience in web development, good coll
   <td style="text-align: center; width: 40%; vertical-align: center;">
     <img
     src="../assets/05-chapter-1/startup-profile/team-member-profiles/franco-lopez.jpg"
-    alt="Profile photo of Franco Lopez"
+    alt="Foto de perfil de Franco Lopez"
     width="70%"
     style="border-radius: 10px;">
   </td>
@@ -130,121 +130,122 @@ Soy estudiante de la carrera de Ingeniería de Software dentro de la Universidad
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/06-chapter-1/startup-profile/team-member-profiles/gustavo-olivares.jpeg"
-      alt="Profile photo of Gustavo Olivares"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/gustavo-olivares.jpeg"
+      alt="Foto de perfil de Gustavo Olivares"
       width="70%"
       style="border-radius: 10px;">
     </td>
     <td style="text-align: justify; width: 60%; vertical-align: top;">
       <h2>Olivares Lao, Gustavo Alonso</h2>
       <p>
-        <b>Student code:</b> U202216448
+        <b>Código de estudiante:</b> U202216448
       </p>
       <p>
-        <b>Age:</b> 00
-      <p>
-        <b>Degree:</b> Software engineering
+        <b>Edad:</b> 00
       </p>
       <p>
-        <b>About me:</b> I ...
+        <b>Carrera:</b> Ingeniería de Software
+      </p>
+      <p>
+        <b>Sobre mí:</b> Yo ...
       </p>
     </td>
   </tr>
 </table>
 
 ## **1.2. Solution Profile**
-### **1.2.1. Background and Problem Statement**
+### **1.2.1. Antecedentes y problemática**
 
-HipoSim is a web and mobile mortgage credit simulator aimed at first-time homebuyers in Peru. The product models the full financial mechanics of a mortgage loan — the French amortization method, interest-rate conversion, total and partial grace periods, and the standard evaluation indicators (NPV, IRR, and TCEA) — so that a buyer can see, before committing to any bank, what a mortgage credit will actually cost them over its full term.
+HipoSim es un simulador web y móvil de crédito hipotecario dirigido a compradores de primera vivienda en el Perú. El producto modela toda la mecánica financiera de un préstamo hipotecario (el método de amortización francés, la conversión de tasas de interés, los periodos de gracia total y parcial, y los indicadores de evaluación estándar: VAN, TIR y TCEA) para que un comprador pueda ver, antes de comprometerse con cualquier banco, cuánto le costará realmente un crédito hipotecario durante todo su plazo.
 
-In the Peruvian market, buying a first home is a long-term financial commitment (15 to 20-year loans) that is almost always evaluated exclusively inside the channels of a single financial entity — such as BCP or Interbank — or through state-backed programs like the Fondo Mivivienda. First-time buyers are therefore dependent on whatever information each bank chooses to disclose, precisely at the stage of the process where they have the least negotiating power and the least experience comparing credit conditions.
+En el mercado peruano, comprar una primera vivienda es un compromiso financiero de largo plazo (préstamos de 15 a 20 años) que casi siempre se evalúa exclusivamente dentro de los canales de una sola entidad financiera, como BCP o Interbank, o mediante programas respaldados por el Estado como el Fondo Mivivienda. Los compradores primerizos dependen así de la información que cada banco decide divulgar, justo en la etapa del proceso en la que tienen menor poder de negociación y menor experiencia comparando condiciones de crédito.
 
-**Problem Statement**
+**Enunciado del problema**
 
-First-time homebuyers in Peru, typically between 25 and 40 years old and holding their first stable formal job, do not have access to a simple, independent, and transparent tool that lets them simulate and compare the real conditions of a mortgage credit — including the effective annual cost (TCEA), the full amortization schedule, grace periods, and applicable state benefits such as the Bono del Buen Pagador or the Nuevo Crédito Mivivienda — before approaching a financial entity. As a result, they commit to a mortgage relying almost entirely on the information disclosed by a single bank, without an independent point of comparison.
+Los compradores de primera vivienda en el Perú, típicamente entre 25 y 40 años y con su primer empleo formal estable, no cuentan con una herramienta simple, independiente y transparente que les permita simular y comparar las condiciones reales de un crédito hipotecario (incluyendo el costo efectivo anual, TCEA, el cronograma de amortización completo, los periodos de gracia y los beneficios estatales aplicables, como el Bono del Buen Pagador o el Nuevo Crédito Mivivienda) antes de acercarse a una entidad financiera. Como resultado, se comprometen con una hipoteca apoyándose casi por completo en la información que divulga un solo banco, sin un punto de comparación independiente.
 
 ### **1.2.2. Lean UX Process**
 
-The team applied the Lean UX framework to move from the initial, broader SaaS idea to a validated, scoped-down product concept, aligning the business problem with a testable set of assumptions and hypotheses before committing to the final feature set described in this document.
+El equipo aplicó el marco Lean UX para pasar de la idea inicial, más amplia, de una plataforma SaaS a un concepto de producto acotado y validable, alineando el problema de negocio con un conjunto comprobable de supuestos e hipótesis antes de definir el conjunto final de funcionalidades descrito en este documento.
 
 #### **1.2.2.1. Lean UX Problem Statements**
 
-- **Business problem statement:** Financial entities in Peru (BCP, Interbank) and state programs (Fondo Mivivienda) only expose mortgage simulators inside their own commercial channels, each showing partial or entity-biased information. There is no independent, easy-to-use product that lets a first-time buyer explore and compare realistic mortgage scenarios on their own terms, which limits opportunities to capture and convert this segment before they are "captured" by a single bank's funnel.
-- **User problem statement:** First-time homebuyers do not understand, in concrete terms, how much a mortgage will really cost them (TCEA, total interest, effect of a grace period, impact of state subsidies) until they are already inside a formal application process with a specific bank, at which point comparing alternatives is slow and inconvenient.
+- **Problema de negocio:** Las entidades financieras del Perú (BCP, Interbank) y los programas estatales (Fondo Mivivienda) solo exponen simuladores hipotecarios dentro de sus propios canales comerciales, y cada uno muestra información parcial o sesgada hacia la entidad. No existe un producto independiente y fácil de usar que permita a un comprador primerizo explorar y comparar escenarios hipotecarios realistas por su cuenta, lo que limita las oportunidades de captar y convertir a este segmento antes de que sea "capturado" por el embudo comercial de un solo banco.
+- **Problema del usuario:** Los compradores de primera vivienda no comprenden, en términos concretos, cuánto les costará realmente una hipoteca (TCEA, interés total, efecto de un periodo de gracia, impacto de los subsidios estatales) hasta que ya están dentro de un proceso formal de solicitud con un banco específico, momento en el que comparar alternativas resulta lento e incómodo.
 
 #### **1.2.2.2. Lean UX Assumptions**
 
-- We assume first-time buyers do not know their real TCEA today and rely mainly on the advertised nominal/effective interest rate shown by each bank.
-- We assume users are willing to input personal financial data (income, savings for the down payment, desired property price) into an independent tool if it does not require immediate account creation to see a first result.
-- We assume the ability to save and compare more than one simulation side by side is perceived as valuable enough to justify registering an account.
-- We assume awareness of state benefits (Bono del Buen Pagador, Nuevo Crédito Mivivienda) is low among first-time buyers, and that surfacing them automatically inside the simulation increases perceived usefulness.
-- We assume a mobile-accessible simulator increases engagement, since target users research this kind of decision informally, outside of a desktop banking session.
-- We assume an exportable/shareable PDF report increases trust and is used to discuss the simulation with a partner, family member, or the bank itself.
+- Suponemos que los compradores primerizos hoy no conocen su TCEA real y se apoyan principalmente en la tasa de interés nominal o efectiva publicitada por cada banco.
+- Suponemos que los usuarios están dispuestos a ingresar datos financieros personales (ingresos, ahorros para la cuota inicial, precio de la vivienda deseada) en una herramienta independiente si no se les exige crear una cuenta de inmediato para ver un primer resultado.
+- Suponemos que la posibilidad de guardar y comparar más de una simulación lado a lado se percibe como lo bastante valiosa para justificar el registro de una cuenta.
+- Suponemos que el conocimiento de los beneficios estatales (Bono del Buen Pagador, Nuevo Crédito Mivivienda) es bajo entre los compradores primerizos, y que mostrarlos automáticamente dentro de la simulación aumenta la utilidad percibida.
+- Suponemos que un simulador accesible desde el móvil aumenta el engagement, ya que los usuarios objetivo investigan este tipo de decisión de manera informal, fuera de una sesión de banca desde una computadora.
+- Suponemos que un reporte en PDF exportable y compartible aumenta la confianza y se usa para conversar la simulación con la pareja, un familiar o el propio banco.
 
 #### **1.2.2.3. Lean UX Hypothesis Statements**
 
-- **H1:** We believe that offering a visual, transparent mortgage credit simulator to first-time buyers will generate a higher conversion rate toward requesting a credit application. We will know this is true when we see an increase in the percentage of completed simulations that end in a submitted (simulated) credit request.
-- **H2:** We believe that showing the effective cost (TCEA) and applicable state benefits with a comparative chart, instead of only a numeric table, will increase the percentage of simulations that users complete end-to-end.
-- **H3:** We believe that letting registered users save and compare two or three simulated scenarios side by side will increase the average number of simulations completed per user.
-- **H4:** We believe that letting users save their simulation history will increase user return rate (retention), since a mortgage decision is rarely made in a single session.
+- **H1:** Creemos que ofrecer un simulador visual y transparente de crédito hipotecario a compradores primerizos generará una mayor tasa de conversión hacia la solicitud de crédito. Sabremos que es verdad cuando veamos un aumento en el porcentaje de simulaciones completadas que terminan en una solicitud de crédito enviada (simulada).
+- **H2:** Creemos que mostrar el costo efectivo (TCEA) y los beneficios estatales aplicables mediante un gráfico comparativo, en lugar de solo una tabla numérica, aumentará el porcentaje de simulaciones que los usuarios completan de principio a fin.
+- **H3:** Creemos que permitir a los usuarios registrados guardar y comparar dos o tres escenarios simulados lado a lado aumentará el promedio de simulaciones completadas por usuario.
+- **H4:** Creemos que permitir a los usuarios guardar su historial de simulaciones aumentará la tasa de retorno (retención), ya que una decisión hipotecaria rara vez se toma en una sola sesión.
 
 #### **1.2.2.4. Lean UX Canvas**
 
 <table style="width: 100%;">
   <tr>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>1. Business Problem</b><br>
-      Financial entities and state programs only expose mortgage simulators inside their own biased, entity-specific channels, leaving first-time buyers without an independent way to evaluate real credit conditions before committing to a bank.
+      <b>1. Problema de negocio</b><br>
+      Las entidades financieras y los programas estatales solo exponen simuladores hipotecarios dentro de sus propios canales, sesgados y específicos de cada entidad, dejando a los compradores primerizos sin una forma independiente de evaluar las condiciones reales del crédito antes de comprometerse con un banco.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>2. Business Outcomes</b><br>
-      Increase in simulation-to-application conversion rate; increase in completed simulations per visit; reduction in form abandonment rate during data entry.
+      <b>2. Resultados de negocio</b><br>
+      Aumento de la tasa de conversión de simulación a solicitud; aumento de simulaciones completadas por visita; reducción de la tasa de abandono del formulario durante el ingreso de datos.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>3. Users</b><br>
-      First-time homebuyers, 25-40 years old, first stable formal job, no prior mortgage experience (primary persona: Comprador). Secondary internal user: Administrador who maintains base parameters.
+      <b>3. Usuarios</b><br>
+      Compradores de primera vivienda de 25 a 40 años, con su primer empleo formal estable y sin experiencia previa en hipotecas (persona principal: Comprador). Usuario interno secundario: Administrador, quien mantiene los parámetros base.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>4. User Outcomes &amp; Benefits</b><br>
-      Understand the real cost (TCEA) of a mortgage before talking to a bank; compare scenarios; discover applicable state benefits; feel confident and prepared when approaching a financial entity.
+      <b>4. Resultados y beneficios para el usuario</b><br>
+      Entender el costo real (TCEA) de una hipoteca antes de hablar con un banco; comparar escenarios; descubrir los beneficios estatales aplicables; sentirse seguro y preparado al acercarse a una entidad financiera.
     </td>
   </tr>
   <tr>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>5. Solutions</b><br>
-      Web and mobile mortgage simulator (French method, TCEA/NPV/IRR, grace periods), scenario comparator, simulation history, state-benefit toggle (Bono del Buen Pagador / Mivivienda), exportable/shareable PDF report, institutional landing page.
+      <b>5. Soluciones</b><br>
+      Simulador hipotecario web y móvil (método francés, TCEA/VAN/TIR, periodos de gracia), comparador de escenarios, historial de simulaciones, activación de beneficios estatales (Bono del Buen Pagador / Mivivienda), reporte PDF exportable y compartible, y landing page institucional.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>6. Hypotheses</b><br>
-      H1-H4 listed in section 1.2.2.3, ranked by expected impact on conversion and retention.
+      <b>6. Hipótesis</b><br>
+      H1-H4 listadas en la sección 1.2.2.3, ordenadas por impacto esperado en conversión y retención.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>7. Minimum Viable Product / Experiments</b><br>
-      Release the web simulator with the visual TCEA/benefits comparison first (tests H2); instrument the "submit simulated request" button to validate H1; add the scenario comparator and history in a second iteration to test H3/H4.
+      <b>7. Producto mínimo viable / Experimentos</b><br>
+      Lanzar primero el simulador web con la comparación visual de TCEA y beneficios (prueba H2); instrumentar el botón "enviar solicitud simulada" para validar H1; agregar el comparador de escenarios y el historial en una segunda iteración para probar H3 y H4.
     </td>
     <td style="width: 25%; vertical-align: top; padding: 8px;">
-      <b>8. What's the Most Important Thing We Need to Learn First?</b><br>
-      Whether showing TCEA and state benefits visually actually changes completion and conversion behavior, before investing further effort in the comparator, history, and native mobile parity.
+      <b>8. ¿Qué es lo más importante que necesitamos aprender primero?</b><br>
+      Si mostrar el TCEA y los beneficios estatales de forma visual realmente cambia el comportamiento de finalización y conversión, antes de invertir más esfuerzo en el comparador, el historial y la paridad con la app móvil nativa.
     </td>
   </tr>
 </table>
 
-## **1.3. Target Segments**
+## **1.3. Segmentos objetivo**
 
-The product is scoped around a single primary segment, deliberately narrowed down from the original multi-actor SaaS concept to fit the team's available time and the course constraints.
+El producto se centra en un único segmento principal, deliberadamente reducido respecto del concepto original de SaaS multiactor, para ajustarse al tiempo disponible del equipo y a las restricciones del curso.
 
-**Primary segment — First-time homebuyer (Comprador):**
-- Age range: 25-40 years old.
-- Employment: holds a first stable formal job, with a regular, verifiable monthly income.
-- Housing situation: does not yet own a home and is actively evaluating a mortgage credit for the first time.
-- Financial literacy: has little to no prior experience comparing mortgage credit conditions, grace periods, or effective cost indicators such as TCEA.
-- Behavior: researches informally before engaging a bank, is price- and cost-sensitive, and values transparency and independence from a single financial entity.
-- Access channels: reached through the public landing page as a Visitante, converts into a Usuario Registrado to save, compare, and export simulations.
+**Segmento principal: Comprador de primera vivienda (Comprador):**
+- Rango de edad: 25 a 40 años.
+- Situación laboral: cuenta con su primer empleo formal estable, con un ingreso mensual regular y verificable.
+- Situación de vivienda: aún no es propietario y evalúa activamente por primera vez un crédito hipotecario.
+- Cultura financiera: tiene poca o ninguna experiencia previa comparando condiciones de crédito hipotecario, periodos de gracia o indicadores de costo efectivo como el TCEA.
+- Comportamiento: investiga de manera informal antes de acercarse a un banco, es sensible al precio y al costo, y valora la transparencia y la independencia frente a una sola entidad financiera.
+- Canales de acceso: llega a través del landing page público como Visitante y se convierte en Usuario Registrado para guardar, comparar y exportar simulaciones.
 
-**Secondary segment — Product administrator (Administrador):**
-- An internal stakeholder (team/business side) who keeps the simulator's base parameters up to date — reference interest rates, the Bono del Buen Pagador percentage, and the current Mivivienda ranges — and monitors basic usage metrics.
-- Not a research-driven persona in the same sense as the Comprador; documented mainly to justify the Administrador role and its minimal configuration screen, not as a target market segment.
+**Segmento secundario: Administrador del producto (Administrador):**
+- Un stakeholder interno (lado del equipo o del negocio) que mantiene actualizados los parámetros base del simulador (tasas de interés de referencia, porcentaje del Bono del Buen Pagador y rangos vigentes de Mivivienda) y monitorea métricas básicas de uso.
+- No es una persona basada en investigación en el mismo sentido que el Comprador; se documenta principalmente para justificar el rol de Administrador y su pantalla mínima de configuración, no como segmento de mercado objetivo.
 
-**Reference competitors** (used to benchmark the segment's current alternatives): mortgage simulators from BCP and Interbank, and the Fondo Mivivienda / Nuevo Crédito Mivivienda official simulator.
+**Competidores de referencia** (usados para contrastar las alternativas actuales del segmento): los simuladores hipotecarios de BCP e Interbank, y el simulador oficial del Fondo Mivivienda / Nuevo Crédito Mivivienda.
 
-**Explicitly out of scope for segmentation:** financial advisors, bank commercial agents, and multiple financial entities as distinct actors — these were part of the discarded SaaS version and are not addressed as target segments in the current scope.
+**Fuera de alcance de forma explícita en la segmentación:** asesores financieros, agentes comerciales de los bancos y múltiples entidades financieras como actores distintos; formaban parte de la versión SaaS descartada y no se abordan como segmentos objetivo en el alcance actual.
