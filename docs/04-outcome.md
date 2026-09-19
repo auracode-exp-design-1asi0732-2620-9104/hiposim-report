@@ -104,7 +104,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, the team...
+        Se logró realizar un trabajo sobresaliente, cumpliendo con todos los segmentos del trabajo y entregando un documento que sirve como sustento escrito para comprender los pasos seguidos en la planificación, desarrollo y envío del proyecto a producción
       <br><br>
     </td>
   </tr>
@@ -195,7 +195,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, the team...
+        El equipo estableció medios de comunicación efectivos para entregar un trabajo completo dentro de los cortos períodos de tiempo para la entrega del proyecto. Cada miembro realizó presentaciones detalladas de sus avances y colaboró en la comunicación constante con los segmentos objetivo y clientes.
       <br><br>
     </td>
   </tr>
