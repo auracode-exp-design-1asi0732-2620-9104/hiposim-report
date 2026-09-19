@@ -1,110 +1,112 @@
 # **Chapter IV: Product Design**
 
-This chapter presents the Software Architecture & Design proposal for HipoSim, translating the User Stories and the Impact Map identified in Chapter III into concrete design decisions: the visual style system shared across all products, the information architecture that organizes content for each role, the UX/UI design for the Landing Page, the Web Application and the Mobile Application, and the technical design of the solution — Domain-Driven Software Architecture, Object-Oriented Design and Database Design.
+Este capítulo presenta la propuesta de Software Architecture & Design de HipoSim, traduciendo las User Stories y el Impact Map identificados en el Capítulo III en decisiones concretas de diseño: el sistema de estilo visual compartido por todos los productos, la arquitectura de información que organiza el contenido para cada rol, el diseño UX/UI del Landing Page, la Web Application y la Mobile Application, y el diseño técnico de la solución: Domain-Driven Software Architecture, Object-Oriented Design y Database Design.
 
 ## **4.1. Style Guidelines**
 
-This section establishes a shared, centralized visual language for all HipoSim products — the Landing Page, the Web Application and the Native Mobile Application — so that assets, fonts, colors and tone remain consistent regardless of the platform a user or visitor is on. As mandated by the course's technical constraints, the team adopts **Material Design** as the base design system, adapted through **PrimeVue** for the web, and translated natively for iOS and Android on mobile.
+Esta sección establece un lenguaje visual compartido y centralizado para todos los productos de HipoSim (el Landing Page, la Web Application y la Native Mobile Application), de modo que los assets, las fuentes, los colores y el tono se mantengan consistentes sin importar la plataforma desde la que el usuario o visitante acceda. Conforme a las restricciones técnicas del curso, el equipo adopta **Material Design** como sistema de diseño base, adaptado mediante **PrimeVue** para la web y trasladado de forma nativa a iOS y Android en móvil.
 
 ### **4.1.1. General Style Guidelines**
 
-**Branding.** The product name, HipoSim, communicates its two defining traits directly: "Hipo-" (hipotecario) states the domain, and "-Sim" states the nature of the tool — a simulator, not a bank. The logo and wordmark (see Chapter II, competitive analysis) avoid any visual association with a specific financial institution, reinforcing the product's core value proposition: independence from any single bank.
+**Branding.** El nombre del producto, HipoSim, comunica directamente sus dos rasgos definitorios: "Hipo-" (hipotecario) indica el dominio, y "-Sim" indica la naturaleza de la herramienta: un simulador, no un banco. El logo y el wordmark (ver Capítulo II, análisis competitivo) evitan cualquier asociación visual con una entidad financiera específica, reforzando la propuesta de valor central del producto: la independencia frente a cualquier banco.
 
-**Tone of communication.** Because HipoSim handles a high-stakes financial decision for someone with little to no prior credit experience, the tone is deliberately calibrated to build trust without intimidating the user:
+**Tono de comunicación.** Debido a que HipoSim aborda una decisión financiera de alto impacto para personas con poca o ninguna experiencia previa en créditos, el tono se calibra deliberadamente para generar confianza sin intimidar al usuario:
 
-| Dimension | Position adopted | Rationale |
+| Dimensión | Posición adoptada | Justificación |
 |---|---|---|
-| Fun ↔ Serious | Leans **Serious**, with approachable language | Mortgage terms (TCEA, grace period, amortization) are inherently technical; the tone must not trivialize a 15-20 year financial commitment. |
-| Formal ↔ Casual | **Semi-formal** | Formal enough to convey credibility on financial figures, casual enough to avoid sounding like bank legal copy. |
-| Respectful ↔ Irreverent | **Respectful** | The user is making a first-time, high-anxiety decision; no room for irony or sarcasm in copy. |
-| Enthusiastic ↔ Serene | Leans **Serene** | The product's differentiator is transparency and calm clarity, not excitement or urgency-driven persuasion. |
+| Divertido ↔ Serio | Tiende a **Serio**, con lenguaje cercano | Los términos hipotecarios (TCEA, periodo de gracia, amortización) son inherentemente técnicos; el tono no debe trivializar un compromiso financiero de 15 a 20 años. |
+| Formal ↔ Casual | **Semiformal** | Lo bastante formal para transmitir credibilidad en las cifras financieras, y lo bastante casual para no sonar como texto legal bancario. |
+| Respetuoso ↔ Irreverente | **Respetuoso** | El usuario está tomando por primera vez una decisión de alta ansiedad; no hay espacio para la ironía ni el sarcasmo en los textos. |
+| Entusiasta ↔ Sereno | Tiende a **Sereno** | El diferenciador del producto es la transparencia y la claridad tranquila, no el entusiasmo ni la persuasión basada en urgencia. |
 
-**Typography.** The type scale follows Material Design 3 type tokens (Display, Headline, Title, Body, Label), using a single humanist sans-serif family (Roboto, the default typeface bundled with PrimeVue's Material theme) across all products, to keep numeric data (interest rates, currency amounts, TCEA percentages) legible at small sizes on mobile.
+**Tipografía.** La escala tipográfica sigue los type tokens de Material Design 3 (Display, Headline, Title, Body, Label), utilizando una única familia sans-serif humanista (Roboto, la tipografía por defecto incluida en el tema Material de PrimeVue) en todos los productos, para mantener legibles en pantallas pequeñas los datos numéricos (tasas de interés, montos en moneda, porcentajes de TCEA).
 
-**Colors.** The palette separates brand color from semantic/status color, in line with Material Design color roles:
+**Colores.** La paleta separa el color de marca del color semántico o de estado, en línea con los roles de color de Material Design:
 
-| Role | Usage |
+| Rol | Uso |
 |---|---|
-| Primary | Navigation, primary CTAs ("Simular ahora", "Guardar simulación") |
-| Secondary / Accent | Highlights inside the results view (e.g., TCEA callout) |
-| Success | Confirmation states (benefit applies, simulation saved) |
-| Warning | Non-blocking alerts (e.g., TCEA above a configured threshold, per the in-app notification defined in Chapter I) |
-| Error | Form validation errors |
-| Neutral / Surface | Backgrounds, cards, dividers |
+| Primary | Navegación, CTAs principales ("Simular ahora", "Guardar simulación") |
+| Secondary / Accent | Elementos destacados dentro de la vista de resultados (por ejemplo, el resaltado del TCEA) |
+| Success | Estados de confirmación (el beneficio aplica, simulación guardada) |
+| Warning | Alertas no bloqueantes (por ejemplo, TCEA por encima de un umbral configurado, según la notificación in-app definida en el Capítulo I) |
+| Error | Errores de validación de formularios |
+| Neutral / Surface | Fondos, tarjetas, divisores |
 
-Color combinations for text and interactive elements must meet **WCAG AA contrast ratios**, in line with the Accessibility (a11y) requirement described later in this chapter.
+Las combinaciones de color para texto y elementos interactivos deben cumplir las **relaciones de contraste WCAG AA**, en línea con el requisito de Accesibilidad (a11y) descrito más adelante en este capítulo.
 
-**Spacing.** An 8px baseline grid (Material Design standard) is used for all spacing, padding and component sizing decisions, to keep alignment consistent between the Figma design files and the PrimeVue/native implementations.
+**Espaciado.** Se utiliza una cuadrícula base de 8px (estándar de Material Design) para todas las decisiones de espaciado, padding y dimensionamiento de componentes, a fin de mantener la alineación consistente entre los archivos de diseño en Figma y las implementaciones en PrimeVue y nativas.
 
 ### **4.1.2. Web Style Guidelines**
 
-The Web Application and the Landing Page follow **Responsive Web Design**, targeting three breakpoints: mobile (< 768px), tablet (768px-1024px) and desktop (> 1024px), on a 12-column fluid grid.
+La Web Application y el Landing Page siguen **Responsive Web Design**, con tres breakpoints: móvil (< 768px), tablet (768px-1024px) y escritorio (> 1024px), sobre una cuadrícula fluida de 12 columnas.
 
-UI components for the Web Application are sourced from **PrimeVue** (Material theme) to guarantee consistency and reduce custom CSS: stepper/wizard components for the multi-step simulation form (client data → property data → credit parameters → results), data tables for the amortization schedule and the simulation history, cards for scenario comparison, and toast/banner components for the in-app threshold notification.
+Los componentes de UI de la Web Application provienen de **PrimeVue** (tema Material) para garantizar consistencia y reducir el CSS personalizado: componentes stepper/wizard para el formulario de simulación de varios pasos (datos del cliente → datos de la vivienda → parámetros del crédito → resultados), tablas de datos para el cronograma de amortización y el historial de simulaciones, tarjetas para la comparación de escenarios, y componentes toast/banner para la notificación in-app de umbral.
 
-The Landing Page, built with plain HTML5/CSS3/JavaScript, mirrors the same color, type and spacing tokens as the Web Application (documented as shared CSS custom properties) even though it does not depend on PrimeVue, so that a Visitante does not perceive a visual discontinuity when moving from the Landing Page into the registered product.
+El Landing Page, construido con HTML5/CSS3/JavaScript puro, replica los mismos tokens de color, tipografía y espaciado que la Web Application (documentados como variables CSS compartidas) aunque no dependa de PrimeVue, de modo que el Visitante no perciba una discontinuidad visual al pasar del Landing Page al producto registrado.
 
 ### **4.1.3. Mobile Style Guidelines**
 
-Both mobile platforms share the same brand tokens (color, type scale ratios, iconography) defined in 4.1.1, but each adapts its navigation and interaction patterns to the conventions its users already expect from native apps.
+Ambas plataformas móviles comparten los mismos tokens de marca (color, proporciones de la escala tipográfica, iconografía) definidos en 4.1.1, pero cada una adapta sus patrones de navegación e interacción a las convenciones que sus usuarios ya esperan de las aplicaciones nativas.
 
 #### **4.1.3.1. iOS Mobile Style Guidelines**
 
-On iOS, layout follows Apple's Human Interface Guidelines for structure and gesture conventions (bottom tab bar for primary navigation, safe-area-aware layouts, swipe-back navigation, native modal sheets for the simulation wizard steps), while visual styling (color, elevation, type) stays aligned with the Material-based system defined for the product, not the default iOS visual style — consistent with the single Design System applied across web and mobile.
+En iOS, la estructura y las convenciones de gestos siguen las Human Interface Guidelines de Apple (barra de pestañas inferior para la navegación principal, layouts que respetan las safe areas, navegación con swipe hacia atrás, hojas modales nativas para los pasos del asistente de simulación), mientras que el estilo visual (color, elevación, tipografía) se mantiene alineado con el sistema basado en Material definido para el producto, y no con el estilo visual por defecto de iOS, en coherencia con el único Design System aplicado en web y móvil.
 
 #### **4.1.3.2. Android Mobile Style Guidelines**
 
-On Android, both structure and visual styling follow Material Design guidelines natively: bottom navigation bar, a Floating Action Button (FAB) for the primary "New simulation" action from the history screen, and Material elevation/shadow conventions for cards (scenario comparison) and the results sheet.
+En Android, tanto la estructura como el estilo visual siguen de forma nativa las guías de Material Design: barra de navegación inferior, un Floating Action Button (FAB) para la acción principal "Nueva simulación" desde la pantalla de historial, y las convenciones de elevación y sombras de Material para las tarjetas (comparación de escenarios) y la hoja de resultados.
+
 ## **4.2. Information Architecture**
 
-This section defines how content is organized across the Landing Page, the Web Application and the Mobile Application so that Visitantes, Compradores and Administradores can find what they need with minimal effort, directly supporting the three-role scope defined in Chapter I.
+Esta sección define cómo se organiza el contenido en el Landing Page, la Web Application y la Mobile Application, de modo que los Visitantes, Compradores y Administradores encuentren lo que necesitan con el mínimo esfuerzo, respaldando directamente el alcance de tres roles definido en el Capítulo I.
 
 ### **4.2.1. Organization Systems**
 
-- **Hierarchical organization** is applied to the Landing Page (Home → Product → Benefits → About/Terms) and to the Administrador's configuration screen (Base parameters → Usage metrics), since both group content by topic importance rather than by sequence.
-- **Sequential (step-by-step) organization** is applied to the simulation flow itself, the product's core task: client data → property data → credit parameters (amount, TEA/TNA, term, grace period) → results (amortization schedule, NPV/IRR/TCEA, applicable state benefits). This mirrors how a real mortgage evaluation is done and avoids overwhelming a first-time user with every input field at once.
-- **Matrix organization** is applied to the scenario comparator, where 2-3 saved simulations are laid out side by side against the same set of financial indicators (rows), so a Comprador can compare like-for-like.
+- **La organización jerárquica** se aplica al Landing Page (Inicio → Producto → Beneficios → Nosotros/Términos) y a la pantalla de configuración del Administrador (Parámetros base → Métricas de uso), ya que ambos agrupan el contenido por importancia temática y no por secuencia.
+- **La organización secuencial (paso a paso)** se aplica al flujo de simulación, la tarea central del producto: datos del cliente → datos de la vivienda → parámetros del crédito (monto, TEA/TNA, plazo, periodo de gracia) → resultados (cronograma de amortización, VAN/TIR/TCEA, beneficios estatales aplicables). Esto refleja cómo se realiza una evaluación hipotecaria real y evita abrumar a un usuario primerizo con todos los campos a la vez.
+- **La organización matricial** se aplica al comparador de escenarios, donde 2 o 3 simulaciones guardadas se disponen lado a lado frente al mismo conjunto de indicadores financieros (filas), de modo que el Comprador pueda comparar en igualdad de condiciones.
 
-Content is categorized primarily **by audience** (Visitante content on the Landing Page vs. Comprador content behind login vs. Administrador content in the configuration panel), and secondarily **by topic** within the Landing Page (product overview, state benefits explainer, competitors/independence pitch, Terms and Conditions).
+El contenido se categoriza principalmente **por audiencia** (contenido del Visitante en el Landing Page frente al contenido del Comprador tras iniciar sesión y el del Administrador en el panel de configuración), y secundariamente **por tópicos** dentro del Landing Page (visión general del producto, explicación de beneficios estatales, propuesta de independencia frente a los competidores, Términos y Condiciones).
 
 ### **4.2.2. Labeling Systems**
 
-Navigation labels are kept short, in plain language, and consistent between web and mobile:
+Las etiquetas de navegación son cortas, en lenguaje sencillo y consistentes entre web y móvil:
 
-| Label | Refers to |
+| Etiqueta | Hace referencia a |
 |---|---|
-| Simular | Start/continue a new credit simulation |
-| Comparar | Scenario comparator (2-3 saved simulations) |
-| Historial | List of previously saved simulations |
-| Beneficios | Explanation of Bono del Buen Pagador / Mivivienda and eligibility |
-| Exportar / Compartir | PDF export and read-only shareable link for a simulation |
-| Configuración | Administrador's base-parameters screen (rates, BBP %, Mivivienda ranges) |
+| Simular | Iniciar o continuar una nueva simulación de crédito |
+| Comparar | Comparador de escenarios (2 a 3 simulaciones guardadas) |
+| Historial | Lista de simulaciones guardadas previamente |
+| Beneficios | Explicación del Bono del Buen Pagador / Mivivienda y los requisitos para acceder |
+| Exportar / Compartir | Exportación a PDF y enlace de solo lectura para compartir una simulación |
+| Configuración | Pantalla de parámetros base del Administrador (tasas, % del BBP, rangos Mivivienda) |
 
-Labels intentionally avoid internal/technical terms (e.g., "TCEA" is always paired with a short plain-language explanation the first time it appears in a given screen) so that a first-time buyer with no financial background is not lost in domain jargon that Chapter II's interviews showed users do not reliably understand.
+Las etiquetas evitan intencionalmente términos internos o técnicos (por ejemplo, "TCEA" siempre va acompañado de una breve explicación en lenguaje sencillo la primera vez que aparece en una pantalla) para que un comprador primerizo sin formación financiera no se pierda en una jerga de dominio que, según las entrevistas del Capítulo II, los usuarios no comprenden con claridad.
 
 ### **4.2.3. SEO Tags and Meta Tags**
 
-| Page | Title | Meta Description | Keywords | Author |
+| Página | Title | Meta Description | Keywords | Author |
 |---|---|---|---|---|
-| Landing — Home | HipoSim \| Independent Mortgage Credit Simulator in Peru | Simulate your mortgage credit for free, compare real conditions and discover state benefits like Bono del Buen Pagador before talking to a bank. | mortgage simulator Peru, crédito hipotecario, TCEA, Bono del Buen Pagador, Mivivienda | HipoSim / AuraCode |
-| Landing — Benefits | HipoSim \| Bono del Buen Pagador and Nuevo Crédito Mivivienda Explained | Find out if you qualify for state mortgage benefits and how much they reduce your real credit cost. | Bono del Buen Pagador, Nuevo Crédito Mivivienda, subsidio vivienda Perú | HipoSim / AuraCode |
-| Web App — Simulator | HipoSim \| Start Your Mortgage Simulation | Enter your income and the property you want to buy to see your real mortgage cost, amortization schedule and TCEA. | simulador hipotecario, cuota hipotecaria, amortización francesa | HipoSim / AuraCode |
+| Landing: Inicio | HipoSim \| Simulador Independiente de Crédito Hipotecario en Perú | Simula tu crédito hipotecario gratis, compara condiciones reales y descubre beneficios estatales como el Bono del Buen Pagador antes de hablar con un banco. | simulador hipotecario Perú, crédito hipotecario, TCEA, Bono del Buen Pagador, Mivivienda | HipoSim / AuraCode |
+| Landing: Beneficios | HipoSim \| Bono del Buen Pagador y Nuevo Crédito Mivivienda Explicados | Descubre si calificas para los beneficios estatales hipotecarios y cuánto reducen el costo real de tu crédito. | Bono del Buen Pagador, Nuevo Crédito Mivivienda, subsidio vivienda Perú | HipoSim / AuraCode |
+| Web App: Simulador | HipoSim \| Inicia tu Simulación Hipotecaria | Ingresa tus ingresos y la vivienda que deseas comprar para ver el costo real de tu hipoteca, el cronograma de amortización y el TCEA. | simulador hipotecario, cuota hipotecaria, amortización francesa | HipoSim / AuraCode |
 
 ### **4.2.4. Searching Systems**
 
-Given the intentionally small dataset a single Comprador manages (a handful of saved simulations, per the "un poco más de alcance" scope defined in Chapter I), HipoSim does not implement a general-purpose full-text search. Instead, it offers lightweight **filtering** where it adds real value:
+Dado el conjunto intencionalmente pequeño de datos que maneja un Comprador (un puñado de simulaciones guardadas, conforme al alcance "un poco más de alcance" definido en el Capítulo I), HipoSim no implementa una búsqueda de texto completo de propósito general. En su lugar, ofrece **filtros** ligeros donde aportan valor real:
 
-- **Historial**: filter by date range and by property type, so a user revisiting the tool after weeks can find a specific past simulation without scrolling.
-- **Comparador**: selection is done by picking directly from the (already short) list of saved simulations, not by search.
+- **Historial**: filtro por rango de fechas y por tipo de vivienda, para que un usuario que vuelve a la herramienta tras varias semanas pueda encontrar una simulación específica sin desplazarse por toda la lista.
+- **Comparador**: la selección se realiza eligiendo directamente de la lista (ya corta) de simulaciones guardadas, no mediante búsqueda.
 
-This decision keeps the product aligned with the "Simplest Useful Thing" principle referenced for the course's experimentation phase (Chapter VIII), avoiding investment in a searching system the segment does not need at this scale.
+Esta decisión mantiene al producto alineado con el principio "Simplest Useful Thing" referenciado para la fase de experimentación del curso (Capítulo VIII), evitando invertir en un sistema de búsqueda que el segmento no necesita a esta escala.
 
 ### **4.2.5. Navigation Systems**
 
-- **Landing Page (Visitante)**: persistent top navigation bar (Home, Product, Benefits, Terms) plus a persistent "Simular ahora" call-to-action that lets a Visitante try the basic simulator without registering, consistent with the Visitante role defined in Chapter I.
-- **Web Application (Comprador)**: left/side navigation (desktop) collapsing into a top drawer (mobile web) with Simular, Historial, Comparar as primary destinations; a breadcrumb-style step indicator inside the simulation wizard shows progress across its four steps.
-- **Native Mobile Application**: bottom tab bar with the same primary destinations (Simular, Historial, Comparar, Perfil), following each platform's own convention as described in 4.1.3.
-- **Administrador**: a single, separate configuration entry point (not exposed to Compradores), reachable after an Administrador login, containing the parameters screen and the basic usage-metrics dashboard.
+- **Landing Page (Visitante)**: barra de navegación superior persistente (Inicio, Producto, Beneficios, Términos) más un llamado a la acción persistente "Simular ahora" que permite al Visitante probar el simulador básico sin registrarse, en coherencia con el rol de Visitante definido en el Capítulo I.
+- **Web Application (Comprador)**: navegación lateral (escritorio) que colapsa en un menú desplegable superior (web móvil) con Simular, Historial y Comparar como destinos principales; un indicador de pasos tipo breadcrumb dentro del asistente de simulación muestra el progreso a lo largo de sus cuatro pasos.
+- **Native Mobile Application**: barra de pestañas inferior con los mismos destinos principales (Simular, Historial, Comparar, Perfil), siguiendo la convención propia de cada plataforma descrita en 4.1.3.
+- **Administrador**: un único punto de entrada de configuración, separado (no expuesto a los Compradores), accesible tras el inicio de sesión del Administrador, que contiene la pantalla de parámetros y el panel básico de métricas de uso.
+
 ## **4.3. Landing Page UI Design**
 ### **4.3.1. Landing Page Wireframe**
 ### **4.3.2. Landing Page Mock-up**
@@ -124,73 +126,75 @@ This decision keeps the product aligned with the "Simplest Useful Thing" princip
 ## **4.7. Web Applications Prototyping**
 ## **4.8. Domain-Driven Software Architecture**
 
-This section proposes the software architecture for HipoSim using the **C4 Model** (Context, Container, Component), built on top of the User Stories and Impact Map from Chapter III and the checklist scope defined in Chapter I. Diagrams below were generated from Diagram-as-Code sources (kept alongside the images in `assets/08-chapter-4/domain-driven-software-architecture/`) as a working draft; the team will formalize the final versions in **Structurizr** (C4 Model), as mandated by the course's technology constraints, before the next delivery.
+Esta sección propone la arquitectura de software de HipoSim utilizando el **Modelo C4** (Context, Container, Component), construida sobre las User Stories y el Impact Map del Capítulo III y sobre el alcance del checklist definido en el Capítulo I. Los diagramas a continuación fueron generados a partir de fuentes Diagram-as-Code (guardadas junto a las imágenes en `assets/08-chapter-4/domain-driven-software-architecture/`) como borrador de trabajo; el equipo formalizará las versiones finales en **Structurizr** (Modelo C4), conforme a las restricciones tecnológicas del curso, antes de la siguiente entrega.
 
 ### **4.8.1. Software Architecture Context Diagram**
 
-At the context level, three actors interact with a single software system, **HipoSim Platform**, with no real external system integration in the current scope (no real banking integration, no real payment gateway — consistent with what is explicitly out of scope, per Chapter I):
+A nivel de contexto, tres actores interactúan con un único sistema de software, **HipoSim Platform**, sin integración con sistemas externos reales en el alcance actual (sin integración bancaria real ni pasarela de pagos real, en coherencia con lo que está explícitamente fuera de alcance según el Capítulo I):
 
 <div align="center">
-  <img src="../assets/08-chapter-4/domain-driven-software-architecture/context-diagram.png" alt="HipoSim System Context Diagram" width="800">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/context-diagram.png" alt="Diagrama de contexto del sistema HipoSim" width="800">
 </div>
 
 ### **4.8.2. Software Architecture Container Diagrams**
 
-At the container level, the platform is decomposed into the products defined in Chapter I's technical scope checklist: a static Landing Page, a Vue-based Web Application, a Native Mobile Application, a single shared RESTful API, and a relational database.
+A nivel de contenedores, la plataforma se descompone en los productos definidos en el checklist de alcance técnico del Capítulo I: un Landing Page estático, una Web Application basada en Vue, una Native Mobile Application, una única RESTful API compartida y una base de datos relacional.
 
 <div align="center">
-  <img src="../assets/08-chapter-4/domain-driven-software-architecture/container-diagram.png" alt="HipoSim Container Diagram" width="700">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/container-diagram.png" alt="Diagrama de contenedores de HipoSim" width="700">
 </div>
 
 ### **4.8.3. Software Architecture Components Diagrams**
 
-Within the RESTful Web API container, components are organized by responsibility, keeping the financial domain logic isolated from transport/persistence concerns:
+Dentro del contenedor RESTful Web API, los componentes se organizan por responsabilidad, manteniendo la lógica del dominio financiero aislada de las preocupaciones de transporte y persistencia:
 
-| Component | Responsibility |
+| Componente | Responsabilidad |
 |---|---|
-| `AuthController` / `AuthService` | Registration and login for Comprador and Administrador; role-based authorization |
-| `SimulationController` / `SimulationService` | Orchestrates a simulation request: validates input, calls the Financial Engine and the Benefits Engine, persists results |
-| `ScenarioController` / `ScenarioService` | Saves, retrieves and groups simulations into 2-3-way scenario comparisons |
-| `ReportController` / `ReportGenerationService` | Generates the exportable PDF and the read-only shareable link for a simulation |
-| `AdminController` / `AdminParameterService` | CRUD for base parameters (reference rates, Bono del Buen Pagador %, Mivivienda ranges) and exposes basic usage metrics |
-| `FinancialEngine` | Domain logic ported from the original AutoFinance Pro project: French amortization method, rate conversion, grace periods, NPV/IRR/TCEA calculation |
-| `BenefitsEngine` | Evaluates Bono del Buen Pagador / Nuevo Crédito Mivivienda eligibility and its effect on the simulation, based on Administrador-configured parameters |
-| `Repositories` (per aggregate) | Persistence access to PostgreSQL via Entity Framework Core |
+| `AuthController` / `AuthService` | Registro e inicio de sesión de Comprador y Administrador; autorización basada en roles |
+| `SimulationController` / `SimulationService` | Orquesta una solicitud de simulación: valida los datos de entrada, invoca al Financial Engine y al Benefits Engine, y persiste los resultados |
+| `ScenarioController` / `ScenarioService` | Guarda, recupera y agrupa simulaciones en comparaciones de escenarios de 2 a 3 elementos |
+| `ReportController` / `ReportGenerationService` | Genera el PDF exportable y el enlace de solo lectura para compartir una simulación |
+| `AdminController` / `AdminParameterService` | CRUD de los parámetros base (tasas de referencia, % del Bono del Buen Pagador, rangos Mivivienda) y expone las métricas básicas de uso |
+| `FinancialEngine` | Lógica de dominio portada del proyecto original AutoFinance Pro: método de amortización francés, conversión de tasas, periodos de gracia, cálculo de VAN/TIR/TCEA |
+| `BenefitsEngine` | Evalúa la elegibilidad al Bono del Buen Pagador / Nuevo Crédito Mivivienda y su efecto en la simulación, según los parámetros configurados por el Administrador |
+| `Repositories` (por agregado) | Acceso de persistencia a PostgreSQL mediante Entity Framework Core |
 
 <div align="center">
-  <img src="../assets/08-chapter-4/domain-driven-software-architecture/components-diagram.png" alt="HipoSim RESTful API Components Diagram" width="750">
+  <img src="../assets/08-chapter-4/domain-driven-software-architecture/components-diagram.png" alt="Diagrama de componentes de la RESTful API de HipoSim" width="750">
 </div>
+
 ## **4.9. Software Object-Oriented Design**
 
 ### **4.9.1. Class Diagrams**
 
-The class design below reflects the core domain entities implied by the product scope in Chapter I (client data, property data, simulation parameters, financial results, state benefits, scenario comparison, admin parameters), independent of any specific persistence technology. This diagram was generated from a Diagram-as-Code source (kept alongside the image in `assets/08-chapter-4/software-object-oriented-design/`) as a working draft; the team will formalize it in **LucidChart**, as mandated by the course's technology constraints.
+El diseño de clases a continuación refleja las entidades centrales del dominio que se desprenden del alcance del producto en el Capítulo I (datos del cliente, datos de la vivienda, parámetros de simulación, resultados financieros, beneficios estatales, comparación de escenarios, parámetros de administración), independientemente de cualquier tecnología de persistencia específica. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/software-object-oriented-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart**, conforme a las restricciones tecnológicas del curso.
 
 <div align="center">
-  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="HipoSim Class Diagram" width="900">
+  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="Diagrama de clases de HipoSim" width="900">
 </div>
 
 ### **4.9.2. Class Dictionary**
 
-| Class | Key Attributes | Key Methods | Description |
+| Clase | Atributos principales | Métodos principales | Descripción |
 |---|---|---|---|
-| `User` | Id, FullName, Email, PasswordHash, Role | Register(), Login() | Base account shared by Buyer and Administrator, differentiated by role as defined in Chapter I. |
-| `Buyer` | MonthlyIncome, AvailableSavings | — | Registered first-time homebuyer (Comprador); can own Simulations and ScenarioComparisons. |
-| `Administrator` | — | UpdateBaseParameters(), ViewUsageMetrics() | Internal team member who maintains AdminParameter values and monitors basic usage metrics. |
-| `Property` | Price, Currency, Type | — | The home being evaluated in a Simulation (price, currency, property type). |
-| `Simulation` | LoanAmount, AnnualRate, RateType, TermInMonths, GracePeriodMonths, GraceType | Calculate() | Encapsulates one credit simulation's input parameters and triggers the French-method calculation ported from AutoFinance Pro. |
-| `AmortizationEntry` | Period, Installment, Interest, Amortization, RemainingBalance | — | One row of the French amortization schedule produced by a Simulation. |
-| `FinancialIndicatorResult` | Npv, Irr, Tcea | — | The NPV, IRR and TCEA indicators computed for a Simulation. |
-| `StateBenefit` | Name, DiscountPercentage, MinPropertyPrice, MaxPropertyPrice | EvaluateEligibility() | Represents Bono del Buen Pagador or Nuevo Crédito Mivivienda, and whether a given Simulation qualifies. |
-| `ScenarioComparison` | CreatedAt | AddSimulation() | Groups 2-3 Simulations of the same Buyer for side-by-side comparison. |
-| `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produces the exportable PDF and the read-only shareable link for one Simulation. |
-| `AdminParameter` | Key, Value, UpdatedAt | — | A single configurable base parameter (reference rate, Bono del Buen Pagador %, Mivivienda range) maintained by an Administrator. |
+| `User` | Id, FullName, Email, PasswordHash, Role | Register(), Login() | Cuenta base compartida por Buyer y Administrator, diferenciada por rol según lo definido en el Capítulo I. |
+| `Buyer` | MonthlyIncome, AvailableSavings | Ninguno | Comprador de primera vivienda registrado; puede ser propietario de Simulations y ScenarioComparisons. |
+| `Administrator` | Ninguno | UpdateBaseParameters(), ViewUsageMetrics() | Miembro interno del equipo que mantiene los valores de AdminParameter y monitorea las métricas básicas de uso. |
+| `Property` | Price, Currency, Type | Ninguno | La vivienda evaluada en una Simulation (precio, moneda, tipo de vivienda). |
+| `Simulation` | LoanAmount, AnnualRate, RateType, TermInMonths, GracePeriodMonths, GraceType | Calculate() | Encapsula los parámetros de entrada de una simulación de crédito y dispara el cálculo por método francés portado de AutoFinance Pro. |
+| `AmortizationEntry` | Period, Installment, Interest, Amortization, RemainingBalance | Ninguno | Una fila del cronograma de amortización francés producido por una Simulation. |
+| `FinancialIndicatorResult` | Npv, Irr, Tcea | Ninguno | Los indicadores VAN, TIR y TCEA calculados para una Simulation. |
+| `StateBenefit` | Name, DiscountPercentage, MinPropertyPrice, MaxPropertyPrice | EvaluateEligibility() | Representa el Bono del Buen Pagador o el Nuevo Crédito Mivivienda, y si una Simulation dada califica. |
+| `ScenarioComparison` | CreatedAt | AddSimulation() | Agrupa de 2 a 3 Simulations del mismo Buyer para su comparación lado a lado. |
+| `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produce el PDF exportable y el enlace de solo lectura para compartir una Simulation. |
+| `AdminParameter` | Key, Value, UpdatedAt | Ninguno | Un parámetro base configurable (tasa de referencia, % del Bono del Buen Pagador, rango Mivivienda) mantenido por un Administrator. |
+
 ## **4.10. Database Design**
 
 ### **4.10.1. Relational/Non-Relational Database Diagram**
 
-A relational model (PostgreSQL) is proposed, consistent with the Class Design in 4.9 and with the original AutoFinance Pro database. This diagram was generated from a Diagram-as-Code source (kept alongside the image in `assets/08-chapter-4/database-design/`) as a working draft; the team will formalize it in **LucidChart / Vertabelo**, as mandated by the course's technology constraints.
+Se propone un modelo relacional (PostgreSQL), consistente con el diseño de clases de 4.9 y con la base de datos del proyecto original AutoFinance Pro. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/database-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart / Vertabelo**, conforme a las restricciones tecnológicas del curso.
 
 <div align="center">
-  <img src="../assets/08-chapter-4/database-design/er-diagram.png" alt="HipoSim Relational Database Diagram" width="900">
+  <img src="../assets/08-chapter-4/database-design/er-diagram.png" alt="Diagrama de base de datos relacional de HipoSim" width="900">
 </div>
