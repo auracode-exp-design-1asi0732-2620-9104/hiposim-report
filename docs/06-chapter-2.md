@@ -699,3 +699,132 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 <img src="../assets/06-chapter-2/as-is-scenario-segmento-2.png">
 
 ## **2.4. Ubiquitous Language**
+
+1. **Mortgage Loan** (Crédito Hipotecario)
+
+   **Definición:** Financiamiento otorgado por una entidad financiera para la compra de una vivienda, en el cual el propio inmueble queda como garantía del cumplimiento de pago.
+
+2. **First-time Homebuyer** (Comprador de Primera Vivienda)
+
+   **Definición:** Persona que se encuentra evaluando o gestionando la adquisición de su primera vivienda propia, sin contar previamente con experiencia en la solicitud de un crédito hipotecario.
+
+3. **Mortgage Simulator** (Simulador Hipotecario)
+
+   **Definición:** Herramienta que permite estimar las condiciones de un crédito hipotecario —cuota, plazo, costo total— a partir de los datos ingresados por el usuario, sin constituir una oferta vinculante de crédito.
+
+4. **Nominal Rate – TEA** (Tasa Efectiva Anual)
+
+   **Definición:** Tasa de interés anual que refleja el costo del financiamiento otorgado por la entidad, considerando la capitalización de intereses, pero sin incluir los demás cargos asociados al crédito.
+
+5. **Annual Effective Cost Rate – TCEA** (Tasa de Costo Efectivo Anual)
+
+   **Definición:** Indicador que expresa el costo total real de un crédito en términos anuales, incluyendo la tasa de interés, los seguros, las comisiones y demás cargos aplicables, permitiendo comparar de forma objetiva distintas ofertas de crédito.
+
+6. **French Amortization Method** (Método de Amortización Francés)
+
+   **Definición:** Método de cálculo de un crédito en el que la cuota periódica se mantiene constante durante todo el plazo, variando internamente la proporción destinada al pago de interés y a la amortización del capital.
+
+7. **Amortization Schedule** (Cronograma de Pagos)
+
+   **Definición:** Detalle periodo por periodo de las cuotas de un crédito, que muestra para cada una el monto de interés, la amortización de capital, el saldo pendiente y la fecha correspondiente.
+
+8. **Down Payment** (Cuota Inicial)
+
+   **Definición:** Monto que el comprador debe aportar de forma directa al momento de adquirir la vivienda, expresado generalmente como un porcentaje del valor del inmueble, y que no forma parte del monto financiado por la entidad.
+
+9. **Loan Term** (Plazo del Crédito)
+
+   **Definición:** Periodo de tiempo, expresado en meses o años, durante el cual el comprador se compromete a pagar el crédito hipotecario hasta su cancelación total.
+
+10. **Monthly Installment** (Cuota Mensual)
+
+    **Definición:** Monto que el comprador debe pagar periódicamente a la entidad financiera durante el plazo del crédito, compuesto por la amortización de capital y el pago de interés correspondiente.
+
+11. **Grace Period** (Periodo de Gracia)
+
+    **Definición:** Lapso al inicio del crédito durante el cual el comprador no realiza el pago habitual de la cuota, ya sea porque esta se posterga por completo o porque solo se cubre una parte, según la modalidad aplicable.
+
+12. **Net Present Value – NPV** (Valor Actual Neto – VAN)
+
+    **Definición:** Indicador financiero que expresa, en valor presente, el resultado de comparar los flujos de pago futuros de un crédito frente a una tasa de referencia, utilizado para evaluar la conveniencia de un escenario de financiamiento.
+
+13. **Internal Rate of Return – IRR** (Tasa Interna de Retorno – TIR)
+
+    **Definición:** Tasa que iguala el valor presente de los pagos futuros de un crédito con el monto inicial financiado, utilizada como referencia para comparar el costo efectivo entre distintos escenarios de simulación.
+
+14. **State Benefit** (Beneficio Estatal)
+
+    **Definición:** Incentivo otorgado por el Estado peruano para facilitar el acceso a la vivienda propia, que puede reducir el monto del crédito, la cuota inicial o el costo total del financiamiento según el programa aplicable.
+
+15. **Good Payer Bonus – BBP** (Bono del Buen Pagador)
+
+    **Definición:** Subsidio otorgado por el Estado peruano que se aplica directamente al monto del crédito hipotecario de compradores que califican, reduciendo el capital a financiar y, en consecuencia, el costo total del crédito.
+
+16. **New Mivivienda Credit** (Nuevo Crédito Mivivienda)
+
+    **Definición:** Programa de crédito hipotecario respaldado por el Fondo Mivivienda, dirigido a la compra de viviendas dentro de determinados rangos de precio, y que puede combinarse con subsidios estatales como el Bono del Buen Pagador.
+
+17. **Mivivienda Fund** (Fondo Mivivienda)
+
+    **Definición:** Entidad estatal peruana encargada de administrar los programas de financiamiento habitacional y los subsidios asociados a la compra de vivienda, estableciendo los rangos de precio y condiciones de elegibilidad correspondientes.
+
+18. **Housing Price Range** (Rango de Precio de Vivienda)
+
+    **Definición:** Intervalo de valores de una vivienda dentro del cual esta califica para un determinado programa de crédito o beneficio estatal, definido periódicamente por la entidad correspondiente.
+
+19. **Eligibility Check** (Verificación de Elegibilidad)
+
+    **Definición:** Proceso mediante el cual se determina si un comprador y la vivienda que pretende adquirir cumplen con los requisitos establecidos para acceder a un beneficio estatal o programa de crédito específico.
+
+20. **Simulation Scenario** (Escenario de Simulación)
+
+    **Definición:** Conjunto particular de datos ingresados por el usuario —precio de vivienda, cuota inicial, plazo, tasa, beneficios aplicados— que genera un resultado de simulación específico dentro del sistema.
+
+21. **Scenario Comparator** (Comparador de Escenarios)
+
+    **Definición:** Funcionalidad que permite visualizar de forma simultánea dos o más escenarios de simulación, facilitando la comparación de sus condiciones y costos totales.
+
+22. **Simulation History** (Historial de Simulaciones)
+
+    **Definición:** Registro de los escenarios de simulación previamente generados por un usuario, que permite consultarlos o compararlos nuevamente sin necesidad de volver a ingresar los datos.
+
+23. **Simulation Report** (Reporte de Simulación)
+
+    **Definición:** Documento exportable, generalmente en formato PDF, que resume los resultados de uno o más escenarios de simulación para ser compartido o utilizado como referencia fuera del sistema.
+
+24. **Financial Parameter** (Parámetro Financiero)
+
+    **Definición:** Valor configurable dentro del sistema —como una tasa de interés, un porcentaje de beneficio estatal o un rango de precios— que alimenta los cálculos del simulador y debe mantenerse actualizado conforme a las fuentes oficiales.
+
+25. **Reference Rate** (Tasa Referencial)
+
+    **Definición:** Tasa de interés publicada por una entidad financiera o por el organismo regulador, utilizada como base para las simulaciones de crédito hipotecario dentro del sistema.
+
+26. **Official Source** (Fuente Oficial)
+
+    **Definición:** Documento o canal de información reconocido y verificable —como la SBS, los bancos o el Fondo Mivivienda— a partir del cual se obtienen y validan los parámetros financieros y los beneficios estatales utilizados en el simulador.
+
+27. **Parameter Update** (Actualización de Parámetros)
+
+    **Definición:** Proceso mediante el cual el Administrador registra un nuevo valor para un parámetro financiero o estatal dentro del sistema, indicando su fecha de vigencia y la fuente oficial que lo respalda.
+
+28. **Approval Workflow** (Flujo de Aprobación)
+
+    **Definición:** Proceso mediante el cual un cambio propuesto sobre un parámetro crítico debe ser revisado y validado por otra persona con el rol correspondiente antes de que dicho cambio se publique y entre en vigencia.
+
+29. **Change History** (Historial de Cambios)
+
+    **Definición:** Registro que conserva, para cada parámetro, sus valores anteriores, la fecha de modificación, la fuente utilizada y la persona responsable del cambio, permitiendo su consulta o comparación posterior.
+
+30. **Rollback** (Reversión de Cambio)
+
+    **Definición:** Acción mediante la cual un parámetro publicado es restituido a su valor anterior, utilizada cuando se detecta un error en una actualización reciente.
+
+31. **Access Role** (Rol de Acceso)
+
+    **Definición:** Nivel de permisos asignado a un usuario del panel de administración —consulta, editor o aprobador— que determina qué acciones puede realizar sobre los parámetros del sistema.
+
+32. **Usage Metric** (Métrica de Uso)
+
+    **Definición:** Dato cuantitativo relacionado con el uso del simulador —como el número de simulaciones realizadas, la tasa de finalización o de exportación— utilizado para monitorear el desempeño del producto.
+
