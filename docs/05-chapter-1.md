@@ -143,13 +143,13 @@ Soy estudiante de la carrera de Ingeniería de Software dentro de la Universidad
         <b>Código de estudiante:</b> U202216448
       </p>
       <p>
-        <b>Edad:</b> 00
+        <b>Edad:</b> 22
       </p>
       <p>
         <b>Carrera:</b> Ingeniería de Software
       </p>
       <p>
-        <b>Sobre mí:</b> Yo ...
+        <b>Sobre mí:</b> Estudiante de Ingeniería de Software (8vo ciclo, UPC) y Desarrollador Front-end Junior. Especializado en React, JavaScript y Python, con un fuerte enfoque en análisis de datos e integración de inteligencia artificial. Busco unirme a un equipo colaborativo para optimizar procesos, aportar soluciones y continuar mi crecimiento profesional.
       </p>
     </td>
   </tr>
