@@ -41,7 +41,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -53,7 +53,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, asumí la responsabilidad de elaborar y estructurar la documentación correspondiente al Chapter V: Product Implementation, procurando que la información presentada fuera clara, coherente y trazable. Asimismo, definí y documenté las prácticas de Software Configuration Management aplicadas al proyecto, considerando la correcta gestión del código fuente, el uso responsable de los repositorios y la protección de la integridad del trabajo realizado por cada integrante. Estas actividades me permitieron reconocer la importancia ética y profesional de documentar de manera transparente las decisiones técnicas, respetar las contribuciones del equipo y mantener evidencias verificables del proceso de desarrollo.
       <br><br>
       <hr>
       <br><br>
@@ -65,7 +65,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -77,7 +77,7 @@
         AV1
       </i></b>
       <br>
-         During AV1, I...
+         Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -101,7 +101,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
     </td>
     <!-- COLUMN 3 -->
@@ -133,7 +133,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -145,7 +145,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, organicé el flujo de trabajo colaborativo mediante GitFlow, estableciendo el uso de las ramas main, develop, feature, release y hotfix de acuerdo con el propósito de cada una. También supervisé la integración de cambios mediante commits, Pull Requests, revisión de código y resolución de conflictos. Estas responsabilidades requirieron evaluar el impacto de cada modificación antes de incorporarla al proyecto, con el fin de reducir errores, evitar pérdidas de trabajo y mantener una versión estable del producto. De esta manera, contribuí a optimizar el tiempo y los recursos del equipo, fortalecer la colaboración y garantizar que las decisiones técnicas favorecieran la calidad, mantenibilidad y sostenibilidad de la solución.
       <br><br>
       <hr>
       <br><br>
@@ -157,7 +157,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -169,7 +169,7 @@
         AV1
       </i></b>
       <br>
-         During AV1, I...
+         Durante la AV1, ...
       <br><br>
       <hr>
       <br><br>
@@ -193,7 +193,7 @@
         AV1
       </i></b>
       <br>
-        During AV1, I...
+        Durante la AV1, ...
       <br><br>
     </td>
     <!-- COLUMN 3 -->
