@@ -1,5 +1,14 @@
 # **Chapter III: Requirements Specification**
 ## **3.1. To-Be Scenario Mapping**
+
+**Segmento 1: Comprador de Primera Vivienda (Hernesto)**
+
+> ![Wireframe — Landing Page](../assets/07-chapter-3/1.png)
+
+**Segmento 2: Administrador de Producto (Daniel)**
+
+> ![Wireframe — Landing Page](../assets/07-chapter-3/2.png)
+
 ## 3.2. User Stories
 
 **Product Backlog — User Stories & Epics**
