@@ -689,4 +689,13 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 <img src="../assets/06-chapter-2/empathy-map-segmento-2.png">
 
 ### **2.3.5. As-is Scenario Mapping**
+
+### Segmento 1: Comprador de primera vivienda
+
+<img src="../assets/06-chapter-2/as-is-scenario-segmento-1.png">
+
+### Segmento 2: Administrador de Producto
+
+<img src="../assets/06-chapter-2/as-is-scenario-segmento-2.png">
+
 ## **2.4. Ubiquitous Language**
