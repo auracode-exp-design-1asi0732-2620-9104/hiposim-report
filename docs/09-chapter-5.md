@@ -34,8 +34,8 @@ Las siguientes herramientas soportan el ciclo de vida de HipoSim. La selección 
 <tr><td style="border:1px solid #B8C2CC; padding:9px;">Diseño UX/UI</td><td style="border:1px solid #B8C2CC; padding:9px;">Figma</td><td style="border:1px solid #B8C2CC; padding:9px;">Crear wireframes, mock-ups, wireflows, flujos de usuario y prototipos web y móviles.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.figma.com/">Sitio oficial</a></td></tr>
 <tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Arquitectura y modelado</td><td style="border:1px solid #B8C2CC; padding:9px;">Structurizr y Lucidchart</td><td style="border:1px solid #B8C2CC; padding:9px;">Formalizar los diagramas C4, de clases y de base de datos.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://structurizr.com/">Structurizr</a> / <a href="https://www.lucidchart.com/">Lucidchart</a></td></tr>
 <tr><td style="border:1px solid #B8C2CC; padding:9px;">Control de versiones</td><td style="border:1px solid #B8C2CC; padding:9px;">Git y GitHub</td><td style="border:1px solid #B8C2CC; padding:9px;">Registrar cambios, aplicar GitFlow, revisar contribuciones y conectar los repositorios con los servicios de despliegue.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://git-scm.com/">Git</a> / <a href="https://github.com/">GitHub</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollo web</td><td style="border:1px solid #B8C2CC; padding:9px;">VS Code, Node.js, Vue 3, Vite, PrimeVue y Tailwind CSS</td><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollar la aplicación web modular y responsiva respetando el sistema visual del Capítulo IV.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://vuejs.org/">Vue</a> / <a href="https://vite.dev/">Vite</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Landing Page</td><td style="border:1px solid #B8C2CC; padding:9px;">HTML5, CSS3 y JavaScript</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementar la presentación pública, beneficios, términos y llamado a la acción.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://developer.mozilla.org/">MDN Web Docs</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollo web</td><td style="border:1px solid #B8C2CC; padding:9px;">VS Code, Node.js, Vue 3, Vite y PrimeVue</td><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollar la aplicación web modular y responsiva respetando el sistema visual del Capítulo IV.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://vuejs.org/">Vue</a> / <a href="https://vite.dev/">Vite</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Landing Page</td><td style="border:1px solid #B8C2CC; padding:9px;">HTML5, CSS3, JavaScript y GitHub Pages</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementar y publicar la presentación pública, el simulador básico, los beneficios, los términos y el llamado a la acción.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://developer.mozilla.org/">MDN Web Docs</a></td></tr>
 <tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Backend</td><td style="border:1px solid #B8C2CC; padding:9px;">Visual Studio/Rider, .NET, C#, ASP.NET Core y Entity Framework Core</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementar la API, autenticación, cálculos financieros, beneficios, reportes, administración y persistencia.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://dotnet.microsoft.com/">.NET</a></td></tr>
 <tr><td style="border:1px solid #B8C2CC; padding:9px;">Base de datos</td><td style="border:1px solid #B8C2CC; padding:9px;">PostgreSQL y pgAdmin</td><td style="border:1px solid #B8C2CC; padding:9px;">Almacenar usuarios, simulaciones, cronogramas, indicadores, beneficios, comparaciones, reportes y parámetros.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.postgresql.org/">PostgreSQL</a></td></tr>
 <tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Pruebas y documentación de API</td><td style="border:1px solid #B8C2CC; padding:9px;">Swagger/OpenAPI y Postman</td><td style="border:1px solid #B8C2CC; padding:9px;">Documentar endpoints y verificar solicitudes, respuestas, validaciones y autorizaciones.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://swagger.io/specification/">OpenAPI</a></td></tr>
@@ -47,7 +47,7 @@ Las siguientes herramientas soportan el ciclo de vida de HipoSim. La selección 
 ```text
 Node.js: versión LTS aprobada por el equipo
 Gestor de paquetes: npm
-Frontend: Vue 3 + Vite + PrimeVue + Tailwind CSS
+Frontend: Vue 3 + Vite + PrimeVue (tema Material)
 Backend: versión de .NET SDK aprobada por el equipo + ASP.NET Core
 ORM: Entity Framework Core
 Base de datos: PostgreSQL
@@ -66,7 +66,7 @@ GitHub será la plataforma de control de versiones. Cada producto digital tendr�
 
 | Producto | Nombre sugerido del repositorio | URL |
 |:--|:--|:--|
-| Landing Page | `hiposim-landing-page` | *URL* |
+| Landing Page | `hiposim-LandingPage` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
 | Aplicación Web Frontend | `hiposim-frontend` | *URL* |
 | Aplicación Móvil Nativa | `hiposim-mobile` | *URL* |
 | API RESTful y pruebas | `hiposim-platform` | *URL* |
@@ -103,7 +103,7 @@ test(financial-engine): add TCEA calculation cases
 
 <div style="text-align:justify; line-height:1.6;">
 
-Los identificadores del código y los elementos técnicos se escribirán en inglés. El contenido visible para el usuario permanecerá en español porque HipoSim se dirige a compradores peruanos. El código priorizará claridad, funciones breves, nombres del dominio, separación de responsabilidades y ausencia de reglas duplicadas.
+Los identificadores del código y los elementos técnicos se escribirán en inglés. El contenido visible para el usuario se gestionará con internacionalización (i18n) en español (es_419) e inglés (en_US), porque HipoSim se dirige a compradores peruanos y el curso exige ambos idiomas. El código priorizará claridad, funciones breves, nombres del dominio, separación de responsabilidades y ausencia de reglas duplicadas.
 
 </div>
 
@@ -114,14 +114,14 @@ Los identificadores del código y los elementos técnicos se escribirán en ingl
 | JavaScript | `const` por defecto, camelCase para variables y funciones, PascalCase para clases, igualdad estricta y async/await. | [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) |
 | Vue | Componentes PascalCase de varias palabras, un componente por archivo, props explícitas y lógica de negocio en servicios/composables. | [Vue Style Guide](https://vuejs.org/style-guide/) |
 | C# / ASP.NET Core | PascalCase para miembros públicos, camelCase para parámetros, sufijo Async, inyección de dependencias y validación de DTO. | [C# Coding Conventions](https://learn.microsoft.com/dotnet/csharp/fundamentals/coding-style/coding-conventions) |
-| Gherkin | Un comportamiento por escenario, pasos Given-When-Then declarativos y lenguaje del negocio. | [Gherkin Reference](https://cucumber.io/docs/gherkin/) |
+| Gherkin | Un comportamiento por escenario, pasos Dado que-Cuando-Entonces declarativos y lenguaje del negocio. | [Gherkin Reference](https://cucumber.io/docs/gherkin/) |
 
 | Elemento | Convención | Ejemplo |
 |:--|:--|:--|
 | Componente Vue | PascalCase | `SimulationResults.vue` |
 | Variable/función JavaScript | camelCase | `calculateMonthlyPayment` |
 | Clase/interfaz C# | PascalCase / prefijo `I` | `SimulationService`, `ISimulationRepository` |
-| Recurso REST | Sustantivo plural en minúscula | `/api/v1/simulations` |
+| Recurso REST | Sustantivo plural en minúscula | `/api/simulations` |
 | Tabla de base de datos | snake_case plural | `simulation_reports` |
 | Variable de entorno | UPPER_SNAKE_CASE | `DATABASE_CONNECTION_STRING` |
 | Prueba | Nombre orientado al comportamiento | `Calculate_WhenInputIsValid_ReturnsSchedule` |
@@ -130,7 +130,7 @@ Los identificadores del código y los elementos técnicos se escribirán en ingl
 
 <div style="text-align:justify; line-height:1.6;">
 
-Cada producto debe poder desplegarse desde su repositorio. Los proveedores y enlaces públicos se completarán cuando el equipo publique las aplicaciones. La siguiente configuración describe el flujo exigido sin inventar un proveedor no especificado en los capítulos I-IV.
+Cada producto debe poder desplegarse desde su repositorio. El Landing Page ya se publica en GitHub Pages; los proveedores y enlaces públicos de los demás productos se completarán cuando el equipo los publique. La siguiente configuración describe el flujo exigido para cada producto.
 
 </div>
 
@@ -138,8 +138,8 @@ Cada producto debe poder desplegarse desde su repositorio. Los proveedores y enl
 
 1. Obtener la última versión aprobada de `main`.
 2. Validar HTML, CSS, enlaces, comportamiento responsivo, metadatos y accesibilidad.
-3. Publicar los recursos en el servicio de hosting estático seleccionado.
-4. Configurar HTTPS y el dominio de producción.
+3. Publicar los recursos en GitHub Pages desde la rama principal del repositorio.
+4. Verificar que GitHub Pages sirva el sitio mediante HTTPS.
 5. Verificar Inicio, Producto, Beneficios, Términos y **Simular ahora**.
 
 #### **Frontend Web Application Deployment**
@@ -163,14 +163,14 @@ Cada producto debe poder desplegarse desde su repositorio. Los proveedores y enl
 #### **Native Mobile Application Deployment**
 
 1. Configurar el endpoint de producción y los identificadores de la aplicación.
-2. Generar builds firmados de Android e iOS con credenciales protegidas.
+2. Generar builds firmados de Android (y de iOS, si el alcance lo incluye) con credenciales protegidas.
 3. Probar tamaños de dispositivo y versiones soportadas.
 4. Distribuir una compilación de prueba interna antes de enviarla a las tiendas.
 5. Completar metadatos, privacidad, capturas y notas de versión.
 
 | Producto | URL de producción/distribución | Estado |
 |:--|:--|:--|
-| Landing Page | *Pendiente* | Completar después del despliegue. |
+| Landing Page | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) | Publicado en GitHub Pages. |
 | Aplicación Web Frontend | *Pendiente* | Completar después del despliegue. |
 | API RESTful | *Pendiente* | Completar después del despliegue. |
 | Aplicación Móvil Nativa | *Pendiente: enlace interno o de tienda* | Completar después de la publicación. |
@@ -181,120 +181,121 @@ Cada producto debe poder desplegarse desde su repositorio. Los proveedores y enl
 
 <div style="text-align:justify; line-height:1.6;">
 
-La implementación se organiza mediante el Product Backlog del Capítulo III. La secuencia prioriza la propuesta de valor: permitir que un comprador calcule una hipoteca, comprenda su costo real y evalúe beneficios estatales antes de incorporar la gestión de escenarios y las funciones administrativas.
+La implementación se organiza mediante el Product Backlog del Capítulo III, gestionado en Jira. La secuencia comienza por el Landing Page, que permite a un visitante estimar su cuota y su TCEA sin registrarse, y por las bases del frontend web y de la aplicación móvil; después incorpora el backend, la simulación completa, la gestión de escenarios y la conexión opcional con inmobiliarias, dejando las funciones administrativas para una etapa posterior.
 
 </div>
 
 ### **5.2.1. Sprint Backlogs**
 
-#### **Sprint 1 - Mortgage Simulation Foundation**
+<div style="text-align:justify; line-height:1.6;">
+
+El Product Backlog del Capítulo III se gestiona en Jira, donde cada historia se descompone en tasks. El Sprint 1 concentra el Landing Page y las bases del frontend web y de la aplicación móvil. Los Sprints 2 a 4 se planifican de forma tentativa y se ajustarán según el resultado de cada Sprint Review.
+
+</div>
+
+#### **Sprint 1 - Landing Page and Foundations**
 
 | Campo | Detalle |
 |:--|:--|
 | Sprint | Sprint 1 |
-| Sprint Goal | Nuestro enfoque es entregar la primera simulación hipotecaria completa. Creemos que brinda al comprador una estimación comprensible de cuotas y costo total. Se confirmará cuando ingrese datos válidos y obtenga un cronograma francés con TCEA, VAN y TIR. |
-| Elementos planificados | TS01, TS02, US01, US02, US04 |
-| Suma de Story Points | **24** |
+| Sprint Goal | Nuestro enfoque es publicar el Landing Page con un simulador básico, beneficios estatales, información legal y cambio de idioma, y dejar listas las bases del frontend web y de la aplicación móvil. Creemos que entrega claridad sobre el costo real del crédito a los compradores primerizos. Se confirmará cuando un visitante obtenga su cuota mensual y su TCEA estimada, sin registrarse, en el sitio publicado en GitHub Pages. |
+| Velocity | 26 Story Points (estimación inicial, sin historial de Sprints previos). |
+| Suma de Story Points | **26** |
+| Elementos planificados | TS04, US14, US15, US16, US17, US18, US19, US20, TS01, SP03 y 4 tasks de diseño de mockups. |
 | Fecha, hora, ubicación y asistentes | *Pendiente: completar con el registro real del Sprint Planning.* |
 
-| Orden | ID | Elemento | SP | Resultado esperado |
-|---:|:---:|:--|---:|:--|
-| 1 | TS01 | Configurar entorno frontend | 3 | La aplicación Vue/Vite carga con la arquitectura base. |
-| 2 | TS02 | Implementar backend y base de datos | 5 | La API ASP.NET Core y el esquema PostgreSQL funcionan. |
-| 3 | US01 | Simular crédito base | 5 | Los datos válidos generan una cuota sin exigir registro. |
-| 4 | US02 | Ver cronograma de pagos | 3 | Se muestran capital, interés, cuota y saldo mensual. |
-| 5 | US04 | Visualizar TCEA, VAN y TIR | 8 | Los indicadores se calculan y destacan en el resultado. |
+**Sprint Backlog 1**
 
-#### **Sprint 2 - Benefits and Scenario Management**
+> Captura del Board del Sprint 1 en Jira: _pendiente de agregar_.
+>
+> URL público del Board: _pendiente de agregar_.
 
-| Campo | Detalle |
-|:--|:--|
-| Sprint | Sprint 2 |
-| Sprint Goal | Nuestro enfoque es hacer que los resultados sean reutilizables y comparables. Creemos que ayuda a evaluar alternativas y conversar con la familia. Se confirmará cuando el usuario aplique el BBP, se registre, guarde, compare y exporte escenarios. |
-| Elementos planificados | US05, US13, US06, US07, US08, TS03 |
-| Suma de Story Points | **24** |
-| Revisión y retrospectiva previa | *Pendiente: completar con resultados y acciones reales.* |
+| ID | Historia o elemento | SP | Work-Items / Tasks |
+|:---:|:--|---:|:--|
+| TS04 | Configurar y publicar el Landing Page | 3 | 1. Estructurar el repositorio y las secciones del Landing Page<br>2. Aplicar los tokens de estilo del Design System (colores y tipografía)<br>3. Agregar atributos ARIA y validar el contraste WCAG AA<br>4. Publicar en GitHub Pages y verificar la URL pública |
+| US14 | Ver propuesta de valor | 2 | 1. Redactar el contenido de propuesta de valor y comparación con simuladores bancarios<br>2. Maquetar la sección de inicio y la navegación (escritorio y móvil) |
+| US15 | Simular crédito sin registro desde el Landing Page | 5 | 1. Diseñar los controles del simulador básico<br>2. Implementar el cálculo por método francés en JavaScript<br>3. Implementar la aplicación del Bono del Buen Pagador<br>4. Implementar la vista del cronograma completo<br>5. Validar los resultados contra los casos de prueba de AutoFinance Pro |
+| US16 | Conocer beneficios estatales | 2 | 1. Redactar el contenido de beneficios estatales<br>2. Maquetar la sección de beneficios |
+| US17 | Consultar Términos y Condiciones y Privacidad | 2 | 1. Redactar los Términos y Condiciones y la política de privacidad (Ley N° 29733)<br>2. Publicar las páginas y enlazarlas en el pie del Landing Page |
+| US18 | Consultar preguntas frecuentes | 2 | 1. Redactar las preguntas frecuentes<br>2. Implementar la sección de preguntas frecuentes |
+| US19 | Contactar al equipo de HipoSim | 2 | 1. Diseñar el formulario de contacto<br>2. Implementar la validación y el envío de la consulta |
+| US20 | Cambiar el idioma del sitio | 3 | 1. Definir los diccionarios de textos en español (es_419) e inglés (en_US)<br>2. Implementar el selector de idioma y la carga de textos<br>3. Conservar el idioma elegido al navegar entre secciones<br>4. Actualizar el atributo lang del documento y verificar los textos traducidos |
+| TS01 | Configurar entorno de frontend | 3 | 1. Crear el proyecto Vue con Vite<br>2. Instalar y configurar PrimeVue con el tema Material y los tokens de HipoSim<br>3. Definir la estructura de carpetas y el enrutamiento |
+| SP03 | Definir la tecnología de la app móvil nativa | 2 | 1. Comparar las opciones de tecnología móvil nativa<br>2. Construir un prototipo mínimo de una pantalla conectada a la API |
+| DS | Diseño de mockups (independientes de una historia) | - | 1. Diseñar mockup móvil del registro contextual (US13)<br>2. Diseñar mockup móvil de resultados y conexión con inmobiliarias (US21)<br>3. Diseñar mockup web de la bandeja de leads (US23)<br>4. Diseñar mockup web de la ficha del lead (US24) |
 
-| Orden | ID | Elemento | SP | Resultado esperado |
-|---:|:---:|:--|---:|:--|
-| 1 | US05 | Integrar Bono del Buen Pagador | 5 | La elegibilidad y reducción del capital aparecen en el resultado. |
-| 2 | US13 | Iniciar sesión y registrarse | 3 | Las cuentas acceden de forma segura a funciones privadas. |
-| 3 | US06 | Guardar escenario | 3 | El usuario autenticado conserva simulaciones nombradas. |
-| 4 | US07 | Comparar escenarios | 5 | Dos o tres simulaciones se presentan lado a lado. |
-| 5 | US08 | Exportar reporte PDF | 5 | El reporte contiene indicadores, gráficos y cronograma. |
-| 6 | TS03 | Generación dinámica de reportes | 3 | El cliente genera y descarga el archivo eficientemente. |
+El responsable y el estado de cada task se registran en Jira.
 
-#### **Sprint 3 - Advanced Simulation and Administration**
+#### **Sprints 2 to 4 - Tentative Planning**
 
-| Campo | Detalle |
-|:--|:--|
-| Sprint | Sprint 3 |
-| Sprint Goal | Nuestro enfoque es mantener parámetros financieros confiables y condiciones avanzadas. Creemos que mejora la exactitud y trazabilidad. Se confirmará cuando funcionen los periodos de gracia y el Administrador pueda actualizar, previsualizar y auditar parámetros. |
-| Elementos planificados | US03, US09, US10, US11, US12 |
-| Suma de Story Points | **21** |
-| Revisión y retrospectiva previa | *Pendiente* |
+| Sprint | Story Points | Elementos | Enfoque |
+|:--|:-:|:--|:--|
+| Sprint 2 | 33 | SP02, TS02, TS06, TS05, US01, US04, US05 | Backend y base de datos, endpoint de simulación documentado, simulación con indicadores y Bono del Buen Pagador. |
+| Sprint 3 | 29 | US02, US13, TS07, US06, US07, SP01, TS03, US08 | Cronograma, autenticación, escenarios guardados y reporte PDF. |
+| Sprint 4 | 26 | US21, US22, TS08, US23, US24, US25 | Conexión opcional con inmobiliarias y portal del Asesor. |
+| Sin Sprint asignado | 21 | US03, US09, US10, US11, US12 | Periodo de gracia y administración de parámetros, con prioridad baja. |
 
-| Orden | ID | Elemento | SP | Resultado esperado |
-|---:|:---:|:--|---:|:--|
-| 1 | US03 | Aplicar periodo de gracia | 5 | La gracia total o parcial modifica cuotas y costo total. |
-| 2 | US09 | Actualizar tasas referenciales | 3 | La TEA válida se almacena con fecha de vigencia. |
-| 3 | US10 | Configurar rangos Mivivienda | 5 | La elegibilidad emplea los rangos configurados. |
-| 4 | US11 | Previsualizar impacto | 3 | Se comparan la cuota anterior y la proyectada. |
-| 5 | US12 | Historial de auditoría | 5 | Cada cambio registra responsable y fecha. |
+La implementación del backend y de la base de datos (TS02) no forma parte de esta entrega; se planifica a partir del Sprint 2.
 
 ### **5.2.2. Implemented Landing Page Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La Landing Page comunica la propuesta independiente y transparente de HipoSim. Su navegación sigue el Capítulo IV: **Inicio**, **Producto**, **Beneficios** y **Términos**, con el llamado persistente **Simular ahora**. Emplea verde azulado (`#0E5C63`), turquesa (`#3AAFA9`), ámbar (`#F5A524`), Poppins, Roboto, espaciado basado en 8 px y diseño responsivo.
+El Landing Page comunica la propuesta independiente y transparente de HipoSim e incluye un simulador básico interactivo (valor de la vivienda, cuota inicial y plazo) que calcula la cuota mensual, la TCEA estimada y el préstamo neto sin registro, con la opción de aplicar el Bono del Buen Pagador. Su navegación es **Inicio**, **Producto**, **Beneficios** y **Términos**, con los llamados **Ingresar** y **Simular ahora**. Emplea verde azulado (`#0E5C63`), turquesa (`#3AAFA9`), ámbar (`#F5A524`), las tipografías Outfit (títulos) y Roboto Flex (cuerpo), espaciado basado en múltiplos de 8 px y diseño responsivo.
 
 </div>
 
 | Evidencia | Registro requerido |
 |:--|:--|
-| Repositorio | *URL* |
-| Despliegue | *URL* |
+| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
+| Despliegue | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
+| Historias relacionadas | TS04, US14, US15, US16, US17, US18, US19 y US20 (Sprint 1) |
 | Versión | *Pendiente* |
-| Capturas | *Pendiente* |
 | Verificación | Navegación, metadatos, enlaces, responsividad, accesibilidad y CTA. |
+| Trabajo en curso del Sprint 1 | Atributos ARIA (TS04) y selector de idioma (US20). |
 
-<!--
 <div align="center">
   <img src="../assets/09-chapter-5/landing-page/home-desktop.png" width="85%" alt="Página de inicio de HipoSim en escritorio">
-  <p><em>Figura 1. Landing Page implementada de HipoSim.</em></p>
+  <p><em>Figura 1. Landing Page implementada de HipoSim (escritorio).</em></p>
 </div>
--->
+
+<div align="center">
+  <img src="../assets/09-chapter-5/landing-page/home-mobile.png" width="35%" alt="Página de inicio de HipoSim en móvil">
+  <p><em>Figura 2. Landing Page implementada de HipoSim (móvil).</em></p>
+</div>
 
 ### **5.2.3. Implemented Frontend-Web Application Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La Aplicación Web responsiva materializa el recorrido principal del comprador: datos del cliente, vivienda, parámetros del crédito y resultados. La vista final presenta cronograma, TCEA, VAN, TIR, beneficios estatales y acciones para guardar, comparar y exportar escenarios.
+La Aplicación Web responsiva se diseña en dos frentes: el recorrido del Comprador (datos del cliente, vivienda, parámetros del crédito y resultados) y el portal del Asesor de inmobiliaria, donde se gestionan los leads que el Comprador autorizó compartir. Para esta entrega se presentan los mockups de la bandeja de leads y de la ficha del lead (Capítulo IV) y la configuración del entorno (TS01); la implementación funcional continúa a partir del Sprint 2.
 
 </div>
 
 | Módulo | Requerimientos | Evidencia esperada |
 |:--|:--|:--|
-| Autenticación | US13 | Registro, inicio de sesión, rutas protegidas y navegación por rol. |
-| Asistente de simulación | US01, US03 | Validación, cuatro pasos, monto, tasa, plazo y gracia. |
+| Autenticación | US13, US22 | Registro e inicio de sesión de Comprador y Asesor, y rutas protegidas por rol. |
+| Asistente de simulación | US01, US03 | Validación, cuatro pasos, monto, plazo y gracia. |
 | Resultados financieros | US02, US04, US05 | Cuota, cronograma, TCEA, VAN, TIR y BBP. |
-| Historial | US06 | Lista de simulaciones y filtros de fecha/tipo. |
+| Historial | US06 | Lista de simulaciones y filtros de fecha y tipo. |
 | Comparación | US07 | Dos o tres escenarios en paralelo. |
-| Reportes | US08, TS03 | PDF con gráficos, indicadores y cronograma. |
-| Administración | US09-US12 | Parámetros, previsualización, métricas e historial. |
+| Reportes | US08, TS03 | PDF con indicadores y cronograma. |
+| Conexión con inmobiliarias | US21 | Envío de la simulación solo con el consentimiento del Comprador. |
+| Portal del Asesor | US23, US24, US25 | Bandeja de leads, ficha del lead, cambio de estado y notas de seguimiento. |
+| Administración | US09-US12 | Parámetros, previsualización e historial (prioridad baja, etapa posterior). |
 
 | Evidencia | Registro requerido |
 |:--|:--|
 | Repositorio | *PENDIENTE.* |
 | Despliegue | *PENDIENTE* |
 | Commits/Pull Requests | *Pendiente: identificadores por Sprint.* |
-| Capturas | *Pendiente: autenticación, simulación, resultados, historial, comparación y administración.* |
+| Capturas | *Pendiente: mockups de la bandeja y la ficha del lead (Capítulo IV) y pantallas implementadas por Sprint.* |
 
 ### **5.2.4. Implemented Native-Mobile Application Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La aplicación móvil conserva las funciones principales: crear una simulación, revisar resultados, consultar historial, comparar escenarios y administrar el perfil. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
+La aplicación móvil Android cubre el registro contextual y los resultados de la simulación, con la opción de enviarla a inmobiliarias únicamente con el consentimiento del Comprador; la simulación completa, el historial y la comparación de escenarios se incorporan en los Sprints siguientes. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
 
 </div>
 
@@ -302,24 +303,25 @@ La aplicación móvil conserva las funciones principales: crear una simulación,
 |:--|:--|
 | Repositorio | *PENDIENTE.* |
 | Distribución | *Pendiente: enlace de prueba interna o tienda.* |
-| Plataformas | Android e iOS. |
-| Flujos | Simulación, resultados, historial, comparación y perfil. |
-| Capturas | *Pendiente: evidencias de ambas plataformas.* |
+| Plataformas | Android (mockups de este entregable); iOS según la decisión del spike SP03. |
+| Flujos | Registro contextual, resultados y conexión con inmobiliarias (mockups); simulación, historial y comparación en Sprints posteriores. |
+| Capturas | *Pendiente: mockups Android y evidencias de la implementación.* |
 
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-HipoSim utiliza una API RESTful con ASP.NET Core y PostgreSQL mediante Entity Framework Core. La API centraliza autenticación, simulaciones, escenarios, reportes, beneficios y parámetros administrativos. El Financial Engine aísla amortización francesa, conversión de tasas, periodos de gracia, VAN, TIR y TCEA; el Benefits Engine evalúa BBP y Nuevo Crédito Mivivienda.
+HipoSim utiliza una API RESTful con ASP.NET Core y PostgreSQL mediante Entity Framework Core. La API centraliza autenticación, simulaciones, escenarios, reportes, beneficios, leads y parámetros administrativos. El Financial Engine aísla amortización francesa, conversión de tasas, periodos de gracia, VAN, TIR y TCEA; el Benefits Engine evalúa BBP y Nuevo Crédito Mivivienda. La implementación del backend y de la base de datos (TS02) está planificada para el Sprint 2 y no forma parte de esta entrega.
 
 </div>
 
 | Componente | Responsabilidad |
 |:--|:--|
-| `AuthController` / `AuthService` | Registrar y autenticar Compradores y Administradores; aplicar autorización por roles. |
+| `AuthController` / `AuthService` | Registrar y autenticar Compradores, Asesores y Administradores; aplicar autorización por roles. |
 | `SimulationController` / `SimulationService` | Validar entradas, invocar motores y persistir resultados. |
 | `ScenarioController` / `ScenarioService` | Guardar, recuperar y comparar escenarios. |
 | `ReportController` / `ReportGenerationService` | Crear PDF y enlaces de solo lectura. |
+| `LeadController` / `LeadService` | Registrar los leads autorizados por el Comprador y permitir al Asesor consultarlos, cambiar su estado y registrar notas de seguimiento. |
 | `AdminController` / `AdminParameterService` | Gestionar tasas, BBP, rangos, métricas e historial. |
 | `FinancialEngine` | Calcular amortización, tasas, gracia, VAN, TIR y TCEA. |
 | `BenefitsEngine` | Determinar elegibilidad y recalcular el monto financiado. |
@@ -343,17 +345,22 @@ La API debe publicar un contrato OpenAPI y una interfaz Swagger UI. El diseño s
 
 | Método | Recurso | Propósito | Requerimiento |
 |:--:|:--|:--|:--:|
-| `POST` | `/api/v1/auth/register` | Registrar una cuenta de Comprador. | US13 |
-| `POST` | `/api/v1/auth/login` | Autenticar Comprador o Administrador. | US13 |
-| `POST` | `/api/v1/simulations` | Calcular una simulación. | US01, US03, US04, US05 |
-| `GET` | `/api/v1/simulations/{id}` | Obtener una simulación autorizada. | US02, US06 |
-| `GET` | `/api/v1/simulations` | Listar simulaciones guardadas. | US06 |
-| `POST` | `/api/v1/comparisons` | Comparar dos o tres escenarios. | US07 |
-| `GET` | `/api/v1/simulations/{id}/report` | Generar u obtener el PDF. | US08, TS03 |
-| `GET` | `/api/v1/admin/parameters` | Consultar parámetros vigentes. | US09, US10 |
-| `PUT` | `/api/v1/admin/parameters/{key}` | Actualizar un parámetro autorizado. | US09, US10 |
-| `POST` | `/api/v1/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 |
-| `GET` | `/api/v1/admin/parameters/{key}/history` | Consultar historial de auditoría. | US12 |
+| `POST` | `/api/auth/register` | Registrar una cuenta de Comprador. | US13, TS07 |
+| `POST` | `/api/auth/login` | Autenticar Comprador, Asesor o Administrador. | US13, US22, TS07 |
+| `POST` | `/api/simulations` | Calcular una simulación. | US01, US03, US04, US05, TS06 |
+| `GET` | `/api/simulations/{id}` | Obtener una simulación autorizada. | US02, US06 |
+| `GET` | `/api/simulations` | Listar simulaciones guardadas. | US06 |
+| `POST` | `/api/comparisons` | Comparar dos o tres escenarios. | US07 |
+| `GET` | `/api/simulations/{id}/report` | Generar u obtener el PDF. | US08, TS03 |
+| `POST` | `/api/leads` | Compartir la simulación con inmobiliarias con el consentimiento del Comprador. | US21, TS08 |
+| `GET` | `/api/leads` | Listar los leads de la inmobiliaria del Asesor. | US23, TS08 |
+| `GET` | `/api/leads/{id}` | Obtener la ficha de un lead. | US24 |
+| `PATCH` | `/api/leads/{id}/status` | Cambiar el estado de un lead. | US25, TS08 |
+| `POST` | `/api/leads/{id}/notes` | Registrar una nota de seguimiento. | US25 |
+| `GET` | `/api/admin/parameters` | Consultar parámetros vigentes. | US09, US10 |
+| `PUT` | `/api/admin/parameters/{key}` | Actualizar un parámetro autorizado. | US09, US10 |
+| `POST` | `/api/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 |
+| `GET` | `/api/admin/parameters/{key}/history` | Consultar historial de auditoría. | US12 |
 | `GET` | `/health` | Verificar disponibilidad. | TS02 |
 
 #### **Representative Simulation Request**
@@ -361,7 +368,7 @@ La API debe publicar un contrato OpenAPI y una interfaz Swagger UI. El diseño s
 ```json
 {
   "propertyPrice": 280000.00,
-  "downPayment": 56000.00,
+  "downPayment": 42000.00,
   "annualEffectiveRate": 0.085,
   "termInMonths": 240,
   "gracePeriodMonths": 0,
@@ -375,19 +382,19 @@ La API debe publicar un contrato OpenAPI y una interfaz Swagger UI. El diseño s
 ```json
 {
   "simulationId": "generated-id",
-  "financedAmount": 224000.00,
-  "monthlyInstallment": 1943.52,
-  "tcea": 0.0941,
-  "npv": 224000.00,
-  "irr": 0.0075,
+  "financedAmount": 219800.00,
+  "monthlyInstallment": 1909.00,
+  "tcea": 0.0885,
   "benefit": {
     "name": "Good Payer Bonus",
     "eligible": true,
-    "appliedAmount": 0.00
+    "appliedAmount": 18200.00
   },
   "amortizationSchedule": []
 }
 ```
+
+La respuesta real incluye además el VAN, la TIR y el cronograma completo; el ejemplo se abrevia y usa los mismos valores de referencia que el simulador del Landing Page.
 
 | Evidencia de documentación | Registro requerido |
 |:--|:--|
@@ -431,7 +438,7 @@ La colaboración se evalúa mediante contribuciones trazables. Jira registra la 
 
 <div style="text-align:justify; line-height:1.6;">
 
-El video debe comunicar el valor de HipoSim de forma breve y demostrable. Debe explicar el problema de los compradores primerizos, presentar la simulación independiente, identificar los roles Comprador y Administrador, y demostrar el flujo principal desde la Landing Page hasta el resultado hipotecario.
+El video debe comunicar el valor de HipoSim de forma breve y demostrable. Debe explicar el problema de los compradores primerizos, presentar la simulación independiente, identificar los roles Visitante, Comprador y Asesor de inmobiliaria, y demostrar el flujo principal desde la Landing Page hasta el resultado hipotecario.
 
 </div>
 
@@ -440,10 +447,10 @@ El video debe comunicar el valor de HipoSim de forma breve y demostrable. Debe e
 1. **Problema y segmento:** explicar la falta de una herramienta simple, independiente y transparente.
 2. **Propuesta de valor:** presentar cuotas, TCEA, VAN, TIR, periodos de gracia y beneficios.
 3. **Landing Page:** mostrar información, beneficios, términos y **Simular ahora**.
-4. **Simulación:** ingresar vivienda, cuota inicial, tasa, plazo y periodo de gracia.
+4. **Simulación:** ingresar vivienda, cuota inicial y plazo, y aplicar el Bono del Buen Pagador.
 5. **Interpretación:** explicar cronograma, TCEA y elegibilidad al BBP en lenguaje sencillo.
-6. **Usuario registrado:** demostrar guardado, comparación, historial y exportación PDF.
-7. **Administración:** mostrar actualización, previsualización y auditoría de parámetros.
+6. **Comprador registrado y conexión opcional con inmobiliarias:** mostrar los mockups Android de registro y resultados, y el envío de la simulación solo con consentimiento.
+7. **Portal del Asesor y trazabilidad:** mostrar los mockups web de la bandeja y la ficha del lead, y el Product Backlog y el Sprint 1 en Jira.
 8. **Cierre:** aclarar que HipoSim informa, pero no sustituye la evaluación formal del banco.
 
 | Campo | Registro |
