@@ -65,7 +65,7 @@
         AV1
       </i></b>
       <br>
-        Durante la AV1, ...
+        Durante la AV1, participé en la configuración del entorno de desarrollo y en la gestión del código fuente mediante Git y GitHub, aplicando GitFlow para organizar las contribuciones del equipo. Asimismo, apoyé en la elaboración de la documentación técnica, la recopilación de evidencias de implementación y la configuración del despliegue. Los cambios fueron gestionados mediante ramas, commits y Pull Requests, manteniendo la trazabilidad e integración del trabajo. Estas actividades me permitieron reconocer la responsabilidad ética y profesional de documentar con transparencia, respetar las contribuciones de los integrantes y verificar que cada modificación cumpliera con los estándares de calidad establecidos para el proyecto.
       <br><br>
       <hr>
       <br><br>
@@ -157,7 +157,7 @@
         AV1
       </i></b>
       <br>
-        Durante la AV1, ...
+        Durante la AV1, contribuí en la implementación de la Landing Page, la aplicación web, la aplicación móvil y la API RESTful, relacionando los avances con las historias de usuario y los Sprint Backlogs. Para ello, evalué el uso de Vue 3, Vite, PrimeVue, ASP.NET Core, C#, Entity Framework Core, PostgreSQL y OpenAPI/Swagger, considerando su adecuación técnica, capacidad de integración y mantenibilidad. También apliqué convenciones de código, separación de responsabilidades y validaciones para reducir errores y facilitar futuras mejoras. Además, colaboré en la elaboración de la bibliografía, los anexos y las conclusiones del proyecto, asegurando que las decisiones y resultados estuvieran debidamente sustentados. Estas acciones permitieron optimizar los recursos del equipo y contribuir al desarrollo de una solución de software sostenible, escalable y alineada con las necesidades de sus usuarios.
       <br><br>
       <hr>
       <br><br>
