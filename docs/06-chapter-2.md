@@ -29,19 +29,19 @@ A continuación, se presenta una comparación de los principales competidores co
 <b>HipoSim</b>    
 </td>
 <td style="text-align: center; vertical-align: middle;">
-<b>Simulador BCP (ViaBCP)</b>
 
-<img src="../assets/img/chapter-ii/bcp-logo.png" alt="BCP" width="150"/>
+<img src="../assets/06-chapter-2/logo-bcp.jpg" alt="BCP" width="150"/>
+<b>Simulador BCP (ViaBCP)</b>    
 </td>
 <td style="text-align: center; vertical-align: middle;">
+    
+<img src="../assets/06-chapter-2/logo-interbank.png" alt="Interbank" width="150"/>
 <b>Simulador Interbank</b>
-
-<img src="../assets/img/chapter-ii/interbank-logo.png" alt="Interbank" width="150"/>
 </td>
 <td style="text-align: center; vertical-align: middle;">
-<b>Simulador Fondo Mivivienda</b>
 
-<img src="../assets/img/chapter-ii/mivivienda-logo.png" alt="Fondo Mivivienda" width="150"/>
+<img src="../assets/06-chapter-2/fondo-mivivienda.jpg" alt="Fondo Mivivienda" width="150"/>
+<b>Simulador Fondo Mivivienda</b>    
 </td>
 </tr>
 <tr>
