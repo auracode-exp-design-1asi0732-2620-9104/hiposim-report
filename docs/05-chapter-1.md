@@ -132,7 +132,7 @@ Soy estudiante de la carrera de Ingeniería de Software dentro de la Universidad
   <tr>
     <td style="text-align: center; width: 40%; vertical-align: center;">
       <img
-      src="../assets/05-chapter-1/startup-profile/team-member-profiles/gustavo-olivares.jpeg"
+      src="../assets/05-chapter-1/startup-profile/team-member-profiles/gustavo-olivares.jpg"
       alt="Foto de perfil de Gustavo Olivares"
       width="70%"
       style="border-radius: 10px;">
