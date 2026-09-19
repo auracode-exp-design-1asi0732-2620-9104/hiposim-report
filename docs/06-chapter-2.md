@@ -298,45 +298,45 @@ Preguntas Específicas
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td></td>
+            <td>Alberto</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td></td>
+            <td>Roman</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td></td>
+            <td>40 años</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td></td>
+            <td>Surco</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/06-chapter-2/entrevista.png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/entrevista-alberto-roman.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAdCnl85yvhSrk9QQ9Lem4JAZkundmLCncxIt0ueEJ-jlw?e=UDoIg6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #2 - segmento 1
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>0:00</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>6:13</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>Alberto Román trabaja hace 10 años en diagnóstico de servicios de autos deportivos, con empleo formal estable. Está evaluando el financiamiento para la futura compra de una vivienda, departamento o terreno. A diferencia de otros entrevistados, se apoya principalmente en un amigo que trabaja en una entidad financiera para resolver sus dudas antes de dar cualquier paso, y usa sobre todo la laptop (y en menor medida el celular) para revisar información, además de comparar de forma general lo que ofrecen distintos bancos por redes. Aún no se ha animado a usar un simulador hipotecario directamente, en parte por temor a que lo empiecen a llamar después, y no sabe qué es el TCEA. Tiene una confianza baja a moderada en que los simuladores sean objetivos, por lo que prefiere contrastar cualquier resultado con la opinión de su amigo del banco. Ha comparado de forma superficial las facilidades y plazos entre un par de bancos, sin profundizar. No conocía el Bono del Buen Pagador ni el Nuevo Crédito Mivivienda antes de la entrevista. Para sentirse seguro antes de acercarse a un banco, necesita respaldo, confianza y claridad sobre los beneficios disponibles. Estaría dispuesto a ingresar sus datos financieros en una herramienta independiente únicamente para simular, siempre que eso no derive en llamadas comerciales recurrentes, y no tendría inconveniente en guardar o comparar sus simulaciones.</td>
         </tr>
     </tbody>
 </table>
