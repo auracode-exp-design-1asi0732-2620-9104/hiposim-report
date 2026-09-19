@@ -24,9 +24,9 @@ A continuación, se presenta una comparación de los principales competidores co
 <tr>
 <td colspan="2" style="text-align: center;"><b>Competidores</b></td>
 <td style="text-align: center; vertical-align: middle;">
-<b>HipoSim</b>
 
-<img src="../assets/img/chapter-ii/hiposim-logo.png" alt="HipoSim" width="150" height="80"/>
+<img src="../assets/06-chapter-2/logo-hiposim.png" alt="HipoSim" width="150" height="150"/>
+<b>HipoSim</b>    
 </td>
 <td style="text-align: center; vertical-align: middle;">
 <b>Simulador BCP (ViaBCP)</b>
