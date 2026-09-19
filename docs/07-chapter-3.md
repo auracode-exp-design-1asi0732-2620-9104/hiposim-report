@@ -61,3 +61,13 @@
 | 15 | **TS02** | Implementar backend y base de datos | Como Developer, quiero configurar C# (.NET Core) y PostgreSQL, para asegurar la persistencia y reglas de negocio. | 5 |
 | 16 | **TS03** | Generación dinámica de reportes | Como Developer, quiero implementar un servicio de exportación PDF, para habilitar la descarga rápida del reporte. | 5 |
 ## **3.4. Impact Mapping**
+
+El Impact Mapping vincula los objetivos principales del negocio con el cambio de comportamiento esperado en nuestros segmentos de usuarios y las funcionalidades (Entregables) necesarias para lograrlo.
+
+**Impact Map - Segmento 1: Comprador de Primera Vivienda**
+
+> ![Wireframe — Landing Page](../assets/07-chapter-3/3.png)
+
+**Impact Map - Segmento 2: Administrador de Producto**
+
+> ![Wireframe — Landing Page](../assets/07-chapter-3/4.png)
