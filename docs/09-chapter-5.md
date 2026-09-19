@@ -173,7 +173,7 @@ Cada producto debe poder desplegarse desde su repositorio. El Landing Page ya se
 | Landing Page | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) | Publicado en GitHub Pages. |
 | Aplicación Web Frontend | *Pendiente* | Completar después del despliegue. |
 | API RESTful | *Pendiente* | Completar después del despliegue. |
-| Aplicación Móvil Nativa | *Pendiente: enlace interno o de tienda* | Completar después de la publicación. |
+| Aplicación Móvil Nativa | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) | Código en la rama `develop`; sin despliegue ni distribución en esta entrega. |
 
 <div style="page-break-before:always;"></div>
 
@@ -221,7 +221,7 @@ El Product Backlog del Capítulo III se gestiona en Jira, donde cada historia se
 | US19 | Contactar al equipo de HipoSim | 2 | 1. Diseñar el formulario de contacto<br>2. Implementar la validación y el envío de la consulta |
 | US20 | Cambiar el idioma del sitio | 3 | 1. Definir los diccionarios de textos en español (es_419) e inglés (en_US)<br>2. Implementar el selector de idioma y la carga de textos<br>3. Conservar el idioma elegido al navegar entre secciones<br>4. Actualizar el atributo lang del documento y verificar los textos traducidos |
 | TS01 | Configurar entorno de frontend | 3 | 1. Crear el proyecto Vue con Vite<br>2. Instalar y configurar PrimeVue con el tema Material y los tokens de HipoSim<br>3. Definir la estructura de carpetas y el enrutamiento |
-| SP03 | Definir la tecnología de la app móvil nativa | 2 | 1. Comparar las opciones de tecnología móvil nativa<br>2. Construir un prototipo mínimo de una pantalla conectada a la API |
+| SP03 | Definir la tecnología de la app móvil nativa | 2 | 1. Comparar las opciones de tecnología móvil nativa<br>2. Construir un prototipo mínimo de una pantalla y documentar la decisión en un ADR |
 | DS | Diseño de mockups (independientes de una historia) | - | 1. Diseñar mockup móvil del registro contextual (US13)<br>2. Diseñar mockup móvil de resultados y conexión con inmobiliarias (US21)<br>3. Diseñar mockup web de la bandeja de leads (US23)<br>4. Diseñar mockup web de la ficha del lead (US24) |
 
 El responsable y el estado de cada task se registran en Jira.
@@ -241,7 +241,7 @@ La implementación del backend y de la base de datos (TS02) no forma parte de es
 
 <div style="text-align:justify; line-height:1.6;">
 
-El Landing Page comunica la propuesta independiente y transparente de HipoSim e incluye un simulador básico interactivo (valor de la vivienda, cuota inicial y plazo) que calcula la cuota mensual, la TCEA estimada y el préstamo neto sin registro, con la opción de aplicar el Bono del Buen Pagador. Su navegación es **Inicio**, **Producto**, **Beneficios** y **Términos**, con los llamados **Ingresar** y **Simular ahora**. Emplea verde azulado (`#0E5C63`), turquesa (`#3AAFA9`), ámbar (`#F5A524`), las tipografías Outfit (títulos) y Roboto Flex (cuerpo), espaciado basado en múltiplos de 8 px y diseño responsivo.
+El Landing Page comunica la propuesta independiente y transparente de HipoSim e incluye un simulador básico interactivo (valor de la vivienda, cuota inicial y plazo) que calcula la cuota mensual, la TCEA estimada y el préstamo neto sin registro, con la opción de aplicar el Bono del Buen Pagador. Su navegación es **Inicio**, **Producto**, **Beneficios** y **Preguntas**, con un selector de idioma (ES/EN) y los llamados **Ingresar** y **Simular ahora**. Incluye además las secciones de preguntas frecuentes, contacto, Términos y Condiciones y Política de Privacidad (Ley N° 29733), que aclara que la conexión con inmobiliarias solo ocurre si el usuario la autoriza. Está construido con HTML5, CSS3 y JavaScript, con Tailwind CSS como utilidad de estilos exclusivamente en el Landing Page, mientras que la Aplicación Web usa PrimeVue. Emplea verde azulado (`#0E5C63`), turquesa (`#3AAFA9`), ámbar (`#F5A524`), las tipografías Outfit (títulos) y Roboto Flex (cuerpo), espaciado basado en múltiplos de 8 px y diseño responsivo.
 
 </div>
 
@@ -251,8 +251,8 @@ El Landing Page comunica la propuesta independiente y transparente de HipoSim e 
 | Despliegue | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
 | Historias relacionadas | TS04, US14, US15, US16, US17, US18, US19 y US20 (Sprint 1) |
 | Versión | *Pendiente* |
-| Verificación | Navegación, metadatos, enlaces, responsividad, accesibilidad y CTA. |
-| Trabajo en curso del Sprint 1 | Atributos ARIA (TS04) y selector de idioma (US20). |
+| Verificación | Navegación, metadatos, enlaces, responsividad, accesibilidad (landmarks y atributos ARIA), cambio de idioma ES/EN con persistencia en `localStorage` y CTA. |
+| Alcance y limitaciones | El formulario de contacto valida los campos, pero su envío es simulado (sin backend). El cálculo del simulador usa una TCEA referencial fija de 8.85%. El idioma inicial es español y el inglés se activa con el selector; queda por decidir el idioma por defecto (el curso indica en_US). |
 
 <div align="center">
   <img src="../assets/09-chapter-5/landing-page/home-desktop.png" width="85%" alt="Página de inicio de HipoSim en escritorio">
@@ -295,17 +295,25 @@ La Aplicación Web responsiva se diseña en dos frentes: el recorrido del Compra
 
 <div style="text-align:justify; line-height:1.6;">
 
-La aplicación móvil Android cubre el registro contextual y los resultados de la simulación, con la opción de enviarla a inmobiliarias únicamente con el consentimiento del Comprador; la simulación completa, el historial y la comparación de escenarios se incorporan en los Sprints siguientes. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
+La aplicación móvil Android nativa se desarrolla con Kotlin, Jetpack Compose y Material 3, con Hilt, Navigation Compose y ViewModel con StateFlow (decisión documentada en el ADR 0001, spike SP03). Esta entrega incluye la pantalla de Resultados del Crédito (cuota, TCEA, Bono del Buen Pagador, composición de la primera cuota y cronograma inicial, con datos de ejemplo), el Registro Contextual con consentimiento obligatorio de la Ley N° 29733, una sesión simulada en memoria y la hoja para enviar la cotización a inmobiliarias, que exige registro. Aún no hay backend, generación de PDF, inicio de sesión propio, historial ni comparación de escenarios, que se incorporan en los Sprints siguientes. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
 
 </div>
 
 | Evidencia | Registro requerido |
 |:--|:--|
-| Repositorio | *PENDIENTE.* |
-| Distribución | *Pendiente: enlace de prueba interna o tienda.* |
-| Plataformas | Android (mockups de este entregable); iOS según la decisión del spike SP03. |
-| Flujos | Registro contextual, resultados y conexión con inmobiliarias (mockups); simulación, historial y comparación en Sprints posteriores. |
-| Capturas | *Pendiente: mockups Android y evidencias de la implementación.* |
+| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) (rama `develop`, integrada mediante el Pull Request #1) |
+| Distribución | Sin despliegue en esta entrega; se ejecuta en emulador o dispositivo Android desde el código fuente. |
+| Plataformas | Android (minSdk 26, targetSdk 36); iOS según la decisión del spike SP03. |
+| Historias relacionadas | SP03 (Sprint 1) y avance de US13 y US21 (previstas para Sprints posteriores). |
+| Flujos | Resultados de la simulación, registro contextual, sesión simulada y bloqueo de la conexión con inmobiliarias hasta registrarse. |
+| Calidad | ktlint y lint sin errores, 35 pruebas unitarias, 4 pruebas de interfaz en emulador y flujo de integración continua en GitHub Actions. |
+| Idioma | Textos en recursos, inglés por defecto y español (es-419). |
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/01-resultados.png" width="30%" alt="Pantalla de resultados del crédito en la aplicación Android">
+  <img src="../assets/09-chapter-5/native-mobile/02-registro.png" width="30%" alt="Pantalla de registro contextual en la aplicación Android">
+  <p><em>Figura 3. Resultados del crédito y Registro Contextual de la aplicación Android.</em></p>
+</div>
 
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
 
