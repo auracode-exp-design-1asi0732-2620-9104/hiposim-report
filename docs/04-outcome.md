@@ -27,7 +27,7 @@
       <b>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software.</b>
     </td>
     <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
-      <b>Bautista Rivera, Jose Diego</b>
+        <b>Bautista Rivera, Jose Diego</b>
       <br><br>
         <b><i>AV1</i></b>
       <br>
@@ -74,9 +74,9 @@
         Elaboré User Stories, organicé el Product Backlog y desarrollé el Impact Mapping, manteniendo trazabilidad entre objetivos, actores y entregables. Asimismo, apoyé la distribución de responsabilidades, promoviendo acuerdos claros y una participación equitativa en la elaboración de los artefactos del proyecto.
     </td>
     <td style="border: 1px solid #777; padding: 10px; text-align: justify; vertical-align: top;">
-      <b><i>AV1</i></b>
-    <br>
-      El equipo evidenció responsabilidad ética y profesional al documentar decisiones, gestionar cambios con trazabilidad, proteger la integridad de las evidencias y respetar las contribuciones de cada integrante. La coordinación de tareas y la comunicación transparente permitieron elaborar entregables consistentes y verificables, sustentados en necesidades reales de los usuarios.
+        <b><i>AV1</i></b>
+      <br>
+        El equipo evidenció responsabilidad ética y profesional al documentar decisiones, gestionar cambios con trazabilidad, proteger la integridad de las evidencias y respetar las contribuciones de cada integrante. La coordinación de tareas y la comunicación transparente permitieron elaborar entregables consistentes y verificables, sustentados en necesidades reales de los usuarios.
     </td>
   </tr>
 
