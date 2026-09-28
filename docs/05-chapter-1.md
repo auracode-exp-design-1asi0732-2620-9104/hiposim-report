@@ -232,7 +232,7 @@ El equipo aplicó el marco Lean UX para pasar de la idea inicial, más amplia, d
     </td>
     <td style="width: 25%; vertical-align: top; border: 1px solid #94A3B8; padding: 12px; text-align: justify; line-height: 1.45;">
       <strong>3. Usuarios</strong><br>
-      Compradores de primera vivienda de 25 a 40 años, con su primer empleo formal estable y sin experiencia previa en hipotecas (persona principal: Comprador). Usuario interno secundario: Administrador, quien mantiene los parámetros base.
+      Compradores de primera vivienda de 25 a 40 años, con su primer empleo formal estable y sin experiencia previa en hipotecas (persona principal). Asesores de inmobiliaria, quienes reciben la simulación de un Comprador solo si este lo autoriza (segmento secundario). Rol interno del equipo: Administrador de la plataforma, quien mantiene los parámetros base.
     </td>
     <td style="width: 25%; vertical-align: top; border: 1px solid #94A3B8; padding: 12px; text-align: justify; line-height: 1.45;">
       <strong>4. Resultados y beneficios para el usuario</strong><br>
@@ -263,26 +263,53 @@ El equipo aplicó el marco Lean UX para pasar de la idea inicial, más amplia, d
 
 <div style="text-align: justify; line-height: 1.6;">
 
-El producto se centra en un único segmento principal, deliberadamente reducido respecto del concepto original de SaaS multiactor, para ajustarse al tiempo disponible del equipo y a las restricciones del curso.
+HipoSim atiende dos segmentos. El primero es el comprador de primera vivienda, para quien se construye el simulador independiente. El segundo es la inmobiliaria, que recibe únicamente los leads que un Comprador decide compartir de forma explícita, bajo un modelo de conexión opcional (opt-in) y no de venta directa de datos. Ambos segmentos se mantienen deliberadamente acotados respecto del concepto original de SaaS multiactor, para ajustarse al tiempo disponible del equipo y a las restricciones del curso.
 
 </div>
 
-**Segmento principal: Comprador de primera vivienda (Comprador):**
+### **Segmento 1: Comprador de primera vivienda**
+
+<div style="text-align: justify; line-height: 1.6;">
+
+Es el segmento principal del producto. Se compone de dos roles: el Visitante, que llega al Landing Page sin cuenta y prueba el simulador básico, y el Comprador, que se registra para guardar, comparar y exportar sus simulaciones, y que decide de forma explícita si comparte una simulación con una inmobiliaria.
+
+</div>
+
 - Rango de edad: 25 a 40 años.
 - Situación laboral: cuenta con su primer empleo formal estable, con un ingreso mensual regular y verificable.
 - Situación de vivienda: aún no es propietario y evalúa activamente por primera vez un crédito hipotecario.
 - Cultura financiera: tiene poca o ninguna experiencia previa comparando condiciones de crédito hipotecario, periodos de gracia o indicadores de costo efectivo como el TCEA.
 - Comportamiento: investiga de manera informal antes de acercarse a un banco, es sensible al precio y al costo, y valora la transparencia y la independencia frente a una sola entidad financiera.
-- Canales de acceso: llega a través del landing page público como Visitante y se convierte en Usuario Registrado para guardar, comparar y exportar simulaciones.
+- Canales de acceso: llega a través del Landing Page público como Visitante y se convierte en Comprador para guardar, comparar y exportar simulaciones, y para enviar su simulación a una inmobiliaria si así lo decide.
 
-**Segmento secundario: Administrador del producto (Administrador):**
-- Un stakeholder interno (lado del equipo o del negocio) que mantiene actualizados los parámetros base del simulador (tasas de interés de referencia, porcentaje del Bono del Buen Pagador y rangos vigentes de Mivivienda) y monitorea métricas básicas de uso.
-- No es una persona basada en investigación en el mismo sentido que el Comprador; se documenta principalmente para justificar el rol de Administrador y su pantalla mínima de configuración, no como segmento de mercado objetivo.
+**Competidores de referencia** (utilizados para contrastar las alternativas actuales de este segmento): los simuladores hipotecarios de BCP e Interbank, así como el simulador oficial del Fondo Mivivienda / Nuevo Crédito Mivivienda.
+
+### **Segmento 2: Inmobiliarias**
 
 <div style="text-align: justify; line-height: 1.6;">
 
-**Competidores de referencia** (utilizados para contrastar las alternativas actuales del segmento): los simuladores hipotecarios de BCP e Interbank, así como el simulador oficial del Fondo Mivivienda / Nuevo Crédito Mivivienda.
+Es el segmento de negocio de HipoSim. Se compone de dos roles: el Asesor de inmobiliaria, persona principal de este segmento, que atiende a los Compradores que autorizaron compartir su simulación; y el Administrador de la inmobiliaria, un rol secundario que gestiona a los asesores de su propia empresa. HipoSim no vende ni comparte datos de un Comprador sin su consentimiento explícito, conforme a la Ley N.° 29733 de Protección de Datos Personales.
 
-**Fuera de alcance de forma explícita en la segmentación:** asesores financieros, agentes comerciales de los bancos y múltiples entidades financieras como actores distintos; formaban parte de la versión SaaS descartada y no se abordan como segmentos objetivo en el alcance actual.
+</div>
+
+- Perfil: agentes o asesores comerciales de inmobiliarias, agencias o proyectos inmobiliarios que buscan contactar compradores calificados y con una simulación de crédito ya realizada, en lugar de leads fríos sin información financiera.
+- Necesidad: recibir interesados con un nivel de calificación previo (monto financiado, cuota estimada, TCEA) para priorizar su atención comercial.
+- Comportamiento: da seguimiento a los leads recibidos mediante llamadas o mensajes, y registra el estado de cada contacto.
+- Canales de acceso: se registra su inmobiliaria e inicia sesión en la Aplicación Web de HipoSim, exclusiva para este segmento.
+- Este segmento se documenta con un menor nivel de investigación que el Comprador, y se completa con entrevistas a asesores reales durante el desarrollo del proyecto.
+
+**Referencia futura:** el modelo de datos contempla que cada inmobiliaria opere como una organización independiente (multitenant), de forma que los leads y los asesores de una inmobiliaria no sean visibles para otra. La administración de tenants no forma parte del alcance de esta entrega.
+
+### **Rol interno: Administrador de la plataforma**
+
+<div style="text-align: justify; line-height: 1.6;">
+
+No es un segmento de mercado, sino un rol que ejerce el propio equipo de HipoSim: da de alta a las inmobiliarias, mantiene actualizados los parámetros base del simulador (tasas de interés de referencia, porcentaje del Bono del Buen Pagador y rangos vigentes de Mivivienda) y monitorea métricas básicas de uso. Se documenta para justificar el rol de Administrador y su pantalla mínima de configuración, de prioridad baja en esta entrega.
+
+</div>
+
+<div style="text-align: justify; line-height: 1.6;">
+
+**Fuera de alcance de forma explícita en la segmentación:** múltiples bancos o entidades financieras como actores del producto, reasignación de leads entre asesores, comparación de inventario inmobiliario y cualquier forma de puntuación o validación crediticia real (SBS); formaban parte de la versión SaaS descartada o de los mockups iniciales del segmento Inmobiliarias, y no se implementan en el alcance actual.
 
 </div>
