@@ -22,7 +22,7 @@
 ## **3.2. User Stories**
 
 <p style="text-align: justify; line-height: 1.6;">
-  Las User Stories se organizan en épicas y se redactan con el formato "Como... quiero... para...". Cada historia incluye criterios de aceptación escritos en Gherkin (Dado que, Cuando, Entonces), en tiempo presente y sin referencias a la interfaz de usuario. Se incluyen historias para los roles Visitante (Landing Page), Comprador y Usuario Registrado, Asesor de inmobiliaria y Administrador, además de Technical Stories para el rol Developer y Spike Stories para reducir la incertidumbre técnica. La prioridad se expresa como Alta, Media o Baja según el valor para el negocio.
+  Las User Stories se organizan en épicas y se redactan con el formato "Como... quiero... para...". Cada historia incluye criterios de aceptación escritos en Gherkin (Dado que, Cuando, Entonces), en tiempo presente y sin referencias a la interfaz de usuario. Se incluyen historias para los roles Visitante (Landing Page), Comprador, Asesor de inmobiliaria y Administrador de la inmobiliaria, además de Technical Stories para el rol Developer y Spike Stories para reducir la incertidumbre técnica. La prioridad se expresa como Alta, Media o Baja según el valor para el negocio.
 </p>
 
 <p style="text-align: justify; line-height: 1.6;">
@@ -62,11 +62,11 @@
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>EP03</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Usuario Registrado</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comprador</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Media</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">N/A</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Gestión de Escenarios</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como usuario registrado, quiero guardar, comparar y exportar simulaciones, para discutir las opciones con mi familia sin perder los cálculos.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero guardar, comparar y exportar simulaciones, para discutir las opciones con mi familia sin perder los cálculos.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Se completa cuando se cumplen las historias US06, US07 y US08.</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
@@ -85,7 +85,7 @@
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">N/A</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Autenticación y Perfiles</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como usuario, quiero registrarme e iniciar sesión, para acceder de forma segura a las funciones que requieren una cuenta.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Se completa cuando se cumplen las historias US13 y US22.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Se completa cuando se cumplen las historias US13, US26 y US22.</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>EP06</strong></td>
@@ -161,29 +161,29 @@
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US06</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Usuario Registrado</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comprador</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Media</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP03</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Guardar escenario de simulación</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero guardar un escenario de simulación en mi perfil, para no tener que volver a ingresar los datos en futuras sesiones.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero guardar un escenario de simulación en mi perfil, para no tener que volver a ingresar los datos en futuras sesiones.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Guardado exitoso.</strong> Dado que el usuario ha iniciado sesión y tiene una simulación completada; Cuando solicita guardarla asignándole un nombre; Entonces el sistema la almacena en su historial personal.</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US07</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Usuario Registrado</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comprador</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Media</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP03</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparar escenarios guardados</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero comparar entre dos y tres escenarios guardados lado a lado, para decidir qué configuración, por ejemplo el plazo o la cuota inicial, me conviene más.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero comparar entre dos y tres escenarios guardados lado a lado, para decidir qué configuración, por ejemplo el plazo o la cuota inicial, me conviene más.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Comparación de escenarios.</strong> Dado que el usuario tiene al menos dos escenarios guardados; Cuando selecciona entre dos y tres escenarios para compararlos; Entonces el sistema presenta los indicadores en paralelo, resaltando las diferencias en cuota, TCEA y pago total.</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US08</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Usuario Registrado</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comprador</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Media</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP03</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exportar reporte en PDF</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero descargar un reporte en PDF de mis simulaciones o comparativas, para enviárselo a mi pareja o llevarlo al banco.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero descargar un reporte en PDF de mis simulaciones o comparativas, para enviárselo a mi pareja o llevarlo al banco.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Descarga exitosa.</strong> Dado que el usuario visualiza el resultado de una simulación; Cuando solicita exportar el reporte; Entonces el sistema genera un archivo PDF con el resumen, los indicadores y el cronograma.</td>
     </tr>
     <tr style="page-break-inside: avoid;">
@@ -230,6 +230,15 @@
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Registrarse como Comprador</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero registrarme con mi correo electrónico y una contraseña, para acceder a las funciones de guardado, comparación y exportación.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Registro exitoso.</strong> Dado que el Comprador ingresa nombre, correo, celular y contraseña válidos y acepta los Términos y la autorización de tratamiento de datos personales (Ley N° 29733); Cuando envía el registro; Entonces el sistema crea la cuenta y emite un token JWT de sesión.<br><br><strong>Escenario 2: Correo ya registrado.</strong> Dado que el correo ingresado ya tiene una cuenta; Cuando envía el registro; Entonces el sistema rechaza la solicitud e informa que el correo ya está registrado.<br><br><strong>Escenario 3: Términos no aceptados.</strong> Dado que el Comprador no acepta los Términos; Cuando envía el registro; Entonces el sistema no crea la cuenta.</td>
+    </tr>
+    <tr style="page-break-inside: avoid;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US26</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comprador</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Alta</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP05</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Iniciar sesión como Comprador</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero iniciar sesión con mi correo electrónico y mi contraseña, para acceder a mis simulaciones guardadas y a mi historial en cualquier dispositivo.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Inicio de sesión exitoso.</strong> Dado que el Comprador ingresa credenciales válidas; Cuando inicia sesión; Entonces el sistema emite un token JWT y lo redirige a la pantalla de resultados con sus datos.<br><br><strong>Escenario 2: Credenciales inválidas.</strong> Dado que el Comprador ingresa credenciales inválidas; Cuando inicia sesión; Entonces el sistema rechaza el acceso sin indicar cuál de los datos es incorrecto.</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS01</strong></td>
@@ -444,279 +453,276 @@
 ## **3.3. Product Backlog**
 
 <p style="text-align: justify; line-height: 1.6;">
-  El Product Backlog ordena las historias según su valor para el negocio. Las historias del Landing Page se ubican al inicio porque forman parte del primer Sprint, seguidas de las bases técnicas y del simulador; las historias de autenticación y de conexión con inmobiliarias se ubican después de que el simulador entrega valor, y las del Administrador quedan al final. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
+  El Product Backlog completo, con las 36 historias del proyecto, se mantiene en Jira. Esta tabla presenta únicamente las historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial, ordenadas según su valor para el negocio: primero el Landing Page, por ser obligatorio desde el primer sprint, luego las bases técnicas de la API y finalmente el flujo de simulación en la aplicación móvil y el flujo de leads en la aplicación web. Las historias de guardar y comparar escenarios, de exportar PDF, de Administrador y otras funciones adicionales quedan registradas en Jira para sprints posteriores a esta entrega. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
 </p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 16px 0 22px 0; font-size: 9pt; page-break-inside: auto; table-layout: fixed;">
   <thead style="display: table-header-group;">
     <tr style="page-break-inside: avoid;">
       <th style="width: 6%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Orden</th>
-      <th style="width: 10%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">User Story ID</th>
-      <th style="width: 18%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Título</th>
-      <th style="width: 56%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Descripción</th>
-      <th style="width: 10%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Story Points</th>
+      <th style="width: 8%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">User Story ID</th>
+      <th style="width: 20%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Título</th>
+      <th style="width: 32%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Descripción</th>
+      <th style="width: 8%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Story Points</th>
+      <th style="width: 13%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Se evidencia en</th>
+      <th style="width: 13%; background-color: #0E5C63; color: #FFFFFF; border: 1px solid #64748B; padding: 7px; text-align: center; vertical-align: middle; overflow-wrap: anywhere;">Sprint</th>
     </tr>
   </thead>
   <tbody style="page-break-inside: auto;">
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">1</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS04</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS04</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Configurar y publicar el Landing Page</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero desarrollar el Landing Page con HTML5, CSS3 y JavaScript y publicarlo en GitHub Pages con atributos ARIA, para que el sitio esté disponible y sea accesible.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Publicar el Landing Page en GitHub Pages con atributos ARIA.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US14</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US14</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver propuesta de valor</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero ver en la página de inicio qué es HipoSim y en qué se diferencia de los simuladores bancarios, para entender su propuesta antes de simular.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comunicar qué es HipoSim y en qué se diferencia de un simulador bancario.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US15</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US15</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Simular crédito sin registro desde el Landing Page</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero probar un simulador básico indicando el valor de la vivienda, la cuota inicial y el plazo, para obtener una cuota mensual y un TCEA estimados sin registrarme.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Simulador básico sin registro, con Bono del Buen Pagador.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">4</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US16</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US16</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Conocer beneficios estatales</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero conocer el Bono del Buen Pagador, el Bono Mivivienda Sostenible y el Nuevo Crédito Mivivienda, para saber a qué subsidios podría acceder.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Descripción del Bono del Buen Pagador y de los programas Mivivienda.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US17</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US17</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Consultar Términos y Condiciones y Privacidad</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero consultar los Términos y Condiciones y la política de privacidad, para conocer mis derechos y cómo se tratan mis datos personales.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Términos, condiciones y política de privacidad (Ley N.° 29733).</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">6</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US18</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US18</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Consultar preguntas frecuentes</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero consultar preguntas frecuentes sobre el simulador, el TCEA y los beneficios estatales, para resolver mis dudas sin contactar al equipo.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Preguntas frecuentes sobre el simulador y los beneficios.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">7</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US19</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US19</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Contactar al equipo de HipoSim</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero enviar una consulta al equipo de HipoSim, para resolver dudas que no encontré en el sitio.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Formulario de contacto del Landing Page.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">8</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US20</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US20</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Cambiar el idioma del sitio</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero cambiar el idioma del sitio entre español (es_419) e inglés (en_US), para usarlo en el idioma que prefiero.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Selector de idioma espanol (es_419) e ingles (en_US).</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Landing</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">9</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS01</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS01</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Configurar entorno de frontend</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero configurar el entorno de desarrollo con Vue y PrimeVue (tema Material), para asegurar una interfaz modular y responsiva alineada con el Design System definido.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Proyecto Vue con Vite y PrimeVue (tema Material).</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">10</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP03</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP03</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Definir la tecnología de la app móvil nativa</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero comparar las opciones de desarrollo móvil nativo, para elegir la tecnología de la aplicación con el menor riesgo para el tiempo disponible.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparación de tecnologías y ADR de la decisión.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 1 (hecho)</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">11</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP02</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP02</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Validar el port del motor financiero a C#</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero validar el port del motor financiero (método francés, VAN, TIR y TCEA) de Python a C#, para asegurar que los resultados coinciden con los del proyecto original.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Validación del método francés, VAN, TIR y TCEA contra AutoFinance Pro.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">12</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS02</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS02</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Implementar backend y base de datos</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero configurar el backend con ASP.NET Core (C#) y las migraciones en PostgreSQL mediante Entity Framework Core, para asegurar una persistencia robusta y escalable.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Proyecto ASP.NET Core, entidades y migraciones en PostgreSQL.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">13</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS06</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoint de simulación</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero exponer un endpoint REST para calcular una simulación hipotecaria, para que el Landing Page, la web y el móvil compartan el mismo motor de cálculo.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS07</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoints de autenticación</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Registro e inicio de sesión con JWT para Comprador y Asesor.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">14</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS05</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Documentar la API con OpenAPI/Swagger</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero documentar la API con OpenAPI mediante Swagger, para que los equipos de web y móvil conozcan los contratos de cada endpoint.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS06</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoint de simulación</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Endpoint REST del motor financiero compartido por Landing, web y movil.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">15</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US01</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Simular crédito base</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero simular un crédito ingresando el precio de la vivienda y la cuota inicial, para ver mi cuota mensual sin tener que registrarme primero.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS05</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Documentar la API con OpenAPI/Swagger</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Documentación de los contratos de cada endpoint.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">16</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US04</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Visualizar TCEA, VAN y TIR</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero ver el cálculo automático del TCEA, el VAN y la TIR de mi simulación, para conocer el costo real efectivo más allá de la tasa nominal.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">8</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS08</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoints de leads</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Endpoints para enviar, listar y actualizar leads.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">17</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US05</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Aplicar Bono del Buen Pagador</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero aplicar el Bono del Buen Pagador a mi simulación, para ver automáticamente cómo se reduce el monto a financiar si califico.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US13</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Registrarse como Comprador</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Registro del Comprador conectado a la API.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">18</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US02</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver cronograma de pagos</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero visualizar el cronograma de pagos detallado, para entender cómo se distribuye mi cuota entre capital e intereses mes a mes.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US26</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Iniciar sesión como Comprador</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Inicio de sesión del Comprador conectado a la API.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">19</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US13</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Registrarse como Comprador</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero registrarme con mi correo electrónico y una contraseña, para acceder a las funciones de guardado, comparación y exportación.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US01</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Simular crédito base</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Formulario de simulación conectado al endpoint de simulación.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">20</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS07</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoints de autenticación</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero exponer los endpoints de registro e inicio de sesión con JWT, para autenticar a Compradores y Asesores de forma segura.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US04</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Visualizar TCEA, VAN y TIR</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Cálculo automático de indicadores en la pantalla de resultados.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">21</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US06</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Guardar escenario de simulación</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero guardar un escenario de simulación en mi perfil, para no tener que volver a ingresar los datos en futuras sesiones.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US05</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Aplicar Bono del Buen Pagador</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Aplicación del bono sobre el monto a financiar.</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">22</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US07</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparar escenarios guardados</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero comparar entre dos y tres escenarios guardados lado a lado, para decidir qué configuración, por ejemplo el plazo o la cuota inicial, me conviene más.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US02</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver cronograma de pagos</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Cronograma detallado mes a mes.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">23</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP01</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Investigar bibliotecas de generación de PDF en C#</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero investigar bibliotecas de generación de PDF para ASP.NET Core, para determinar cuál es la más adecuada para el reporte de simulación.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US21</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Enviar mi simulación a inmobiliarias con mi consentimiento</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Envío del lead con la autorización explícita del Comprador.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Movil y API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">24</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS03</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Generar reportes PDF desde la API</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero implementar en la API un servicio que genere el reporte de una simulación en PDF, para que las aplicaciones web y móvil descarguen el mismo documento.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US22</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Iniciar sesión como Asesor</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Inicio de sesión del Asesor conectado a la API.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">25</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US08</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exportar reporte en PDF</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Usuario Registrado, quiero descargar un reporte en PDF de mis simulaciones o comparativas, para enviárselo a mi pareja o llevarlo al banco.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US23</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver bandeja de leads</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Bandeja de leads de la inmobiliaria conectada a la API.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">26</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US21</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Enviar mi simulación a inmobiliarias con mi consentimiento</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero elegir enviar mi simulación a inmobiliarias verificadas, para recibir información de proyectos en mi rango presupuestal solo si yo lo autorizo.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US24</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver ficha del lead</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ficha del lead con los datos de la simulación compartida.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">27</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US22</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Iniciar sesión como Asesor</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Asesor de inmobiliaria, quiero iniciar sesión con mis credenciales, para acceder a los interesados de mi inmobiliaria.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
-    </tr>
-    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">28</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS08</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exponer endpoints de leads</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como desarrollador, quiero exponer los endpoints para enviar y gestionar leads, para que el Comprador comparta su simulación y el Asesor le dé seguimiento.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-    </tr>
-    <tr style="page-break-inside: avoid;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">29</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US23</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver bandeja de leads</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Asesor de inmobiliaria, quiero ver la bandeja de leads que autorizaron compartir su simulación, para priorizar a quién contactar.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-    </tr>
-    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">30</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US24</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver ficha del lead</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Asesor de inmobiliaria, quiero ver la ficha de un lead con su simulación, para conocer su capacidad de compra antes de contactarlo.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-    </tr>
-    <tr style="page-break-inside: avoid;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">31</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US25</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US25</strong></td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Gestionar estado y seguimiento del lead</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Asesor de inmobiliaria, quiero cambiar el estado de un lead y registrar notas de mis contactos, para llevar el control de su atención.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
-    </tr>
-    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">32</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US03</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Aplicar periodo de gracia</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero añadir un periodo de gracia, total o parcial, a mi simulación, para ver cómo afecta el pago de mis primeras cuotas y el costo total.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-    </tr>
-    <tr style="page-break-inside: avoid;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">33</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US09</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Actualizar tasas referenciales</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Administrador, quiero actualizar las tasas de interés referenciales (TEA) del sistema, para que las nuevas simulaciones reflejen las condiciones actuales del mercado.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
-    </tr>
-    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">34</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US10</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Configurar rangos Mivivienda</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Administrador, quiero actualizar los topes y valores del programa Mivivienda y del Bono del Buen Pagador, para mantener la exactitud legal de los subsidios estatales calculados.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
-    </tr>
-    <tr style="page-break-inside: avoid;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">35</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US11</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Previsualizar impacto de parámetros</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Administrador, quiero previsualizar cómo afectará un cambio de tasa a una simulación estándar antes de publicarlo, para evitar errores de digitación que afecten al simulador.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
-    </tr>
-    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">36</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US12</strong></td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Historial de auditoría de parámetros</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Administrador, quiero ver un historial completo de quién cambió cada parámetro y cuándo, para mantener la trazabilidad frente a auditorías normativas.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Cambio de estado y registro de notas de seguimiento.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
   </tbody>
 </table>
 
+<p style="text-align: justify; line-height: 1.6;">
+  El Sprint 1 sumó 26 Story Points y ya está implementado y publicado. El Sprint 2, en curso, suma 56 Story Points sobre la API, la aplicación móvil del Comprador y la aplicación web del Asesor; su alcance final se ajusta durante el Sprint Planning según la capacidad real del equipo, priorizando el flujo completo (simular, enviar la simulación y darle seguimiento como Asesor) sobre funciones adicionales como guardar o comparar escenarios y exportar en PDF, que quedan en el Backlog de Jira para una siguiente entrega.
+</p>
+
 <div style="margin: 16px 0; padding: 12px 16px; background-color: #F8FAFC; border-left: 5px solid #0E5C63; page-break-inside: avoid;">
   <strong>Product Backlog en Jira</strong>
-  <p style="text-align: justify; margin: 8px 0 4px 0;">Captura del Product Backlog en Jira: <em>pendiente de agregar</em> (<code>../assets/07-chapter-3/product-backlog-jira.png</code>).</p>
-  <p style="text-align: justify; margin: 4px 0;">URL pública del Product Backlog: <em>pendiente de agregar</em>.</p>
+  <p style="text-align: justify; margin: 8px 0 4px 0;">Captura del Product Backlog completo en Jira: <em>pendiente de agregar</em> (<code>../assets/07-chapter-3/product-backlog-jira.png</code>).</p>
+  <p style="text-align: justify; margin: 4px 0;">URL público del Product Backlog: <em>pendiente de agregar</em>.</p>
 </div>
 
 ## **3.4. Impact Mapping**
