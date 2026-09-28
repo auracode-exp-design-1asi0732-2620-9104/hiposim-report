@@ -189,7 +189,7 @@ La implementación se organiza mediante el Product Backlog del Capítulo III, ge
 
 <div style="text-align:justify; line-height:1.6;">
 
-El Product Backlog del Capítulo III se gestiona en Jira, donde cada historia se descompone en tasks. El Sprint 1 concentra el Landing Page y las bases del frontend web y de la aplicación móvil. Los Sprints 2 a 4 se planifican de forma tentativa y se ajustarán según el resultado de cada Sprint Review.
+El Product Backlog completo, con las 36 historias del proyecto, se gestiona en Jira. Este informe presenta únicamente los Sprints con historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial. El Sprint 1 concentró el Landing Page y las bases del frontend web y de la aplicación móvil, y ya está implementado. El Sprint 2 concentra la API, la aplicación móvil del Comprador y la aplicación web del Asesor de inmobiliaria, que son los dos productos de HipoSim junto con el Landing Page. Las demás historias del backlog, como guardar y comparar escenarios, exportar en PDF y la administración de parámetros, quedan registradas en Jira para una siguiente entrega.
 
 </div>
 
@@ -226,16 +226,44 @@ El Product Backlog del Capítulo III se gestiona en Jira, donde cada historia se
 
 El responsable y el estado de cada task se registran en Jira.
 
-#### **Sprints 2 to 4 - Tentative Planning**
+#### **Sprint 2 - API, Buyer Mobile App and Advisor Web App**
 
-| Sprint | Story Points | Elementos | Enfoque |
-|:--|:-:|:--|:--|
-| Sprint 2 | 33 | SP02, TS02, TS06, TS05, US01, US04, US05 | Backend y base de datos, endpoint de simulación documentado, simulación con indicadores y Bono del Buen Pagador. |
-| Sprint 3 | 29 | US02, US13, TS07, US06, US07, SP01, TS03, US08 | Cronograma, autenticación, escenarios guardados y reporte PDF. |
-| Sprint 4 | 26 | US21, US22, TS08, US23, US24, US25 | Conexión opcional con inmobiliarias y portal del Asesor. |
-| Sin Sprint asignado | 21 | US03, US09, US10, US11, US12 | Periodo de gracia y administración de parámetros, con prioridad baja. |
+| Campo | Detalle |
+|:--|:--|
+| Sprint | Sprint 2 |
+| Sprint Goal | Nuestro enfoque es implementar la API con el motor financiero, la autenticación y los leads, y conectar a ella la aplicación móvil del Comprador y la aplicación web del Asesor de inmobiliaria. Creemos que entrega el flujo completo del producto: un Comprador simula, envía su simulación con su consentimiento, y un Asesor la recibe y le da seguimiento. Se confirmará cuando ese flujo funcione de punta a punta entre el móvil y la web, sobre datos reales de la API. |
+| Velocity | 56 Story Points (estimación del equipo; se ajusta en el Sprint Planning según la capacidad real y priorizando el flujo completo sobre funciones adicionales). |
+| Suma de Story Points | **56** |
+| Elementos planificados | SP02, TS02, TS07, TS06, TS05, TS08, US13, US26, US01, US04, US05, US02, US21, US22, US23, US24, US25. |
+| Fecha, hora, ubicación y asistentes | *Pendiente: completar con el registro real del Sprint Planning.* |
 
-La implementación del backend y de la base de datos (TS02) no forma parte de esta entrega; se planifica a partir del Sprint 2.
+**Sprint Backlog 2**
+
+> Captura del Board del Sprint 2 en Jira: _pendiente de agregar_.
+>
+> URL público del Board: _pendiente de agregar_.
+
+| ID | Historia o elemento | SP | Se evidencia en | Work-Items / Tasks |
+|:---:|:--|---:|:--|:--|
+| SP02 | Validar el port del motor financiero a C# | 3 | API | 1. Portar las fórmulas de amortización, VAN, TIR y TCEA a C#<br>2. Ejecutar los casos de prueba de AutoFinance Pro y documentar las diferencias |
+| TS02 | Implementar backend y base de datos | 5 | API | 1. Crear la solución ASP.NET Core<br>2. Definir las entidades (Usuario, Simulación, Inmobiliaria, Lead) y el DbContext<br>3. Configurar PostgreSQL y ejecutar las migraciones |
+| TS07 | Exponer endpoints de autenticación | 3 | API | 1. Implementar el registro y el inicio de sesión con JWT<br>2. Diferenciar el rol Comprador del rol Asesor en el token |
+| TS06 | Exponer endpoint de simulación | 5 | API | 1. Definir el contrato del endpoint y sus validaciones<br>2. Implementar el endpoint sobre el motor financiero<br>3. Escribir pruebas unitarias y de integración |
+| TS05 | Documentar la API con OpenAPI/Swagger | 2 | API | 1. Configurar Swagger en el proyecto<br>2. Anotar los endpoints con sus esquemas de solicitud y respuesta |
+| TS08 | Exponer endpoints de leads | 5 | API | 1. Implementar el endpoint para enviar un lead con consentimiento<br>2. Implementar la bandeja y la ficha por inmobiliaria<br>3. Implementar el cambio de estado y las notas de seguimiento |
+| US13 | Registrarse como Comprador | 2 | Móvil | 1. Conectar el formulario de registro existente al endpoint de registro |
+| US26 | Iniciar sesión como Comprador | 2 | Móvil | 1. Implementar la pantalla de inicio de sesión<br>2. Conectarla al endpoint de autenticación |
+| US01 | Simular crédito base | 5 | Móvil | 1. Diseñar el formulario de simulación<br>2. Conectarlo con el endpoint de simulación<br>3. Mostrar la cuota mensual y los mensajes de validación |
+| US04 | Visualizar TCEA, VAN y TIR | 5 | Móvil | 1. Conectar la pantalla de resultados existente a la respuesta real de la API<br>2. Verificar los indicadores contra los casos de prueba |
+| US05 | Aplicar Bono del Buen Pagador | 3 | Móvil | 1. Conectar la opción del bono al cálculo real de la API |
+| US02 | Ver cronograma de pagos | 3 | Móvil | 1. Completar la vista de cronograma con el detalle mensual que devuelve la API |
+| US21 | Enviar mi simulación a inmobiliarias con mi consentimiento | 3 | Móvil y API | 1. Conectar el botón de enviar cotización al endpoint de leads |
+| US22 | Iniciar sesión como Asesor | 2 | Web | 1. Conectar el login existente al endpoint de autenticación |
+| US23 | Ver bandeja de leads | 3 | Web | 1. Conectar la bandeja de leads existente a los datos reales de la API |
+| US24 | Ver ficha del lead | 3 | Web | 1. Conectar la ficha del lead existente a los datos reales de la API |
+| US25 | Gestionar estado y seguimiento del lead | 2 | Web | 1. Conectar el cambio de estado y las notas al endpoint correspondiente |
+
+El responsable y el estado de cada task se registran en Jira. El Sprint 2 reutiliza la interfaz ya construida en los repositorios de la aplicación web y de la aplicación móvil, y su trabajo principal es implementar la API y conectar ambas aplicaciones a ella. Las historias de guardar y comparar escenarios (US06, US07), de exportar en PDF (SP01, TS03, US08), el periodo de gracia (US03) y la administración de parámetros (US09 a US12) quedan en el Backlog de Jira para una siguiente entrega.
 
 ### **5.2.2. Implemented Landing Page Evidence**
 
@@ -268,34 +296,31 @@ El Landing Page comunica la propuesta independiente y transparente de HipoSim e 
 
 <div style="text-align:justify; line-height:1.6;">
 
-La Aplicación Web responsiva se diseña en dos frentes: el recorrido del Comprador (datos del cliente, vivienda, parámetros del crédito y resultados) y el portal del Asesor de inmobiliaria, donde se gestionan los leads que el Comprador autorizó compartir. Para esta entrega se presentan los mockups de la bandeja de leads y de la ficha del lead (Capítulo IV) y la configuración del entorno (TS01); la implementación funcional continúa a partir del Sprint 2.
+La Aplicación Web es el portal del Asesor de inmobiliaria: gestiona los leads que el Comprador autorizó compartir desde el Landing Page o la aplicación móvil. Se construye con Vue 3, Vite, PrimeVue (tema Material), Pinia y axios. Esta entrega incluye el inicio de sesión y el registro de la inmobiliaria, la bandeja de leads, la ficha del lead, un panel de resumen y las secciones de notificaciones y de configuración, todas con datos de ejemplo. Para el Sprint 2, el trabajo consiste en conectar estas pantallas a la API real; los módulos que no se conecten a tiempo se marcan como "Próximamente" en la interfaz y no se presentan como evidencia.
 
 </div>
 
 | Módulo | Requerimientos | Evidencia esperada |
 |:--|:--|:--|
-| Autenticación | US13, US22 | Registro e inicio de sesión de Comprador y Asesor, y rutas protegidas por rol. |
-| Asistente de simulación | US01, US03 | Validación, cuatro pasos, monto, plazo y gracia. |
-| Resultados financieros | US02, US04, US05 | Cuota, cronograma, TCEA, VAN, TIR y BBP. |
-| Historial | US06 | Lista de simulaciones y filtros de fecha y tipo. |
-| Comparación | US07 | Dos o tres escenarios en paralelo. |
-| Reportes | US08, TS03 | PDF con indicadores y cronograma. |
-| Conexión con inmobiliarias | US21 | Envío de la simulación solo con el consentimiento del Comprador. |
-| Portal del Asesor | US23, US24, US25 | Bandeja de leads, ficha del lead, cambio de estado y notas de seguimiento. |
-| Administración | US09-US12 | Parámetros, previsualización e historial (prioridad baja, etapa posterior). |
+| Autenticación | US22 | Inicio de sesión del Asesor conectado a la API, con rutas protegidas. |
+| Bandeja de leads | US23 | Lista de leads de la inmobiliaria, con nombre, simulación, estado y fecha. |
+| Ficha del lead | US24 | Datos de contacto, simulación compartida e historial de seguimiento. |
+| Estado y seguimiento | US25 | Cambio de estado del lead y registro de notas. |
+| Registro de la inmobiliaria | Sin historia formal en esta entrega | Pantalla existente; las cuentas de prueba las provee el equipo mientras se define su alcance. |
+| Panel, notificaciones y configuración | Sin historia en esta entrega | Pantallas existentes, mostradas como "Próximamente" si no llegan a conectarse a la API. |
 
 | Evidencia | Registro requerido |
 |:--|:--|
-| Repositorio | *PENDIENTE.* |
-| Despliegue | *PENDIENTE* |
+| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp) |
+| Despliegue | Sin despliegue en esta entrega; se ejecuta en local desde el código fuente. |
 | Commits/Pull Requests | *Pendiente: identificadores por Sprint.* |
-| Capturas | *Pendiente: mockups de la bandeja y la ficha del lead (Capítulo IV) y pantallas implementadas por Sprint.* |
+| Capturas | *Pendiente: pantallas conectadas a la API real, por historia.* |
 
 ### **5.2.4. Implemented Native-Mobile Application Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La aplicación móvil Android nativa se desarrolla con Kotlin, Jetpack Compose y Material 3, con Hilt, Navigation Compose y ViewModel con StateFlow (decisión documentada en el ADR 0001, spike SP03). Esta entrega incluye la pantalla de Resultados del Crédito (cuota, TCEA, Bono del Buen Pagador, composición de la primera cuota y cronograma inicial, con datos de ejemplo), el Registro Contextual con consentimiento obligatorio de la Ley N° 29733, una sesión simulada en memoria y la hoja para enviar la cotización a inmobiliarias, que exige registro. Aún no hay backend, generación de PDF, inicio de sesión propio, historial ni comparación de escenarios, que se incorporan en los Sprints siguientes. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
+La aplicación móvil Android nativa es el producto del Comprador: se desarrolla con Kotlin, Jetpack Compose y Material 3, con Hilt, Navigation Compose y ViewModel con StateFlow (decisión documentada en el ADR 0001, spike SP03). El Sprint 1 entregó las pantallas de Resultados del Crédito y de Registro Contextual, con datos de ejemplo y una sesión simulada en memoria. El Sprint 2 conecta ambas pantallas a la API real, agrega el formulario de simulación y el inicio de sesión, y habilita el envío de la simulación a una inmobiliaria con el consentimiento del Comprador (Ley N° 29733). Aún no hay generación de PDF, historial ni comparación de escenarios, que se incorporan en un sprint posterior a esta entrega. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
 
 </div>
 
@@ -304,7 +329,7 @@ La aplicación móvil Android nativa se desarrolla con Kotlin, Jetpack Compose y
 | Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) (rama `develop`, integrada mediante el Pull Request #1) |
 | Distribución | Sin despliegue en esta entrega; se ejecuta en emulador o dispositivo Android desde el código fuente. |
 | Plataformas | Android (minSdk 26, targetSdk 36); iOS según la decisión del spike SP03. |
-| Historias relacionadas | SP03 (Sprint 1) y avance de US13 y US21 (previstas para Sprints posteriores). |
+| Historias relacionadas | SP03 (Sprint 1, hecho); US13, US26, US01, US04, US05, US02 y US21 (Sprint 2, en conexión con la API). |
 | Flujos | Resultados de la simulación, registro contextual, sesión simulada y bloqueo de la conexión con inmobiliarias hasta registrarse. |
 | Calidad | ktlint y lint sin errores, 35 pruebas unitarias, 4 pruebas de interfaz en emulador y flujo de integración continua en GitHub Actions. |
 | Idioma | Textos en recursos, inglés por defecto y español (es-419). |
@@ -319,21 +344,21 @@ La aplicación móvil Android nativa se desarrolla con Kotlin, Jetpack Compose y
 
 <div style="text-align:justify; line-height:1.6;">
 
-HipoSim utiliza una API RESTful con ASP.NET Core y PostgreSQL mediante Entity Framework Core. La API centraliza autenticación, simulaciones, escenarios, reportes, beneficios, leads y parámetros administrativos. El Financial Engine aísla amortización francesa, conversión de tasas, periodos de gracia, VAN, TIR y TCEA; el Benefits Engine evalúa BBP y Nuevo Crédito Mivivienda. La implementación del backend y de la base de datos (TS02) está planificada para el Sprint 2 y no forma parte de esta entrega.
+HipoSim utiliza una API RESTful con ASP.NET Core y PostgreSQL mediante Entity Framework Core. Para esta entrega (Sprint 2), la API centraliza autenticación, simulaciones y leads, que son los componentes que consumen la aplicación móvil y la aplicación web. Escenarios, reportes y parámetros administrativos quedan planificados para una siguiente entrega. El Financial Engine aísla amortización francesa, conversión de tasas, periodos de gracia, VAN, TIR y TCEA, y su port desde Python se valida contra AutoFinance Pro (SP02); el Benefits Engine evalúa el Bono del Buen Pagador.
 
 </div>
 
-| Componente | Responsabilidad |
-|:--|:--|
-| `AuthController` / `AuthService` | Registrar y autenticar Compradores, Asesores y Administradores; aplicar autorización por roles. |
-| `SimulationController` / `SimulationService` | Validar entradas, invocar motores y persistir resultados. |
-| `ScenarioController` / `ScenarioService` | Guardar, recuperar y comparar escenarios. |
-| `ReportController` / `ReportGenerationService` | Crear PDF y enlaces de solo lectura. |
-| `LeadController` / `LeadService` | Registrar los leads autorizados por el Comprador y permitir al Asesor consultarlos, cambiar su estado y registrar notas de seguimiento. |
-| `AdminController` / `AdminParameterService` | Gestionar tasas, BBP, rangos, métricas e historial. |
-| `FinancialEngine` | Calcular amortización, tasas, gracia, VAN, TIR y TCEA. |
-| `BenefitsEngine` | Determinar elegibilidad y recalcular el monto financiado. |
-| Repositorios | Persistir agregados en PostgreSQL. |
+| Componente | Responsabilidad | Alcance |
+|:--|:--|:--|
+| `AuthController` / `AuthService` | Registrar y autenticar Compradores y Asesores; aplicar autorización por roles. | Esta entrega |
+| `SimulationController` / `SimulationService` | Validar entradas, invocar el motor financiero y devolver el resultado. | Esta entrega |
+| `LeadController` / `LeadService` | Registrar los leads autorizados por el Comprador y permitir al Asesor consultarlos, cambiar su estado y registrar notas de seguimiento. | Esta entrega |
+| `FinancialEngine` | Calcular amortización, tasas, gracia, VAN, TIR y TCEA. | Esta entrega |
+| `BenefitsEngine` | Determinar elegibilidad y recalcular el monto financiado. | Esta entrega |
+| Repositorios | Persistir agregados en PostgreSQL. | Esta entrega |
+| `ScenarioController` / `ScenarioService` | Guardar, recuperar y comparar escenarios. | Sprint posterior |
+| `ReportController` / `ReportGenerationService` | Crear PDF y enlaces de solo lectura. | Sprint posterior |
+| `AdminController` / `AdminParameterService` | Gestionar tasas, BBP, rangos, métricas e historial. | Sprint posterior |
 
 | Evidencia | Registro requerido |
 |:--|:--|
@@ -457,8 +482,8 @@ El video debe comunicar el valor de HipoSim de forma breve y demostrable. Debe e
 3. **Landing Page:** mostrar información, beneficios, términos y **Simular ahora**.
 4. **Simulación:** ingresar vivienda, cuota inicial y plazo, y aplicar el Bono del Buen Pagador.
 5. **Interpretación:** explicar cronograma, TCEA y elegibilidad al BBP en lenguaje sencillo.
-6. **Comprador registrado y conexión opcional con inmobiliarias:** mostrar los mockups Android de registro y resultados, y el envío de la simulación solo con consentimiento.
-7. **Portal del Asesor y trazabilidad:** mostrar los mockups web de la bandeja y la ficha del lead, y el Product Backlog y el Sprint 1 en Jira.
+6. **Comprador registrado y conexión opcional con inmobiliarias:** mostrar la aplicación móvil Android con el registro, el inicio de sesión, los resultados y el envío de la simulación solo con consentimiento.
+7. **Portal del Asesor y trazabilidad:** mostrar la aplicación web con el inicio de sesión, la bandeja y la ficha del lead, y el Product Backlog y los Sprints 1 y 2 en Jira.
 8. **Cierre:** aclarar que HipoSim informa, pero no sustituye la evaluación formal del banco.
 
 | Campo | Registro |
