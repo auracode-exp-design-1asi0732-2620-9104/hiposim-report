@@ -196,39 +196,39 @@ Preguntas Específicas
 
 8. ¿Le interesaría guardar, comparar o exportar sus simulaciones?
 
-## Segmento 2: Administrador de producto:
+## Segmento 2: Inmobiliarias:
 
-Preguntas personales
+Preguntas Personales
 
-1. ¿Cuál es su nombre, edad y cargo dentro del equipo o la organización?
+1. ¿Cuál es su nombre, edad y distrito de residencia?
 
-2. ¿Cuál sería su rol respecto al mantenimiento de tasas y parámetros del producto?
+2. ¿En qué inmobiliaria, agencia o proyecto trabaja y cuál es su cargo?
 
-3. ¿Qué fuentes usa hoy para obtener esa información: SBS, bancos, Fondo Mivivienda u otra?
+3. ¿Hace cuánto tiempo trabaja como asesor inmobiliario?
 
-4. ¿Con qué frecuencia necesitaría actualizar estos datos?
+4. ¿Qué tipo de viviendas ofrece principalmente: rango de precios, proyectos Mivivienda u otros?
 
-5. ¿Qué herramienta o dispositivo usa con más frecuencia para esta tarea?
+5. ¿Qué dispositivo y herramientas usa con más frecuencia para gestionar a sus clientes: Excel, CRM, WhatsApp u otro?
 
-6. ¿Qué parte de este proceso le genera mayor dificultad?
+6. ¿Qué parte de su trabajo con clientes le genera mayor dificultad o frustración?
 
-Preguntas Específicas
+Preguntas Específicas 
 
-1. ¿Qué parámetros necesita mantener actualizados: tasas referenciales, porcentaje del Bono del Buen Pagador, rangos Mivivienda u otros?
+1. ¿Cómo le llegan hoy los clientes interesados y qué información trae cada uno?
 
-2. ¿Qué tan seguido cambian estos valores y qué tan rápido deberían reflejarse en el sistema?
+2. ¿Con qué frecuencia un interesado resulta no calificar para un crédito? ¿En qué momento se da cuenta?
 
-3. ¿Qué riesgo representa que un valor quede desactualizado?
+3. ¿Qué datos financieros le gustaría conocer antes del primer contacto: monto financiado, cuota estimada, TCEA o beneficios estatales aplicables?
 
-4. ¿Qué tan simple le resultaría actualizar estos valores desde un panel de administración?
+4. ¿Cómo decide a qué clientes atender primero?
 
-5. ¿Qué métricas de uso le interesaría monitorear, como simulaciones realizadas o tasa de conversión?
+5. ¿Cómo da seguimiento a cada cliente y registra el estado de cada contacto?
 
-6. ¿Qué nivel de acceso o permisos considera necesario para realizar estas tareas de forma segura?
+6. ¿Qué valor tendría para usted recibir solo clientes que autorizaron compartir su simulación? ¿Cambiaría su forma de contactarlos?
 
-7. ¿Confía en que los cambios que realice se reflejarán correctamente y a tiempo en el simulador?
+7. ¿Quién administra a los asesores en su empresa y qué debería poder controlar desde una plataforma?
 
-8. ¿Qué funcionalidad le facilitaría esta tarea, como alertas de cambio de tasas o un historial de modificaciones?
+8. ¿Qué funcionalidad le facilitaría más su trabajo: ver el detalle de la simulación, filtrar clientes, registrar el estado del contacto o recibir notificaciones de nuevos interesados?
 
 
 ### **2.2.2. Interview Recording**
@@ -394,7 +394,7 @@ Preguntas Específicas
     </tbody>
 </table>
 
-# Segmento 2: Administrador de Producto
+# Segmento 2: Inmobiliarias
 
 <table>
     <colgroup></colgroup>
@@ -445,7 +445,6 @@ Preguntas Específicas
         <tr>
             <td>Resumen</td>
             <td>
-                Carlos Mendoza Ríos (50 años) es administrador de productos digitales, responsable de centralizar y supervisar la información que alimenta el simulador: identifica cambios en tasas y condiciones de programas estatales, actualiza los datos y verifica que se apliquen correctamente. Usa como fuentes la SBS, las páginas oficiales de los bancos y el Fondo Mivivienda/Ministerio de Vivienda, revisando la información semanalmente pese a la actual estabilidad de tasas. Trabaja principalmente desde su laptop corporativa, con acceso a paneles de administración, tablas y documentos oficiales. Su mayor dificultad no es el cambio del dato en sí, sino verificar que la fuente sea oficial y confiable, que el valor corresponda al tipo de crédito y fecha correctos, e interpretar lenguaje técnico o normativo (a veces requiere apoyo legal). Entre los parámetros que mantiene están las tasas de interés (nominal y efectiva), los porcentajes y límites del Bono del Buen Pagador, los rangos de vivienda para el Nuevo Crédito Mivivienda, los montos de financiamiento, la cuota inicial mínima, los plazos, periodos de gracia, costos administrativos, seguros y comisiones. Ve como principal riesgo de un dato desactualizado que el usuario obtenga una simulación incorrecta, pierda confianza en la herramienta, o que se genere un riesgo reputacional y fuga de clientes. Espera que un panel de administración lo guíe en un proceso controlado (parámetros por categoría, historial de cada valor, vista previa del impacto en una simulación de ejemplo, validaciones de formato/rango, aprobación para cambios críticos), y le interesa monitorear métricas como simulaciones completadas, tasa de conversión hacia guardar/exportar/compartir, parámetros más usados y abandono por etapa. Propone niveles de acceso diferenciados (consulta, editor, aprobador) y solo confiaría en el sistema si cuenta con confirmación detallada, una simulación de prueba tras cada actualización y opción de reversión rápida. La funcionalidad que más le facilitaría el trabajo es un centro de administración con alertas de cambios en fuentes oficiales y un historial completo de modificaciones con opción de comparar y restaurar versiones.
             </td>
         </tr>
     </tbody>
