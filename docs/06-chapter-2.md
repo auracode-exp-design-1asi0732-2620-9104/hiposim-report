@@ -406,30 +406,30 @@ Preguntas Específicas
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>Carlos</td>
+            <td>Juliana</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td>Mendoza Ríos</td>
+            <td>Paucan Alburqueque</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td>50</td>
+            <td>52</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td>San Miguel</td>
+            <td>Miraflores</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/06-chapter-2/carlos-mendoza-entrevista.png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/juliana-paucan-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAKtbbSWlxbTasU9NmG1xyzAQXK_8J5hF1RC25yCku2iHo?e=sgcwsZ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQC7z6bBUthnRZMrOohhLHtrATYp7gnwS0OgZz87q1-F__k?e=weynr2&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
                 Entrevista #1 - segmento 2
             </a>
             </td>
@@ -440,11 +440,12 @@ Preguntas Específicas
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td>15:32</td>
+            <td>25:05</td>
         </tr>
         <tr>
             <td>Resumen</td>
             <td>
+                Juliana trabajó hace menos de un año como ejecutiva comercial en RE/MAX Perú, como agente inmobiliaria independiente sin contrato ni sueldo fijo, y dejó el rubro hace unos tres meses. Se dedicaba al alquiler y venta de departamentos en Miraflores, San Isidro, San Borja y Santa Catalina. Gestionaba a sus clientes mediante redes sociales, WhatsApp, llamadas y la base de datos de RE/MAX, cuyo acceso tiene un costo mensual para el agente, además de portales como Urbania. La captación era mayormente activa: mapeo de zonas, búsqueda de letreros de venta o alquiler sin inmobiliaria, contactos personales y recomendaciones de clientes anteriores; señaló la falta de organización como su principal dificultad. Antes de avanzar con un interesado verificaba toda su información financiera: en alquiler aplicaba un filtro minucioso (historial en Infocorp/SBS mediante la plataforma de RE/MAX, boletas e ingresos al menos 30% superiores al alquiler), mientras que en venta confirmaba que el comprador ya tuviera su crédito hipotecario en trámite, ya que el pago debe estar listo a la firma de la minuta. El seguimiento lo realizaba con llamadas y mensajes constantes, fijando fechas límite y manteniendo tres o cuatro alternativas por inmueble ante posibles desistimientos. Su comisión era de 3% a 5% en ventas y el primer mes de alquiler. Consideró que recibir clientes que autorizaron compartir su simulación no cambiaría su forma de contactarlos, pues cada gestión se valida con el broker de la oficina con asesoría legal. En RE/MAX, cada oficina opera de forma independiente bajo su propio broker, quien asesora y capacita a los agentes. Entre las funcionalidades propuestas, priorizó recibir notificaciones de nuevos interesados.
             </td>
         </tr>
     </tbody>
