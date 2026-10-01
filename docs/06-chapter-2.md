@@ -637,7 +637,7 @@ En esta sección se presentan los User Personas definidos para HipoSim a partir 
 
  <img src="../assets/06-chapter-2/user-persona-segmento-1.png">
 
-### Segmento 2: Administrador de Producto
+### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/user-persona-segmento-2.png">
 
@@ -684,7 +684,7 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 <img src="../assets/06-chapter-2/journey-mapping-segmento-1.png">
 
-### Segmento 2: Administrador de Producto
+### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/journey-mapping-segmento-2.png">
 
@@ -694,7 +694,7 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 <img src="../assets/06-chapter-2/empathy-map-segmento-1.png">
 
-### Segmento 2: Administrador de Producto
+### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/empathy-map-segmento-2.png">
 
@@ -704,7 +704,7 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 <img src="../assets/06-chapter-2/as-is-scenario-segmento-1.png">
 
-### Segmento 2: Administrador de Producto
+### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/as-is-scenario-segmento-2.jpg">
 
