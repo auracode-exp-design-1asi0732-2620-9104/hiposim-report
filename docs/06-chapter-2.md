@@ -462,45 +462,45 @@ Preguntas Específicas
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td></td>
+            <td>Ricardo</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td></td>
+            <td>Huamán Torres</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td></td>
+            <td>36</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td></td>
+            <td>Jesús María</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/img/chapter-ii/ricardo-huaman-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQC3XxibKa8FRYeFW8RdpwIJAbsCVOepUYkQBw9wABSRVFg?e=GWH2fC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #2 - segmento 2
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>00:00</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>15:17</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>Ricardo es asesor comercial desde hace cinco años en una inmobiliaria que desarrolla proyectos multifamiliares en Lima Centro y Lima Norte, donde atiende la sala de ventas y acompaña al cliente hasta la firma de la minuta. Ofrece departamentos de dos y tres dormitorios de entre 280 y 420 mil soles, varios de ellos dentro del Nuevo Crédito Mivivienda, por lo que la mayoría de sus clientes son compradores de primera vivienda. Gestiona a sus clientes principalmente desde el celular mediante WhatsApp Business; aunque la empresa cuenta con un CRM, suele registrar la información en un Excel propio o en notas del celular por falta de tiempo. Su mayor frustración son los leads fríos: interesados que dejan sus datos en formularios, no responden o no saben cuánto les puede financiar el banco. Los clientes le llegan por campañas en redes sociales, portales inmobiliarios, visitas a la sala de ventas y referidos, casi siempre sin datos financieros. Estima que cuatro o cinco de cada diez interesados no califican o no están listos, y muchas veces se entera recién cuando el banco evalúa al cliente, incluso después de la separación del inmueble. Antes del primer contacto le gustaría conocer el monto financiable, la cuota inicial disponible, la cuota estimada y si el cliente califica para el Bono del Buen Pagador; considera el TCEA solo como referencia. Hoy prioriza a los clientes a criterio propio, según si visitaron la sala, tienen precalificación bancaria o responden rápido. Da seguimiento por llamadas y WhatsApp, y registra estados como nuevo, contactado, visitó, separó, en evaluación bancaria y cerrado o perdido, aunque admite que los actualiza de forma irregular y pierde historial. Valora recibir solo clientes que autorizaron compartir su simulación, porque mejora el primer contacto y le permite ofrecer proyectos acordes a su capacidad, siempre que la simulación use tasas actualizadas y el consentimiento quede claro conforme a la ley de protección de datos personales. En su empresa, una jefa comercial coordina a seis asesores, asigna los leads y solicita reportes; desde una plataforma debería poder registrar o dar de baja asesores, ver la cartera y el estado de cada uno, y asegurar que cada asesor vea solo sus propios clientes. Prioriza ver el detalle de la simulación, seguido de las notificaciones de nuevos interesados, y pide que el registro del estado del contacto sea rápido y desde el celular.</td>
         </tr>
     </tbody>
 </table>
