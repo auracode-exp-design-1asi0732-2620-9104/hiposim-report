@@ -660,22 +660,21 @@ La matriz de tareas de usuario permite identificar, para cada segmento, las prin
 | 9 | Consultar y decidir junto a su pareja o familia | Media | Alta |
 | 10 | Acercarse formalmente a un banco a solicitar el crédito | Baja | Alta |
 
-#### Segmento 2: Administrador
+#### Segmento 2: Inmobiliarias
 
 | # | Tarea | Frecuencia | Importancia |
 |---|-------|------------|-------------|
-| 1 | Consultar fuentes oficiales (SBS, Fondo Mivivienda/Ministerio de Vivienda) | Alta | Alta |
-| 2 | Validar que una fuente sea oficial, vigente y aplicable al tipo de crédito correspondiente | Alta | Alta |
-| 3 | Actualizar tasas de interés (nominal/efectiva) en el sistema | Media | Alta |
-| 4 | Actualizar porcentajes y rangos del Bono del Buen Pagador / Nuevo Crédito Mivivienda | Baja | Alta |
-| 5 | Registrar un cambio en el panel (nuevo valor, fecha de vigencia, documento de respaldo, observación) | Media | Alta |
-| 6 | Previsualizar el impacto de un cambio en una simulación de ejemplo antes de publicarlo | Media | Alta |
-| 7 | Aprobar o rechazar un cambio propuesto por otro editor | Media | Alta |
-| 8 | Revisar el historial de modificaciones de un parámetro | Media | Media |
-| 9 | Revertir un cambio publicado en caso de error | Baja | Alta |
-| 10 | Monitorear métricas de uso del simulador (simulaciones realizadas, conversión, abandono) | Media | Media |
-| 11 | Atender alertas de cambios normativos o de fuentes oficiales | Media | Alta |
-| 12 | Exportar el historial de cambios para fines de auditoría | Baja | Media |
+| 1 | Captar nuevos interesados (campañas en redes sociales, portales inmobiliarios, referidos, mapeo de zonas) | Alta | Alta |
+| 2 | Realizar el primer contacto con un nuevo interesado por llamada o WhatsApp | Alta | Alta |
+| 3 | Indagar la capacidad financiera del interesado (ingresos, cuota inicial, monto que podría financiar) | Alta | Alta |
+| 4 | Priorizar a qué interesados atender primero | Alta | Alta |
+| 5 | Verificar si el interesado califica para el Bono del Buen Pagador o el Nuevo Crédito Mivivienda | Media | Alta |
+| 6 | Presentar opciones de vivienda acordes a la capacidad del cliente (cotizaciones, visitas al piloto o inmueble) | Media | Alta |
+| 7 | Dar seguimiento a cada cliente mediante llamadas y mensajes | Alta | Alta |
+| 8 | Registrar y actualizar el estado de cada contacto (CRM, Excel o notas del celular) | Media | Media |
+| 9 | Confirmar el avance de la evaluación crediticia del cliente con el banco | Media | Alta |
+| 10 | Elaborar reportes de avance para el broker o jefe comercial | Baja | Media |
+| 11 | Coordinar la separación del inmueble y la firma de la minuta | Baja | Alta |
 
 ### **2.3.3. User Journey Mapping**
 
