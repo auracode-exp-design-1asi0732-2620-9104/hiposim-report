@@ -351,45 +351,46 @@ Preguntas Específicas
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td></td>
+            <td>Jack</td>
         </tr>
         <tr>
             <td>Apellidos</td>
-            <td></td>
+            <td>Daga</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td></td>
+            <td>32</td>
         </tr>
         <tr>
             <td>Distrito</td>
-            <td></td>
+            <td>Surco</td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/entrevista-jack-daga.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://drive.google.com/file/d/1pg9zZ18wrHPP4SKXrtPEQ-oGWhUn8r4F/view?usp=share_link" target="_blank">
+                Entrevista Jack Daga
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>00:00</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>09:49</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>La entrevista con Jack Daga, de 32 años, ingeniero de sistemas residente en Surco, permitió identificar las principales necesidades de una persona que se encuentra evaluando comprar su primera vivienda. Actualmente busca información mediante páginas inmobiliarias como Urbania, grupos de Facebook y WhatsApp, recomendaciones, podcasts, influencers y ferias inmobiliarias. Su principal dificultad es encontrar información confiable y completa sobre las propiedades, especialmente respecto a ubicación, características y condiciones, ya que muchas veces debe investigar por su cuenta para determinar si una vivienda realmente se adapta a sus necesidades. En cuanto al financiamiento, ha comenzado a consultar sobre tasas de interés, plazos y bonos, pero todavía no ha utilizado un simulador hipotecario. Considera que una herramienta independiente podría ofrecer una perspectiva más objetiva que un simulador perteneciente a un banco y estaría dispuesto a ingresar datos financieros aproximados para conocer cuánto podría pagar en cuotas y cuál sería el costo total. Además, manifestó interés en comparar diferentes bancos y en guardar y exportar las simulaciones, debido a que las tasas y condiciones pueden cambiar con el tiempo. En conclusión, la entrevista evidencia la necesidad de una herramienta centralizada que permita simular, comparar y guardar alternativas de crédito hipotecario de manera sencilla, transparente y con protección de la información financiera del usuario.
+</td>
         </tr>
     </tbody>
 </table>
