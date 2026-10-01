@@ -424,7 +424,7 @@ Preguntas Específicas
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/06-chapter-2/juliana-paucan-entrevista.png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/juliana-pauca-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
@@ -479,7 +479,7 @@ Preguntas Específicas
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/ricardo-huaman-entrevista.png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/ricardo-huaman-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
