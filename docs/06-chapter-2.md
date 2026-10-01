@@ -514,46 +514,50 @@ Preguntas Específicas
     </thead>
     <tbody>
         <tr>
-            <td>Nombre</td>
+            <td>Jakelin</td>
             <td></td>
         </tr>
         <tr>
-            <td>Apellidos</td>
+            <td>Gutierrez Flores</td>
             <td></td>
         </tr>
         <tr>
-            <td>Edad</td>
+            <td>34 años</td>
             <td></td>
         </tr>
         <tr>
-            <td>Distrito</td>
+            <td>Breña</td>
             <td></td>
         </tr>
         <tr>
             <td>Evidencia</td>
             <td style="text-align: left;">
-                <div align="center"><img src="../assets/img/chapter-ii/[nombre-entrevistado].png" width="700"></div>
+                <div align="center"><img src="../assets/06-chapter-2/Jakelin-entrevista.png" width="700"></div>
             </td>
         </tr>
         <tr>
             <td>Link</td>
             <td>
-                <a href="#" target="_blank">
-                [pendiente]
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323319_upc_edu_pe/IQBxlDKkWL6ZRb-3Xr0whyq-Aa-yvKwN0Denn3JxVq112X0?e=UdOlvc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #3 - segmento 2
             </a>
             </td>
         </tr>
         <tr>
             <td>Timing donde inicia la entrevista<br></td>
-            <td></td>
+            <td>00:00</td>
         </tr>
         <tr>
             <td>Duración de la entrevista<br></td>
-            <td></td>
+            <td>6:07</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td></td>
+            <td>akelin tiene seis años como asesora, los últimos tres en primera vivienda, vendiendo departamentos de 1 a 3 dormitorios entre S/ 250,000 y S/ 450,000, varios con Mivivienda Sostenible. Gestiona a sus clientes con Excel y WhatsApp Business; el CRM de la empresa casi no se usa por ser lento y mal implementado. Su mayor frustración es invertir tiempo en contactos que recién después de dos o tres llamadas resultan no calificar para el crédito.
+
+Los leads le llegan por portales, redes sociales y referidos, casi siempre sin datos financieros. Calcula que el 40% no califica, y se entera recién al pedir el DNI o cuando el cliente menciona su sueldo. Le interesa conocer desde el inicio el monto financiado, la cuota estimada y la elegibilidad a bonos estatales; el TCEA solo importa después, cuando el cliente ya compara con un banco. Prioriza por "temperatura" (ahorro + empleo formal) y da seguimiento en Excel, aunque reconoce que a veces pierde contactos sin darse cuenta.
+
+Valora mucho recibir solo clientes que autorizaron compartir su simulación, porque le permitiría enfocarse en cerrar en vez de calificar. En su empresa, el Gerente Comercial asigna zonas, revisa metas y reasigna clientes entre asesores. Las funcionalidades que más valora son ver el detalle de la simulación al instante y recibir notificaciones de nuevos interesados.</td>
         </tr>
     </tbody>
 </table>
