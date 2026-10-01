@@ -706,7 +706,7 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 ### Segmento 2: Administrador de Producto
 
-<img src="../assets/06-chapter-2/as-is-scenario-segmento-2.png">
+<img src="../assets/06-chapter-2/as-is-scenario-segmento-2.jpg">
 
 ## **2.4. Ubiquitous Language**
 
