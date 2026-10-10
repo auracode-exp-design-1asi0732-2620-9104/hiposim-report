@@ -374,10 +374,13 @@ Dentro del contenedor RESTful Web API, los componentes se organizan por responsa
 
 ### **4.9.1. Class Diagrams**
 
-El diseño de clases a continuación refleja las entidades centrales del dominio que se desprenden del alcance del producto en el Capítulo I (datos del cliente, datos de la vivienda, parámetros de simulación, resultados financieros, beneficios estatales, comparación de escenarios, parámetros de administración), independientemente de cualquier tecnología de persistencia específica. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/software-object-oriented-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart**, conforme a las restricciones tecnológicas del curso.
+El diagrama de clases de HipoSim representa la estructura orientada a objetos del backend, considerando los módulos de autenticación, simulaciones hipotecarias y gestión de leads. Se identifican las principales entidades del dominio, sus atributos, relaciones y multiplicidades, así como los controladores y servicios responsables de procesar las operaciones del sistema.
 
+El diseño utiliza una separación de responsabilidades entre la capa de presentación de la API, la lógica de negocio y la persistencia de datos mediante Entity Framework Core. Asimismo, incorpora las entidades `Lead`, `LeadNote` y `LeadStatusChange`, implementadas durante el Sprint 2 para gestionar solicitudes de contacto y el seguimiento comercial realizado por los asesores inmobiliarios.
+
+El diagrama se mantiene como código fuente editable en `assets/08-chapter-4/software-object-oriented-design/class-diagram.mmd`, facilitando su actualización conforme evoluciona la implementación del proyecto.
 <div align="center">
-  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="Diagrama de clases de HipoSim" width="900">
+  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram-v2.png" alt="Diagrama de clases de HipoSim" width="900">
 </div>
 
 ### **4.9.2. Class Dictionary**
