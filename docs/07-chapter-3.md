@@ -19,6 +19,8 @@
   <p style="text-align: center; margin-top: 8px;"><em>Figura 2. To-Be Scenario Map del administrador de producto.</em></p>
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ## **3.2. User Stories**
 
 <p style="text-align: justify; line-height: 1.6;">
@@ -450,6 +452,10 @@
   </tbody>
 </table>
 
+
+<div style="page-break-after: always;"></div>
+
+
 ## **3.3. Product Backlog**
 
 <p style="text-align: justify; line-height: 1.6;">
@@ -719,11 +725,8 @@
   El Sprint 1 sumó 26 Story Points y ya está implementado y publicado. El Sprint 2, en curso, suma 56 Story Points sobre la API, la aplicación móvil del Comprador y la aplicación web del Asesor; su alcance final se ajusta durante el Sprint Planning según la capacidad real del equipo, priorizando el flujo completo (simular, enviar la simulación y darle seguimiento como Asesor) sobre funciones adicionales como guardar o comparar escenarios y exportar en PDF, que quedan en el Backlog de Jira para una siguiente entrega.
 </p>
 
-<div style="margin: 16px 0; padding: 12px 16px; background-color: #F8FAFC; border-left: 5px solid #0E5C63; page-break-inside: avoid;">
-  <strong>Product Backlog en Jira</strong>
-  <p style="text-align: justify; margin: 8px 0 4px 0;">Captura del Product Backlog completo en Jira: <em>pendiente de agregar</em> (<code>../assets/07-chapter-3/product-backlog-jira.png</code>).</p>
-  <p style="text-align: justify; margin: 4px 0;">URL público del Product Backlog: <em>pendiente de agregar</em>.</p>
-</div>
+<div style="page-break-after: always;"></div>
+
 
 ## **3.4. Impact Mapping**
 
