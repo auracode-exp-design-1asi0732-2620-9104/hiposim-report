@@ -424,7 +424,12 @@ La incorporación de `Lead`, `LeadNote` y `LeadStatusChange` permite gestionar s
 ### **4.10.1. Relational/Non-Relational Database Diagram**
 
 Se propone un modelo relacional (PostgreSQL), consistente con el diseño de clases de 4.9 y con la base de datos del proyecto original AutoFinance Pro. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/database-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart / Vertabelo**, conforme a las restricciones tecnológicas del curso.
+El diseño de base de datos de HipoSim se amplió durante el Sprint 2 para incorporar la gestión de solicitudes de contacto entre compradores e inmobiliarias. Se añadieron las entidades `AGENCIES`, `LEADS`, `LEAD_NOTES` y `LEAD_STATUS_CHANGES`, manteniendo las estructuras previamente definidas para usuarios, simulaciones hipotecarias, beneficios estatales y comparaciones de escenarios.
+
+La entidad `LEADS` relaciona al comprador, la inmobiliaria y la simulación hipotecaria asociada a su solicitud, además de registrar el consentimiento de contacto y el estado actual. Por su parte, `LEAD_NOTES` permite almacenar las observaciones realizadas por los asesores, mientras que `LEAD_STATUS_CHANGES` conserva el historial de modificaciones para facilitar la trazabilidad del seguimiento comercial.
+
+Estas incorporaciones corresponden al módulo TS08 y permiten mantener la información de las solicitudes y su seguimiento mediante un modelo relacional.
 
 <div align="center">
-  <img src="../assets/08-chapter-4/database-design/er-diagram.png" alt="Diagrama de base de datos relacional de HipoSim" width="900">
+  <img src="../assets/08-chapter-4/database-design/db-diagram-v2.png" alt="Diagrama de base de datos relacional de HipoSim" width="900">
 </div>
