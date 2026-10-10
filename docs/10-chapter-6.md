@@ -8,6 +8,8 @@ Distinguimos cuatro niveles de prueba complementarios. Las **pruebas unitarias**
 
 La solución abarca una Landing Page desarrollada con HTML5, CSS3 y JavaScript; el portal web del asesor, desarrollado con Vue 3, Vite, PrimeVue, Pinia y axios; una aplicación Android nativa con Kotlin, Jetpack Compose, Hilt, Navigation Compose y ViewModel con StateFlow; y una API diseñada con ASP.NET Core, Entity Framework Core y PostgreSQL. El Landing Page ya está publicado en GitHub Pages y ejecuta un simulador básico en el navegador. El portal web utiliza datos de ejemplo, mientras que la integración del móvil y de la web con la API forma parte del Sprint 2.
 
+<div style="page-break-after: always;"></div>
+
 | Nivel de verificación | Componentes y procesos prioritarios | Historias relacionadas | Criterio de aceptación |
 |---|---|---|---|
 | Unit Testing | Método francés, conversión de tasas, cálculo de indicadores, validación de entradas y elegibilidad al BBP | US01, US02, US04, US05, US15, SP02 | Reglas matemáticas y de negocio correctas de manera aislada |
@@ -16,6 +18,8 @@ La solución abarca una Landing Page desarrollada con HTML5, CSS3 y JavaScript; 
 | System Testing | Navegación del sitio, resultados hipotecarios, acceso móvil y recorrido comprador–asesor | US14–US20, US13, US26, US21–US25 | Recorridos funcionales y seguros, con manejo comprensible de errores |
 
 El registro técnico disponible consigna **35 pruebas unitarias, 4 pruebas de interfaz ejecutadas en emulador y un flujo de integración continua mediante GitHub Actions para la aplicación Android**, junto con verificaciones de `ktlint` y Android Lint. Para la API y la integración completa con PostgreSQL contamos con el alcance funcional y los contratos previstos, pero no con un registro de ejecución que permita declarar sus pruebas aprobadas. Por ello presentamos sus casos y resultados esperados como especificación verificable, sin confundirlos con resultados obtenidos.
+
+<div style="page-break-after: always;"></div>
 
 ### **6.1.1. Core Entities Unit Tests**
 
@@ -33,6 +37,8 @@ Donde `C` es la cuota periódica, `P` representa el capital financiado, `i` es l
 i=(1+TEA)^{1/12}-1\]
 
 La fórmula supone un escenario de amortización regular, sin gracia ni cargos adicionales integrados en la cuota. Los seguros, comisiones y otros cargos se consideran por separado en el cálculo del costo efectivo total cuando corresponden. La TCEA no debe tratarse como equivalente a la TEA si existen costos adicionales.
+
+<div style="page-break-after: always;"></div>
 
 **Matriz de casos unitarios del núcleo funcional**
 
@@ -58,6 +64,8 @@ Para establecer un caso de referencia reproducible empleamos los datos de simula
 También utilizamos pruebas de límites: cuota inicial exactamente igual al mínimo, precio de vivienda en los extremos de un rango de beneficio, tasas válidas muy bajas, plazos en sus valores extremos admitidos y redondeo de centavos. En las verificaciones del cronograma comprobamos las invariantes `cuota = interés + amortización`, `saldo final = saldo inicial - amortización` y la conservación del capital amortizado. La comparación con el proyecto de referencia **AutoFinance Pro** forma parte de la historia técnica SP02 y permite detectar diferencias introducidas al portar las fórmulas financieras a C#.
 
 En la aplicación Android, el Capítulo V documenta 35 pruebas unitarias, además de verificaciones de estilo y análisis estático. Esa cifra describe el conjunto de pruebas informado para dicho producto; no la extendemos al backend, al portal web ni a la Landing Page sin los respectivos registros de ejecución.
+
+<div style="page-break-after: always;"></div>
 
 ### **6.1.2. Core Integration Tests**
 
@@ -100,6 +108,8 @@ El flujo de integración más importante combina el envío voluntario de una sim
 
 Durante esta versión, el simulador básico del Landing Page realiza sus operaciones en JavaScript dentro del navegador; no corresponde presentarlo como un cliente de la API desplegada. De igual forma, el portal del asesor todavía utiliza datos de ejemplo y la conexión efectiva con los servicios se encuentra comprendida en el Sprint 2. Las verificaciones IT-01 a IT-12 establecen criterios de integración para esa etapa, pero su aprobación depende de la disponibilidad de la API, de la base de datos y de los clientes conectados.
 
+<div style="page-break-after: always;"></div>
+
 ### **6.1.3. Core Behavior-Driven Development**
 
 Adoptamos BDD como mecanismo de comunicación entre requisitos, implementación y verificación. Cada escenario describe un comportamiento observable por el usuario o por el consumidor del servicio, sin incorporar detalles internos del código ni decisiones particulares de diseño de pantallas. La nomenclatura y el formato Gherkin permiten relacionar directamente las especificaciones con las historias de usuario del Product Backlog.
@@ -133,6 +143,7 @@ Característica: Simulación hipotecaria básica
     Entonces el sistema rechaza los parámetros ingresados
     Y comunica que la cuota inicial mínima es del 10 por ciento
 ```
+<div style="page-break-after: always;"></div>
 
 **Bono del Buen Pagador — US05 y US15**
 
@@ -184,6 +195,7 @@ Característica: Intercambio autorizado de simulaciones
     Y no crea un lead
     Y no revela información financiera del comprador
 ```
+<div style="page-break-after: always;"></div>
 
 **Acceso y seguimiento de leads — US22, US23, US24, US25 y TS08**
 
@@ -220,6 +232,8 @@ Para enlazar estos escenarios con la automatización, distinguimos la **especifi
 
 Las reglas de privacidad se consideran transversales: el consentimiento tiene que ser explícito, la identidad del comprador debe estar autenticada para compartir y el asesor solamente puede acceder a los leads para los que posee autorización. Así preservamos la finalidad informativa de HipoSim y el tratamiento responsable de los datos personales descrito en la Ley N.° 29733.
 
+<div style="page-break-after: always;"></div>
+
 ### **6.1.4. Core System Tests**
 
 Las pruebas de sistema abarcan el comportamiento completo de los productos digitales y los recorridos que conectan al visitante, al comprador registrado y al asesor. Evaluamos la navegación, la validación de formularios, la visualización financiera, los permisos, la experiencia responsiva y la comunicación con servicios externos al cliente. Priorizamos las rutas que afectan directamente una decisión económica o que pueden exponer información personal.
@@ -238,10 +252,3 @@ Las pruebas de sistema abarcan el comportamiento completo de los productos digit
 | ST-10 | Recorrido transversal | Intentar compartir sin consentimiento o consultar leads sin token | Operaciones rechazadas y ausencia de exposición de datos | Criterio de seguridad transversal |
 | ST-11 | Web y Android | Interrumpir o hacer fallar una solicitud de servicio | Error comprensible y estado de interfaz coherente, sin confirmar una operación fallida | Criterio de robustez |
 | ST-12 | Android | Ejecutar pruebas automatizadas de interfaz en emulador | Verificación de los flujos de interfaz incluidos en la suite móvil | Cuatro pruebas de interfaz consignadas |
-
-El escenario integral de mayor importancia comienza cuando un comprador genera una simulación, continúa con su autenticación y autorización expresa para compartirla, y termina cuando el asesor autorizado consulta el lead y actualiza su seguimiento. Consideramos satisfactorio el flujo solamente cuando las operaciones de cálculo, autorización, persistencia y visualización coinciden entre los dos clientes y la API.
-
-El sitio público puede verificarse directamente en **[HipoSim Landing Page](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/)**. No atribuimos al flujo comprador–asesor una validación completa en producción porque, en la versión documentada, el portal web funciona con datos de ejemplo y ni la API ni el portal cuentan con una URL productiva acreditada. La aplicación Android cuenta con cuatro pruebas de interfaz en emulador reportadas en el Capítulo V, aunque el informe no identifica individualmente sus nombres ni resultados por escenario.
-
-En conjunto, nuestra estrategia combina un conjunto de casos reproducibles, los contratos funcionales de las historias de usuario y la comprobación de límites financieros y de privacidad. La cobertura funcional real se consolida gradualmente a medida que los componentes pasan de su implementación aislada a la integración y al despliegue verificable.
-
