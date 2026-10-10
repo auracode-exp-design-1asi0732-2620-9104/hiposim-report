@@ -44,6 +44,8 @@
   <b>10. Balance del avance del proyecto.</b> El desarrollo de HipoSim ha permitido conectar la investigación de usuarios con decisiones de arquitectura, implementación, pruebas y prácticas DevOps. El trabajo colaborativo ha hecho posible delimitar responsabilidades técnicas y documentales, identificar dependencias entre historias y establecer criterios de calidad verificables. Concluimos que el avance es consistente con una solución en evolución, cuyo principal reto pendiente es demostrar el funcionamiento integrado de sus productos y validar sus efectos mediante evidencia medible, sin perder de vista la transparencia financiera y la protección del usuario.
 </p>
 
+<div style="page-break-after: always;"></div>
+
 ### Recommendations
 
 <p style="text-align: justify;">
