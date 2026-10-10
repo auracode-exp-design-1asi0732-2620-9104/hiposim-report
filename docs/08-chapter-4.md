@@ -10,7 +10,8 @@ Esta sección establece un lenguaje visual compartido y centralizado para todos 
 
 A continuación se presentan las pautas generales de estilo que guiarán la identidad visual de HipoSim, asegurando coherencia, claridad y una experiencia de navegación fluida para todos los usuarios. Las decisiones se apoyan en los principios de Material Design y buscan transmitir confianza, transparencia y cercanía, atributos clave para un producto que acompaña una decisión financiera de largo plazo.
 
----
+<div style="page-break-after: always;"></div>
+
 
 **Colors**
 
@@ -38,7 +39,7 @@ Como apoyo a la paleta principal, la interfaz utiliza un color de texto principa
 
 Todas las combinaciones de texto y fondo deben cumplir la relación de contraste **WCAG AA** (mínimo 4.5:1 para texto normal). En particular, el texto sobre `#0E5C63` y `#5F6B76` es blanco, mientras que el texto sobre el turquesa `#3AAFA9` y el ámbar `#F5A524` es siempre el color oscuro `#1F2933`.
 
----
+<div style="page-break-after: always;"></div>
 
 **Branding**
 
@@ -58,7 +59,9 @@ El ícono (sin el wordmark) se utiliza en espacios reducidos como el favicon, el
 
 Los archivos fuente del logotipo en formato vectorial (`logo-hiposim.svg` y `logo-icon.svg`) se conservan en `assets/08-chapter-4/style-guidelines/`.
 
----
+<div style="page-break-after: always;"></div>
+
+
 
 **Typography**
 
@@ -77,7 +80,9 @@ El tamaño y el peso tipográfico varían según el nivel jerárquico del conten
 | Botón principal | Roboto | Medium (500) | 16 px |
 | Botón secundario | Roboto | Medium (500) | 14 px |
 
----
+<div style="page-break-after: always;"></div>
+
+
 
 **Spacing**
 
@@ -100,6 +105,10 @@ Los tonos de comunicación definen cómo se dirige HipoSim a cada rol, con el ob
 - **Visitante y Comprador de primera vivienda:** se utiliza un lenguaje claro, sin jerga financiera innecesaria, que explica cada término técnico (como TCEA o periodo de gracia) la primera vez que aparece. El tono es tranquilizador y orientado a la transparencia, ya que estas personas toman por primera vez una decisión de alto impacto y desconfían de la información que muestran los bancos. Se evita la ironía, el sarcasmo y la presión por urgencia.
 - **Administrador:** se emplea un lenguaje directo, preciso y funcional, centrado en la tarea de mantener actualizados los parámetros del simulador (tasas de referencia, porcentaje del Bono del Buen Pagador, rangos de Mivivienda). El tono es neutro y orientado a la acción, con mensajes de confirmación y de error explícitos para evitar cambios accidentales sobre valores que afectan a todas las simulaciones.
 
+<div style="page-break-after: always;"></div>
+
+
+
 ### **4.1.2. Web Style Guidelines**
 
 La Web Application y el Landing Page siguen **Responsive Web Design**, con tres breakpoints: móvil (< 768px), tablet (768px-1024px) y escritorio (> 1024px), sobre una cuadrícula fluida de 12 columnas.
@@ -119,6 +128,10 @@ En iOS, la estructura y las convenciones de gestos siguen las Human Interface Gu
 #### **4.1.3.2. Android Mobile Style Guidelines**
 
 En Android, tanto la estructura como el estilo visual siguen de forma nativa las guías de Material Design: barra de navegación inferior, un Floating Action Button (FAB) para la acción principal "Nueva simulación" desde la pantalla de historial, y las convenciones de elevación y sombras de Material para las tarjetas (comparación de escenarios) y la hoja de resultados.
+
+<div style="page-break-after: always;"></div>
+
+
 
 ## **4.2. Information Architecture**
 
@@ -147,6 +160,9 @@ Las etiquetas de navegación son cortas, en lenguaje sencillo y consistentes ent
 
 Las etiquetas evitan intencionalmente términos internos o técnicos (por ejemplo, "TCEA" siempre va acompañado de una breve explicación en lenguaje sencillo la primera vez que aparece en una pantalla) para que un comprador primerizo sin formación financiera no se pierda en una jerga de dominio que, según las entrevistas del Capítulo II, los usuarios no comprenden con claridad.
 
+<div style="page-break-after: always;"></div>
+
+
 ### **4.2.3. SEO Tags and Meta Tags**
 
 | Página | Title | Meta Description | Keywords | Author |
@@ -164,12 +180,20 @@ Dado el conjunto intencionalmente pequeño de datos que maneja un Comprador (un 
 
 Esta decisión mantiene al producto alineado con el principio "Simplest Useful Thing" referenciado para la fase de experimentación del curso (Capítulo VIII), evitando invertir en un sistema de búsqueda que el segmento no necesita a esta escala.
 
+<div style="page-break-after: always;"></div>
+
+
+
 ### **4.2.5. Navigation Systems**
 
 - **Landing Page (Visitante)**: barra de navegación superior persistente (Inicio, Producto, Beneficios, Términos) más un llamado a la acción persistente "Simular ahora" que permite al Visitante probar el simulador básico sin registrarse, en coherencia con el rol de Visitante definido en el Capítulo I.
 - **Web Application (Comprador)**: navegación lateral (escritorio) que colapsa en un menú desplegable superior (web móvil) con Simular, Historial y Comparar como destinos principales; un indicador de pasos tipo breadcrumb dentro del asistente de simulación muestra el progreso a lo largo de sus cuatro pasos.
 - **Native Mobile Application**: barra de pestañas inferior con los mismos destinos principales (Simular, Historial, Comparar, Perfil), siguiendo la convención propia de cada plataforma descrita en 4.1.3.
 - **Administrador**: un único punto de entrada de configuración, separado (no expuesto a los Compradores), accesible tras el inicio de sesión del Administrador, que contiene la pantalla de parámetros y el panel básico de métricas de uso.
+
+<div style="page-break-after: always;"></div>
+
+
 
 ## **4.3. Landing Page UI Design**
 
@@ -185,6 +209,10 @@ Esta sección presenta el diseño UX/UI del Landing Page, el punto de entrada de
 
 El wireframe organiza el contenido en siete bloques secuenciales: hero con el simulador interactivo embebido (sin necesidad de registro previo), explicación del flujo en 4 pasos, comparación frente a los simuladores bancarios tradicionales, explicación de los subsidios estatales (BBP y Mivivienda), un bloque de funcionalidades avanzadas que incentiva la creación de cuenta gratuita, el banner de conversión final y el footer con navegación legal y de soporte. En mobile, el simulador interactivo del hero se apila debajo del titular y los pasos pasan de una grilla de 4 columnas a un listado vertical, conforme a los breakpoints definidos en 4.1.2.
 
+<div style="page-break-after: always;"></div>
+
+
+
 ### **4.3.2. Landing Page Mock-up**
 
 <div align="center">
@@ -194,6 +222,9 @@ El wireframe organiza el contenido en siete bloques secuenciales: hero con el si
 </div>
 
 El mock-up aplica la paleta de marca sobre la estructura validada en el wireframe: el verde azulado (`#0E5C63`) enmarca el widget del simulador y la sección de transparencia frente a bancos, el ámbar (`#F5A524`) se reserva exclusivamente para el CTA principal "Simular ahora" (repetido en el navbar, el hero y el banner final, pero como única acción destacada por pantalla), y el turquesa (`#3AAFA9`) resalta los datos de apoyo (ahorro estimado, badges de confianza "100% Independiente", "Regulación SBS referencial"). El bloque comparativo "HipoSim vs. Simuladores Bancarios Tradicionales" traduce visualmente el análisis competitivo del Capítulo II, usando el color de error (`#D64545`) para las limitaciones de los bancos y el de éxito (`#2E9E6B`) para los diferenciales de HipoSim.
+
+<div style="page-break-after: always;"></div>
+
 ## **4.4. Mobile Applications UX/UI Design**
 
 Esta sección presenta el diseño UX/UI de la aplicación móvil nativa para el Comprador, cubriendo dos pantallas críticas del flujo: el registro contextual que se activa justo después de que el usuario ve el resultado de su simulación (no antes, en coherencia con la regla de acceso sin login definida en el Capítulo I), y la pantalla de resultados que conecta la simulación con las inmobiliarias disponibles.
@@ -236,6 +267,10 @@ Los mock-ups de alta fidelidad aplican la paleta, tipografía y componentes defi
   <img src="../assets/08-chapter-4/mobile-applications-ux-ui-design/mock-ups/registration-mockup.png" alt="Mock-up de la pantalla de Registro Contextual (mobile)" width="320">
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
+
 En el mock-up de Resultados, el TCEA y la cuota mensual se destacan en ámbar (`#F5A524`), siguiendo la regla de acento único definida en el Style Guide, mientras que el subsidio estatal aplicado se resalta con el color de éxito (`#2E9E6B`) para transmitir un beneficio ya confirmado. El botón "Enviar cotización a inmobiliarias" reutiliza el mismo acento ámbar como único llamado a la acción de la pantalla, coherente con la restricción de un solo uso de ámbar por vista.
 
 ### **4.4.4. Mobile Applications User Flow Diagrams**
@@ -276,6 +311,10 @@ Esta sección presenta el diseño UX/UI de la Web Application para el rol Inmobi
   <img src="../assets/08-chapter-4/web-applications-ux-ui-design/wireframes/lead-detail-wireframe.png" alt="Wireframe de la Ficha de Detalle de un Lead (desktop)" width="900">
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
+
 - **Bandeja de Leads e Interesados**: organiza el contenido en tres niveles, de arriba hacia abajo: KPIs operativos (leads nuevos, en contacto, calificados a BBP, pipeline proyectado), filtros de búsqueda (nombre/DNI, estado, distrito, solo con Bono BBP) y la tabla de prospectos, siguiendo la organización jerárquica definida en 4.2.1.
 - **Ficha de Detalle de un Lead**: agrupa los datos del solicitante, su capacidad financiera y ratios de aprobación, la simulación certificada por HipoSim (cuota, TCEA, composición de la cuota inicial), el match de inventario de la inmobiliaria y la bitácora de interacciones tipo CRM, de modo que el asesor comercial pueda evaluar y contactar al prospecto sin salir de la pantalla.
 
@@ -297,6 +336,10 @@ flowchart LR
     F -->|Atender ahora| D
     B --> G[Configuración]
 ```
+
+<div style="page-break-after: always;"></div>
+
+
 
 ### **4.6.3. Web Applications Mock-ups**
 
@@ -330,6 +373,10 @@ flowchart TD
     Close -- Sí --> Closed([Estado: Cerrado / Separación])
     Close -- No --> Open
 ```
+
+<div style="page-break-after: always;"></div>
+
+
 ## **4.7. Web Applications Prototyping**
 ## **4.8. Domain-Driven Software Architecture**
 
@@ -370,6 +417,10 @@ Dentro del contenedor RESTful Web API, los componentes se organizan por responsa
   <img src="../assets/08-chapter-4/domain-driven-software-architecture/components-diagram.png" alt="Diagrama de componentes de la RESTful API de HipoSim" width="750">
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
+
 ## **4.9. Software Object-Oriented Design**
 
 ### **4.9.1. Class Diagrams**
@@ -379,6 +430,9 @@ El diseño de clases a continuación refleja las entidades centrales del dominio
 <div align="center">
   <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="Diagrama de clases de HipoSim" width="900">
 </div>
+
+<div style="page-break-after: always;"></div>
+
 
 ### **4.9.2. Class Dictionary**
 
@@ -395,6 +449,10 @@ El diseño de clases a continuación refleja las entidades centrales del dominio
 | `ScenarioComparison` | CreatedAt | AddSimulation() | Agrupa de 2 a 3 Simulations del mismo Buyer para su comparación lado a lado. |
 | `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produce el PDF exportable y el enlace de solo lectura para compartir una Simulation. |
 | `AdminParameter` | Key, Value, UpdatedAt | Ninguno | Un parámetro base configurable (tasa de referencia, % del Bono del Buen Pagador, rango Mivivienda) mantenido por un Administrator. |
+
+<div style="page-break-after: always;"></div>
+
+
 
 ## **4.10. Database Design**
 
