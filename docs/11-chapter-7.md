@@ -11,6 +11,8 @@ Organizamos el trabajo con **GitFlow**: `main` representa la línea estable; `de
 | Aplicación Android | [hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) | Desarrollo en `develop`; PR n.° 1 documentado; pruebas y CI móvil reportadas |
 | API RESTful y PostgreSQL | Contrato y componentes definidos en el informe | Repositorio público, ejecución del pipeline y despliegue no acreditados |
 
+<div style="page-break-after: always;"></div>
+
 ## **7.1. Continuous Integration**
 
 La integración continua nos permite revisar cada cambio antes de incorporarlo a una versión compartida. En lugar de depender exclusivamente de pruebas manuales posteriores al desarrollo, definimos controles sobre la sintaxis, la construcción de los productos, el comportamiento funcional y la compatibilidad entre componentes. De esta forma, cada historia de usuario puede relacionarse con un cambio identificable y con los resultados de verificación correspondientes.
@@ -29,6 +31,8 @@ Aplicamos los siguientes acuerdos de integración:
 6. Preservamos la separación entre datos de demostración y datos reales, especialmente cuando se manejan ingresos, ahorros, simulaciones hipotecarias o datos de contacto.
 
 La aplicación Android aporta la evidencia más concreta de automatización en la versión revisada: el informe consigna **GitHub Actions, 35 pruebas unitarias, 4 pruebas de interfaz y ejecución satisfactoria de `ktlint` y lint**. Para los demás repositorios se encuentran definidos los procesos de compilación y verificación, pero no se documentan ejecuciones automáticas concluidas equivalentes. Esto determina el nivel de madurez de nuestra integración continua por producto y evita generalizar los resultados del móvil a toda la plataforma.
+
+<div style="page-break-after: always;"></div>
 
 ### **7.1.2. Build & Test Suite Pipeline Components**
 
@@ -50,6 +54,8 @@ La integración debe impedir que una modificación en el motor financiero altere
 
 Nuestro criterio de aceptación del pipeline consiste en obtener una compilación reproducible, sin defectos bloqueantes conocidos, con las pruebas aplicables superadas y con un registro asociado al commit examinado. Esta verificación es especialmente importante al integrar cambios en `develop` y preparar una rama `release/*`, porque permite detectar problemas antes de trasladarlos a una versión pública.
 
+<div style="page-break-after: always;"></div>
+
 ## **7.2. Continuous Delivery**
 
 La entrega continua organiza el paso desde una versión integrada hasta un artefacto que pueda publicarse de forma controlada. En HipoSim distinguimos la disponibilidad de código fuente, la preparación del paquete y la liberación efectiva al usuario. Una compilación exitosa no demuestra por sí misma que el producto funciona en un entorno operativo: también deben verificarse configuración, dependencias, permisos, integridad de datos y comportamiento de las rutas principales.
@@ -61,6 +67,8 @@ Aplicamos el versionado semántico y las ramas `release/*` para delimitar las ve
 La **Landing Page** dispone de una publicación en GitHub Pages y constituye el producto con una URL operativa documentada. En el **portal web**, la entrega debe producir el directorio `dist`, configurado para consumir la API del entorno correspondiente. En la **API**, el artefacto de publicación de .NET depende de una configuración protegida de PostgreSQL y de migraciones de Entity Framework Core. Para **Android**, la construcción debe diferenciar el paquete de desarrollo del paquete firmado destinado a distribución interna o publicación; el informe acredita la existencia del flujo de CI, pero no una distribución productiva mediante tienda o servicio de pruebas.
 
 Nuestro proceso de entrega adopta cuatro controles esenciales. Primero, preservamos la integridad del artefacto respecto del commit de origen. Segundo, separamos las variables de configuración por entorno para impedir que una versión de desarrollo apunte involuntariamente a recursos productivos. Tercero, verificamos permisos, HTTPS y el tratamiento del consentimiento antes de exponer datos personales. Por último, mantenemos un mecanismo de recuperación a una versión estable y un registro de los cambios incluidos en la liberación.
+
+<div style="page-break-after: always;"></div>
 
 ### **7.2.2. Stages Deployment Pipeline Components**
 
@@ -81,6 +89,8 @@ En el sitio estático, la publicación se relaciona con la rama principal y el s
 
 La documentación actual acredita la publicación del Landing Page, pero no identifica un entorno de *staging* ya desplegado para la API o el portal, ni registra aprobaciones de releases productivas de esos componentes. En consecuencia, las etapas anteriores describen nuestro flujo de entrega y sus condiciones de aceptación, mientras que su ejecución integral permanece vinculada a la conclusión de la integración del Sprint 2.
 
+<div style="page-break-after: always;"></div>
+
 ## **7.3. Continuous deployment**
 
 El despliegue continuo representa el nivel en el que una versión que ha superado las verificaciones y controles de liberación llega automáticamente a su entorno de operación. Para HipoSim establecemos una política diferenciada por riesgo: los recursos estáticos pueden publicarse con un procedimiento simple y reversible, mientras que los servicios que procesan simulaciones y datos personales requieren comprobaciones adicionales de integridad, autorización y disponibilidad.
@@ -92,6 +102,8 @@ Nuestro punto de partida operativo es **GitHub Pages**, donde se encuentra publi
 Para el portal web y la API contemplamos la entrega a servicios que permitan gestionar variables de entorno, TLS/HTTPS, registros de aplicación y versiones. La API requiere configuración segura de PostgreSQL, aplicación controlada de migraciones y restricciones CORS conforme al origen de los clientes. No atribuimos estos productos a un proveedor cloud específico porque el Capítulo V no define uno ni proporciona enlaces de despliegue. La aplicación Android tampoco cuenta todavía con una distribución pública documentada: su compilación y sus pruebas se mantienen separadas del proceso de publicación en tiendas.
 
 Como principios de despliegue adoptamos la separación de entornos, el uso de credenciales protegidas, la posibilidad de revertir una versión y las comprobaciones posteriores a la publicación. Los cambios que afectan cálculos hipotecarios o permisos de acceso se consideran de mayor criticidad, ya que un fallo podría presentar importes engañosos o divulgar datos de un comprador sin autorización.
+
+<div style="page-break-after: always;"></div>
 
 ### **7.3.2. Production Deployment Pipeline Components**
 
