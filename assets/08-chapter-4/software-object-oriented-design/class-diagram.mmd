@@ -1,96 +1,138 @@
 classDiagram
-  class User {
+  direction LR
+
+  class Agency {
+    +Guid Id
+    +string Name
+    +DateTimeOffset CreatedAt
+  }
+
+  class AppUser {
     +Guid Id
     +string FullName
     +string Email
+    +string EmailNormalized
+    +string Phone
     +string PasswordHash
-    +UserRole Role
-    +Register()
-    +Login()
+    +string Role
+    +Guid? AgencyId
+    +DateTimeOffset AcceptedTermsAt
+    +DateTimeOffset AcceptedDataProcessingAt
+    +DateTimeOffset CreatedAt
   }
 
-  class Buyer {
-    +decimal MonthlyIncome
-    +decimal AvailableSavings
-  }
-
-  class Administrator {
-    +UpdateBaseParameters(AdminParameter)
-    +ViewUsageMetrics()
-  }
-
-  class Property {
+  class StoredSimulation {
     +Guid Id
-    +decimal Price
-    +string Currency
-    +PropertyType Type
+    +Guid? BuyerId
+    +DateTimeOffset CreatedAt
+    +string InputJson
+    +string ResponseJson
   }
 
-  class Simulation {
+  class Lead {
     +Guid Id
     +Guid BuyerId
-    +decimal LoanAmount
-    +decimal AnnualRate
-    +RateType RateType
-    +int TermInMonths
-    +int GracePeriodMonths
-    +GraceType GraceType
-    +DateTime CreatedAt
-    +Calculate()
-  }
-
-  class AmortizationEntry {
-    +int Period
-    +decimal Installment
-    +decimal Interest
-    +decimal Amortization
-    +decimal RemainingBalance
-  }
-
-  class FinancialIndicatorResult {
-    +decimal Npv
-    +decimal Irr
-    +decimal Tcea
-  }
-
-  class StateBenefit {
-    +Guid Id
-    +string Name
-    +decimal DiscountPercentage
-    +decimal MinPropertyPrice
-    +decimal MaxPropertyPrice
-    +EvaluateEligibility(Simulation) bool
-  }
-
-  class ScenarioComparison {
-    +Guid Id
-    +Guid BuyerId
-    +DateTime CreatedAt
-    +AddSimulation(Simulation)
-  }
-
-  class SimulationReport {
-    +Guid Id
+    +Guid AgencyId
     +Guid SimulationId
-    +string ShareableLinkToken
-    +GeneratePdf() byte[]
+    +string Status
+    +DateTimeOffset ConsentGrantedAt
+    +DateTimeOffset CreatedAt
   }
 
-  class AdminParameter {
+  class LeadNote {
     +Guid Id
-    +string Key
-    +decimal Value
-    +DateTime UpdatedAt
+    +Guid LeadId
+    +Guid AuthorId
+    +string Content
+    +DateTimeOffset CreatedAt
   }
 
-  User <|-- Buyer
-  User <|-- Administrator
-  Buyer "1" --> "0..*" Simulation : owns
-  Simulation "1" --> "1" Property : references
-  Simulation "1" --> "1..*" AmortizationEntry : produces
-  Simulation "1" --> "1" FinancialIndicatorResult : produces
-  Simulation "0..*" --> "0..*" StateBenefit : applies
-  Buyer "1" --> "0..*" ScenarioComparison : creates
-  ScenarioComparison "1" --> "2..3" Simulation : groups
-  Simulation "1" --> "0..1" SimulationReport : exports
-  Administrator "1" --> "0..*" AdminParameter : maintains
+  class LeadStatusChange {
+    +Guid Id
+    +Guid LeadId
+    +Guid ChangedBy
+    +string PreviousStatus
+    +string NewStatus
+    +DateTimeOffset ChangedAt
+  }
+
+  class HipoSimDbContext {
+    +DbSet~Agency~ Agencies
+    +DbSet~AppUser~ Users
+    +DbSet~StoredSimulation~ Simulations
+    +DbSet~Lead~ Leads
+    +DbSet~LeadNote~ LeadNotes
+    +DbSet~LeadStatusChange~ LeadStatusChanges
+  }
+
+  class AuthService {
+    +RegisterAsync(request, cancellationToken)
+    +LoginAsync(request, cancellationToken)
+  }
+
+  class JwtTokenService {
+    +Create(user) AuthResponse
+  }
+
+  class AuthController {
+    +Register(request, cancellationToken)
+    +Login(request, cancellationToken)
+  }
+
+  class SimulationService {
+    +CalculateAsync(request, buyerId, cancellationToken)
+  }
+
+  class SimulationsController {
+    +Create(request, cancellationToken)
+  }
+
+  class LeadService {
+    +CreateAsync(buyerId, request, cancellationToken)
+    +GetInboxAsync(agencyId, status, cancellationToken)
+    +GetDetailAsync(agencyId, leadId, cancellationToken)
+    +UpdateStatusAsync(agencyId, advisorId, leadId, request, cancellationToken)
+    +CreateNoteAsync(agencyId, advisorId, leadId, request, cancellationToken)
+  }
+
+  class LeadsController {
+    +Create(request, cancellationToken)
+    +GetInbox(status, cancellationToken)
+    +GetDetail(id, cancellationToken)
+    +UpdateStatus(id, request, cancellationToken)
+    +CreateNote(id, request, cancellationToken)
+  }
+
+  class FinancialEngine {
+    +Calculate(...)
+    +ConvertRate(...)
+    +ComputeIndicators(...)
+  }
+
+  Agency "1" --> "0..*" AppUser : employs advisors
+  Agency "1" --> "0..*" Lead : receives
+  AppUser "1" --> "0..*" StoredSimulation : creates
+  AppUser "1" --> "0..*" Lead : creates as buyer
+  StoredSimulation "1" --> "0..*" Lead : supports
+  Lead "1" --> "0..*" LeadNote : contains
+  Lead "1" --> "0..*" LeadStatusChange : tracks
+  AppUser "1" --> "0..*" LeadNote : writes
+  AppUser "1" --> "0..*" LeadStatusChange : performs
+
+  HipoSimDbContext ..> Agency
+  HipoSimDbContext ..> AppUser
+  HipoSimDbContext ..> StoredSimulation
+  HipoSimDbContext ..> Lead
+  HipoSimDbContext ..> LeadNote
+  HipoSimDbContext ..> LeadStatusChange
+
+  AuthController ..> AuthService
+  AuthService ..> HipoSimDbContext
+  AuthService ..> JwtTokenService
+
+  SimulationsController ..> SimulationService
+  SimulationService ..> HipoSimDbContext
+  SimulationService ..> FinancialEngine
+
+  LeadsController ..> LeadService
+  LeadService ..> HipoSimDbContext

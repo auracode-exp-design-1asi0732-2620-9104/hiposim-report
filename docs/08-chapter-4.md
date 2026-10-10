@@ -425,16 +425,21 @@ Dentro del contenedor RESTful Web API, los componentes se organizan por responsa
 
 ### **4.9.1. Class Diagrams**
 
-El diseño de clases a continuación refleja las entidades centrales del dominio que se desprenden del alcance del producto en el Capítulo I (datos del cliente, datos de la vivienda, parámetros de simulación, resultados financieros, beneficios estatales, comparación de escenarios, parámetros de administración), independientemente de cualquier tecnología de persistencia específica. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/software-object-oriented-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart**, conforme a las restricciones tecnológicas del curso.
+El diagrama de clases de HipoSim representa la estructura orientada a objetos del backend, considerando los módulos de autenticación, simulaciones hipotecarias y gestión de leads. Se identifican las principales entidades del dominio, sus atributos, relaciones y multiplicidades, así como los controladores y servicios responsables de procesar las operaciones del sistema.
 
+El diseño utiliza una separación de responsabilidades entre la capa de presentación de la API, la lógica de negocio y la persistencia de datos mediante Entity Framework Core. Asimismo, incorpora las entidades `Lead`, `LeadNote` y `LeadStatusChange`, implementadas durante el Sprint 2 para gestionar solicitudes de contacto y el seguimiento comercial realizado por los asesores inmobiliarios.
+
+El diagrama se mantiene como código fuente editable en `assets/08-chapter-4/software-object-oriented-design/class-diagram.mmd`, facilitando su actualización conforme evoluciona la implementación del proyecto.
 <div align="center">
-  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram.png" alt="Diagrama de clases de HipoSim" width="900">
+  <img src="../assets/08-chapter-4/software-object-oriented-design/class-diagram-v2.png" alt="Diagrama de clases de HipoSim" width="900">
 </div>
 
 <div style="page-break-after: always;"></div>
 
 
 ### **4.9.2. Class Dictionary**
+
+El siguiente diccionario describe las clases principales del diseño orientado a objetos de HipoSim, incluyendo las entidades del modelo conceptual y las clases implementadas en el backend durante el desarrollo del producto.
 
 | Clase | Atributos principales | Métodos principales | Descripción |
 |---|---|---|---|
@@ -449,17 +454,36 @@ El diseño de clases a continuación refleja las entidades centrales del dominio
 | `ScenarioComparison` | CreatedAt | AddSimulation() | Agrupa de 2 a 3 Simulations del mismo Buyer para su comparación lado a lado. |
 | `SimulationReport` | ShareableLinkToken | GeneratePdf() | Produce el PDF exportable y el enlace de solo lectura para compartir una Simulation. |
 | `AdminParameter` | Key, Value, UpdatedAt | Ninguno | Un parámetro base configurable (tasa de referencia, % del Bono del Buen Pagador, rango Mivivienda) mantenido por un Administrator. |
+| `Agency` | Id, Name, CreatedAt | Ninguno | Representa una inmobiliaria registrada en HipoSim, asociada con asesores y solicitudes de contacto. |
+| `AppUser` | Id, FullName, Email, EmailNormalized, Phone, PasswordHash, Role, AgencyId, AcceptedTermsAt, AcceptedDataProcessingAt, CreatedAt | Ninguno | Representa una cuenta de usuario implementada en el backend, identificada mediante su rol y su asociación opcional con una inmobiliaria. |
+| `StoredSimulation` | Id, BuyerId, InputJson, ResponseJson, CreatedAt | Ninguno | Almacena los parámetros y resultados de una simulación hipotecaria para permitir su consulta y vinculación con solicitudes de contacto. |
+| `Lead` | Id, BuyerId, AgencyId, SimulationId, Status, ConsentGrantedAt, CreatedAt | Ninguno | Representa la solicitud de contacto que un comprador envía a una inmobiliaria, vinculada con una simulación y el consentimiento otorgado. |
+| `LeadNote` | Id, LeadId, AuthorId, Content, CreatedAt | Ninguno | Registra las observaciones realizadas por los asesores durante el seguimiento de una solicitud de contacto. |
+| `LeadStatusChange` | Id, LeadId, ChangedBy, PreviousStatus, NewStatus, ChangedAt | Ninguno | Conserva el historial de modificaciones del estado de un lead, incluyendo el responsable y la fecha del cambio. |
+| `HipoSimDbContext` | Users, Agencies, Simulations, Leads, LeadNotes, LeadStatusChanges | OnModelCreating() | Configura las entidades y relaciones del modelo de persistencia mediante Entity Framework Core y PostgreSQL. |
+| `AuthService` | Dependencias de autenticación y persistencia | RegisterAsync(), LoginAsync() | Implementa la lógica de registro e inicio de sesión de los usuarios. |
+| `JwtTokenService` | Configuración JWT | Create() | Genera los tokens de autenticación que permiten identificar a los usuarios y aplicar autorización basada en roles. |
+| `AuthController` | AuthService | Register(), Login() | Expone los endpoints REST para el registro y la autenticación de usuarios. |
+| `SimulationService` | Dependencias del motor financiero y persistencia | CalculateAsync() | Coordina el procesamiento de simulaciones hipotecarias y el almacenamiento de sus resultados. |
+| `SimulationsController` | SimulationService | Create() | Expone los endpoints REST relacionados con la ejecución de simulaciones hipotecarias. |
+| `LeadService` | Dependencias de persistencia | CreateAsync(), GetInboxAsync(), GetDetailAsync(), UpdateStatusAsync(), CreateNoteAsync() | Implementa las operaciones de creación, consulta, actualización de estados y registro de notas para la gestión de leads. |
+| `LeadsController` | LeadService | Create(), GetInbox(), GetDetail(), UpdateStatus(), CreateNote() | Expone los cinco endpoints REST para administrar las solicitudes de contacto y su seguimiento. |
+| `FinancialEngine` | Componentes internos del motor financiero | Operaciones de amortización, conversión de tasas y cálculo de indicadores | Representa el componente encargado de procesar cálculos hipotecarios mediante el método francés y obtener indicadores financieros. |
 
-<div style="page-break-after: always;"></div>
+Las primeras clases corresponden al diseño conceptual del producto, mientras que las clases incorporadas posteriormente representan componentes de la implementación actual del backend. Esta distinción permite mantener la trazabilidad entre el diseño original y las funcionalidades desarrolladas.
 
-
-
+La incorporación de `Lead`, `LeadNote` y `LeadStatusChange` permite gestionar solicitudes de contacto, registrar notas de seguimiento y conservar el historial de cambios de estado. Estas entidades se relacionan con usuarios, inmobiliarias y simulaciones hipotecarias, y se almacenan mediante Entity Framework Core y PostgreSQL.
 ## **4.10. Database Design**
 
 ### **4.10.1. Relational/Non-Relational Database Diagram**
 
 Se propone un modelo relacional (PostgreSQL), consistente con el diseño de clases de 4.9 y con la base de datos del proyecto original AutoFinance Pro. Este diagrama fue generado a partir de una fuente Diagram-as-Code (guardada junto a la imagen en `assets/08-chapter-4/database-design/`) como borrador de trabajo; el equipo lo formalizará en **LucidChart / Vertabelo**, conforme a las restricciones tecnológicas del curso.
+El diseño de base de datos de HipoSim se amplió durante el Sprint 2 para incorporar la gestión de solicitudes de contacto entre compradores e inmobiliarias. Se añadieron las entidades `AGENCIES`, `LEADS`, `LEAD_NOTES` y `LEAD_STATUS_CHANGES`, manteniendo las estructuras previamente definidas para usuarios, simulaciones hipotecarias, beneficios estatales y comparaciones de escenarios.
+
+La entidad `LEADS` relaciona al comprador, la inmobiliaria y la simulación hipotecaria asociada a su solicitud, además de registrar el consentimiento de contacto y el estado actual. Por su parte, `LEAD_NOTES` permite almacenar las observaciones realizadas por los asesores, mientras que `LEAD_STATUS_CHANGES` conserva el historial de modificaciones para facilitar la trazabilidad del seguimiento comercial.
+
+Estas incorporaciones corresponden al módulo TS08 y permiten mantener la información de las solicitudes y su seguimiento mediante un modelo relacional.
 
 <div align="center">
-  <img src="../assets/08-chapter-4/database-design/er-diagram.png" alt="Diagrama de base de datos relacional de HipoSim" width="900">
+  <img src="../assets/08-chapter-4/database-design/db-diagram-v2.png" alt="Diagrama de base de datos relacional de HipoSim" width="900">
 </div>

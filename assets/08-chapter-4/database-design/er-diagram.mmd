@@ -1,3 +1,4 @@
+
 erDiagram
   USERS ||--o{ SIMULATIONS : owns
   USERS ||--o{ SCENARIO_COMPARISONS : creates
@@ -95,4 +96,47 @@ erDiagram
     string key
     decimal value
     timestamp updated_at
+  }
+
+%% TS08 - Leads Management
+
+  AGENCIES ||--o{ LEADS : receives
+  USERS ||--o{ LEADS : creates
+  SIMULATIONS ||--o{ LEADS : references
+  LEADS ||--o{ LEAD_NOTES : contains
+  LEADS ||--o{ LEAD_STATUS_CHANGES : tracks
+  USERS ||--o{ LEAD_NOTES : writes
+  USERS ||--o{ LEAD_STATUS_CHANGES : performs
+
+  AGENCIES {
+    uuid id PK
+    string name
+    timestamp created_at
+  }
+
+  LEADS {
+    uuid id PK
+    uuid buyer_id FK
+    uuid agency_id FK
+    uuid simulation_id FK
+    string status
+    timestamp consent_granted_at
+    timestamp created_at
+  }
+
+  LEAD_NOTES {
+    uuid id PK
+    uuid lead_id FK
+    uuid author_id FK
+    string content
+    timestamp created_at
+  }
+
+  LEAD_STATUS_CHANGES {
+    uuid id PK
+    uuid lead_id FK
+    uuid changed_by FK
+    string previous_status
+    string new_status
+    timestamp changed_at
   }
