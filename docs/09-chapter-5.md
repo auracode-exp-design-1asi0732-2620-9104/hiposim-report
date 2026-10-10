@@ -486,6 +486,23 @@ Las pruebas del backend se ejecutaron mediante `dotnet test`, obteniendo **188 p
 
 </div>
 
+<div align="center">
+  <img src="../assets/09-chapter-5/backend-evidence/leads-swagger.png" alt="Endpoints REST de Leads Management en Swagger" width="900">
+  <p><em>Figura. Endpoints REST implementados para la gestión de leads en HipoSim.</em></p>
+</div>
+
+**Automated Tests — Leads Management (TS08)**
+
+<div align="center">
+  <img src="../assets/09-chapter-5/backend-evidence/leads-tests.png" alt="Pruebas automatizadas del backend de HipoSim" width="900">
+  <p><em>Figura. Ejecución satisfactoria de la batería de pruebas del backend, incluyendo las pruebas asociadas al módulo Leads Management.</em></p>
+</div>
+
+<div style="text-align:justify; line-height:1.6;">
+
+La evidencia anterior confirma la ejecución satisfactoria de la solución backend, con 188 pruebas correctas y sin errores registrados. Este resultado respalda la validación técnica del módulo TS08 dentro del conjunto de pruebas automatizadas del proyecto.
+
+</div>
 ### **5.2.7. Team Collaboration Insights**
 
 <div style="text-align:justify; line-height:1.6;">
