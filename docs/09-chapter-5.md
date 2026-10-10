@@ -356,6 +356,35 @@ Centralizamos el trabajo del backend en [hiposim-backEnd](https://github.com/aur
 
 </div>
 
+#### **Leads Management Backend Evidence (TS08)**
+
+<div style="text-align:justify; line-height:1.6;">
+
+Durante el Sprint 2 implementamos el módulo de gestión de interesados (TS08) en el backend de HipoSim, utilizando ASP.NET Core, C#, Entity Framework Core y PostgreSQL. Su desarrollo permite registrar solicitudes de contacto autorizadas por compradores y gestionar su seguimiento desde el rol de asesor inmobiliario.
+
+La implementación incorpora `LeadsController` y `LeadService`, responsables de las operaciones de creación, consulta, actualización de estados y registro de notas. Asimismo, se incorporaron las entidades `Lead`, `LeadNote` y `LeadStatusChange` para almacenar las solicitudes y mantener la trazabilidad del seguimiento comercial.
+
+</div>
+
+| Componente implementado | Responsabilidad | Evidencia de implementación |
+|:--|:--|:--|
+| `LeadsController` | Exponer los cinco endpoints REST del módulo. | Controlador desarrollado en el backend. |
+| `LeadService` | Gestionar solicitudes, estados, notas y restricciones de acceso. | Servicio de aplicación implementado. |
+| `Lead` | Almacenar los datos principales de la solicitud y el consentimiento. | Entidad incorporada a la persistencia. |
+| `LeadNote` | Registrar observaciones de seguimiento. | Entidad relacionada con los leads. |
+| `LeadStatusChange` | Mantener el historial de cambios de estado. | Entidad de trazabilidad implementada. |
+| Entity Framework Core | Gestionar la persistencia relacional de leads. | Migración `AddLeadsManagement` incorporada. |
+
+<div style="text-align:justify; line-height:1.6;">
+
+Para la seguridad de los servicios se utiliza autenticación JWT y autorización según el rol del usuario. Las consultas y operaciones de seguimiento restringen el acceso a los interesados asociados con la inmobiliaria del asesor, mientras que la creación de solicitudes exige consentimiento explícito del comprador.
+
+La implementación también fue sometida a pruebas automatizadas de los endpoints REST. En la última ejecución registrada, el backend obtuvo **188 pruebas satisfactorias**, incluyendo **10 pruebas correspondientes a TS08**. Estas verificaciones abarcan las operaciones principales y las restricciones de acceso del módulo.
+
+La evidencia corresponde a la implementación y validación del backend; no constituye evidencia de un despliegue público en producción ni de una integración completa entre las aplicaciones móvil y web.
+
+</div>
+
 ### **5.2.6. RESTful API Documentation**
 
 <div style="text-align:justify; line-height:1.6;">
