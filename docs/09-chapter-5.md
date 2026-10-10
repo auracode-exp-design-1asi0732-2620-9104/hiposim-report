@@ -411,6 +411,52 @@ La respuesta del motor financiero se organiza alrededor del capital financiado, 
 
 </div>
 
+#### **Leads Management Contract (TS08)**
+
+<div style="text-align:justify; line-height:1.6;">
+
+Durante el Sprint 2 implementamos los servicios REST para gestionar las solicitudes de contacto entre compradores e inmobiliarias. La historia técnica **TS08** comprende la creación de leads, la consulta de la bandeja del asesor, el acceso a la ficha del interesado, la actualización de estados y el registro de notas de seguimiento.
+
+Los servicios se desarrollaron en el backend de HipoSim mediante **ASP.NET Core y C#**, utilizando **Entity Framework Core y PostgreSQL** para la persistencia. La autenticación mediante JWT permite identificar al usuario y aplicar las restricciones de acceso correspondientes a compradores y asesores.
+
+</div>
+
+| Método | Endpoint | Funcionalidad implementada | Requerimiento |
+|:--:|:--|:--|:--:|
+| `POST` | `/api/leads` | Crear una solicitud de contacto con consentimiento del comprador. | US21, TS08 |
+| `GET` | `/api/leads` | Consultar la bandeja de interesados de la inmobiliaria del asesor, con filtrado por estado. | US23, TS08 |
+| `GET` | `/api/leads/{id}` | Obtener la ficha de un interesado autorizado. | US24, TS08 |
+| `PATCH` | `/api/leads/{id}/status` | Actualizar el estado del lead y registrar su historial. | US25, TS08 |
+| `POST` | `/api/leads/{id}/notes` | Agregar observaciones de seguimiento a un lead. | US25, TS08 |
+
+<div style="text-align:justify; line-height:1.6;">
+
+La creación de un lead requiere el consentimiento explícito del comprador mediante el campo `acceptedContact`. Cada solicitud se vincula con el comprador, la inmobiliaria seleccionada y la simulación hipotecaria correspondiente.
+
+Para el seguimiento comercial se definieron los estados `New`, `InContact`, `AppointmentScheduled`, `Closed` y `Discarded`. Las modificaciones quedan registradas en un historial independiente, mientras que las notas permiten conservar las observaciones realizadas durante la atención del interesado.
+
+</div>
+
+#### **Lead Data Persistence**
+
+<div style="text-align:justify; line-height:1.6;">
+
+La persistencia del módulo se organiza mediante las entidades `Lead`, `LeadNote` y `LeadStatusChange`. La entidad `Lead` conserva la información principal de la solicitud, `LeadNote` almacena las observaciones de seguimiento y `LeadStatusChange` registra las transiciones de estado y el usuario responsable.
+
+Estas entidades se integraron al contexto de datos de HipoSim mediante **Entity Framework Core**, incorporando una migración para la gestión de leads. Asimismo, se aplicaron restricciones de acceso para que los asesores consulten y administren únicamente los interesados asociados a su inmobiliaria.
+
+</div>
+
+#### **API Validation and Testing**
+
+<div style="text-align:justify; line-height:1.6;">
+
+La implementación de TS08 se verificó mediante pruebas automatizadas sobre los endpoints de gestión de leads. Se evaluaron las operaciones de creación, consulta, actualización de estado y registro de notas, junto con las restricciones de autenticación, autorización y consentimiento.
+
+Las pruebas del backend se ejecutaron mediante `dotnet test`, obteniendo **188 pruebas satisfactorias** en la solución, de las cuales **10 corresponden al módulo TS08**. Estos resultados respaldan el funcionamiento de los servicios implementados durante el Sprint 2.
+
+</div>
+
 ### **5.2.7. Team Collaboration Insights**
 
 <div style="text-align:justify; line-height:1.6;">
