@@ -2,9 +2,9 @@
 
 <div style="text-align: justify; line-height: 1.6;">
 
-Este capítulo presenta la estrategia de implementación y despliegue de **HipoSim**, un simulador hipotecario web y móvil, independiente y dirigido a compradores de primera vivienda en el Perú. La implementación transforma los requerimientos del Capítulo III y el diseño del producto establecido en el Capítulo IV en un conjunto de productos digitales: una Landing Page pública, una Aplicación Web Frontend responsiva, una Aplicación Móvil Nativa, una API RESTful y una base de datos relacional.
+En AuraCode desarrollamos **HipoSim** como una solución de orientación hipotecaria para compradores de primera vivienda en el Perú. Organizamos el producto en una Landing Page pública, una aplicación web para asesores inmobiliarios, una aplicación móvil Android para compradores, una API RESTful y una base de datos relacional. Con esta distribución conectamos los requisitos definidos en el Capítulo III con las decisiones de arquitectura y experiencia de usuario del Capítulo IV.
 
-También se establecen el entorno de desarrollo, las prácticas de gestión del código fuente, las convenciones de programación, la configuración de despliegue, los Sprint Backlogs, las evidencias de implementación, la documentación del servicio y los criterios de colaboración del equipo. Cuando los capítulos anteriores no proporcionan un enlace de repositorio, despliegue, commit o video, se conserva un campo de evidencia claramente identificado para que el equipo lo complete después de publicar el artefacto correspondiente.
+Durante los dos primeros Sprints concentramos nuestros esfuerzos en la experiencia pública de simulación y en los componentes que permiten conectar al comprador con una inmobiliaria mediante consentimiento explícito. Documentamos tanto los avances obtenidos como las limitaciones de integración y publicación identificadas en esta etapa, sin considerar terminadas las funciones que aún dependen de otros módulos.
 
 </div>
 
@@ -12,84 +12,75 @@ También se establecen el entorno de desarrollo, las prácticas de gestión del 
 
 ## **5.1. Software Configuration Management**
 
-<div style="text-align: justify; line-height: 1.6;">
+<div style="text-align:justify; line-height:1.6;">
 
-La Gestión de la Configuración del Software define las herramientas, convenciones, entornos y prácticas de control de versiones que permiten al equipo construir HipoSim de manera consistente y trazable. Estas decisiones abarcan la gestión del proyecto, requerimientos, diseño UX/UI, desarrollo, pruebas, documentación y despliegue.
+Establecimos una estrategia de gestión de configuración para mantener la trazabilidad entre historias de usuario, componentes, cambios de código y entregas. Empleamos herramientas compartidas de seguimiento y repositorios independientes por producto, con convenciones orientadas a facilitar la revisión técnica y la integración colaborativa.
 
 </div>
 
 ### **5.1.1. Software Development Environment Configuration**
 
-<div style="text-align: justify; line-height: 1.6;">
+<div style="text-align:justify; line-height:1.6;">
 
-Las siguientes herramientas soportan el ciclo de vida de HipoSim. La selección es coherente con los capítulos I, III y IV: Vue y Vite para el cliente web; HTML5, CSS3 y JavaScript para la Landing Page; C# y ASP.NET Core para la API RESTful; Entity Framework Core para la persistencia; y PostgreSQL como base de datos relacional.
+Seleccionamos las herramientas de acuerdo con la arquitectura de HipoSim. Para la experiencia web utilizamos Vue 3, Vite y PrimeVue; para la Landing Page, HTML, CSS y JavaScript; para Android, Kotlin y Jetpack Compose; y para los servicios, C# con ASP.NET Core, Entity Framework Core y PostgreSQL. Complementamos el desarrollo con Jira, GitHub y herramientas de diseño, documentación y validación de API.
 
 </div>
 
 <table style="width:100%; border-collapse:collapse; margin:16px 0;">
 <thead><tr style="background-color:#0E5C63; color:#FFFFFF;"><th style="border:1px solid #B8C2CC; padding:10px;">Actividad</th><th style="border:1px solid #B8C2CC; padding:10px;">Herramienta</th><th style="border:1px solid #B8C2CC; padding:10px;">Propósito en HipoSim</th><th style="border:1px solid #B8C2CC; padding:10px;">Referencia</th></tr></thead>
 <tbody>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Gestión del proyecto</td><td style="border:1px solid #B8C2CC; padding:9px;">Jira</td><td style="border:1px solid #B8C2CC; padding:9px;">Gestionar épicas, historias de usuario, historias técnicas, Sprint Backlogs, prioridades, responsables y progreso.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.atlassian.com/software/jira">Sitio oficial</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Gestión de requerimientos</td><td style="border:1px solid #B8C2CC; padding:9px;">Jira y Markdown</td><td style="border:1px solid #B8C2CC; padding:9px;">Mantener la trazabilidad entre backlog, criterios de aceptación, implementación y documentación.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.markdownguide.org/">Markdown Guide</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Diseño UX/UI</td><td style="border:1px solid #B8C2CC; padding:9px;">Figma</td><td style="border:1px solid #B8C2CC; padding:9px;">Crear wireframes, mock-ups, wireflows, flujos de usuario y prototipos web y móviles.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.figma.com/">Sitio oficial</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Arquitectura y modelado</td><td style="border:1px solid #B8C2CC; padding:9px;">Structurizr y Lucidchart</td><td style="border:1px solid #B8C2CC; padding:9px;">Formalizar los diagramas C4, de clases y de base de datos.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://structurizr.com/">Structurizr</a> / <a href="https://www.lucidchart.com/">Lucidchart</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Control de versiones</td><td style="border:1px solid #B8C2CC; padding:9px;">Git y GitHub</td><td style="border:1px solid #B8C2CC; padding:9px;">Registrar cambios, aplicar GitFlow, revisar contribuciones y conectar los repositorios con los servicios de despliegue.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://git-scm.com/">Git</a> / <a href="https://github.com/">GitHub</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollo web</td><td style="border:1px solid #B8C2CC; padding:9px;">VS Code, Node.js, Vue 3, Vite y PrimeVue</td><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollar la aplicación web modular y responsiva respetando el sistema visual del Capítulo IV.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://vuejs.org/">Vue</a> / <a href="https://vite.dev/">Vite</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Landing Page</td><td style="border:1px solid #B8C2CC; padding:9px;">HTML5, CSS3, JavaScript y GitHub Pages</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementar y publicar la presentación pública, el simulador básico, los beneficios, los términos y el llamado a la acción.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://developer.mozilla.org/">MDN Web Docs</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Backend</td><td style="border:1px solid #B8C2CC; padding:9px;">Visual Studio/Rider, .NET, C#, ASP.NET Core y Entity Framework Core</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementar la API, autenticación, cálculos financieros, beneficios, reportes, administración y persistencia.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://dotnet.microsoft.com/">.NET</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Base de datos</td><td style="border:1px solid #B8C2CC; padding:9px;">PostgreSQL y pgAdmin</td><td style="border:1px solid #B8C2CC; padding:9px;">Almacenar usuarios, simulaciones, cronogramas, indicadores, beneficios, comparaciones, reportes y parámetros.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.postgresql.org/">PostgreSQL</a></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Pruebas y documentación de API</td><td style="border:1px solid #B8C2CC; padding:9px;">Swagger/OpenAPI y Postman</td><td style="border:1px solid #B8C2CC; padding:9px;">Documentar endpoints y verificar solicitudes, respuestas, validaciones y autorizaciones.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://swagger.io/specification/">OpenAPI</a></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Documentación</td><td style="border:1px solid #B8C2CC; padding:9px;">Markdown, HTML y GitHub</td><td style="border:1px solid #B8C2CC; padding:9px;">Mantener el informe técnico versionado y preparado para exportarse a PDF.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://docs.github.com/en/get-started/writing-on-github">GitHub Docs</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Gestión del proyecto</td><td style="border:1px solid #B8C2CC; padding:9px;">Jira</td><td style="border:1px solid #B8C2CC; padding:9px;">Gestionamos épicas, historias de usuario, Sprint Backlogs, responsables y seguimiento del avance.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.atlassian.com/software/jira">Sitio oficial</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Gestión de requerimientos</td><td style="border:1px solid #B8C2CC; padding:9px;">Jira y Markdown</td><td style="border:1px solid #B8C2CC; padding:9px;">Vinculamos los criterios de aceptación del backlog con la implementación y el informe.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.markdownguide.org/">Markdown Guide</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Diseño UX/UI</td><td style="border:1px solid #B8C2CC; padding:9px;">Figma</td><td style="border:1px solid #B8C2CC; padding:9px;">Diseñamos wireframes, mock-ups y flujos de las interfaces web y Android.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.figma.com/">Sitio oficial</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Arquitectura y modelado</td><td style="border:1px solid #B8C2CC; padding:9px;">Structurizr y Lucidchart</td><td style="border:1px solid #B8C2CC; padding:9px;">Modelamos y revisamos los diagramas C4, de clases y de base de datos.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://structurizr.com/">Structurizr</a> / <a href="https://www.lucidchart.com/">Lucidchart</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Control de versiones</td><td style="border:1px solid #B8C2CC; padding:9px;">Git y GitHub</td><td style="border:1px solid #B8C2CC; padding:9px;">Registramos los cambios, aplicamos GitFlow y revisamos las contribuciones de los repositorios.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://git-scm.com/">Git</a> / <a href="https://github.com/">GitHub</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollo web</td><td style="border:1px solid #B8C2CC; padding:9px;">VS Code, Node.js, Vue 3, Vite y PrimeVue</td><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollamos una aplicación web modular y responsiva acorde con el diseño del Capítulo IV.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://vuejs.org/">Vue</a> / <a href="https://vite.dev/">Vite</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Landing Page</td><td style="border:1px solid #B8C2CC; padding:9px;">HTML5, CSS3, JavaScript y GitHub Pages</td><td style="border:1px solid #B8C2CC; padding:9px;">Implementamos la experiencia pública, el simulador básico, los beneficios y los contenidos legales.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://developer.mozilla.org/">MDN Web Docs</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Backend</td><td style="border:1px solid #B8C2CC; padding:9px;">Visual Studio/Rider, .NET, C#, ASP.NET Core y Entity Framework Core</td><td style="border:1px solid #B8C2CC; padding:9px;">Desarrollamos autenticación, cálculos financieros y persistencia; reservamos reportes y administración avanzada para otra iteración.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://dotnet.microsoft.com/">.NET</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Base de datos</td><td style="border:1px solid #B8C2CC; padding:9px;">PostgreSQL y pgAdmin</td><td style="border:1px solid #B8C2CC; padding:9px;">Organizamos la persistencia de usuarios, inmobiliarias, simulaciones y leads.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://www.postgresql.org/">PostgreSQL</a></td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Pruebas y documentación de API</td><td style="border:1px solid #B8C2CC; padding:9px;">Swagger/OpenAPI y Postman</td><td style="border:1px solid #B8C2CC; padding:9px;">Describimos endpoints y contrastamos solicitudes, respuestas y reglas de autorización.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://swagger.io/specification/">OpenAPI</a></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Documentación</td><td style="border:1px solid #B8C2CC; padding:9px;">Markdown, HTML y GitHub</td><td style="border:1px solid #B8C2CC; padding:9px;">Mantenemos el informe técnico bajo control de versiones y preparado para su exportación a PDF.</td><td style="border:1px solid #B8C2CC; padding:9px;"><a href="https://docs.github.com/en/get-started/writing-on-github">GitHub Docs</a></td></tr>
 </tbody></table>
 
 #### **Local Development Environment Baseline**
 
 ```text
-Node.js: versión LTS aprobada por el equipo
-Gestor de paquetes: npm
-Frontend: Vue 3 + Vite + PrimeVue (tema Material)
-Backend: versión de .NET SDK aprobada por el equipo + ASP.NET Core
-ORM: Entity Framework Core
-Base de datos: PostgreSQL
-Control de versiones: Git
-Plataforma remota: GitHub
-Contrato de API: OpenAPI
+Gestión del proyecto: Jira
+Gestor de paquetes web: npm
+Frontend web: Vue 3, Vite y PrimeVue
+Landing Page: HTML5, CSS3 y JavaScript
+Aplicación Android: Kotlin, Jetpack Compose y Material 3
+Servicios REST: C# y ASP.NET Core
+Persistencia: Entity Framework Core y PostgreSQL
+Control de versiones: Git y GitHub
+Especificación de servicios: OpenAPI/Swagger
+Pruebas de servicios: Postman y pruebas automatizadas del proyecto .NET
 ```
 
 ### **5.1.2. Source Code Management**
 
 <div style="text-align:justify; line-height:1.6;">
 
-GitHub será la plataforma de control de versiones. Cada producto digital tendrá un repositorio independiente para administrar su historial, incidencias, despliegue y versiones. El repositorio de la API RESTful también incluirá las pruebas unitarias y de integración/aceptación.
+Concentramos el código fuente en la organización de GitHub de AuraCode y separamos los repositorios de cada producto. Esta organización nos permite revisar cambios de manera independiente, mantener un historial de contribuciones y relacionar las funcionalidades del backlog con Pull Requests. En el repositorio de servicios agrupamos la API y el trabajo asociado a su validación.
 
 </div>
 
-| Producto | Nombre sugerido del repositorio | URL |
+| Producto | Repositorio | Código fuente |
 |:--|:--|:--|
-| Landing Page | `hiposim-LandingPage` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
-| Aplicación Web Frontend | `hiposim-frontend` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp.git) |
-| Aplicación Móvil Nativa | `hiposim-mobile` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile.git) |
-| API RESTful y pruebas | `hiposim-platform` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd.git) |
+| Landing Page | `hiposim-LandingPage` | [GitHub - Landing Page](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
+| Aplicación Web Frontend | `hiposim-webApp` | [GitHub - Web App](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp) |
+| Aplicación Móvil Android | `hiposim-app-mobile` | [GitHub - Mobile App](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
+| Backend y API RESTful | `hiposim-backEnd` | [GitHub - Backend](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd) |
 
 #### **GitFlow Workflow**
 
-- `main`: contiene versiones estables, revisadas y desplegables en producción.
-- `develop`: integra las funcionalidades terminadas para la siguiente versión.
-- `feature/<alcance>-<descripcion-corta>`: implementa una historia; ejemplo: `feature/us01-mortgage-simulation`.
-- `release/<mayor>.<menor>.<parche>`: estabiliza una versión candidata; ejemplo: `release/1.0.0`.
-- `hotfix/<mayor>.<menor>.<parche>-<descripcion>`: corrige un defecto urgente; ejemplo: `hotfix/1.0.1-tcea-rounding`.
-
 <div style="text-align:justify; line-height:1.6;">
 
-Las ramas `feature` nacen desde `develop` y regresan mediante Pull Request. Las ramas `release` nacen desde `develop` y se fusionan con `main` y `develop`. Las ramas `hotfix` nacen desde `main` y también regresan a ambas ramas permanentes. No se permiten cambios directos en `main`. Las versiones emplean **Versionado Semántico** (`MAYOR.MENOR.PARCHE`) y etiquetas como `v1.0.0`.
+Adoptamos **GitFlow** para separar el trabajo estable de las funcionalidades en desarrollo. Utilizamos `main` como referencia de versiones estables y `develop` como rama de integración; las ramas `feature/*` concentran cambios funcionales, mientras que `release/*` y `hotfix/*` permiten distinguir la preparación de versiones y la corrección de incidencias. Las integraciones se canalizan mediante Pull Requests y revisiones entre integrantes.
 
-Los commits siguen **Conventional Commits**:
+Aplicamos **Semantic Versioning** en la identificación de entregas y **Conventional Commits** en los mensajes de cambio. Esto facilita localizar correcciones, nuevas funcionalidades y modificaciones documentales en el historial de los repositorios.
 
 </div>
-
-```text
-<tipo>(<alcance>): <descripción breve>
-```
 
 ```text
 feat(simulation): calculate mortgage installments with French amortization
@@ -103,7 +94,7 @@ test(financial-engine): add TCEA calculation cases
 
 <div style="text-align:justify; line-height:1.6;">
 
-Los identificadores del código y los elementos técnicos se escribirán en inglés. El contenido visible para el usuario se gestionará con internacionalización (i18n) en español (es_419) e inglés (en_US), porque HipoSim se dirige a compradores peruanos y el curso exige ambos idiomas. El código priorizará claridad, funciones breves, nombres del dominio, separación de responsabilidades y ausencia de reglas duplicadas.
+Acordamos utilizar identificadores técnicos en inglés y respetar las convenciones propias de cada lenguaje. En el frontend priorizamos componentes reutilizables y responsabilidades separadas; en el backend, servicios con dependencias explícitas, DTO validados y nombres consistentes con el dominio hipotecario. Para las especificaciones de comportamiento seguimos el vocabulario de las historias de usuario y la sintaxis Gherkin. Los textos de las interfaces se organizan para ofrecer español e inglés sin duplicar lógica de presentación.
 
 </div>
 
@@ -130,50 +121,48 @@ Los identificadores del código y los elementos técnicos se escribirán en ingl
 
 <div style="text-align:justify; line-height:1.6;">
 
-Cada producto debe poder desplegarse desde su repositorio. El Landing Page ya se publica en GitHub Pages; los proveedores y enlaces públicos de los demás productos se completarán cuando el equipo los publique. La siguiente configuración describe el flujo exigido para cada producto.
+Diferenciamos el despliegue público de la Landing Page del proceso de publicación de la aplicación web, la API y Android. La Landing Page constituye el producto con una dirección pública documentada en esta entrega. Para los otros componentes mantenemos código versionado y procedimientos de compilación e integración, pero no contamos en el informe con una publicación productiva acreditada.
 
 </div>
 
 #### **Landing Page Deployment**
 
-1. Obtener la última versión aprobada de `main`.
-2. Validar HTML, CSS, enlaces, comportamiento responsivo, metadatos y accesibilidad.
-3. Publicar los recursos en GitHub Pages desde la rama principal del repositorio.
-4. Verificar que GitHub Pages sirva el sitio mediante HTTPS.
-5. Verificar Inicio, Producto, Beneficios, Términos y **Simular ahora**.
+<div style="text-align:justify; line-height:1.6;">
+
+Publicamos la Landing Page mediante GitHub Pages desde el repositorio dedicado. La publicación ofrece navegación por las secciones de producto, beneficios y preguntas frecuentes, junto con el acceso al simulador básico. Utilizamos la dirección HTTPS del sitio como referencia compartida para comprobar su disponibilidad y contrastar la presentación de contenidos en escritorio y móvil.
+
+</div>
 
 #### **Frontend Web Application Deployment**
 
-1. Instalar dependencias con `npm ci`.
-2. Configurar la URL de la API mediante una variable de entorno.
-3. Ejecutar linting, pruebas automatizadas y `npm run build`.
-4. Publicar el directorio `dist` en el servicio seleccionado.
-5. Verificar rutas, autenticación, simulación, historial, comparación y breakpoints.
+<div style="text-align:justify; line-height:1.6;">
+
+Trabajamos la aplicación del asesor con un proyecto Vue y Vite. El proceso de construcción contempla la instalación reproducible de dependencias con `npm ci`, la compilación mediante `npm run build` y la configuración de la URL base de la API mediante variables de entorno. Durante esta entrega el portal se encuentra documentado como una aplicación ejecutada localmente; la autenticación y la gestión de leads todavía requieren comprobarse sobre la API integrada antes de considerarse un despliegue completo.
+
+</div>
 
 #### **RESTful API and Database Deployment**
 
-1. Restaurar dependencias .NET y compilar en modo Release.
-2. Ejecutar pruebas unitarias y de integración.
-3. Aprovisionar PostgreSQL y proteger la cadena de conexión.
-4. Aplicar las migraciones de Entity Framework Core de forma controlada.
-5. Publicar la API ASP.NET Core en el servicio seleccionado.
-6. Configurar CORS, HTTPS, tokens seguros y registros centralizados.
-7. Verificar el endpoint de salud y la documentación OpenAPI.
+<div style="text-align:justify; line-height:1.6;">
+
+Desarrollamos los servicios con ASP.NET Core y organizamos la persistencia con Entity Framework Core y PostgreSQL. El flujo técnico distingue la restauración de dependencias, la compilación, la ejecución de pruebas y la aplicación controlada de migraciones. Tratamos la cadena de conexión, las claves JWT, la configuración CORS y las credenciales de prueba como información de configuración que no pertenece al código público. La URL de una API productiva no está acreditada en la versión del informe utilizada para esta entrega.
+
+</div>
 
 #### **Native Mobile Application Deployment**
 
-1. Configurar el endpoint de producción y los identificadores de la aplicación.
-2. Generar builds firmados de Android (y de iOS, si el alcance lo incluye) con credenciales protegidas.
-3. Probar tamaños de dispositivo y versiones soportadas.
-4. Distribuir una compilación de prueba interna antes de enviarla a las tiendas.
-5. Completar metadatos, privacidad, capturas y notas de versión.
+<div style="text-align:justify; line-height:1.6;">
 
-| Producto | URL de producción/distribución | Estado |
+Desarrollamos la experiencia nativa para Android y la ejecutamos en emulador o dispositivo de prueba. El proyecto incorpora verificaciones automatizadas y una configuración de integración continua en GitHub Actions. Distinguimos esta ejecución de desarrollo de una distribución pública: en la etapa documentada no se registra la entrega de una APK de producción ni una publicación en una tienda de aplicaciones. La implementación nativa de iOS tampoco forma parte de las evidencias técnicas de este capítulo.
+
+</div>
+
+| Producto | Estado documentado | Referencia |
 |:--|:--|:--|
-| Landing Page | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) | Publicado en GitHub Pages. |
-| Aplicación Web Frontend | *Pendiente* | Completar después del despliegue. |
-| API RESTful | *Pendiente* | Completar después del despliegue. |
-| Aplicación Móvil Nativa | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) | Código en la rama `develop`; sin despliegue ni distribución en esta entrega. |
+| Landing Page | Publicada en GitHub Pages mediante HTTPS. | [Sitio público de HipoSim](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
+| Aplicación Web Frontend | Disponible como proyecto de desarrollo; sin URL productiva acreditada. | [Repositorio web](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp) |
+| API RESTful | Componentes desarrollados e integración en curso; sin URL productiva acreditada. | [Repositorio backend](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd) |
+| Aplicación Móvil Android | Código y pruebas en el repositorio; sin distribución pública acreditada. | [Repositorio móvil](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
 
 <div style="page-break-before:always;"></div>
 
@@ -181,7 +170,7 @@ Cada producto debe poder desplegarse desde su repositorio. El Landing Page ya se
 
 <div style="text-align:justify; line-height:1.6;">
 
-La implementación se organiza mediante el Product Backlog del Capítulo III, gestionado en Jira. La secuencia comienza por el Landing Page, que permite a un visitante estimar su cuota y su TCEA sin registrarse, y por las bases del frontend web y de la aplicación móvil; después incorpora el backend, la simulación completa, la gestión de escenarios y la conexión opcional con inmobiliarias, dejando las funciones administrativas para una etapa posterior.
+Organizamos la implementación mediante el Product Backlog del Capítulo III, administrado en Jira. Dividimos el desarrollo en un primer Sprint centrado en la experiencia pública y en las bases de las aplicaciones, y un segundo Sprint dedicado al motor financiero, la autenticación, el intercambio de datos y la gestión de interesados por inmobiliaria. Priorizamos la continuidad del flujo principal antes que el historial de simulaciones, el comparador, la exportación de PDF y la administración avanzada de parámetros.
 
 </div>
 
@@ -189,98 +178,94 @@ La implementación se organiza mediante el Product Backlog del Capítulo III, ge
 
 <div style="text-align:justify; line-height:1.6;">
 
-El Product Backlog completo, con las 36 historias del proyecto, se gestiona en Jira. Este informe presenta únicamente los Sprints con historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial. El Sprint 1 concentró el Landing Page y las bases del frontend web y de la aplicación móvil, y ya está implementado. El Sprint 2 concentra la API, la aplicación móvil del Comprador y la aplicación web del Asesor de inmobiliaria, que son los dos productos de HipoSim junto con el Landing Page. Las demás historias del backlog, como guardar y comparar escenarios, exportar en PDF y la administración de parámetros, quedan registradas en Jira para una siguiente entrega.
+Distribuimos las historias funcionales y técnicas entre los integrantes de acuerdo con su dependencia y especialidad. El primer Sprint comprendió la Landing Page, el entorno Vue y la decisión tecnológica de Android; el segundo se enfocó en relacionar la aplicación del comprador, la API y el portal del asesor. Las estimaciones expresadas en Story Points representan capacidad planificada y no equivalen, por sí solas, a funcionalidades verificadas.
 
 </div>
 
 #### **Sprint 1 - Landing Page and Foundations**
 
-| Campo | Detalle |
+| Campo | Descripción |
 |:--|:--|
 | Sprint | Sprint 1 |
-| Sprint Goal | Nuestro enfoque es publicar el Landing Page con un simulador básico, beneficios estatales, información legal y cambio de idioma, y dejar listas las bases del frontend web y de la aplicación móvil. Creemos que entrega claridad sobre el costo real del crédito a los compradores primerizos. Se confirmará cuando un visitante obtenga su cuota mensual y su TCEA estimada, sin registrarse, en el sitio publicado en GitHub Pages. |
-| Velocity | 26 Story Points (estimación inicial, sin historial de Sprints previos). |
-| Suma de Story Points | **26** |
-| Elementos planificados | TS04, US14, US15, US16, US17, US18, US19, US20, TS01, SP03 y 4 tasks de diseño de mockups. |
-| Fecha, hora, ubicación y asistentes | *Pendiente: completar con el registro real del Sprint Planning.* |
+| Sprint Goal | Nos enfocamos en publicar una experiencia inicial que permitiera conocer HipoSim, revisar beneficios estatales y ejecutar una simulación básica sin crear una cuenta, mientras organizábamos las bases del frontend web y Android. |
+| Story Points planificados | **26** |
+| Historias y actividades | TS04, US14, US15, US16, US17, US18, US19, US20, TS01, SP03 y actividades de diseño UX/UI. |
+| Resultado principal | Landing Page publicada; bases de web y Android registradas en sus repositorios. |
 
 **Sprint Backlog 1**
 
-> Captura del Board del Sprint 1 en Jira: _pendiente de agregar_.
->
-> URL público del Board: _pendiente de agregar_.
-
-| ID | Historia o elemento | SP | Work-Items / Tasks |
+| ID | Historia o elemento | SP | Trabajo asociado |
 |:---:|:--|---:|:--|
-| TS04 | Configurar y publicar el Landing Page | 3 | 1. Estructurar el repositorio y las secciones del Landing Page<br>2. Aplicar los tokens de estilo del Design System (colores y tipografía)<br>3. Agregar atributos ARIA y validar el contraste WCAG AA<br>4. Publicar en GitHub Pages y verificar la URL pública |
-| US14 | Ver propuesta de valor | 2 | 1. Redactar el contenido de propuesta de valor y comparación con simuladores bancarios<br>2. Maquetar la sección de inicio y la navegación (escritorio y móvil) |
-| US15 | Simular crédito sin registro desde el Landing Page | 5 | 1. Diseñar los controles del simulador básico<br>2. Implementar el cálculo por método francés en JavaScript<br>3. Implementar la aplicación del Bono del Buen Pagador<br>4. Implementar la vista del cronograma completo<br>5. Validar los resultados contra los casos de prueba de AutoFinance Pro |
-| US16 | Conocer beneficios estatales | 2 | 1. Redactar el contenido de beneficios estatales<br>2. Maquetar la sección de beneficios |
-| US17 | Consultar Términos y Condiciones y Privacidad | 2 | 1. Redactar los Términos y Condiciones y la política de privacidad (Ley N° 29733)<br>2. Publicar las páginas y enlazarlas en el pie del Landing Page |
-| US18 | Consultar preguntas frecuentes | 2 | 1. Redactar las preguntas frecuentes<br>2. Implementar la sección de preguntas frecuentes |
-| US19 | Contactar al equipo de HipoSim | 2 | 1. Diseñar el formulario de contacto<br>2. Implementar la validación y el envío de la consulta |
-| US20 | Cambiar el idioma del sitio | 3 | 1. Definir los diccionarios de textos en español (es_419) e inglés (en_US)<br>2. Implementar el selector de idioma y la carga de textos<br>3. Conservar el idioma elegido al navegar entre secciones<br>4. Actualizar el atributo lang del documento y verificar los textos traducidos |
-| TS01 | Configurar entorno de frontend | 3 | 1. Crear el proyecto Vue con Vite<br>2. Instalar y configurar PrimeVue con el tema Material y los tokens de HipoSim<br>3. Definir la estructura de carpetas y el enrutamiento |
-| SP03 | Definir la tecnología de la app móvil nativa | 2 | 1. Comparar las opciones de tecnología móvil nativa<br>2. Construir un prototipo mínimo de una pantalla y documentar la decisión en un ADR |
-| DS | Diseño de mockups (independientes de una historia) | - | 1. Diseñar mockup móvil del registro contextual (US13)<br>2. Diseñar mockup móvil de resultados y conexión con inmobiliarias (US21)<br>3. Diseñar mockup web de la bandeja de leads (US23)<br>4. Diseñar mockup web de la ficha del lead (US24) |
-
-El responsable y el estado de cada task se registran en Jira.
+| TS04 | Configurar y publicar el Landing Page | 3 | Estructuración del sitio, aplicación de estilos, revisión de accesibilidad y publicación en GitHub Pages. |
+| US14 | Ver propuesta de valor | 2 | Redacción y presentación responsiva de la propuesta independiente de HipoSim. |
+| US15 | Simular crédito sin registro desde el Landing Page | 5 | Formulario de entrada, cálculo hipotecario en JavaScript y visualización de condiciones y beneficios. |
+| US16 | Conocer beneficios estatales | 2 | Contenido y estructura visual dedicados al Bono del Buen Pagador y Mivivienda. |
+| US17 | Consultar Términos y Condiciones y Privacidad | 2 | Contenido legal y acceso a la información sobre tratamiento de datos personales. |
+| US18 | Consultar preguntas frecuentes | 2 | Organización de consultas habituales y sus respuestas en el sitio público. |
+| US19 | Contactar al equipo de HipoSim | 2 | Interfaz de contacto y validación de datos; el envío no utiliza un servicio backend. |
+| US20 | Cambiar el idioma del sitio | 3 | Recursos de español e inglés, selector de idioma y conservación de la preferencia del usuario. |
+| TS01 | Configurar entorno de frontend | 3 | Proyecto Vue con Vite y PrimeVue, estructura de carpetas y configuración inicial de navegación. |
+| SP03 | Definir la tecnología de la app móvil nativa | 2 | Evaluación de alternativas y decisión de utilizar Kotlin y Jetpack Compose para Android. |
+| DS | Diseños de interfaz relacionados | — | Mock-ups de registro y resultados móviles, bandeja de leads y ficha del interesado. |
 
 #### **Sprint 2 - API, Buyer Mobile App and Advisor Web App**
 
-| Campo | Detalle |
+| Campo | Descripción |
 |:--|:--|
 | Sprint | Sprint 2 |
-| Sprint Goal | Nuestro enfoque es implementar la API con el motor financiero, la autenticación y los leads, y conectar a ella la aplicación móvil del Comprador y la aplicación web del Asesor de inmobiliaria. Creemos que entrega el flujo completo del producto: un Comprador simula, envía su simulación con su consentimiento, y un Asesor la recibe y le da seguimiento. Se confirmará cuando ese flujo funcione de punta a punta entre el móvil y la web, sobre datos reales de la API. |
-| Velocity | 56 Story Points (estimación del equipo; se ajusta en el Sprint Planning según la capacidad real y priorizando el flujo completo sobre funciones adicionales). |
-| Suma de Story Points | **56** |
-| Elementos planificados | SP02, TS02, TS07, TS06, TS05, TS08, US13, US26, US01, US04, US05, US02, US21, US22, US23, US24, US25. |
-| Fecha, hora, ubicación y asistentes | *Pendiente: completar con el registro real del Sprint Planning.* |
+| Sprint Goal | Nos enfocamos en vincular las simulaciones del comprador con el motor financiero y en hacer posible el envío autorizado de interesados a las inmobiliarias, con seguimiento desde el portal del asesor. |
+| Story Points planificados | **56** |
+| Historias y actividades | SP02, TS02, TS07, TS06, TS05, TS08, US13, US26, US01, US04, US05, US02, US21, US22, US23, US24 y US25. |
+| Estado del alcance | El motor financiero, la infraestructura inicial del backend y los servicios de autenticación y simulación registran avances; la integración completa de leads entre Android y la web permanece en desarrollo en la documentación de TB1. |
 
 **Sprint Backlog 2**
 
-> Captura del Board del Sprint 2 en Jira: _pendiente de agregar_.
->
-> URL público del Board: _pendiente de agregar_.
-
-| ID | Historia o elemento | SP | Se evidencia en | Work-Items / Tasks |
+| ID | Historia o elemento | SP | Producto | Trabajo asociado |
 |:---:|:--|---:|:--|:--|
-| SP02 | Validar el port del motor financiero a C# | 3 | API | 1. Portar las fórmulas de amortización, VAN, TIR y TCEA a C#<br>2. Ejecutar los casos de prueba de AutoFinance Pro y documentar las diferencias |
-| TS02 | Implementar backend y base de datos | 5 | API | 1. Crear la solución ASP.NET Core<br>2. Definir las entidades (Usuario, Simulación, Inmobiliaria, Lead) y el DbContext<br>3. Configurar PostgreSQL y ejecutar las migraciones |
-| TS07 | Exponer endpoints de autenticación | 3 | API | 1. Implementar el registro y el inicio de sesión con JWT<br>2. Diferenciar el rol Comprador del rol Asesor en el token |
-| TS06 | Exponer endpoint de simulación | 5 | API | 1. Definir el contrato del endpoint y sus validaciones<br>2. Implementar el endpoint sobre el motor financiero<br>3. Escribir pruebas unitarias y de integración |
-| TS05 | Documentar la API con OpenAPI/Swagger | 2 | API | 1. Configurar Swagger en el proyecto<br>2. Anotar los endpoints con sus esquemas de solicitud y respuesta |
-| TS08 | Exponer endpoints de leads | 5 | API | 1. Implementar el endpoint para enviar un lead con consentimiento<br>2. Implementar la bandeja y la ficha por inmobiliaria<br>3. Implementar el cambio de estado y las notas de seguimiento |
-| US13 | Registrarse como Comprador | 2 | Móvil | 1. Conectar el formulario de registro existente al endpoint de registro |
-| US26 | Iniciar sesión como Comprador | 2 | Móvil | 1. Implementar la pantalla de inicio de sesión<br>2. Conectarla al endpoint de autenticación |
-| US01 | Simular crédito base | 5 | Móvil | 1. Diseñar el formulario de simulación<br>2. Conectarlo con el endpoint de simulación<br>3. Mostrar la cuota mensual y los mensajes de validación |
-| US04 | Visualizar TCEA, VAN y TIR | 5 | Móvil | 1. Conectar la pantalla de resultados existente a la respuesta real de la API<br>2. Verificar los indicadores contra los casos de prueba |
-| US05 | Aplicar Bono del Buen Pagador | 3 | Móvil | 1. Conectar la opción del bono al cálculo real de la API |
-| US02 | Ver cronograma de pagos | 3 | Móvil | 1. Completar la vista de cronograma con el detalle mensual que devuelve la API |
-| US21 | Enviar mi simulación a inmobiliarias con mi consentimiento | 3 | Móvil y API | 1. Conectar el botón de enviar cotización al endpoint de leads |
-| US22 | Iniciar sesión como Asesor | 2 | Web | 1. Conectar el login existente al endpoint de autenticación |
-| US23 | Ver bandeja de leads | 3 | Web | 1. Conectar la bandeja de leads existente a los datos reales de la API |
-| US24 | Ver ficha del lead | 3 | Web | 1. Conectar la ficha del lead existente a los datos reales de la API |
-| US25 | Gestionar estado y seguimiento del lead | 2 | Web | 1. Conectar el cambio de estado y las notas al endpoint correspondiente |
+| SP02 | Validar la adaptación del motor financiero a C# | 3 | API | Conversión y contraste de los cálculos financieros frente a los casos de referencia de AutoFinance Pro. |
+| TS02 | Implementar backend y base de datos | 5 | API | Solución ASP.NET Core, entidades de dominio, DbContext, PostgreSQL y migraciones. |
+| TS07 | Exponer endpoints de autenticación | 3 | API | Registro, inicio de sesión y autorización JWT diferenciada por roles. |
+| TS06 | Exponer endpoint de simulación | 5 | API | Contrato de entrada, validaciones y ejecución del motor hipotecario. |
+| TS05 | Documentar la API con OpenAPI/Swagger | 2 | API | Definición de esquemas, respuestas, ejemplos y códigos de estado de los servicios. |
+| TS08 | Exponer endpoints de leads | 5 | API | Registro consentido, consulta por inmobiliaria, ficha del lead, estados y notas. |
+| US13 | Registrarse como Comprador | 2 | Android | Vinculación del registro contextual con `/api/auth/register` y aceptación de términos y datos personales. |
+| US26 | Iniciar sesión como Comprador | 2 | Android | Autenticación desde la aplicación móvil mediante `/api/auth/login`. |
+| US01 | Simular crédito base | 5 | Android | Formulario de precio, cuota inicial, plazo y comunicación con `/api/simulations`. |
+| US04 | Visualizar TCEA, VAN y TIR | 5 | Android | Presentación de indicadores calculados por el servicio de simulación. |
+| US05 | Aplicar Bono del Buen Pagador | 3 | Android | Cálculo con el indicador `applyGoodPayerBonus` y actualización de resultados. |
+| US02 | Ver cronograma de pagos | 3 | Android | Distribución mensual de intereses, amortización y saldo pendiente. |
+| US21 | Enviar una simulación a inmobiliarias con consentimiento | 3 | Android y API | Selección de inmobiliaria y transferencia de la simulación autorizada. |
+| US22 | Iniciar sesión como Asesor | 2 | Web | Autenticación del asesor y control de acceso a la aplicación web. |
+| US23 | Ver bandeja de leads | 3 | Web | Consulta de interesados asociados con la inmobiliaria del asesor. |
+| US24 | Ver ficha del lead | 3 | Web | Visualización de los datos compartidos y del seguimiento comercial. |
+| US25 | Gestionar estado y seguimiento del lead | 2 | Web | Actualización de estados y registro de notas de contacto. |
 
-El responsable y el estado de cada task se registran en Jira. El Sprint 2 reutiliza la interfaz ya construida en los repositorios de la aplicación web y de la aplicación móvil, y su trabajo principal es implementar la API y conectar ambas aplicaciones a ella. Las historias de guardar y comparar escenarios (US06, US07), de exportar en PDF (SP01, TS03, US08), el periodo de gracia (US03) y la administración de parámetros (US09 a US12) quedan en el Backlog de Jira para una siguiente entrega.
+<div style="text-align:justify; line-height:1.6;">
+
+Registramos el seguimiento individual de las actividades en Jira y trabajamos las integraciones por repositorio y Pull Request. En esta entrega mantenemos fuera del alcance implementado el guardado y comparación de escenarios (US06 y US07), la exportación de informes PDF (US08), el periodo de gracia avanzado (US03) y las funciones administrativas de parámetros (US09 a US12).
+
+</div>
 
 ### **5.2.2. Implemented Landing Page Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-El Landing Page comunica la propuesta independiente y transparente de HipoSim e incluye un simulador básico interactivo (valor de la vivienda, cuota inicial y plazo) que calcula la cuota mensual, la TCEA estimada y el préstamo neto sin registro, con la opción de aplicar el Bono del Buen Pagador. Su navegación es **Inicio**, **Producto**, **Beneficios** y **Preguntas**, con un selector de idioma (ES/EN) y los llamados **Ingresar** y **Simular ahora**. Incluye además las secciones de preguntas frecuentes, contacto, Términos y Condiciones y Política de Privacidad (Ley N° 29733), que aclara que la conexión con inmobiliarias solo ocurre si el usuario la autoriza. Está construido con HTML5, CSS3 y JavaScript, con Tailwind CSS como utilidad de estilos exclusivamente en el Landing Page, mientras que la Aplicación Web usa PrimeVue. Emplea verde azulado (`#0E5C63`), turquesa (`#3AAFA9`), ámbar (`#F5A524`), las tipografías Outfit (títulos) y Roboto Flex (cuerpo), espaciado basado en múltiplos de 8 px y diseño responsivo.
+Implementamos la Landing Page como primer punto de contacto con el comprador de primera vivienda. Su estructura presenta la propuesta de valor de HipoSim, los beneficios estatales, las preguntas frecuentes, el formulario de contacto y la información legal. Incluimos un simulador básico de cuota hipotecaria con precio del inmueble, cuota inicial y plazo, sin exigir registro previo; también incorporamos la opción relacionada con el Bono del Buen Pagador.
+
+Utilizamos HTML, CSS y JavaScript, con recursos de estilo responsivo y una identidad visual basada en verde azulado (`#0E5C63`), turquesa (`#3AAFA9`) y ámbar (`#F5A524`). Definimos Outfit para títulos y Roboto Flex para el contenido. La versión pública incorpora navegación, selector de idioma y accesos a la simulación desde escritorio y móvil.
+
+La tasa anual del **8,85 %** utilizada como referencia en el cálculo de la Landing Page corresponde a una **TEA**, no a una TCEA comprobada, porque el cálculo público descrito no incorpora todos los seguros y gastos asociados al crédito. Detectamos diferencias con los valores referenciales utilizados en la aplicación móvil y la API, por lo que distinguimos expresamente la cuota financiera de cualquier cuota total que incluya cargos adicionales. El formulario de contacto utiliza validación de entrada, pero no cuenta con envío real conectado a un backend en la etapa documentada.
 
 </div>
 
-| Evidencia | Registro requerido |
+| Aspecto | Información del producto |
 |:--|:--|
-| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
-| Despliegue | [https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
-| Historias relacionadas | TS04, US14, US15, US16, US17, US18, US19 y US20 (Sprint 1) |
-| Versión | *Pendiente* |
-| Verificación | Navegación, metadatos, enlaces, responsividad, accesibilidad (landmarks y atributos ARIA), cambio de idioma ES/EN con persistencia en `localStorage` y CTA. |
-| Alcance y limitaciones | El formulario de contacto valida los campos, pero su envío es simulado (sin backend). El cálculo del simulador usa una TCEA referencial fija de 8.85%. El idioma inicial es español y el inglés se activa con el selector; queda por decidir el idioma por defecto (el curso indica en_US). |
+| Repositorio | [hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
+| Sitio publicado | [HipoSim en GitHub Pages](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
+| Historias relacionadas | TS04, US14, US15, US16, US17, US18, US19 y US20. |
+| Experiencia disponible | Inicio, Producto, Beneficios, Preguntas, información legal, contacto y simulador básico. |
+| Internacionalización | Contenidos en español e inglés, con preferencia de idioma en el navegador. |
+| Alcance financiero | Estimación de cuota con TEA referencial; no equivale a evaluación crediticia bancaria ni a oferta vinculante. |
 
 <div align="center">
   <img src="../assets/09-chapter-5/landing-page/home-desktop.png" width="85%" alt="Página de inicio de HipoSim en escritorio">
@@ -296,43 +281,46 @@ El Landing Page comunica la propuesta independiente y transparente de HipoSim e 
 
 <div style="text-align:justify; line-height:1.6;">
 
-La Aplicación Web es el portal del Asesor de inmobiliaria: gestiona los leads que el Comprador autorizó compartir desde el Landing Page o la aplicación móvil. Se construye con Vue 3, Vite, PrimeVue (tema Material), Pinia y axios. Esta entrega incluye el inicio de sesión y el registro de la inmobiliaria, la bandeja de leads, la ficha del lead, un panel de resumen y las secciones de notificaciones y de configuración, todas con datos de ejemplo. Para el Sprint 2, el trabajo consiste en conectar estas pantallas a la API real; los módulos que no se conecten a tiempo se marcan como "Próximamente" en la interfaz y no se presentan como evidencia.
+Desarrollamos la aplicación web como portal de atención para el asesor inmobiliario. Utilizamos Vue 3, Vite, PrimeVue, Pinia y Axios para organizar la navegación, el estado y la comunicación con los servicios. En la fase documentada disponemos de vistas de inicio de sesión, registro de inmobiliaria, bandeja y ficha de leads, resumen, notificaciones y configuración, con datos de ejemplo. Este estado nos permitió avanzar en la experiencia del asesor antes de completar los endpoints del backend.
+
+El flujo funcional relaciona la autenticación del asesor con la consulta de los interesados que autorizaron compartir su simulación, el acceso a su ficha y la actualización del seguimiento. La conexión de estas vistas con los datos reales de la API continúa siendo parte de la integración del Sprint 2; por ello no consideramos que la existencia de una pantalla con datos de ejemplo demuestre la integración definitiva.
 
 </div>
 
-| Módulo | Requerimientos | Evidencia esperada |
+| Módulo | Requerimiento | Estado documentado |
 |:--|:--|:--|
-| Autenticación | US22 | Inicio de sesión del Asesor conectado a la API, con rutas protegidas. |
-| Bandeja de leads | US23 | Lista de leads de la inmobiliaria, con nombre, simulación, estado y fecha. |
-| Ficha del lead | US24 | Datos de contacto, simulación compartida e historial de seguimiento. |
-| Estado y seguimiento | US25 | Cambio de estado del lead y registro de notas. |
-| Registro de la inmobiliaria | Sin historia formal en esta entrega | Pantalla existente; las cuentas de prueba las provee el equipo mientras se define su alcance. |
-| Panel, notificaciones y configuración | Sin historia en esta entrega | Pantallas existentes, mostradas como "Próximamente" si no llegan a conectarse a la API. |
+| Autenticación del asesor | US22 | Vista disponible; conexión con JWT de la API en desarrollo. |
+| Bandeja de leads | US23 | Interfaz con datos de ejemplo; consulta a backend asociada a TS08. |
+| Ficha del lead | US24 | Vista del interesado; integración de datos compartidos dependiente de los endpoints de leads. |
+| Estado y notas | US25 | Flujo de seguimiento definido; persistencia real dependiente del servicio de leads. |
+| Registro de inmobiliaria | Soporte del portal | Pantalla de interfaz existente; gestión real de cuentas delimitada por el backend. |
+| Resumen, notificaciones y configuración | Vistas complementarias | Presentación inicial sin cobertura completa de servicios productivos. |
 
-| Evidencia | Registro requerido |
-|:--|:--|
-| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp) |
-| Despliegue | Sin despliegue en esta entrega; se ejecuta en local desde el código fuente. |
-| Commits/Pull Requests | *Pendiente: identificadores por Sprint.* |
-| Capturas | *Pendiente: pantallas conectadas a la API real, por historia.* |
+<div style="text-align:justify; line-height:1.6;">
+
+Mantenemos el código del portal en [hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp). En la entrega documentada la aplicación web se ejecuta en desarrollo local y no presenta una URL productiva acreditada.
+
+</div>
 
 ### **5.2.4. Implemented Native-Mobile Application Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La aplicación móvil Android nativa es el producto del Comprador: se desarrolla con Kotlin, Jetpack Compose y Material 3, con Hilt, Navigation Compose y ViewModel con StateFlow (decisión documentada en el ADR 0001, spike SP03). El Sprint 1 entregó las pantallas de Resultados del Crédito y de Registro Contextual, con datos de ejemplo y una sesión simulada en memoria. El Sprint 2 conecta ambas pantallas a la API real, agrega el formulario de simulación y el inicio de sesión, y habilita el envío de la simulación a una inmobiliaria con el consentimiento del Comprador (Ley N° 29733). Aún no hay generación de PDF, historial ni comparación de escenarios, que se incorporan en un sprint posterior a esta entrega. Android utiliza patrones Material, navegación inferior y un botón flotante para una nueva simulación; iOS respeta áreas seguras, navegación nativa y hojas modales, sin perder la identidad visual de HipoSim.
+Construimos la aplicación Android nativa como experiencia principal del comprador. Seleccionamos Kotlin, Jetpack Compose y Material 3, junto con Hilt, Navigation Compose y ViewModel con StateFlow, conforme a la decisión técnica registrada para SP03. En el primer Sprint desarrollamos la presentación de resultados hipotecarios y el registro contextual con datos de ejemplo; en el segundo Sprint concentramos el trabajo en la comunicación con la API mediante Retrofit y en los flujos de simulación, autenticación y envío consentido a una inmobiliaria.
+
+El alcance funcional contempla la validación de una cuota inicial mínima del 10 %, la consulta de la cuota y de los indicadores financieros (TCEA, VAN y TIR), la visualización del cronograma y el uso opcional del Bono del Buen Pagador. Distinguimos las pantallas existentes de las historias cuya integración depende de servicios aún no integrados, especialmente la creación de leads y su recepción en el portal del asesor.
 
 </div>
 
-| Evidencia | Registro requerido |
+| Aspecto | Información documentada |
 |:--|:--|
-| Repositorio | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) (rama `develop`, integrada mediante el Pull Request #1) |
-| Distribución | Sin despliegue en esta entrega; se ejecuta en emulador o dispositivo Android desde el código fuente. |
-| Plataformas | Android (minSdk 26, targetSdk 36); iOS según la decisión del spike SP03. |
-| Historias relacionadas | SP03 (Sprint 1, hecho); US13, US26, US01, US04, US05, US02 y US21 (Sprint 2, en conexión con la API). |
-| Flujos | Resultados de la simulación, registro contextual, sesión simulada y bloqueo de la conexión con inmobiliarias hasta registrarse. |
-| Calidad | ktlint y lint sin errores, 35 pruebas unitarias, 4 pruebas de interfaz en emulador y flujo de integración continua en GitHub Actions. |
-| Idioma | Textos en recursos, inglés por defecto y español (es-419). |
+| Repositorio | [hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
+| Plataforma | Android nativo, `minSdk 26` y `targetSdk 36`. |
+| Integración | Kotlin, Jetpack Compose, Retrofit y arquitectura de presentación basada en ViewModel. |
+| Historias vinculadas | SP03, US13, US26, US01, US04, US05, US02 y US21. |
+| Verificación reportada | 35 pruebas unitarias y 4 pruebas de interfaz en emulador, además de comprobaciones con ktlint y Android lint. |
+| Integración continua | Flujo de GitHub Actions descrito para el repositorio móvil. |
+| Distribución | Ejecución de desarrollo en emulador/dispositivo; sin distribución pública acreditada. |
 
 <div align="center">
   <img src="../assets/09-chapter-5/native-mobile/01-resultados.png" width="30%" alt="Pantalla de resultados del crédito en la aplicación Android">
@@ -344,65 +332,72 @@ La aplicación móvil Android nativa es el producto del Comprador: se desarrolla
 
 <div style="text-align:justify; line-height:1.6;">
 
-HipoSim utiliza una API RESTful con ASP.NET Core y PostgreSQL mediante Entity Framework Core. Para esta entrega (Sprint 2), la API centraliza autenticación, simulaciones y leads, que son los componentes que consumen la aplicación móvil y la aplicación web. Escenarios, reportes y parámetros administrativos quedan planificados para una siguiente entrega. El Financial Engine aísla amortización francesa, conversión de tasas, periodos de gracia, VAN, TIR y TCEA, y su port desde Python se valida contra AutoFinance Pro (SP02); el Benefits Engine evalúa el Bono del Buen Pagador.
+Desarrollamos el backend sobre ASP.NET Core, Entity Framework Core y PostgreSQL, con responsabilidades separadas para autenticación, simulación y administración de interesados. Establecimos una base de datos relacional para los usuarios, las inmobiliarias, las simulaciones y los leads, y utilizamos JWT para representar la identidad y los permisos de comprador y asesor.
+
+Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulations` como servicio central para obtener la cuota, los indicadores y el cronograma de amortización. La adaptación y la validación del motor (SP02), junto con el endpoint de simulación (TS06), figuran entre los trabajos reportados como realizados por el equipo. La autenticación requiere cerrar correcciones de pruebas e integración, mientras que la gestión de leads y la conexión completa entre aplicaciones forman parte del trabajo todavía abierto del Sprint 2.
 
 </div>
 
-| Componente | Responsabilidad | Alcance |
+| Componente | Responsabilidad | Alcance documentado |
 |:--|:--|:--|
-| `AuthController` / `AuthService` | Registrar y autenticar Compradores y Asesores; aplicar autorización por roles. | Esta entrega |
-| `SimulationController` / `SimulationService` | Validar entradas, invocar el motor financiero y devolver el resultado. | Esta entrega |
-| `LeadController` / `LeadService` | Registrar los leads autorizados por el Comprador y permitir al Asesor consultarlos, cambiar su estado y registrar notas de seguimiento. | Esta entrega |
-| `FinancialEngine` | Calcular amortización, tasas, gracia, VAN, TIR y TCEA. | Esta entrega |
-| `BenefitsEngine` | Determinar elegibilidad y recalcular el monto financiado. | Esta entrega |
-| Repositorios | Persistir agregados en PostgreSQL. | Esta entrega |
-| `ScenarioController` / `ScenarioService` | Guardar, recuperar y comparar escenarios. | Sprint posterior |
-| `ReportController` / `ReportGenerationService` | Crear PDF y enlaces de solo lectura. | Sprint posterior |
-| `AdminController` / `AdminParameterService` | Gestionar tasas, BBP, rangos, métricas e historial. | Sprint posterior |
+| `AuthController` / `AuthService` | Registro, inicio de sesión y autorización JWT. | Base implementada; validación e integración en revisión. |
+| `SimulationController` / `SimulationService` | Validaciones y cálculo hipotecario a través del motor financiero. | Desarrollo del servicio reportado para TS06. |
+| `FinancialEngine` | Amortización francesa, tasas e indicadores VAN, TIR y TCEA. | Port a C# y contraste financiero registrados en SP02. |
+| `BenefitsEngine` | Evaluación y aplicación del Bono del Buen Pagador. | Lógica asociada a simulación y a US05. |
+| `LeadController` / `LeadService` | Envío autorizado, listado, ficha, estados y notas. | Integración funcional en desarrollo durante TS08. |
+| Persistencia con Entity Framework Core | Entidades y migraciones sobre PostgreSQL. | Base del servicio definida en TS02. |
+| `ScenarioController` / `ScenarioService` | Guardado y comparación de escenarios. | Funcionalidad reservada a una iteración posterior. |
+| `ReportController` / `ReportGenerationService` | Exportación de simulaciones a PDF. | Funcionalidad reservada a una iteración posterior. |
+| `AdminController` / `AdminParameterService` | Mantenimiento de parámetros y auditoría. | Funcionalidad reservada a una iteración posterior. |
 
-| Evidencia | Registro requerido |
-|:--|:--|
-| Repositorio | *PENDIENTE* |
-| Despliegue | *PENDIENTE* |
-| Migración | *PENDIENTE* |
-| Pruebas | *PENDIENTE* |
-| Salud | *PENDIENTE* |
+<div style="text-align:justify; line-height:1.6;">
+
+Centralizamos el trabajo del backend en [hiposim-backEnd](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd). Para esta entrega no contamos con evidencias consolidadas de una URL pública de producción, una ejecución completa de la batería de pruebas del backend ni la operación del flujo comprador–asesor en un entorno desplegado. Esta distinción nos permite documentar el avance técnico sin atribuir al producto una cobertura que todavía no hemos demostrado.
+
+</div>
 
 ### **5.2.6. RESTful API Documentation**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La API debe publicar un contrato OpenAPI y una interfaz Swagger UI. El diseño siguiente deriva de las historias y arquitectura de los capítulos III y IV. Las rutas y esquemas finales deberán coincidir con la implementación.
+Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el asesor y la administración de parámetros. Definimos el contrato alrededor de autenticación, simulación hipotecaria y leads autorizados, diferenciando los endpoints tratados en el Sprint 2 de los recursos que corresponden a historias posteriores. Utilizamos OpenAPI/Swagger para describir solicitudes y respuestas y Postman como apoyo para la comprobación de las interacciones de servicio.
 
 </div>
 
-| Método | Recurso | Propósito | Requerimiento |
-|:--:|:--|:--|:--:|
-| `POST` | `/api/auth/register` | Registrar una cuenta de Comprador. | US13, TS07 |
-| `POST` | `/api/auth/login` | Autenticar Comprador, Asesor o Administrador. | US13, US22, TS07 |
-| `POST` | `/api/simulations` | Calcular una simulación. | US01, US03, US04, US05, TS06 |
-| `GET` | `/api/simulations/{id}` | Obtener una simulación autorizada. | US02, US06 |
-| `GET` | `/api/simulations` | Listar simulaciones guardadas. | US06 |
-| `POST` | `/api/comparisons` | Comparar dos o tres escenarios. | US07 |
-| `GET` | `/api/simulations/{id}/report` | Generar u obtener el PDF. | US08, TS03 |
-| `POST` | `/api/leads` | Compartir la simulación con inmobiliarias con el consentimiento del Comprador. | US21, TS08 |
-| `GET` | `/api/leads` | Listar los leads de la inmobiliaria del Asesor. | US23, TS08 |
-| `GET` | `/api/leads/{id}` | Obtener la ficha de un lead. | US24 |
-| `PATCH` | `/api/leads/{id}/status` | Cambiar el estado de un lead. | US25, TS08 |
-| `POST` | `/api/leads/{id}/notes` | Registrar una nota de seguimiento. | US25 |
-| `GET` | `/api/admin/parameters` | Consultar parámetros vigentes. | US09, US10 |
-| `PUT` | `/api/admin/parameters/{key}` | Actualizar un parámetro autorizado. | US09, US10 |
-| `POST` | `/api/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 |
-| `GET` | `/api/admin/parameters/{key}/history` | Consultar historial de auditoría. | US12 |
-| `GET` | `/health` | Verificar disponibilidad. | TS02 |
+| Método | Recurso | Propósito | Requerimiento | Situación en TB1 |
+|:--:|:--|:--|:--:|:--|
+| `POST` | `/api/auth/register` | Registrar una cuenta de comprador. | US13, TS07 | Servicio desarrollado; integración móvil en revisión. |
+| `POST` | `/api/auth/login` | Autenticar compradores y asesores. | US22, US26, TS07 | Servicio desarrollado; ajustes de pruebas y respuesta de asesor en proceso de corrección. |
+| `POST` | `/api/simulations` | Calcular una simulación hipotecaria. | US01, US04, US05, TS06 | Implementación reportada; homologación de parámetros entre clientes en revisión. |
+| `GET` | `/api/agencies` | Consultar inmobiliarias disponibles. | US21 | Integración necesaria para el envío consentido. |
+| `POST` | `/api/leads` | Crear un lead a partir de una simulación autorizada. | US21, TS08 | Desarrollo e integración de leads. |
+| `GET` | `/api/leads` | Listar los leads de la inmobiliaria del asesor. | US23, TS08 | Desarrollo e integración de leads. |
+| `GET` | `/api/leads/{id}` | Consultar la ficha de un lead. | US24, TS08 | Desarrollo e integración de leads. |
+| `PATCH` | `/api/leads/{id}/status` | Actualizar el estado del interesado. | US25, TS08 | Desarrollo e integración de leads. |
+| `POST` | `/api/leads/{id}/notes` | Registrar notas del asesor. | US25, TS08 | Desarrollo e integración de leads. |
+| `GET` | `/health` | Consultar el estado del servicio. | TS02 | Endpoint identificado en la documentación técnica del backend. |
+| `GET` | `/api/simulations/{id}` | Recuperar una simulación autorizada. | US02, US06 | Alcance asociado a consulta e historial. |
+| `GET` | `/api/simulations` | Obtener simulaciones guardadas. | US06 | Iteración posterior. |
+| `POST` | `/api/comparisons` | Comparar escenarios de crédito. | US07 | Iteración posterior. |
+| `GET` | `/api/simulations/{id}/report` | Obtener un informe PDF. | US08, TS03 | Iteración posterior. |
+| `GET` | `/api/admin/parameters` | Consultar parámetros financieros. | US09, US10 | Iteración posterior. |
+| `PUT` | `/api/admin/parameters/{key}` | Modificar un parámetro autorizado. | US09, US10 | Iteración posterior. |
+| `POST` | `/api/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 | Iteración posterior. |
+| `GET` | `/api/admin/parameters/{key}/history` | Consultar cambios históricos. | US12 | Iteración posterior. |
 
-#### **Representative Simulation Request**
+#### **Mortgage Simulation Contract**
+
+<div style="text-align:justify; line-height:1.6;">
+
+Definimos la solicitud de simulación mediante el precio de la vivienda, la cuota inicial, la tasa anual efectiva, el plazo expresado en meses y la decisión de aplicar el Bono del Buen Pagador. Como caso de contraste entre productos tomamos una vivienda de **S/ 280 000**, una inicial de **S/ 42 000** y un plazo de **240 meses**. La tasa de **8,85 % TEA** corresponde a la referencia visible en la Landing Page y constituye el valor que identificamos para homogeneizar los cálculos, sin afirmar que todas las aplicaciones ya estén utilizando la misma configuración.
+
+</div>
 
 ```json
 {
   "propertyPrice": 280000.00,
   "downPayment": 42000.00,
-  "annualEffectiveRate": 0.085,
+  "annualEffectiveRate": 0.0885,
   "termInMonths": 240,
   "gracePeriodMonths": 0,
   "graceType": "none",
@@ -410,86 +405,29 @@ La API debe publicar un contrato OpenAPI y una interfaz Swagger UI. El diseño s
 }
 ```
 
-#### **Representative Simulation Response**
+<div style="text-align:justify; line-height:1.6;">
 
-```json
-{
-  "simulationId": "generated-id",
-  "financedAmount": 219800.00,
-  "monthlyInstallment": 1909.00,
-  "tcea": 0.0885,
-  "benefit": {
-    "name": "Good Payer Bonus",
-    "eligible": true,
-    "appliedAmount": 18200.00
-  },
-  "amortizationSchedule": []
-}
-```
+La respuesta del motor financiero se organiza alrededor del capital financiado, la cuota mensual, el cronograma de amortización, los indicadores financieros y el beneficio aplicado. En el contraste entre la Landing Page, la aplicación Android y la API identificamos discrepancias en las tasas de referencia y el tratamiento de seguros. Por ese motivo, documentamos los campos funcionales del resultado sin atribuirles una cuota numérica única que todavía no haya sido reconciliada. Diferenciamos **TEA** de **TCEA** y separamos la cuota financiera de los gastos adicionales al comparar los tres productos.
 
-La respuesta real incluye además el VAN, la TIR y el cronograma completo; el ejemplo se abrevia y usa los mismos valores de referencia que el simulador del Landing Page.
-
-| Evidencia de documentación | Registro requerido |
-|:--|:--|
-| OpenAPI | *PENDIENTE* |
-| Swagger UI | *PENDIENTE* |
-| Colección Postman | *PENDIENTE* |
+</div>
 
 ### **5.2.7. Team Collaboration Insights**
 
 <div style="text-align:justify; line-height:1.6;">
 
-La colaboración se evalúa mediante contribuciones trazables. Jira registra la propiedad y estado de los elementos; GitHub registra ramas, commits, Pull Requests, revisiones y releases. El trabajo debe distribuirse según la prioridad y las habilidades descritas en el Capítulo I, manteniendo responsabilidad compartida por integración y calidad.
+Nos organizamos por productos y servicios, y registramos la coordinación en Jira y GitHub. Distribuimos las historias de implementación, las revisiones de Pull Requests y la documentación del informe entre los seis integrantes. La revisión cruzada del código y el acuerdo de contratos entre frontend, móvil y backend nos permitieron identificar dependencias compartidas, especialmente la autenticación, la consistencia del motor hipotecario y el envío de leads con consentimiento.
+
+Tomamos como referencia GitFlow y Conventional Commits para describir la evolución del producto. Cada integrante documenta su ámbito de trabajo y participa en la integración de funcionalidades con otros responsables; de este modo mantenemos una relación entre el backlog, los cambios técnicos y los resultados del Sprint.
 
 </div>
-
-#### **Collaboration Agreements**
-
-- Cada tarea se vincula con una historia de usuario o técnica.
-- Cada funcionalidad se desarrolla en su propia rama GitFlow.
-- Los Pull Requests describen propósito, backlog relacionado, pruebas y evidencia visual.
-- Al menos un compañero revisa el Pull Request antes de integrarlo en `develop`.
-- Los conflictos se resuelven entre los autores de las áreas afectadas.
-- El Sprint Review valida el producto integrado contra los criterios de aceptación.
-- La retrospectiva registra un acierto, un problema y una acción de mejora.
-- Los secretos nunca se comparten mediante commits ni mensajes.
 
 <table style="width:100%; border-collapse:collapse; margin:16px 0;">
-<thead><tr style="background-color:#0E5C63; color:#FFFFFF;"><th style="border:1px solid #B8C2CC; padding:10px;">Integrante</th><th style="border:1px solid #B8C2CC; padding:10px;">Código</th><th style="border:1px solid #B8C2CC; padding:10px;">Contribución</th><th style="border:1px solid #B8C2CC; padding:10px;">Evidencia</th></tr></thead>
+<thead><tr style="background-color:#0E5C63; color:#FFFFFF;"><th style="border:1px solid #B8C2CC; padding:10px;">Integrante</th><th style="border:1px solid #B8C2CC; padding:10px;">Código</th><th style="border:1px solid #B8C2CC; padding:10px;">Participación en TB1</th><th style="border:1px solid #B8C2CC; padding:10px;">Documentación relacionada</th></tr></thead>
 <tbody>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Bautista Rivera, Jose Diego</td><td style="border:1px solid #B8C2CC; padding:9px;">U202310949</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Carlos Lavado, Ever Giusephi</td><td style="border:1px solid #B8C2CC; padding:9px;">U202224867</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">Daga Chávez, Joaquín Leonardo</td><td style="border:1px solid #B8C2CC; padding:9px;">U202219829</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Janampa Gutierrez, Jhoan Darner</td><td style="border:1px solid #B8C2CC; padding:9px;">U202323319</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
-<tr><td style="border:1px solid #B8C2CC; padding:9px;">López Roman, Franco Mauricio</td><td style="border:1px solid #B8C2CC; padding:9px;">U202315890</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
-<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Olivares Lao, Gustavo Alonso</td><td style="border:1px solid #B8C2CC; padding:9px;">U202216448</td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente de asignación real.</em></td><td style="border:1px solid #B8C2CC; padding:9px;"><em>Pendiente: commits/PR.</em></td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Bautista Rivera, Jose Diego</td><td style="border:1px solid #B8C2CC; padding:9px;">U202310949</td><td style="border:1px solid #B8C2CC; padding:9px;">Simulador móvil, comunicación mediante Retrofit, resultados de la API y revisión de PR de Android.</td><td style="border:1px solid #B8C2CC; padding:9px;">Avances de desarrollo y ejecución de la aplicación móvil.</td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Carlos Lavado, Ever Giusephi</td><td style="border:1px solid #B8C2CC; padding:9px;">U202224867</td><td style="border:1px solid #B8C2CC; padding:9px;">Repositorio backend, PostgreSQL, autenticación JWT, revisión técnica de la API y configuración de despliegue.</td><td style="border:1px solid #B8C2CC; padding:9px;">Diseño de base de datos, configuración y evidencias del backend.</td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Daga Chávez, Joaquín Leonardo</td><td style="border:1px solid #B8C2CC; padding:9px;">U202219829</td><td style="border:1px solid #B8C2CC; padding:9px;">Modelo y servicios de leads, consulta por inmobiliaria, estados, notas y apoyo al cronograma del comprador.</td><td style="border:1px solid #B8C2CC; padding:9px;">Diagrama y diccionario de clases, descripción de servicios REST.</td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Janampa Gutierrez, Jhoan Darner</td><td style="border:1px solid #B8C2CC; padding:9px;">U202323319</td><td style="border:1px solid #B8C2CC; padding:9px;">Portal del asesor, navegación y gestión de leads, coordinación del equipo y seguimiento del Sprint.</td><td style="border:1px solid #B8C2CC; padding:9px;">Sprint Planning, Sprint Backlog, matriz LACX y colaboración.</td></tr>
+<tr><td style="border:1px solid #B8C2CC; padding:9px;">Lopez Roman, Franco Mauricio</td><td style="border:1px solid #B8C2CC; padding:9px;">U202315890</td><td style="border:1px solid #B8C2CC; padding:9px;">Adaptación del motor financiero a C#, servicio de simulación y cálculo del Bono del Buen Pagador.</td><td style="border:1px solid #B8C2CC; padding:9px;">Validación del motor y evidencias de pruebas de simulación.</td></tr>
+<tr style="background-color:#F7FAFC;"><td style="border:1px solid #B8C2CC; padding:9px;">Olivares Lao, Gustavo Alonso</td><td style="border:1px solid #B8C2CC; padding:9px;">U202216448</td><td style="border:1px solid #B8C2CC; padding:9px;">Servicios de consulta de inmobiliarias y salud, especificación OpenAPI/Swagger y colecciones Postman.</td><td style="border:1px solid #B8C2CC; padding:9px;">Tabla de endpoints y documentación de solicitudes y respuestas.</td></tr>
 </tbody></table>
-
-<div style="page-break-before:always;"></div>
-
-## **5.3. Video About-the-Product**
-
-<div style="text-align:justify; line-height:1.6;">
-
-El video debe comunicar el valor de HipoSim de forma breve y demostrable. Debe explicar el problema de los compradores primerizos, presentar la simulación independiente, identificar los roles Visitante, Comprador y Asesor de inmobiliaria, y demostrar el flujo principal desde la Landing Page hasta el resultado hipotecario.
-
-</div>
-
-#### **Recommended Video Structure**
-
-1. **Problema y segmento:** explicar la falta de una herramienta simple, independiente y transparente.
-2. **Propuesta de valor:** presentar cuotas, TCEA, VAN, TIR, periodos de gracia y beneficios.
-3. **Landing Page:** mostrar información, beneficios, términos y **Simular ahora**.
-4. **Simulación:** ingresar vivienda, cuota inicial y plazo, y aplicar el Bono del Buen Pagador.
-5. **Interpretación:** explicar cronograma, TCEA y elegibilidad al BBP en lenguaje sencillo.
-6. **Comprador registrado y conexión opcional con inmobiliarias:** mostrar la aplicación móvil Android con el registro, el inicio de sesión, los resultados y el envío de la simulación solo con consentimiento.
-7. **Portal del Asesor y trazabilidad:** mostrar la aplicación web con el inicio de sesión, la bandeja y la ficha del lead, y el Product Backlog y los Sprints 1 y 2 en Jira.
-8. **Cierre:** aclarar que HipoSim informa, pero no sustituye la evaluación formal del banco.
-
-| Campo | Registro |
-|:--|:--|
-| Título | HipoSim - Acerca del Producto |
-| Plataforma | Microsoft Stream |
-| URL | *Pendiente: insertar el enlace accesible.* |
-| Miniatura | *Pendiente: insertar una captura del video.* |
-| Validación de acceso | *Pendiente: comprobar el acceso de docentes y evaluadores.* |
