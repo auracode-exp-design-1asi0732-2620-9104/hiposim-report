@@ -328,6 +328,34 @@ El alcance funcional contempla la validación de una cuota inicial mínima del 1
   <p><em>Figura 3. Resultados del crédito y Registro Contextual de la aplicación Android.</em></p>
 </div>
 
+<div style="text-align:justify; line-height:1.6;">
+
+Durante el Sprint 2 implementamos la historia de usuario **US02**, correspondiente a la visualización detallada del cronograma de amortización hipotecaria en la aplicación Android de HipoSim. Esta funcionalidad permite al comprador acceder al cronograma completo desde la pantalla de resultados de su simulación.
+
+Desarrollamos `ScheduleScreen` utilizando Kotlin y Jetpack Compose para presentar las cuotas del crédito, incluyendo el número de periodo, saldo inicial, amortización del capital, intereses y saldo restante. Asimismo, incorporamos `ScheduleViewModel` para obtener los resultados de la simulación y `ScheduleUiMapper` para transformar los importes al formato de presentación en soles peruanos.
+
+Integramos la navegación mediante `HipoSimNavHost`, incorporando la ruta `Schedule` y el acceso desde la pantalla de resultados. También añadimos recursos de texto en español e inglés para mantener la consistencia de la interfaz.
+
+</div>
+
+| Componente | Responsabilidad | Implementación |
+|:--|:--|:--|
+| `ScheduleScreen` | Visualizar el cronograma detallado de amortización. | Interfaz desarrollada con Jetpack Compose. |
+| `ScheduleViewModel` | Obtener los datos de la simulación y preparar el estado de la pantalla. | ViewModel con StateFlow. |
+| `ScheduleUiMapper` | Transformar y formatear los datos de cada cuota. | Presentación de importes en soles peruanos. |
+| `HipoSimNavHost` / `Route.Schedule` | Gestionar la navegación desde resultados hacia el cronograma. | Ruta integrada mediante Navigation Compose. |
+
+<div style="text-align:justify; line-height:1.6;">
+
+</div>
+
+**Amortization Schedule — Mobile Application (US02)**
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/03-cronograma.png" width="35%" alt="Pantalla del cronograma de amortización hipotecaria en Android">
+  <p><em>Figura 4. Cronograma de amortización hipotecaria implementado en la aplicación Android de HipoSim (US02).</em></p>
+</div>
+
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
