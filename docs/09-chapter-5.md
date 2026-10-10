@@ -67,9 +67,9 @@ GitHub será la plataforma de control de versiones. Cada producto digital tendr�
 | Producto | Nombre sugerido del repositorio | URL |
 |:--|:--|:--|
 | Landing Page | `hiposim-LandingPage` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-LandingPage) |
-| Aplicación Web Frontend | `hiposim-frontend` | *URL* |
-| Aplicación Móvil Nativa | `hiposim-mobile` | *URL* |
-| API RESTful y pruebas | `hiposim-platform` | *URL* |
+| Aplicación Web Frontend | `hiposim-frontend` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp.git) |
+| Aplicación Móvil Nativa | `hiposim-mobile` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile.git) |
+| API RESTful y pruebas | `hiposim-platform` | [https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd.git](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd.git) |
 
 #### **GitFlow Workflow**
 
