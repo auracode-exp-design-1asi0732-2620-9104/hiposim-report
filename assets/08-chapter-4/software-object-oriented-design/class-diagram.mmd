@@ -1,0 +1,138 @@
+classDiagram
+  direction LR
+
+  class Agency {
+    +Guid Id
+    +string Name
+    +DateTimeOffset CreatedAt
+  }
+
+  class AppUser {
+    +Guid Id
+    +string FullName
+    +string Email
+    +string EmailNormalized
+    +string Phone
+    +string PasswordHash
+    +string Role
+    +Guid? AgencyId
+    +DateTimeOffset AcceptedTermsAt
+    +DateTimeOffset AcceptedDataProcessingAt
+    +DateTimeOffset CreatedAt
+  }
+
+  class StoredSimulation {
+    +Guid Id
+    +Guid? BuyerId
+    +DateTimeOffset CreatedAt
+    +string InputJson
+    +string ResponseJson
+  }
+
+  class Lead {
+    +Guid Id
+    +Guid BuyerId
+    +Guid AgencyId
+    +Guid SimulationId
+    +string Status
+    +DateTimeOffset ConsentGrantedAt
+    +DateTimeOffset CreatedAt
+  }
+
+  class LeadNote {
+    +Guid Id
+    +Guid LeadId
+    +Guid AuthorId
+    +string Content
+    +DateTimeOffset CreatedAt
+  }
+
+  class LeadStatusChange {
+    +Guid Id
+    +Guid LeadId
+    +Guid ChangedBy
+    +string PreviousStatus
+    +string NewStatus
+    +DateTimeOffset ChangedAt
+  }
+
+  class HipoSimDbContext {
+    +DbSet~Agency~ Agencies
+    +DbSet~AppUser~ Users
+    +DbSet~StoredSimulation~ Simulations
+    +DbSet~Lead~ Leads
+    +DbSet~LeadNote~ LeadNotes
+    +DbSet~LeadStatusChange~ LeadStatusChanges
+  }
+
+  class AuthService {
+    +RegisterAsync(request, cancellationToken)
+    +LoginAsync(request, cancellationToken)
+  }
+
+  class JwtTokenService {
+    +Create(user) AuthResponse
+  }
+
+  class AuthController {
+    +Register(request, cancellationToken)
+    +Login(request, cancellationToken)
+  }
+
+  class SimulationService {
+    +CalculateAsync(request, buyerId, cancellationToken)
+  }
+
+  class SimulationsController {
+    +Create(request, cancellationToken)
+  }
+
+  class LeadService {
+    +CreateAsync(buyerId, request, cancellationToken)
+    +GetInboxAsync(agencyId, status, cancellationToken)
+    +GetDetailAsync(agencyId, leadId, cancellationToken)
+    +UpdateStatusAsync(agencyId, advisorId, leadId, request, cancellationToken)
+    +CreateNoteAsync(agencyId, advisorId, leadId, request, cancellationToken)
+  }
+
+  class LeadsController {
+    +Create(request, cancellationToken)
+    +GetInbox(status, cancellationToken)
+    +GetDetail(id, cancellationToken)
+    +UpdateStatus(id, request, cancellationToken)
+    +CreateNote(id, request, cancellationToken)
+  }
+
+  class FinancialEngine {
+    +Calculate(...)
+    +ConvertRate(...)
+    +ComputeIndicators(...)
+  }
+
+  Agency "1" --> "0..*" AppUser : employs advisors
+  Agency "1" --> "0..*" Lead : receives
+  AppUser "1" --> "0..*" StoredSimulation : creates
+  AppUser "1" --> "0..*" Lead : creates as buyer
+  StoredSimulation "1" --> "0..*" Lead : supports
+  Lead "1" --> "0..*" LeadNote : contains
+  Lead "1" --> "0..*" LeadStatusChange : tracks
+  AppUser "1" --> "0..*" LeadNote : writes
+  AppUser "1" --> "0..*" LeadStatusChange : performs
+
+  HipoSimDbContext ..> Agency
+  HipoSimDbContext ..> AppUser
+  HipoSimDbContext ..> StoredSimulation
+  HipoSimDbContext ..> Lead
+  HipoSimDbContext ..> LeadNote
+  HipoSimDbContext ..> LeadStatusChange
+
+  AuthController ..> AuthService
+  AuthService ..> HipoSimDbContext
+  AuthService ..> JwtTokenService
+
+  SimulationsController ..> SimulationService
+  SimulationService ..> HipoSimDbContext
+  SimulationService ..> FinancialEngine
+
+  LeadsController ..> LeadService
+  LeadService ..> HipoSimDbContext
