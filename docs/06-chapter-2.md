@@ -1,0 +1,900 @@
+# **Chapter II: Requirements Elicitation & Analysis**
+## **2.1. Competitors**
+Conocer el entorno competitivo es fundamental para identificar las fortalezas y debilidades de HipoSim frente a las alternativas que hoy utilizan los compradores de primera vivienda en Perú para estimar el costo real de un crédito hipotecario. Este análisis permite entender cómo cada entidad expone su información de simulación, con o sin independencia frente al propio banco que la ofrece, y qué limitaciones presentan sus herramientas actuales.
+
+En esta etapa se analizan distintos tipos de competidores con el objetivo de comprender sus fortalezas, debilidades y enfoque de mercado, y así posicionar a HipoSim como una propuesta que responda de manera más efectiva a la necesidad real del comprador primerizo: comparar condiciones reales de forma independiente antes de comprometerse con un banco.
+
+### **2.1.1. Competitive Analysis**
+
+Para desarrollar una solución realmente útil, es fundamental comprender las alternativas que actualmente utiliza un comprador de primera vivienda en Perú para simular un crédito hipotecario. Este análisis permite identificar no solo cómo se informan hoy los usuarios, sino también las principales limitaciones de las herramientas existentes.
+
+A continuación, se presenta una comparación de los principales competidores considerando su propuesta de valor, mercado objetivo y características generales. Este análisis evidencia que, mientras las soluciones existentes están integradas dentro del canal comercial de una entidad específica —ya sea un banco privado o el propio Fondo Mivivienda— HipoSim se posiciona como una alternativa independiente, centrada en mostrar el costo efectivo real (TCEA) y los beneficios estatales aplicables en un solo lugar, sin sesgo comercial hacia ninguna entidad.
+
+<div style="page-break-after: always;"></div>
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
+<tr>
+<th colspan="6">Panorama del análisis competitivo</th>
+</tr>
+<tr>
+<td colspan="2" rowspan="2"><b>¿Por qué llevar a cabo este análisis?</b></td>
+<td colspan="4">¿Cómo se posiciona HipoSim frente a sus competidores en cuanto a fortalezas, debilidades, oportunidades y su propuesta de valor dentro del proceso de simulación de crédito hipotecario en Perú?</td>
+</tr>
+<tr>
+<td colspan="4">Es una propuesta que posiciona a HipoSim como un simulador independiente de crédito hipotecario, sin afiliación a ninguna entidad financiera, que integra el método de amortización francés, la conversión de tasas, los periodos de gracia y los indicadores TCEA, VAN y TIR, junto con la visibilidad de beneficios estatales, frente a herramientas que hoy están confinadas al canal comercial de cada banco o programa estatal.</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;"><b>Competidores</b></td>
+<td style="text-align: center; vertical-align: middle;">
+
+<img src="../assets/06-chapter-2/logo-hiposim.png" alt="HipoSim" width="150" height="150"/>
+<b>HipoSim</b>    
+</td>
+<td style="text-align: center; vertical-align: middle;">
+
+<img src="../assets/06-chapter-2/logo-bcp.jpg" alt="BCP" width="150"/>
+<b>Simulador BCP (ViaBCP)</b>    
+</td>
+<td style="text-align: center; vertical-align: middle;">
+    
+<img src="../assets/06-chapter-2/logo-interbank.png" alt="Interbank" width="150"/>
+<b>Simulador Interbank</b>
+</td>
+<td style="text-align: center; vertical-align: middle;">
+
+<img src="../assets/06-chapter-2/fondo-mivivienda.jpg" alt="Fondo Mivivienda" width="150"/>
+<b>Simulador Fondo Mivivienda</b>    
+</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Perfil</b></td>
+<td>Overview</td>
+<td>Simulador web y móvil independiente de crédito hipotecario para compradores de primera vivienda en Perú, que modela el método de amortización francés, la conversión de tasas y los indicadores TCEA, VAN y TIR.</td>
+<td>Calculadora hipotecaria integrada dentro del canal digital ViaBCP, que estima la cuota mensual según el valor de la vivienda, el porcentaje de cuota inicial y el plazo elegido.</td>
+<td>Calculadora hipotecaria del canal digital de Interbank, que permite simular créditos convencionales y bajo la modalidad Nuevo Crédito Mivivienda, ajustando el tipo de cuota.</td>
+<td>Herramienta oficial del Fondo Mivivienda para estimar el crédito bajo el programa Nuevo Crédito Mivivienda, aplicando las fórmulas normativas de Tasa de Costo Efectivo (TCED) y el subsidio del Bono del Buen Pagador (BBP).</td>
+</tr>
+<tr>
+<td>Ventaja competitiva</td>
+<td>Independencia frente a cualquier entidad financiera, visualización comparativa del TCEA y beneficios estatales, comparador de escenarios y reporte exportable en PDF.</td>
+<td>Marca líder del sistema financiero peruano e integración directa con el proceso real de solicitud del propio banco.</td>
+<td>Tasa competitiva dentro del mercado privado y opción integrada de modalidad Mivivienda dentro del mismo canal digital del banco.</td>
+<td>Único canal oficial autorizado para calcular con exactitud el subsidio estatal (BBP) y el Nuevo Crédito Mivivienda conforme a la normativa vigente.</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Perfil de Marketing</b></td>
+<td>Mercado objetivo</td>
+<td>Compradores de primera vivienda de 25 a 40 años en Perú, con empleo formal estable y sin experiencia previa comparando créditos.</td>
+<td>Clientes actuales y potenciales de BCP interesados en un crédito hipotecario propio del banco.</td>
+<td>Clientes actuales y potenciales de Interbank, incluyendo quienes califican para el Nuevo Crédito Mivivienda a través de este banco.</td>
+<td>Familias peruanas elegibles para el subsidio estatal, dentro de los rangos de precio de vivienda establecidos por el programa.</td>
+</tr>
+<tr>
+<td>Estrategias de marketing</td>
+<td>Posicionamiento como comparador independiente y educativo, enfocado en la transparencia del costo real (TCEA) y en la difusión de beneficios estatales.</td>
+<td>Captación de clientes hipotecarios dentro del ecosistema propio del banco a través del canal digital ViaBCP.</td>
+<td>Comunicación de tasas competitivas y facilidad para acceder a Mivivienda dentro del mismo flujo digital del banco.</td>
+<td>Comunicación institucional del Estado sobre el Bono del Buen Pagador y los rangos de precios del Nuevo Crédito Mivivienda.</td>
+</tr>
+<tr>
+<td rowspan="3"><b>Perfil de Producto</b></td>
+<td>Productos & Servicios</td>
+<td>Simulador con método francés, cálculo de TCEA/VAN/TIR, periodos de gracia, comparador de escenarios, historial de simulaciones, toggle de beneficios estatales y reporte exportable en PDF.</td>
+<td>Calculadora de cuota mensual según plazo y porcentaje de cuota inicial, con acceso al detalle del crédito hipotecario del banco.</td>
+<td>Calculadora de cuota con selección de tipo de cuota y modalidad Mivivienda.</td>
+<td>Cálculo del monto de crédito, cuota y cronograma bajo las fórmulas oficiales del programa, incluyendo el Bono del Buen Pagador.</td>
+</tr>
+<tr>
+<td>Precios & Costos</td>
+<td>Acceso gratuito; producto digital independiente sin cobro directo al usuario final.</td>
+<td>Sin costo de uso del simulador; el costo real depende de la tasa y condiciones del crédito otorgado por el banco.</td>
+<td>Sin costo de uso del simulador; costo real sujeto a la evaluación crediticia del banco.</td>
+<td>Sin costo de uso del simulador oficial; el subsidio (BBP) reduce el costo real del crédito para quienes califican.</td>
+</tr>
+<tr>
+<td>Canales de distribución</td>
+<td>Web y aplicación móvil propia.</td>
+<td>Sitio web ViaBCP.</td>
+<td>Sitio web y aplicación móvil de Interbank.</td>
+<td>Sitio web oficial del Fondo Mivivienda y bancos participantes del programa.</td>
+</tr>
+<tr>
+<td rowspan="5"><b>Análisis SWOT</b></td>
+</tr>
+<tr>
+<td>Fortalezas</td>
+<td>Independencia de cualquier banco, visualización comparativa del TCEA y los beneficios estatales en un solo lugar, comparador de escenarios y reporte compartible.</td>
+<td>Marca líder y confianza del sistema financiero, integración directa con el proceso real de solicitud.</td>
+<td>Tasa competitiva dentro del mercado privado e integración de la modalidad Mivivienda en el mismo flujo.</td>
+<td>Único canal oficial válido para el cálculo exacto del subsidio estatal, con normativa clara y verificable.</td>
+</tr>
+<tr>
+<td>Debilidades</td>
+<td>Producto nuevo sin reconocimiento de marca, sin relación comercial directa con bancos ni otorgamiento de créditos, dependiente de la actualización manual de tasas y parámetros.</td>
+<td>Muestra únicamente la oferta propia del banco, sin comparación con otras entidades ni con los beneficios estatales de forma integrada.</td>
+<td>Misma limitación de mostrar solo su propia oferta; la información puede percibirse como comercialmente sesgada.</td>
+<td>Solo aplica al Nuevo Crédito Mivivienda (no a créditos hipotecarios convencionales); su cálculo formal (TCED iterativo) resulta poco intuitivo para un usuario sin conocimientos financieros.</td>
+</tr>
+<tr>
+<td>Oportunidades</td>
+<td>Bajo conocimiento del TCEA real y de los beneficios estatales entre compradores primerizos, y creciente investigación informal previa a la compra.</td>
+<td>Ampliar su simulador con mayor transparencia del costo total para reducir el uso de herramientas externas.</td>
+<td>Reforzar la integración de Mivivienda como diferenciador frente a otros bancos.</td>
+<td>Mayor difusión digital del programa hacia compradores primerizos.</td>
+</tr>
+<tr>
+<td>Amenazas</td>
+<td>Mejora de los simuladores propios de cada banco, desconfianza inicial del usuario al ingresar datos financieros en una plataforma independiente, y posible entrada de fintechs comparadoras similares.</td>
+<td>Pérdida de clientes que comparan condiciones fuera de su canal antes de decidir.</td>
+<td>Clientes que comparan condiciones en herramientas independientes antes de acercarse al banco.</td>
+<td>Bajo conocimiento del programa entre la población objetivo, lo que limita su alcance real.</td>
+</tr>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+A partir del análisis comparativo, se identifican las siguientes diferencias clave:
+
+- Frente a los simuladores de BCP e Interbank, HipoSim no depende de ninguna entidad financiera y no muestra únicamente la oferta de un solo banco, sino que permite comparar condiciones de forma independiente antes de iniciar un proceso comercial.
+- A diferencia del simulador oficial del Fondo Mivivienda, que se enfoca exclusivamente en el cálculo normativo del Nuevo Crédito Mivivienda mediante fórmulas poco accesibles para un usuario sin formación financiera, HipoSim traduce ese mismo tipo de beneficio estatal en una visualización simple y comparable junto con créditos hipotecarios convencionales.
+- En los tres casos, los simuladores existentes están confinados al canal comercial de la entidad que los ofrece, lo cual coincide directamente con el problema de negocio identificado en el Capítulo I: no existe hoy un producto independiente que permita a un comprador primerizo explorar y comparar escenarios reales de crédito hipotecario por su cuenta.
+
+En conjunto, este análisis permite concluir que HipoSim no compite como un producto bancario ni reemplaza al canal oficial del Fondo Mivivienda, sino que ocupa un espacio diferenciado: el de una herramienta independiente que traduce información dispersa y entidad-específica en una simulación transparente y comparable, dirigida específicamente al comprador de primera vivienda en la etapa previa a su acercamiento formal a un banco.
+
+
+### **2.1.2. Strategies and Tactics Against Competitors**
+
+Una vez identificados los actores del mercado y las principales diferencias entre las alternativas existentes, resulta necesario definir cómo HipoSim puede fortalecer su posicionamiento competitivo frente a simuladores bancarios ya consolidados y al canal oficial del Fondo Mivivienda.
+
+Con este objetivo, se emplea la Matriz CAME, la cual permite transformar el análisis FODA en estrategias y acciones concretas. A través de esta herramienta se plantean tácticas orientadas a potenciar las fortalezas diferenciales de HipoSim —su independencia, la visualización comparativa del TCEA y de los beneficios estatales— así como a mitigar las debilidades propias de un producto nuevo sin relación comercial directa con las entidades financieras.
+
+Las estrategias definidas buscan:
+* Aprovechar el bajo conocimiento del TCEA real y de los beneficios estatales entre los compradores primerizos para posicionar a HipoSim como fuente de información clara.
+* Comunicar el valor de la independencia y la transparencia frente a simuladores confinados al canal comercial de una sola entidad.
+* Reducir la desconfianza inicial del usuario al ingresar datos financieros personales mediante una experiencia simple y sin barreras de entrada.
+* Posicionar a HipoSim como el punto de referencia informativo antes de que el comprador primerizo se acerque a un banco.
+
+<div style="page-break-after: always;"></div>
+
+
+Matriz CAME para el desarrollo de estrategias basadas en el análisis FODA.
+
+| **Análisis FODA cruzado** | **Oportunidades** | **Amenazas** |
+|---------------------------|------------------|--------------|
+| **Fortalezas (F)**<br>1. Independencia frente a cualquier entidad financiera.<br>2. Visualización comparativa del TCEA y de los beneficios estatales.<br>3. Comparador de escenarios e historial de simulaciones para usuarios registrados.<br>4. Acceso web y móvil, sin necesidad de crear cuenta para ver un primer resultado.<br>5. Reporte de simulación exportable y compartible en PDF. | **Estrategia (FO) — Estrategias Ofensivas**<br>1. Posicionar a HipoSim como el único comparador independiente que muestra el TCEA real y los beneficios estatales en un solo lugar.<br>2. Aprovechar el bajo conocimiento del TCEA para educar al usuario mediante visualizaciones claras y comparativas.<br>3. Difundir el comparador de escenarios y el reporte PDF como herramienta para discutir la decisión en familia o con un asesor.<br>4. Dirigir campañas hacia compradores primerizos que investigan informalmente antes de acercarse a un banco. | **Estrategia (FA) — Estrategias Defensivas**<br>1. Reforzar la transparencia e independencia frente a los simuladores bancarios como principal diferenciador de marca.<br>2. Mantener una actualización rigurosa y frecuente de tasas y parámetros (rol Administrador) para sostener la confianza del usuario.<br>3. Comunicar explícitamente las políticas de privacidad y limitar la solicitud de datos sensibles al mínimo necesario.<br>4. Monitorear los simuladores bancarios y posibles fintechs comparadoras para anticipar mejoras funcionales. |
+| **Debilidades (D)**<br>1. Producto nuevo sin reconocimiento de marca.<br>2. Sin relación comercial directa con bancos ni otorgamiento de créditos.<br>3. Dependencia de la actualización manual de tasas y parámetros.<br>4. Alcance inicial limitado al segmento comprador primerizo. | **Estrategia (DO) — Reorientación**<br>1. Priorizar el MVP con la visualización comparativa de TCEA y beneficios (H2) antes de invertir en el comparador y el historial.<br>2. Aprovechar la tendencia de digitalización financiera para ganar visibilidad pese a ser un producto nuevo.<br>3. Usar el acceso sin barrera de entrada al primer resultado para impulsar la adopción progresiva.<br>4. Explorar la actualización semiautomatizada de tasas y beneficios estatales para reducir la dependencia manual del Administrador. | **Estrategia (DA) — Supervivencia**<br>1. Mantener el alcance acotado al comprador primerizo mientras se valida el modelo, sin competir directamente con bancos o el canal oficial de Mivivienda.<br>2. Simplificar el ingreso de datos personales al mínimo indispensable para reducir la fricción y la desconfianza inicial.<br>3. Evaluar una futura alianza informativa (no comercial) con el Fondo Mivivienda para validar la exactitud de los beneficios mostrados.<br>4. Priorizar el mantenimiento actualizado de las tasas de los bancos de referencia (BCP, Interbank) antes de expandir a más entidades. |
+
+<div style="page-break-after: always;"></div>
+
+## **2.2. Interviews**
+
+Las entrevistas son clave para la metodología de diseño centrado en el usuario, al permitir recolectar información cualitativa directamente del comprador de primera vivienda: cómo investiga hoy, qué tan bien entiende el costo real de un crédito hipotecario y qué fricciones enfrenta antes de acercarse a un banco.
+
+### **2.2.1. Interview Design**
+
+## Segmento 1: Comprador de Primera Vivienda:
+
+Preguntas Personales  
+
+1. ¿Cuál es su nombre, edad y distrito de residencia?
+
+2. ¿Cuál es su ocupación actual y hace cuánto tiene un empleo formal estable?
+
+3. ¿Está actualmente evaluando la compra de su primera vivienda?
+
+4. ¿Qué dispositivo utiliza con más frecuencia para informarse sobre temas financieros?
+
+5. ¿Qué canal usa normalmente para informarse: bancos, redes sociales, recomendaciones u otro?
+
+6. ¿Qué parte de este proceso le genera mayor dificultad o frustración?
+
+Preguntas Específicas
+
+1. ¿Sabe qué es el TCEA y cómo se calcula?
+
+2. ¿Ha usado algún simulador de crédito hipotecario? ¿De qué banco?
+
+3. ¿Confía en que ese simulador es objetivo e independiente? ¿Por qué?
+
+4. ¿Ha comparado las condiciones de más de un banco antes de decidir? ¿Cómo?
+
+5. ¿Conocía el Bono del Buen Pagador o el Nuevo Crédito Mivivienda?
+
+6. ¿Qué información necesita para sentirse seguro antes de acercarse a un banco?
+
+7. ¿Ingresaría sus datos financieros (ingresos, ahorro, precio de vivienda) en una herramienta independiente para simular? ¿Por qué?
+
+8. ¿Le interesaría guardar, comparar o exportar sus simulaciones?
+
+<div style="page-break-after: always;"></div>
+
+## Segmento 2: Inmobiliarias:
+
+Preguntas Personales
+
+1. ¿Cuál es su nombre, edad y distrito de residencia?
+
+2. ¿En qué inmobiliaria, agencia o proyecto trabaja y cuál es su cargo?
+
+3. ¿Hace cuánto tiempo trabaja como asesor inmobiliario?
+
+4. ¿Qué tipo de viviendas ofrece principalmente: rango de precios, proyectos Mivivienda u otros?
+
+5. ¿Qué dispositivo y herramientas usa con más frecuencia para gestionar a sus clientes: Excel, CRM, WhatsApp u otro?
+
+6. ¿Qué parte de su trabajo con clientes le genera mayor dificultad o frustración?
+
+Preguntas Específicas 
+
+1. ¿Cómo le llegan hoy los clientes interesados y qué información trae cada uno?
+
+2. ¿Con qué frecuencia un interesado resulta no calificar para un crédito? ¿En qué momento se da cuenta?
+
+3. ¿Qué datos financieros le gustaría conocer antes del primer contacto: monto financiado, cuota estimada, TCEA o beneficios estatales aplicables?
+
+4. ¿Cómo decide a qué clientes atender primero?
+
+5. ¿Cómo da seguimiento a cada cliente y registra el estado de cada contacto?
+
+6. ¿Qué valor tendría para usted recibir solo clientes que autorizaron compartir su simulación? ¿Cambiaría su forma de contactarlos?
+
+7. ¿Quién administra a los asesores en su empresa y qué debería poder controlar desde una plataforma?
+
+8. ¿Qué funcionalidad le facilitaría más su trabajo: ver el detalle de la simulación, filtrar clientes, registrar el estado del contacto o recibir notificaciones de nuevos interesados?
+
+<div style="page-break-after: always;"></div>
+
+
+### **2.2.2. Interview Recording**
+
+# Segmento 1: Comprador de Primera Vivienda:
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Vitaly</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Baca Arturo</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>25 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Lurín, Lima*</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/vitaly-baca-entrevista.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAF5AyST2rQSp1Vf_9zuk_9AaycEdJysPCj3KbCrMCFYoU?e=wSeJ4W&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #1 - segmento 1
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>0:00 min</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>8:13 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Vitaly trabaja como analista de marketing hace 4 años y evalúa junto a su pareja, desde hace 6 meses, la compra de un departamento como primera vivienda. Se informa principalmente por celular, a través de redes sociales (TikTok, Instagram), la web de BCP —banco con el que ya tiene una relación previa— y recomendaciones de amigos y su padre. Su principal frustración es que cada banco muestra únicamente su propia información, lo que dificulta comparar, y que términos como el TCEA no le resultan claros: sabe que representa el costo real del crédito más allá de la tasa anunciada, pero no sabría calcularlo. Ha usado el simulador de Interbank (a través de su padre) y no confía en que sea objetivo, ya que percibe que cada banco muestra la información que más le conviene. Para comparar bancos, replicó manualmente los resultados de cada simulador en una hoja de cálculo. Conocía el Nuevo Crédito Mivivienda pero no sabía si calificaba, y se enteró del Bono del Buen Pagador hace poco por un amigo. Antes de acercarse a un banco, necesita saber el costo total del crédito y si califica para algún beneficio estatal. Estaría dispuesto a ingresar sus datos financieros en una herramienta independiente para simular, siempre que no le exija crear cuenta de inmediato ni derive en llamadas comerciales; además, le interesaría guardar y comparar 2-3 escenarios y exportar un reporte en PDF para decidir junto con su pareja.</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Alberto</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Roman</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>40 años</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Surco</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/entrevista-alberto-roman.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQAdCnl85yvhSrk9QQ9Lem4JAZkundmLCncxIt0ueEJ-jlw?e=UDoIg6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #2 - segmento 1
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>0:00</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>6:13</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Alberto Román trabaja hace 10 años en diagnóstico de servicios de autos deportivos, con empleo formal estable. Está evaluando el financiamiento para la futura compra de una vivienda, departamento o terreno. A diferencia de otros entrevistados, se apoya principalmente en un amigo que trabaja en una entidad financiera para resolver sus dudas antes de dar cualquier paso, y usa sobre todo la laptop (y en menor medida el celular) para revisar información, además de comparar de forma general lo que ofrecen distintos bancos por redes. Aún no se ha animado a usar un simulador hipotecario directamente, en parte por temor a que lo empiecen a llamar después, y no sabe qué es el TCEA. Tiene una confianza baja a moderada en que los simuladores sean objetivos, por lo que prefiere contrastar cualquier resultado con la opinión de su amigo del banco. Ha comparado de forma superficial las facilidades y plazos entre un par de bancos, sin profundizar. No conocía el Bono del Buen Pagador ni el Nuevo Crédito Mivivienda antes de la entrevista. Para sentirse seguro antes de acercarse a un banco, necesita respaldo, confianza y claridad sobre los beneficios disponibles. Estaría dispuesto a ingresar sus datos financieros en una herramienta independiente únicamente para simular, siempre que eso no derive en llamadas comerciales recurrentes, y no tendría inconveniente en guardar o comparar sus simulaciones.</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Jack</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Daga</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>32</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Surco</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/entrevista-jack-daga.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://drive.google.com/file/d/1pg9zZ18wrHPP4SKXrtPEQ-oGWhUn8r4F/view?usp=share_link" target="_blank">
+                Entrevista Jack Daga
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>09:49</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>La entrevista con Jack Daga, de 32 años, ingeniero de sistemas residente en Surco, permitió identificar las principales necesidades de una persona que se encuentra evaluando comprar su primera vivienda. Actualmente busca información mediante páginas inmobiliarias como Urbania, grupos de Facebook y WhatsApp, recomendaciones, podcasts, influencers y ferias inmobiliarias. Su principal dificultad es encontrar información confiable y completa sobre las propiedades, especialmente respecto a ubicación, características y condiciones, ya que muchas veces debe investigar por su cuenta para determinar si una vivienda realmente se adapta a sus necesidades. En cuanto al financiamiento, ha comenzado a consultar sobre tasas de interés, plazos y bonos, pero todavía no ha utilizado un simulador hipotecario. Considera que una herramienta independiente podría ofrecer una perspectiva más objetiva que un simulador perteneciente a un banco y estaría dispuesto a ingresar datos financieros aproximados para conocer cuánto podría pagar en cuotas y cuál sería el costo total. Además, manifestó interés en comparar diferentes bancos y en guardar y exportar las simulaciones, debido a que las tasas y condiciones pueden cambiar con el tiempo. En conclusión, la entrevista evidencia la necesidad de una herramienta centralizada que permita simular, comparar y guardar alternativas de crédito hipotecario de manera sencilla, transparente y con protección de la información financiera del usuario.
+</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+# Segmento 2: Inmobiliarias
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Juliana</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Paucan Alburqueque</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>52</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Miraflores</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/juliana-pauca-entrevista.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQC7z6bBUthnRZMrOohhLHtrATYp7gnwS0OgZz87q1-F__k?e=weynr2&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #1 - segmento 2
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>0:00</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>25:05</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+                Juliana trabajó hace menos de un año como ejecutiva comercial en RE/MAX Perú, como agente inmobiliaria independiente sin contrato ni sueldo fijo, y dejó el rubro hace unos tres meses. Se dedicaba al alquiler y venta de departamentos en Miraflores, San Isidro, San Borja y Santa Catalina. Gestionaba a sus clientes mediante redes sociales, WhatsApp, llamadas y la base de datos de RE/MAX, cuyo acceso tiene un costo mensual para el agente, además de portales como Urbania. La captación era mayormente activa: mapeo de zonas, búsqueda de letreros de venta o alquiler sin inmobiliaria, contactos personales y recomendaciones de clientes anteriores; señaló la falta de organización como su principal dificultad. Antes de avanzar con un interesado verificaba toda su información financiera: en alquiler aplicaba un filtro minucioso (historial en Infocorp/SBS mediante la plataforma de RE/MAX, boletas e ingresos al menos 30% superiores al alquiler), mientras que en venta confirmaba que el comprador ya tuviera su crédito hipotecario en trámite, ya que el pago debe estar listo a la firma de la minuta. El seguimiento lo realizaba con llamadas y mensajes constantes, fijando fechas límite y manteniendo tres o cuatro alternativas por inmueble ante posibles desistimientos. Su comisión era de 3% a 5% en ventas y el primer mes de alquiler. Consideró que recibir clientes que autorizaron compartir su simulación no cambiaría su forma de contactarlos, pues cada gestión se valida con el broker de la oficina con asesoría legal. En RE/MAX, cada oficina opera de forma independiente bajo su propio broker, quien asesora y capacita a los agentes. Entre las funcionalidades propuestas, priorizó recibir notificaciones de nuevos interesados.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Ricardo</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>Huamán Torres</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>Distrito</td>
+            <td>Jesús María</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/ricardo-huaman-entrevista.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQC3XxibKa8FRYeFW8RdpwIJAbsCVOepUYkQBw9wABSRVFg?e=GWH2fC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #2 - segmento 2
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>15:17</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Ricardo es asesor comercial desde hace cinco años en una inmobiliaria que desarrolla proyectos multifamiliares en Lima Centro y Lima Norte, donde atiende la sala de ventas y acompaña al cliente hasta la firma de la minuta. Ofrece departamentos de dos y tres dormitorios de entre 280 y 420 mil soles, varios de ellos dentro del Nuevo Crédito Mivivienda, por lo que la mayoría de sus clientes son compradores de primera vivienda. Gestiona a sus clientes principalmente desde el celular mediante WhatsApp Business; aunque la empresa cuenta con un CRM, suele registrar la información en un Excel propio o en notas del celular por falta de tiempo. Su mayor frustración son los leads fríos: interesados que dejan sus datos en formularios, no responden o no saben cuánto les puede financiar el banco. Los clientes le llegan por campañas en redes sociales, portales inmobiliarios, visitas a la sala de ventas y referidos, casi siempre sin datos financieros. Estima que cuatro o cinco de cada diez interesados no califican o no están listos, y muchas veces se entera recién cuando el banco evalúa al cliente, incluso después de la separación del inmueble. Antes del primer contacto le gustaría conocer el monto financiable, la cuota inicial disponible, la cuota estimada y si el cliente califica para el Bono del Buen Pagador; considera el TCEA solo como referencia. Hoy prioriza a los clientes a criterio propio, según si visitaron la sala, tienen precalificación bancaria o responden rápido. Da seguimiento por llamadas y WhatsApp, y registra estados como nuevo, contactado, visitó, separó, en evaluación bancaria y cerrado o perdido, aunque admite que los actualiza de forma irregular y pierde historial. Valora recibir solo clientes que autorizaron compartir su simulación, porque mejora el primer contacto y le permite ofrecer proyectos acordes a su capacidad, siempre que la simulación use tasas actualizadas y el consentimiento quede claro conforme a la ley de protección de datos personales. En su empresa, una jefa comercial coordina a seis asesores, asigna los leads y solicita reportes; desde una plataforma debería poder registrar o dar de baja asesores, ver la cartera y el estado de cada uno, y asegurar que cada asesor vea solo sus propios clientes. Prioriza ver el detalle de la simulación, seguido de las notificaciones de nuevos interesados, y pide que el registro del estado del contacto sea rápido y desde el celular.</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <colgroup></colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #3<br></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jakelin</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Gutierrez Flores</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>34 años</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Breña</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td style="text-align: left;">
+                <div align="center"><img src="../assets/06-chapter-2/Jakelin-entrevista.png" width="700"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323319_upc_edu_pe/IQBxlDKkWL6ZRb-3Xr0whyq-Aa-yvKwN0Denn3JxVq112X0?e=UdOlvc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank">
+                Entrevista #3 - segmento 2
+            </a>
+            </td>
+        </tr>
+        <tr>
+            <td>Timing donde inicia la entrevista<br></td>
+            <td>00:00</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista<br></td>
+            <td>6:07</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>akelin tiene seis años como asesora, los últimos tres en primera vivienda, vendiendo departamentos de 1 a 3 dormitorios entre S/ 250,000 y S/ 450,000, varios con Mivivienda Sostenible. Gestiona a sus clientes con Excel y WhatsApp Business; el CRM de la empresa casi no se usa por ser lento y mal implementado. Su mayor frustración es invertir tiempo en contactos que recién después de dos o tres llamadas resultan no calificar para el crédito.
+
+Los leads le llegan por portales, redes sociales y referidos, casi siempre sin datos financieros. Calcula que el 40% no califica, y se entera recién al pedir el DNI o cuando el cliente menciona su sueldo. Le interesa conocer desde el inicio el monto financiado, la cuota estimada y la elegibilidad a bonos estatales; el TCEA solo importa después, cuando el cliente ya compara con un banco. Prioriza por "temperatura" (ahorro + empleo formal) y da seguimiento en Excel, aunque reconoce que a veces pierde contactos sin darse cuenta.
+
+Valora mucho recibir solo clientes que autorizaron compartir su simulación, porque le permitiría enfocarse en cerrar en vez de calificar. En su empresa, el Gerente Comercial asigna zonas, revisa metas y reasigna clientes entre asesores. Las funcionalidades que más valora son ver el detalle de la simulación al instante y recibir notificaciones de nuevos interesados.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+### **2.2.3. Interview Analysis**
+
+A partir de las entrevistas realizadas al segmento Comprador de Primera Vivienda, se identifican patrones comunes y particularidades relevantes para la definición del arquetipo de usuario. Dado que este análisis se basa en 2 entrevistas correspondientes al avance de este entregable, los hallazgos se presentan en términos cualitativos; se recomienda ampliar la muestra al mínimo de 5-6 entrevistas indicado en la sección 2.2.2 antes de la entrega final.
+
+#### Análisis de características objetivas y subjetivas
+
+En esta sección se presenta el análisis detallado de la información recolectada de las entrevistas al segmento Comprador de Primera Vivienda. Se explican primero los hallazgos estadísticos objetivos y subjetivos, seguidos de la evidencia gráfica correspondiente y la definición del arquetipo de usuario. Dado que este análisis se basa en 2 entrevistas (Vitaly Bacacamargo Arturo y Camila Fernández Ríos) correspondientes al avance de este entregable, los hallazgos se presentan como una primera aproximación cualitativa; se recomienda ampliar la muestra al mínimo de 5-6 entrevistas indicado en la sección 2.2.2 antes de la entrega final.
+
+**Segmento 1: Comprador de Primera Vivienda**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que la búsqueda de una primera vivienda es un proceso activo y sostenido en el tiempo: el 100% de los entrevistados se encuentra evaluando la compra desde hace 3 a 6 meses y cuenta con empleo formal estable de 4 a 6 años, lo que valida el criterio de acceso a crédito definido para este segmento. Asimismo, el 100% combina más de un canal para informarse (web bancaria, redes sociales o foros, y recomendaciones cercanas), y el 100% ha utilizado al menos un simulador hipotecario de un banco (Interbank, BCP o Scotiabank). En cuanto al dispositivo principal de consulta, se observa una división pareja: el 50% se informa principalmente desde el celular, mientras que el 50% restante utiliza laptop, lo que sugiere que HipoSim debe ofrecer una experiencia consistente en ambos formatos.
+
+A nivel subjetivo, el 100% de los entrevistados manifestó baja confianza en la objetividad de los simuladores bancarios, aunque por razones distintas: la mitad percibe un sesgo comercial hacia la entidad, mientras que la otra mitad percibe falta de transparencia en costos adicionales como seguros y gastos notariales. De igual forma, el 100% no logra comprender con claridad el TCEA —el 50% lo asocia correctamente con el costo real del crédito sin saber calcularlo, mientras que el 50% restante lo confunde directamente con la tasa de interés simple—, y el 100% desconocía con certeza si calificaba para algún beneficio estatal antes de la entrevista. Además, el 100% recurre actualmente a comparaciones manuales entre bancos (hojas de cálculo o revisión pestaña por pestaña) ante la ausencia de una herramienta que centralice esta información.
+
+En conjunto, se observa que el Comprador de Primera Vivienda busca disponer de información confiable e independiente sobre el costo real de un crédito hipotecario y los beneficios estatales a los que podría acceder, antes de comprometerse con una entidad financiera específica.
+
+<br>
+
+<div align="center">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-1-1.png" width="400">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-1-2.png" width="400">
+</div>
+
+<br>
+
+<div style="page-break-after: always;"></div>
+
+**Segmento 2: Inmobiliarias**
+
+**Análisis de Características Objetivas y Subjetivas:**
+
+El análisis de las entrevistas evidencia que la labor del asesor inmobiliario gira en torno a la captación, el filtrado y el seguimiento de interesados, con muy poca información disponible al inicio de la relación con el cliente. El 100% de los entrevistados comercializa departamentos en distritos de Lima, y el 67% se enfoca específicamente en proyectos de primera vivienda con acceso a beneficios estatales, como el Nuevo Crédito Mivivienda o bonos asociados a viviendas sostenibles; el 33% restante combinaba ventas con alquileres. En cuanto a experiencia, el 67% cuenta con cinco o más años en el rubro, mientras que el 33% tiene alrededor de un año. Respecto a la captación, el 100% recibe interesados a través de portales inmobiliarios, redes sociales y referidos de clientes anteriores, aunque el 33% depende principalmente de la búsqueda activa mediante el mapeo de zonas y contactos personales. Para gestionar a sus clientes, el 100% utiliza WhatsApp y llamadas telefónicas como canal principal, y el 67% registra el seguimiento en hojas de cálculo propias, incluso cuando la empresa cuenta con un CRM corporativo.
+
+Un hallazgo central es que el 100% de los entrevistados conoce la capacidad financiera del interesado recién después del primer contacto, ya sea al conversar sobre sus ingresos, al solicitar su DNI para una evaluación preliminar o al revisar su historial crediticio. El 67% estima que entre el 40% y el 50% de los interesados no califica para un crédito o desiste al conocer el monto real de la cuota inicial, y señala que muchas veces lo descubre en etapas avanzadas, incluso después de la separación del inmueble. Asimismo, el 100% desearía conocer antes del primer contacto el monto financiable y la cuota estimada del cliente, y el 67% considera relevante saber si este califica para algún beneficio estatal; respecto al TCEA, las opiniones se dividen entre quienes lo consideran un dato clave (33%) y quienes lo ven solo como una referencia que el cliente termina revisando con el banco (33%).
+
+A nivel subjetivo, el 67% identifica como su principal frustración a los interesados que no califican o que no responden, mientras que el 33% señala la falta de organización en el seguimiento; en ambos casos, el problema de fondo es el tiempo invertido en clientes que no llegan a concretar una compra. Respecto a recibir únicamente interesados que autorizaron compartir su simulación, el 67% lo considera un cambio de alto valor, ya que les permitiría dejar de dedicar la mayor parte de su tiempo a filtrar clientes y enfocarse directamente en cerrar la venta, siempre que la simulación se base en parámetros actualizados y el consentimiento quede claramente registrado; el 33% restante considera que no cambiaría su forma de contactarlos, debido a que sus gestiones siguen procedimientos definidos por el broker y su asesoría legal. Por otro lado, el 100% de los entrevistados reporta a un responsable comercial (broker, jefa o gerente comercial) que asigna leads o zonas y revisa metas y reportes, y el 67% espera que este responsable pueda consultar desde una plataforma la cartera y el estado de los clientes de cada asesor. Finalmente, el 100% ubica la notificación inmediata de nuevos interesados entre las funcionalidades más valiosas, ya que consideran que el primero en contactar al cliente tiene mayores probabilidades de cerrar la venta, y el 67% prioriza además la visualización del detalle de la simulación apenas llega el contacto.
+
+En conjunto, se observa que el asesor de inmobiliaria busca recibir interesados con información financiera confiable y con su consentimiento para ser contactados, de manera oportuna, para concentrar su tiempo en clientes con capacidad real de compra en lugar de filtrarlos manualmente.
+
+<br>
+
+<div align="center">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-2-1.png" width="400">
+    <img src="../assets/06-chapter-2/grafico-analisis-segmento-2-2.png" width="400">
+</div>
+
+<br>
+
+##### Conclusiones y Definición de Arquetipos
+
+A partir del análisis realizado, se define el siguiente perfil de usuario (User Persona):
+
+*Arquetipo: "El Comprador Primerizo"*
+
+**Característica principal:** Persona de 25 a 35 años, con empleo formal estable de al menos 4 años, que investiga activamente la compra de su primera vivienda combinando canales digitales y recomendaciones cercanas, sin depender de una sola entidad o simulador.
+
+**Necesidad principal:** Comprender el costo real total de un crédito hipotecario y conocer con certeza si califica para beneficios estatales como el Bono del Buen Pagador o el Nuevo Crédito Mivivienda, antes de acercarse formalmente a un banco.
+
+**Principal dificultad:** La información disponible está fragmentada y sesgada hacia cada entidad financiera, lo que lo obliga a comparar manualmente y le genera desconfianza sobre si realmente está viendo la mejor opción disponible.
+
+*Arquetipo: "La Asesor Orientado al Cierre"*
+
+**Característica principal:** Asesor comercial de 34 a 52 años, con experiencia en la venta de departamentos en Lima, que gestiona a sus clientes principalmente por WhatsApp y llamadas, registra su seguimiento en herramientas dispersas y depende de comisiones, por lo que el tiempo invertido en cada interesado es decisivo.
+
+**Necesidad principal:** Recibir interesados que ya simularon su crédito y autorizaron ser contactados, con información sobre su monto financiable, cuota estimada y beneficios estatales aplicables, y ser notificada de inmediato para contactarlos antes que la competencia.
+
+**Principal dificultad:** Conocer la capacidad financiera del interesado recién después del primer contacto, lo que la obliga a dedicar gran parte de su tiempo a filtrar clientes y provoca que muchas operaciones se caigan en etapas avanzadas, como la evaluación bancaria.
+
+<div style="page-break-after: always;"></div>
+
+## **2.3. Needfinding**
+### **2.3.1. User Personas**
+
+En esta sección se presentan los User Personas definidos para HipoSim a partir de la información recopilada durante las entrevistas realizadas a los segmentos de dueños primerizos, y administradores de producto. Estos perfiles sintetizan sus principales características, objetivos, necesidades, motivaciones, frustraciones y comportamientos, permitiendo comprender mejor a los usuarios objetivo y orientar el diseño de la solución hacia sus necesidades reales.
+
+### Segmento 1: Comprador de primera vivienda
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="../assets/06-chapter-2/user-persona-segmento-1.png" style="width: 60%;">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+### Segmento 2: Inmobiliaria
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/user-persona-segmento-2.png" style="width: 60%;">
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
+### **2.3.2. User Task Matrix**
+
+La matriz de tareas de usuario permite identificar, para cada segmento, las principales tareas que realiza en relación con el problema que HipoSim busca resolver, junto con la frecuencia con la que las realiza y la importancia que tienen para él. Esta información, derivada de las entrevistas realizadas, sirve como base para priorizar las funcionalidades del producto.
+
+#### Segmento 1: Comprador de Primera Vivienda
+
+| # | Tarea | Frecuencia | Importancia |
+|---|-------|------------|-------------|
+| 1 | Buscar información sobre créditos hipotecarios en distintos canales (redes sociales, webs bancarias, recomendaciones) | Alta | Alta |
+| 2 | Simular una cuota de crédito en el simulador de un banco | Media | Alta |
+| 3 | Comparar manualmente los resultados de distintos simuladores bancarios (ej. en una hoja de cálculo) | Media | Alta |
+| 4 | Verificar si califica para el Bono del Buen Pagador o el Nuevo Crédito Mivivienda | Baja | Alta |
+| 5 | Entender el TCEA y el costo total del crédito | Baja | Alta |
+| 6 | Comparar distintos escenarios de simulación (cuota inicial, plazo) | Media | Alta |
+| 7 | Guardar los resultados de una simulación | Media | Media |
+| 8 | Exportar o compartir un reporte de la simulación con su pareja o familia | Baja | Media |
+| 9 | Consultar y decidir junto a su pareja o familia | Media | Alta |
+| 10 | Acercarse formalmente a un banco a solicitar el crédito | Baja | Alta |
+
+<div style="page-break-after: always;"></div>
+
+
+#### Segmento 2: Inmobiliarias
+
+| # | Tarea | Frecuencia | Importancia |
+|---|-------|------------|-------------|
+| 1 | Captar nuevos interesados (campañas en redes sociales, portales inmobiliarios, referidos, mapeo de zonas) | Alta | Alta |
+| 2 | Realizar el primer contacto con un nuevo interesado por llamada o WhatsApp | Alta | Alta |
+| 3 | Indagar la capacidad financiera del interesado (ingresos, cuota inicial, monto que podría financiar) | Alta | Alta |
+| 4 | Priorizar a qué interesados atender primero | Alta | Alta |
+| 5 | Verificar si el interesado califica para el Bono del Buen Pagador o el Nuevo Crédito Mivivienda | Media | Alta |
+| 6 | Presentar opciones de vivienda acordes a la capacidad del cliente (cotizaciones, visitas al piloto o inmueble) | Media | Alta |
+| 7 | Dar seguimiento a cada cliente mediante llamadas y mensajes | Alta | Alta |
+| 8 | Registrar y actualizar el estado de cada contacto (CRM, Excel o notas del celular) | Media | Media |
+| 9 | Confirmar el avance de la evaluación crediticia del cliente con el banco | Media | Alta |
+| 10 | Elaborar reportes de avance para el broker o jefe comercial | Baja | Media |
+| 11 | Coordinar la separación del inmueble y la firma de la minuta | Baja | Alta |
+
+<div style="page-break-after: always;"></div>
+
+
+### **2.3.3. User Journey Mapping**
+
+Esta sección presenta el recorrido que actualmente realiza cada User Persona para cumplir su objetivo, sin contar con una solución como HipoSim. Permite identificar las etapas, puntos de contacto, dificultades y emociones que atraviesa a lo largo de su proceso.
+
+### Segmento 1: Comprador de primera vivienda
+
+<img src="../assets/06-chapter-2/journey-mapping-segmento-1.png">
+
+<div style="page-break-after: always;"></div>
+
+
+### Segmento 2: Inmobiliaria
+
+<img src="../assets/06-chapter-2/journey-mapping-segmento-2.png">
+
+<div style="page-break-after: always;"></div>
+
+### **2.3.4. Empathy Mapping**
+
+### Segmento 1: Comprador de primera vivienda
+
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/empathy-map-segmento-1.png" style="width: 50%;">
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
+
+### Segmento 2: Inmobiliaria
+
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/empathy-map-segmento-2.png" style="width: 50%;">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+### **2.3.5. As-is Scenario Mapping**
+
+### Segmento 1: Comprador de primera vivienda
+
+<img src="../assets/06-chapter-2/as-is-scenario-segmento-1.png">
+
+
+### Segmento 2: Inmobiliaria
+
+<img src="../assets/06-chapter-2/as-is-scenario-segmento-2.jpg">
+
+<div style="page-break-after: always;"></div>
+
+
+## **2.4. Ubiquitous Language**
+
+1. **Mortgage Loan** (Crédito Hipotecario)
+
+   **Definición:** Financiamiento otorgado por una entidad financiera para la compra de una vivienda, en el cual el propio inmueble queda como garantía del cumplimiento de pago.
+
+2. **First-time Homebuyer** (Comprador de Primera Vivienda)
+
+   **Definición:** Persona que se encuentra evaluando o gestionando la adquisición de su primera vivienda propia, sin contar previamente con experiencia en la solicitud de un crédito hipotecario.
+
+3. **Mortgage Simulator** (Simulador Hipotecario)
+
+   **Definición:** Herramienta que permite estimar las condiciones de un crédito hipotecario —cuota, plazo, costo total— a partir de los datos ingresados por el usuario, sin constituir una oferta vinculante de crédito.
+
+4. **Nominal Rate – TEA** (Tasa Efectiva Anual)
+
+   **Definición:** Tasa de interés anual que refleja el costo del financiamiento otorgado por la entidad, considerando la capitalización de intereses, pero sin incluir los demás cargos asociados al crédito.
+
+5. **Annual Effective Cost Rate – TCEA** (Tasa de Costo Efectivo Anual)
+
+   **Definición:** Indicador que expresa el costo total real de un crédito en términos anuales, incluyendo la tasa de interés, los seguros, las comisiones y demás cargos aplicables, permitiendo comparar de forma objetiva distintas ofertas de crédito.
+
+6. **French Amortization Method** (Método de Amortización Francés)
+
+   **Definición:** Método de cálculo de un crédito en el que la cuota periódica se mantiene constante durante todo el plazo, variando internamente la proporción destinada al pago de interés y a la amortización del capital.
+
+7. **Amortization Schedule** (Cronograma de Pagos)
+
+   **Definición:** Detalle periodo por periodo de las cuotas de un crédito, que muestra para cada una el monto de interés, la amortización de capital, el saldo pendiente y la fecha correspondiente.
+
+8. **Down Payment** (Cuota Inicial)
+
+   **Definición:** Monto que el comprador debe aportar de forma directa al momento de adquirir la vivienda, expresado generalmente como un porcentaje del valor del inmueble, y que no forma parte del monto financiado por la entidad.
+
+9. **Loan Term** (Plazo del Crédito)
+
+   **Definición:** Periodo de tiempo, expresado en meses o años, durante el cual el comprador se compromete a pagar el crédito hipotecario hasta su cancelación total.
+
+10. **Monthly Installment** (Cuota Mensual)
+
+    **Definición:** Monto que el comprador debe pagar periódicamente a la entidad financiera durante el plazo del crédito, compuesto por la amortización de capital y el pago de interés correspondiente.
+
+11. **Grace Period** (Periodo de Gracia)
+
+    **Definición:** Lapso al inicio del crédito durante el cual el comprador no realiza el pago habitual de la cuota, ya sea porque esta se posterga por completo o porque solo se cubre una parte, según la modalidad aplicable.
+
+12. **Net Present Value – NPV** (Valor Actual Neto – VAN)
+
+    **Definición:** Indicador financiero que expresa, en valor presente, el resultado de comparar los flujos de pago futuros de un crédito frente a una tasa de referencia, utilizado para evaluar la conveniencia de un escenario de financiamiento.
+
+13. **Internal Rate of Return – IRR** (Tasa Interna de Retorno – TIR)
+
+    **Definición:** Tasa que iguala el valor presente de los pagos futuros de un crédito con el monto inicial financiado, utilizada como referencia para comparar el costo efectivo entre distintos escenarios de simulación.
+
+14. **State Benefit** (Beneficio Estatal)
+
+    **Definición:** Incentivo otorgado por el Estado peruano para facilitar el acceso a la vivienda propia, que puede reducir el monto del crédito, la cuota inicial o el costo total del financiamiento según el programa aplicable.
+
+15. **Good Payer Bonus – BBP** (Bono del Buen Pagador)
+
+    **Definición:** Subsidio otorgado por el Estado peruano que se aplica directamente al monto del crédito hipotecario de compradores que califican, reduciendo el capital a financiar y, en consecuencia, el costo total del crédito.
+
+16. **New Mivivienda Credit** (Nuevo Crédito Mivivienda)
+
+    **Definición:** Programa de crédito hipotecario respaldado por el Fondo Mivivienda, dirigido a la compra de viviendas dentro de determinados rangos de precio, y que puede combinarse con subsidios estatales como el Bono del Buen Pagador.
+
+17. **Mivivienda Fund** (Fondo Mivivienda)
+
+    **Definición:** Entidad estatal peruana encargada de administrar los programas de financiamiento habitacional y los subsidios asociados a la compra de vivienda, estableciendo los rangos de precio y condiciones de elegibilidad correspondientes.
+
+18. **Housing Price Range** (Rango de Precio de Vivienda)
+
+    **Definición:** Intervalo de valores de una vivienda dentro del cual esta califica para un determinado programa de crédito o beneficio estatal, definido periódicamente por la entidad correspondiente.
+
+19. **Eligibility Check** (Verificación de Elegibilidad)
+
+    **Definición:** Proceso mediante el cual se determina si un comprador y la vivienda que pretende adquirir cumplen con los requisitos establecidos para acceder a un beneficio estatal o programa de crédito específico.
+
+20. **Simulation Scenario** (Escenario de Simulación)
+
+    **Definición:** Conjunto particular de datos ingresados por el usuario —precio de vivienda, cuota inicial, plazo, tasa, beneficios aplicados— que genera un resultado de simulación específico dentro del sistema.
+
+21. **Scenario Comparator** (Comparador de Escenarios)
+
+    **Definición:** Funcionalidad que permite visualizar de forma simultánea dos o más escenarios de simulación, facilitando la comparación de sus condiciones y costos totales.
+
+22. **Simulation History** (Historial de Simulaciones)
+
+    **Definición:** Registro de los escenarios de simulación previamente generados por un usuario, que permite consultarlos o compararlos nuevamente sin necesidad de volver a ingresar los datos.
+
+23. **Simulation Report** (Reporte de Simulación)
+
+    **Definición:** Documento exportable, generalmente en formato PDF, que resume los resultados de uno o más escenarios de simulación para ser compartido o utilizado como referencia fuera del sistema.
+
+24. **Financial Parameter** (Parámetro Financiero)
+
+    **Definición:** Valor configurable dentro del sistema —como una tasa de interés, un porcentaje de beneficio estatal o un rango de precios— que alimenta los cálculos del simulador y debe mantenerse actualizado conforme a las fuentes oficiales.
+
+25. **Reference Rate** (Tasa Referencial)
+
+    **Definición:** Tasa de interés publicada por una entidad financiera o por el organismo regulador, utilizada como base para las simulaciones de crédito hipotecario dentro del sistema.
+
+26. **Official Source** (Fuente Oficial)
+
+    **Definición:** Documento o canal de información reconocido y verificable —como la SBS, los bancos o el Fondo Mivivienda— a partir del cual se obtienen y validan los parámetros financieros y los beneficios estatales utilizados en el simulador.
+
+27. **Parameter Update** (Actualización de Parámetros)
+
+    **Definición:** Proceso mediante el cual el Administrador registra un nuevo valor para un parámetro financiero o estatal dentro del sistema, indicando su fecha de vigencia y la fuente oficial que lo respalda.
+
+28. **Approval Workflow** (Flujo de Aprobación)
+
+    **Definición:** Proceso mediante el cual un cambio propuesto sobre un parámetro crítico debe ser revisado y validado por otra persona con el rol correspondiente antes de que dicho cambio se publique y entre en vigencia.
+
+29. **Change History** (Historial de Cambios)
+
+    **Definición:** Registro que conserva, para cada parámetro, sus valores anteriores, la fecha de modificación, la fuente utilizada y la persona responsable del cambio, permitiendo su consulta o comparación posterior.
+
+30. **Rollback** (Reversión de Cambio)
+
+    **Definición:** Acción mediante la cual un parámetro publicado es restituido a su valor anterior, utilizada cuando se detecta un error en una actualización reciente.
+
+31. **Access Role** (Rol de Acceso)
+
+    **Definición:** Nivel de permisos asignado a un usuario del panel de administración —consulta, editor o aprobador— que determina qué acciones puede realizar sobre los parámetros del sistema.
+
+32. **Usage Metric** (Métrica de Uso)
+
+    **Definición:** Dato cuantitativo relacionado con el uso del simulador —como el número de simulaciones realizadas, la tasa de finalización o de exportación— utilizado para monitorear el desempeño del producto.
+
