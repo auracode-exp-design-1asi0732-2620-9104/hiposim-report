@@ -112,7 +112,5 @@
     - [7.3.2. Production Deployment Pipeline Components](11-chapter-7.md#732-production-deployment-pipeline-components)
 - [**Conclusions**](13-conclusions.md#conclusions)
   - [Conclusions and recommendations](13-conclusions.md#conclusions-and-recommendations)
-  - [App Validation Video](13-conclusions.md#app-validation-video)
-  - [Video About the team](13-conclusions.md#video-about-the-team)
 - [**Bibliography**](14-bibliography.md#bibliography)
 - [**Annexes**](15-annexes.md#annexes)
