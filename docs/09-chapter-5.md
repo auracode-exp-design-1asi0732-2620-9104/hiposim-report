@@ -57,6 +57,9 @@ Especificación de servicios: OpenAPI/Swagger
 Pruebas de servicios: Postman y pruebas automatizadas del proyecto .NET
 ```
 
+<div style="page-break-after: always;"></div>
+
+
 ### **5.1.2. Source Code Management**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -90,6 +93,9 @@ docs(api): document simulation endpoints
 test(financial-engine): add TCEA calculation cases
 ```
 
+<div style="page-break-after: always;"></div>
+
+
 ### **5.1.3. Source Code Style Guide & Conventions**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -116,6 +122,8 @@ Acordamos utilizar identificadores técnicos en inglés y respetar las convencio
 | Tabla de base de datos | snake_case plural | `simulation_reports` |
 | Variable de entorno | UPPER_SNAKE_CASE | `DATABASE_CONNECTION_STRING` |
 | Prueba | Nombre orientado al comportamiento | `Calculate_WhenInputIsValid_ReturnsSchedule` |
+
+<div style="page-break-after: always;"></div>
 
 ### **5.1.4. Software Deployment Configuration**
 
@@ -192,6 +200,8 @@ Distribuimos las historias funcionales y técnicas entre los integrantes de acue
 | Historias y actividades | TS04, US14, US15, US16, US17, US18, US19, US20, TS01, SP03 y actividades de diseño UX/UI. |
 | Resultado principal | Landing Page publicada; bases de web y Android registradas en sus repositorios. |
 
+<div style="page-break-after: always;"></div>
+
 **Sprint Backlog 1**
 
 | ID | Historia o elemento | SP | Trabajo asociado |
@@ -207,6 +217,8 @@ Distribuimos las historias funcionales y técnicas entre los integrantes de acue
 | TS01 | Configurar entorno de frontend | 3 | Proyecto Vue con Vite y PrimeVue, estructura de carpetas y configuración inicial de navegación. |
 | SP03 | Definir la tecnología de la app móvil nativa | 2 | Evaluación de alternativas y decisión de utilizar Kotlin y Jetpack Compose para Android. |
 | DS | Diseños de interfaz relacionados | — | Mock-ups de registro y resultados móviles, bandeja de leads y ficha del interesado. |
+
+<div style="page-break-after: always;"></div>
 
 #### **Sprint 2 - API, Buyer Mobile App and Advisor Web App**
 
@@ -246,6 +258,9 @@ Registramos el seguimiento individual de las actividades en Jira y trabajamos la
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
 ### **5.2.2. Implemented Landing Page Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -277,6 +292,9 @@ La tasa anual del **8,85 %** utilizada como referencia en el cálculo de la Land
   <p><em>Figura 2. Landing Page implementada de HipoSim (móvil).</em></p>
 </div>
 
+<div style="page-break-after: always;"></div>
+
+
 ### **5.2.3. Implemented Frontend-Web Application Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -301,6 +319,8 @@ El flujo funcional relaciona la autenticación del asesor con la consulta de los
 Mantenemos el código del portal en [hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp). En la entrega documentada la aplicación web se ejecuta en desarrollo local y no presenta una URL productiva acreditada.
 
 </div>
+
+<div style="page-break-after: always;"></div>
 
 ### **5.2.4. Implemented Native-Mobile Application Evidence**
 
@@ -356,6 +376,8 @@ Integramos la navegación mediante `HipoSimNavHost`, incorporando la ruta `Sched
   <p><em>Figura 4. Cronograma de amortización hipotecaria implementado en la aplicación Android de HipoSim (US02).</em></p>
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -383,6 +405,8 @@ Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulation
 Centralizamos el trabajo del backend en [hiposim-backEnd](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd). Para esta entrega no contamos con evidencias consolidadas de una URL pública de producción, una ejecución completa de la batería de pruebas del backend ni la operación del flujo comprador–asesor en un entorno desplegado. Esta distinción nos permite documentar el avance técnico sin atribuir al producto una cobertura que todavía no hemos demostrado.
 
 </div>
+
+<div style="page-break-after: always;"></div>
 
 #### **Leads Management Backend Evidence (TS08)**
 
@@ -413,6 +437,8 @@ La evidencia corresponde a la implementación y validación del backend; no cons
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ### **5.2.6. RESTful API Documentation**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -441,6 +467,8 @@ Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el 
 | `PUT` | `/api/admin/parameters/{key}` | Modificar un parámetro autorizado. | US09, US10 | Iteración posterior. |
 | `POST` | `/api/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 | Iteración posterior. |
 | `GET` | `/api/admin/parameters/{key}/history` | Consultar cambios históricos. | US12 | Iteración posterior. |
+
+<div style="page-break-after: always;"></div>
 
 #### **Mortgage Simulation Contract**
 
@@ -476,6 +504,8 @@ Durante el Sprint 2 implementamos los servicios REST para gestionar las solicitu
 
 Los servicios se desarrollaron en el backend de HipoSim mediante **ASP.NET Core y C#**, utilizando **Entity Framework Core y PostgreSQL** para la persistencia. La autenticación mediante JWT permite identificar al usuario y aplicar las restricciones de acceso correspondientes a compradores y asesores.
 
+<div style="page-break-after: always;"></div>
+
 </div>
 
 | Método | Endpoint | Funcionalidad implementada | Requerimiento |
@@ -504,6 +534,8 @@ Estas entidades se integraron al contexto de datos de HipoSim mediante **Entity 
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### **API Validation and Testing**
 
 <div style="text-align:justify; line-height:1.6;">
@@ -522,15 +554,16 @@ Las pruebas del backend se ejecutaron mediante `dotnet test`, obteniendo **188 p
 **Automated Tests — Leads Management (TS08)**
 
 <div align="center">
-  <img src="../assets/09-chapter-5/backend-evidence/leads-tests.png" alt="Pruebas automatizadas del backend de HipoSim" width="900">
+  <img src="../assets/09-chapter-5/backend-evidence/leads-tests.png" alt="Pruebas automatizadas del backend de HipoSim" width="800">
   <p><em>Figura. Ejecución satisfactoria de la batería de pruebas del backend, incluyendo las pruebas asociadas al módulo Leads Management.</em></p>
 </div>
 
 <div style="text-align:justify; line-height:1.6;">
-
-La evidencia anterior confirma la ejecución satisfactoria de la solución backend, con 188 pruebas correctas y sin errores registrados. Este resultado respalda la validación técnica del módulo TS08 dentro del conjunto de pruebas automatizadas del proyecto.
-
+  La evidencia anterior confirma la ejecución satisfactoria de la solución backend, con 188 pruebas correctas y sin errores registrados. Este resultado respalda la validación técnica del módulo TS08 dentro del conjunto de pruebas automatizadas del proyecto.
 </div>
+
+<div style="page-break-after: always;"></div>
+
 ### **5.2.7. Team Collaboration Insights**
 
 <div style="text-align:justify; line-height:1.6;">
