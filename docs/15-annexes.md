@@ -36,6 +36,8 @@
   En el segmento comprador, las entrevistas aportan información sobre comparación de bancos, comprensión de la TCEA, beneficios estatales y necesidad de guardar simulaciones. En el segmento inmobiliario, abordan la calificación inicial de interesados, el uso de WhatsApp o registros manuales, la gestión del seguimiento y el valor de recibir leads con consentimiento. Estos hallazgos son cualitativos y no se presentan como estimaciones representativas de toda la población.
 </p>
 
+<div style="page-break-after: always;"></div>
+
 ## **Annex C. Trazabilidad entre requisitos, componentes y verificación**
 
 | Identificador | Funcionalidad o componente | Producto involucrado | Relación documental |
@@ -50,6 +52,7 @@
 | TS05 | Documentación REST mediante OpenAPI y Swagger | API | 5.2.6; 6.1.2 |
 | TS04 / US14–US20 | Sitio institucional y simulador básico | Landing Page | 5.2.2; 6.1.4; 7.3.2 |
 
+<div style="page-break-after: always;"></div>
 
 ## **Annex D. Contrato de referencia para la simulación hipotecaria**
 
@@ -82,6 +85,8 @@
 <p style="text-align: justify;">
   El contrato de referencia utiliza una TEA de 8,5 %, mientras que el simulador de la Landing Page presenta una tasa referencial de 8,85 % en la versión documentada. La homologación de tasas, seguros, cargos y criterios de redondeo es necesaria antes de comparar directamente las cuotas entre productos. La TCEA se diferencia de la TEA porque incorpora los costos aplicables al crédito; no debe mostrarse como sinónimo de la tasa base.
 </p>
+
+<div style="page-break-after: always;"></div>
 
 ## **Annex E. Inventario de servicios REST del flujo principal**
 
