@@ -10,6 +10,8 @@ Para desarrollar una solución realmente útil, es fundamental comprender las al
 
 A continuación, se presenta una comparación de los principales competidores considerando su propuesta de valor, mercado objetivo y características generales. Este análisis evidencia que, mientras las soluciones existentes están integradas dentro del canal comercial de una entidad específica —ya sea un banco privado o el propio Fondo Mivivienda— HipoSim se posiciona como una alternativa independiente, centrada en mostrar el costo efectivo real (TCEA) y los beneficios estatales aplicables en un solo lugar, sin sesgo comercial hacia ninguna entidad.
 
+<div style="page-break-after: always;"></div>
+
 <table border="1" cellpadding="10" cellspacing="0" style="margin-left: auto; margin-right: auto; font-family: sans-serif;">
 <tr>
 <th colspan="6">Panorama del análisis competitivo</th>
@@ -129,6 +131,8 @@ A continuación, se presenta una comparación de los principales competidores co
 </tr>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 A partir del análisis comparativo, se identifican las siguientes diferencias clave:
 
 - Frente a los simuladores de BCP e Interbank, HipoSim no depende de ninguna entidad financiera y no muestra únicamente la oferta de un solo banco, sino que permite comparar condiciones de forma independiente antes de iniciar un proceso comercial.
@@ -136,6 +140,7 @@ A partir del análisis comparativo, se identifican las siguientes diferencias cl
 - En los tres casos, los simuladores existentes están confinados al canal comercial de la entidad que los ofrece, lo cual coincide directamente con el problema de negocio identificado en el Capítulo I: no existe hoy un producto independiente que permita a un comprador primerizo explorar y comparar escenarios reales de crédito hipotecario por su cuenta.
 
 En conjunto, este análisis permite concluir que HipoSim no compite como un producto bancario ni reemplaza al canal oficial del Fondo Mivivienda, sino que ocupa un espacio diferenciado: el de una herramienta independiente que traduce información dispersa y entidad-específica en una simulación transparente y comparable, dirigida específicamente al comprador de primera vivienda en la etapa previa a su acercamiento formal a un banco.
+
 
 ### **2.1.2. Strategies and Tactics Against Competitors**
 
@@ -149,12 +154,17 @@ Las estrategias definidas buscan:
 * Reducir la desconfianza inicial del usuario al ingresar datos financieros personales mediante una experiencia simple y sin barreras de entrada.
 * Posicionar a HipoSim como el punto de referencia informativo antes de que el comprador primerizo se acerque a un banco.
 
+<div style="page-break-after: always;"></div>
+
+
 Matriz CAME para el desarrollo de estrategias basadas en el análisis FODA.
 
 | **Análisis FODA cruzado** | **Oportunidades** | **Amenazas** |
 |---------------------------|------------------|--------------|
 | **Fortalezas (F)**<br>1. Independencia frente a cualquier entidad financiera.<br>2. Visualización comparativa del TCEA y de los beneficios estatales.<br>3. Comparador de escenarios e historial de simulaciones para usuarios registrados.<br>4. Acceso web y móvil, sin necesidad de crear cuenta para ver un primer resultado.<br>5. Reporte de simulación exportable y compartible en PDF. | **Estrategia (FO) — Estrategias Ofensivas**<br>1. Posicionar a HipoSim como el único comparador independiente que muestra el TCEA real y los beneficios estatales en un solo lugar.<br>2. Aprovechar el bajo conocimiento del TCEA para educar al usuario mediante visualizaciones claras y comparativas.<br>3. Difundir el comparador de escenarios y el reporte PDF como herramienta para discutir la decisión en familia o con un asesor.<br>4. Dirigir campañas hacia compradores primerizos que investigan informalmente antes de acercarse a un banco. | **Estrategia (FA) — Estrategias Defensivas**<br>1. Reforzar la transparencia e independencia frente a los simuladores bancarios como principal diferenciador de marca.<br>2. Mantener una actualización rigurosa y frecuente de tasas y parámetros (rol Administrador) para sostener la confianza del usuario.<br>3. Comunicar explícitamente las políticas de privacidad y limitar la solicitud de datos sensibles al mínimo necesario.<br>4. Monitorear los simuladores bancarios y posibles fintechs comparadoras para anticipar mejoras funcionales. |
 | **Debilidades (D)**<br>1. Producto nuevo sin reconocimiento de marca.<br>2. Sin relación comercial directa con bancos ni otorgamiento de créditos.<br>3. Dependencia de la actualización manual de tasas y parámetros.<br>4. Alcance inicial limitado al segmento comprador primerizo. | **Estrategia (DO) — Reorientación**<br>1. Priorizar el MVP con la visualización comparativa de TCEA y beneficios (H2) antes de invertir en el comparador y el historial.<br>2. Aprovechar la tendencia de digitalización financiera para ganar visibilidad pese a ser un producto nuevo.<br>3. Usar el acceso sin barrera de entrada al primer resultado para impulsar la adopción progresiva.<br>4. Explorar la actualización semiautomatizada de tasas y beneficios estatales para reducir la dependencia manual del Administrador. | **Estrategia (DA) — Supervivencia**<br>1. Mantener el alcance acotado al comprador primerizo mientras se valida el modelo, sin competir directamente con bancos o el canal oficial de Mivivienda.<br>2. Simplificar el ingreso de datos personales al mínimo indispensable para reducir la fricción y la desconfianza inicial.<br>3. Evaluar una futura alianza informativa (no comercial) con el Fondo Mivivienda para validar la exactitud de los beneficios mostrados.<br>4. Priorizar el mantenimiento actualizado de las tasas de los bancos de referencia (BCP, Interbank) antes de expandir a más entidades. |
+
+<div style="page-break-after: always;"></div>
 
 ## **2.2. Interviews**
 
@@ -196,6 +206,8 @@ Preguntas Específicas
 
 8. ¿Le interesaría guardar, comparar o exportar sus simulaciones?
 
+<div style="page-break-after: always;"></div>
+
 ## Segmento 2: Inmobiliarias:
 
 Preguntas Personales
@@ -229,6 +241,8 @@ Preguntas Específicas
 7. ¿Quién administra a los asesores en su empresa y qué debería poder controlar desde una plataforma?
 
 8. ¿Qué funcionalidad le facilitaría más su trabajo: ver el detalle de la simulación, filtrar clientes, registrar el estado del contacto o recibir notificaciones de nuevos interesados?
+
+<div style="page-break-after: always;"></div>
 
 
 ### **2.2.2. Interview Recording**
@@ -394,6 +408,8 @@ Preguntas Específicas
         </tr>
     </tbody>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 # Segmento 2: Inmobiliarias
 
@@ -562,6 +578,8 @@ Valora mucho recibir solo clientes que autorizaron compartir su simulación, por
     </tbody>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ### **2.2.3. Interview Analysis**
 
 A partir de las entrevistas realizadas al segmento Comprador de Primera Vivienda, se identifican patrones comunes y particularidades relevantes para la definición del arquetipo de usuario. Dado que este análisis se basa en 2 entrevistas correspondientes al avance de este entregable, los hallazgos se presentan en términos cualitativos; se recomienda ampliar la muestra al mínimo de 5-6 entrevistas indicado en la sección 2.2.2 antes de la entrega final.
@@ -588,6 +606,8 @@ En conjunto, se observa que el Comprador de Primera Vivienda busca disponer de i
 </div>
 
 <br>
+
+<div style="page-break-after: always;"></div>
 
 **Segmento 2: Inmobiliarias**
 
@@ -630,6 +650,8 @@ A partir del análisis realizado, se define el siguiente perfil de usuario (User
 
 **Principal dificultad:** Conocer la capacidad financiera del interesado recién después del primer contacto, lo que la obliga a dedicar gran parte de su tiempo a filtrar clientes y provoca que muchas operaciones se caigan en etapas avanzadas, como la evaluación bancaria.
 
+<div style="page-break-after: always;"></div>
+
 ## **2.3. Needfinding**
 ### **2.3.1. User Personas**
 
@@ -637,11 +659,20 @@ En esta sección se presentan los User Personas definidos para HipoSim a partir 
 
 ### Segmento 1: Comprador de primera vivienda
 
- <img src="../assets/06-chapter-2/user-persona-segmento-1.png">
+<div style="display: flex; justify-content: center; width: 100%;">
+  <img src="../assets/06-chapter-2/user-persona-segmento-1.png" style="width: 60%;">
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### Segmento 2: Inmobiliaria
 
-<img src="../assets/06-chapter-2/user-persona-segmento-2.png">
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/user-persona-segmento-2.png" style="width: 60%;">
+</div>
+
+
+<div style="page-break-after: always;"></div>
 
 ### **2.3.2. User Task Matrix**
 
@@ -662,6 +693,9 @@ La matriz de tareas de usuario permite identificar, para cada segmento, las prin
 | 9 | Consultar y decidir junto a su pareja o familia | Media | Alta |
 | 10 | Acercarse formalmente a un banco a solicitar el crédito | Baja | Alta |
 
+<div style="page-break-after: always;"></div>
+
+
 #### Segmento 2: Inmobiliarias
 
 | # | Tarea | Frecuencia | Importancia |
@@ -678,6 +712,9 @@ La matriz de tareas de usuario permite identificar, para cada segmento, las prin
 | 10 | Elaborar reportes de avance para el broker o jefe comercial | Baja | Media |
 | 11 | Coordinar la separación del inmueble y la firma de la minuta | Baja | Alta |
 
+<div style="page-break-after: always;"></div>
+
+
 ### **2.3.3. User Journey Mapping**
 
 Esta sección presenta el recorrido que actualmente realiza cada User Persona para cumplir su objetivo, sin contar con una solución como HipoSim. Permite identificar las etapas, puntos de contacto, dificultades y emociones que atraviesa a lo largo de su proceso.
@@ -686,19 +723,36 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 <img src="../assets/06-chapter-2/journey-mapping-segmento-1.png">
 
+<div style="page-break-after: always;"></div>
+
+
 ### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/journey-mapping-segmento-2.png">
+
+<div style="page-break-after: always;"></div>
 
 ### **2.3.4. Empathy Mapping**
 
 ### Segmento 1: Comprador de primera vivienda
 
-<img src="../assets/06-chapter-2/empathy-map-segmento-1.png">
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/empathy-map-segmento-1.png" style="width: 50%;">
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
 
 ### Segmento 2: Inmobiliaria
 
-<img src="../assets/06-chapter-2/empathy-map-segmento-2.png">
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <img src="../assets/06-chapter-2/empathy-map-segmento-2.png" style="width: 50%;">
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ### **2.3.5. As-is Scenario Mapping**
 
@@ -706,9 +760,13 @@ Esta sección presenta el recorrido que actualmente realiza cada User Persona pa
 
 <img src="../assets/06-chapter-2/as-is-scenario-segmento-1.png">
 
+
 ### Segmento 2: Inmobiliaria
 
 <img src="../assets/06-chapter-2/as-is-scenario-segmento-2.jpg">
+
+<div style="page-break-after: always;"></div>
+
 
 ## **2.4. Ubiquitous Language**
 
