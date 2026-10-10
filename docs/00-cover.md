@@ -133,7 +133,7 @@
   </p>
 
   <p style="text-align: center;">
-    <b>Septiembre 2026</b>
+    <b>Octubre 2026</b>
   </p>
 
 </div>
