@@ -4,6 +4,18 @@
 
 ### **1.1.1. Descripción de la Startup**
 
+<div style="text-align: justify; line-height: 1.6;">
+ **AuraCode** es una startup tecnológica enfocada en el diseño, desarrollo e implementación de soluciones de software innovadoras que respondan a necesidades reales de las personas y organizaciones. Nuestra propuesta se fundamenta en el uso de tecnologías modernas, metodologías ágiles y buenas prácticas de ingeniería de software, con el propósito de desarrollar productos digitales accesibles, seguros, eficientes y orientados a mejorar la experiencia de los usuarios.
+</div>
+
+<div style="text-align: justify; line-height: 1.6;">
+  Nuestro primer producto es **HipoSim**, una plataforma web y móvil dirigida principalmente a compradores de primera vivienda en el Perú. Esta solución permite simular y comparar escenarios de créditos hipotecarios de manera independiente, proporcionando información clara sobre cuotas mensuales, tasas de interés, cronogramas de amortización, costos efectivos y beneficios estatales, como el Bono del Buen Pagador y el Nuevo Crédito Mivivienda. Asimismo, contempla la conexión voluntaria entre compradores e inmobiliarias, facilitando el contacto con asesores mediante el consentimiento explícito del usuario.
+</div>
+
+<div style="text-align: justify; line-height: 1.6;">
+  Como equipo, buscamos promover la transformación digital mediante soluciones confiables y sostenibles, priorizando la transparencia, la protección de datos personales y la mejora continua. Nuestra visión es consolidar a AuraCode como una startup capaz de desarrollar herramientas tecnológicas que simplifiquen procesos complejos, faciliten la toma de decisiones informadas y generen un impacto positivo en la sociedad.
+</div>
+
 ### **1.1.2. Perfiles de integrantes del equipo**
 
 <table style="width: 100%; border-collapse: collapse; margin: 18px 0; page-break-inside: auto;">
@@ -167,6 +179,8 @@
   </tr>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ## **1.2. Solution Profile**
 
 ### **1.2.1. Antecedentes y problemática**
@@ -189,6 +203,8 @@ Los compradores de primera vivienda en el Perú, típicamente entre 25 y 40 año
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
 ### **1.2.2. Lean UX Process**
 
 <div style="text-align: justify; line-height: 1.6;">
@@ -210,6 +226,8 @@ El equipo aplicó el marco Lean UX para pasar de la idea inicial, más amplia, d
 - Suponemos que el conocimiento de los beneficios estatales (Bono del Buen Pagador, Nuevo Crédito Mivivienda) es bajo entre los compradores primerizos, y que mostrarlos automáticamente dentro de la simulación aumenta la utilidad percibida.
 - Suponemos que un simulador accesible desde el móvil aumenta la interacción, ya que los usuarios objetivo investigan este tipo de decisión de manera informal, fuera de una sesión bancaria desde una computadora.
 - Suponemos que un reporte en PDF exportable y compartible aumenta la confianza y se utiliza para conversar sobre la simulación con la pareja, un familiar o el propio banco.
+
+<div style="page-break-after: always;"></div>
 
 #### **1.2.2.3. Lean UX Hypothesis Statements**
 
@@ -259,6 +277,8 @@ El equipo aplicó el marco Lean UX para pasar de la idea inicial, más amplia, d
   </tr>
 </table>
 
+<div style="page-break-after: always;"></div>
+
 ## **1.3. Segmentos objetivo**
 
 <div style="text-align: justify; line-height: 1.6;">
@@ -283,6 +303,8 @@ Es el segmento principal del producto. Se compone de dos roles: el Visitante, qu
 - Canales de acceso: llega a través del Landing Page público como Visitante y se convierte en Comprador para guardar, comparar y exportar simulaciones, y para enviar su simulación a una inmobiliaria si así lo decide.
 
 **Competidores de referencia** (utilizados para contrastar las alternativas actuales de este segmento): los simuladores hipotecarios de BCP e Interbank, así como el simulador oficial del Fondo Mivivienda / Nuevo Crédito Mivivienda.
+
+<div style="page-break-after: always;"></div>
 
 ### **Segmento 2: Inmobiliarias**
 
