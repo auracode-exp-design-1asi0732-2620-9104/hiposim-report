@@ -252,3 +252,46 @@ Las pruebas de sistema abarcan el comportamiento completo de los productos digit
 | ST-10 | Recorrido transversal | Intentar compartir sin consentimiento o consultar leads sin token | Operaciones rechazadas y ausencia de exposición de datos | Criterio de seguridad transversal |
 | ST-11 | Web y Android | Interrumpir o hacer fallar una solicitud de servicio | Error comprensible y estado de interfaz coherente, sin confirmar una operación fallida | Criterio de robustez |
 | ST-12 | Android | Ejecutar pruebas automatizadas de interfaz en emulador | Verificación de los flujos de interfaz incluidos en la suite móvil | Cuatro pruebas de interfaz consignadas |
+
+
+
+<div style="page-break-after: always;"></div>
+
+## **6.3. Validation Interviews**
+
+Las entrevistas de validación tienen como finalidad evaluar la experiencia de los usuarios al interactuar con las funcionalidades implementadas en HipoSim. Mediante estas entrevistas buscamos identificar dificultades de navegación, problemas de comprensión de los resultados financieros y oportunidades de mejora en la plataforma.
+
+### **6.3.1. Diseño de entrevistas**
+
+Para las entrevistas de validación se han elaborado preguntas dirigidas a los dos segmentos objetivo de HipoSim: compradores de primera vivienda y representantes de inmobiliarias.
+
+Los participantes interactuarán con las funcionalidades correspondientes a su segmento y posteriormente responderán preguntas relacionadas con la facilidad de uso, claridad de la información, navegación y utilidad de la plataforma.
+
+**Segmento objetivo: Compradores de primera vivienda**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a HipoSim? ¿Comprendiste el propósito de la plataforma?
+2. ¿Qué tan sencillo te resultó ingresar los datos para realizar una simulación hipotecaria?
+3. ¿La aplicación te informó claramente cuando realizaste una simulación o guardaste un escenario?
+4. ¿Qué términos financieros comprendiste y cuáles te resultaron difíciles de interpretar?
+5. ¿Tuviste dificultades para regresar a una pantalla anterior, modificar los datos o realizar una nueva simulación?
+6. ¿Encontraste fácilmente el cronograma de pagos y comprendiste la información presentada?
+7. ¿Qué tan sencillo te resultó guardar y comparar diferentes escenarios hipotecarios?
+8. Al comparar escenarios, ¿cómo identificaste cuál tenía la menor cuota mensual y cuál tenía el menor costo total?
+9. ¿Encontraste errores, mensajes confusos o elementos visuales que dificultaran el uso de la aplicación?
+10. ¿Qué mejorarías o agregarías en HipoSim para evaluar la compra de una vivienda?
+
+**Segmento objetivo: Inmobiliarias**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a la plataforma web de HipoSim?
+2. ¿Te resultó sencillo identificar las funcionalidades disponibles en el menú de navegación?
+3. ¿Qué tan fácil fue encontrar y revisar las solicitudes de los compradores interesados?
+4. ¿La información presentada en cada solicitud te pareció suficiente para realizar un seguimiento comercial?
+5. ¿Comprendiste los estados disponibles para gestionar las solicitudes de los compradores?
+6. ¿Encontraste dificultades al actualizar el estado de una solicitud o registrar una nota de seguimiento?
+7. ¿La información de la simulación hipotecaria te resultó clara y útil para conocer las necesidades del comprador?
+8. ¿La plataforma te informó correctamente cuando realizaste una actualización?
+9. ¿Encontraste errores o inconsistencias en la interfaz y sus funcionalidades?
+10. ¿Qué funcionalidades o mejoras considerarías necesarias para utilizar HipoSim en tu trabajo?
+
+Las respuestas obtenidas permitirán identificar oportunidades de mejora relacionadas con las heurísticas de usabilidad y evaluar si las funcionalidades implementadas responden a las necesidades de ambos segmentos objetivo.
+
