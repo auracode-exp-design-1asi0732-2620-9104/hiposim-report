@@ -463,3 +463,142 @@ En esta sección se registrarán las entrevistas de validación correspondientes
         </tr>
     </tbody>
 </table>
+
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.3. Evaluaciones según heurísticas**
+
+La evaluación heurística de HipoSim tiene como finalidad identificar problemas de usabilidad que puedan afectar la experiencia de los compradores de primera vivienda y los asesores inmobiliarios.
+
+Para esta evaluación se consideran los principios de usabilidad de Jakob Nielsen, con el propósito de identificar oportunidades de mejora en la navegación, presentación de información, consistencia visual y prevención de errores.
+
+**Aplicación para evaluar:** HipoSim.
+
+**Tareas por evaluar:**
+
+- Realizar una simulación hipotecaria.
+- Interpretar los indicadores financieros.
+- Consultar el cronograma de pagos.
+- Guardar diferentes escenarios hipotecarios.
+- Comparar dos o tres escenarios guardados.
+- Identificar las alternativas con menor cuota mensual y menor costo total.
+- Descargar el reporte de una simulación.
+- Consultar y gestionar las solicitudes de compradores interesados desde la plataforma web.
+
+**Escala de severidad**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Escala de severidad</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No tan grave</td>
+            <td>Leve</td>
+            <td>Moderado</td>
+            <td>Grave</td>
+            <td>Muy grave</td>
+        </tr>
+    </tbody>
+</table>
+
+**Tabla de resumen**
+
+La siguiente tabla presenta los problemas preliminares identificados durante las pruebas técnicas de la aplicación móvil. La severidad asignada corresponde a una valoración inicial del equipo y podrá actualizarse después de las entrevistas de validación.
+
+| #Orden | Problema | Escala de severidad | Heurística evaluada | Estado |
+|---|---|---|---|---|
+| #1 | Redondeo de los importes monetarios en la comparación de escenarios. | 3 | Consistencia y estándares | Corregido |
+| #2 | Resaltado de un único escenario cuando existen valores mínimos empatados. | 3 | Consistencia y estándares | Corregido |
+| #3 | Distribución de importes extensos en varias líneas al comparar tres escenarios. | 2 | Diseño estético y minimalista | Pendiente |
+| #4 | Diferencia de precisión monetaria entre la lista de escenarios y la pantalla de comparación. | 2 | Consistencia y estándares | Pendiente |
+
+<div style="page-break-after: always;"></div>
+
+**Heurísticas y recomendaciones**
+
+**Problema #1: Redondeo de los importes monetarios en la comparación de escenarios.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Los importes correspondientes a las cuotas mensuales, costos totales y diferencias monetarias se presentaban redondeados, dificultando la identificación de diferencias pequeñas entre escenarios hipotecarios.
+- **Recomendación:** Presentar los importes monetarios con dos decimales para facilitar una comparación precisa.
+- **Solución implementada:** Se modificó el formato monetario de la pantalla de comparación para conservar los céntimos en las cuotas mensuales, costos totales y diferencias.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+</div>
+
+
+Pendiente de incorporar captura de la comparación de escenarios.
+
+<div style="page-break-after: always;"></div>
+
+**Problema #2: Resaltado de un único escenario cuando existen valores mínimos empatados.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Cuando dos escenarios presentaban el mismo valor mínimo, la interfaz resaltaba únicamente uno de ellos. Esto podía generar una interpretación incorrecta sobre cuál era la alternativa más conveniente.
+- **Recomendación:** Resaltar todos los escenarios que compartan el menor valor de un indicador. Cuando todos los escenarios presenten el mismo valor, evitar destacar alguno de ellos.
+- **Solución implementada:** Se actualizó la lógica de comparación para reconocer los valores mínimos empatados y conservar una presentación neutral cuando todos los valores sean iguales.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+</div>
+
+
+Pendiente de incorporar captura de la comparación de tres escenarios.
+
+<div style="page-break-after: always;"></div>
+
+**Problema #3: Distribución de importes extensos en varias líneas.**
+
+- **Heurística evaluada:** Diseño estético y minimalista.
+- **Descripción del problema:** Al comparar tres escenarios hipotecarios, algunos importes monetarios ocupan varias líneas debido al espacio disponible en las columnas de la pantalla.
+- **Recomendación:** Mejorar la distribución de las columnas y adaptar el tamaño de los textos para mantener la legibilidad de los resultados.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+</div>
+
+
+Pendiente de incorporar captura de la comparación de tres escenarios.
+
+<div style="page-break-after: always;"></div>
+
+**Problema #4: Diferencia de precisión monetaria entre pantallas.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** La lista de escenarios guardados presenta importes monetarios redondeados, mientras que la pantalla de comparación presenta los valores con dos decimales.
+- **Recomendación:** Unificar el formato monetario utilizado en ambas pantallas para mantener la consistencia de la información financiera.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+</div>
+
+
+Pendiente de incorporar capturas de la lista de escenarios y la pantalla de comparación.
