@@ -295,3 +295,171 @@ Los participantes interactuarán con las funcionalidades correspondientes a su s
 
 Las respuestas obtenidas permitirán identificar oportunidades de mejora relacionadas con las heurísticas de usabilidad y evaluar si las funcionalidades implementadas responden a las necesidades de ambos segmentos objetivo.
 
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.2. Registro de entrevistas**
+
+En esta sección se registrarán las entrevistas de validación correspondientes a los segmentos objetivo de HipoSim, con la finalidad de evaluar la usabilidad, claridad y utilidad de las funcionalidades implementadas.
+
+#### **Segmento 1: Comprador de Primera Vivienda**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+#### **Segmento 2: Inmobiliarias**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
