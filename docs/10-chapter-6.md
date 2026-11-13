@@ -539,11 +539,8 @@ La siguiente tabla presenta los problemas preliminares identificados durante las
 
 
 <div align="center">
-    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica1.png" width="350">
 </div>
-
-
-Pendiente de incorporar captura de la comparación de escenarios.
 
 <div style="page-break-after: always;"></div>
 
@@ -559,11 +556,9 @@ Pendiente de incorporar captura de la comparación de escenarios.
 
 
 <div align="center">
-    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
 </div>
 
-
-Pendiente de incorporar captura de la comparación de tres escenarios.
 
 <div style="page-break-after: always;"></div>
 
@@ -578,11 +573,8 @@ Pendiente de incorporar captura de la comparación de tres escenarios.
 
 
 <div align="center">
-    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
 </div>
-
-
-Pendiente de incorporar captura de la comparación de tres escenarios.
 
 <div style="page-break-after: always;"></div>
 
@@ -595,10 +587,10 @@ Pendiente de incorporar captura de la comparación de tres escenarios.
 
 **Evidencia:**
 
-
 <div align="center">
-    <img src="../assets/10-chapter-6/heuristic-evaluation/compare-three-scenarios.png" width="350">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica4.png" width="350">
 </div>
 
-
-Pendiente de incorporar capturas de la lista de escenarios y la pantalla de comparación.
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
