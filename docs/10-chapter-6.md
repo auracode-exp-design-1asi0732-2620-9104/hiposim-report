@@ -252,3 +252,366 @@ Las pruebas de sistema abarcan el comportamiento completo de los productos digit
 | ST-10 | Recorrido transversal | Intentar compartir sin consentimiento o consultar leads sin token | Operaciones rechazadas y ausencia de exposición de datos | Criterio de seguridad transversal |
 | ST-11 | Web y Android | Interrumpir o hacer fallar una solicitud de servicio | Error comprensible y estado de interfaz coherente, sin confirmar una operación fallida | Criterio de robustez |
 | ST-12 | Android | Ejecutar pruebas automatizadas de interfaz en emulador | Verificación de los flujos de interfaz incluidos en la suite móvil | Cuatro pruebas de interfaz consignadas |
+
+
+
+<div style="page-break-after: always;"></div>
+
+## **6.3. Validation Interviews**
+
+Las entrevistas de validación tienen como finalidad evaluar la experiencia de los usuarios al interactuar con las funcionalidades implementadas en HipoSim. Mediante estas entrevistas buscamos identificar dificultades de navegación, problemas de comprensión de los resultados financieros y oportunidades de mejora en la plataforma.
+
+### **6.3.1. Diseño de entrevistas**
+
+Para las entrevistas de validación se han elaborado preguntas dirigidas a los dos segmentos objetivo de HipoSim: compradores de primera vivienda y representantes de inmobiliarias.
+
+Los participantes interactuarán con las funcionalidades correspondientes a su segmento y posteriormente responderán preguntas relacionadas con la facilidad de uso, claridad de la información, navegación y utilidad de la plataforma.
+
+**Segmento objetivo: Compradores de primera vivienda**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a HipoSim? ¿Comprendiste el propósito de la plataforma?
+2. ¿Qué tan sencillo te resultó ingresar los datos para realizar una simulación hipotecaria?
+3. ¿La aplicación te informó claramente cuando realizaste una simulación o guardaste un escenario?
+4. ¿Qué términos financieros comprendiste y cuáles te resultaron difíciles de interpretar?
+5. ¿Tuviste dificultades para regresar a una pantalla anterior, modificar los datos o realizar una nueva simulación?
+6. ¿Encontraste fácilmente el cronograma de pagos y comprendiste la información presentada?
+7. ¿Qué tan sencillo te resultó guardar y comparar diferentes escenarios hipotecarios?
+8. Al comparar escenarios, ¿cómo identificaste cuál tenía la menor cuota mensual y cuál tenía el menor costo total?
+9. ¿Encontraste errores, mensajes confusos o elementos visuales que dificultaran el uso de la aplicación?
+10. ¿Qué mejorarías o agregarías en HipoSim para evaluar la compra de una vivienda?
+
+**Segmento objetivo: Inmobiliarias**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a la plataforma web de HipoSim?
+2. ¿Te resultó sencillo identificar las funcionalidades disponibles en el menú de navegación?
+3. ¿Qué tan fácil fue encontrar y revisar las solicitudes de los compradores interesados?
+4. ¿La información presentada en cada solicitud te pareció suficiente para realizar un seguimiento comercial?
+5. ¿Comprendiste los estados disponibles para gestionar las solicitudes de los compradores?
+6. ¿Encontraste dificultades al actualizar el estado de una solicitud o registrar una nota de seguimiento?
+7. ¿La información de la simulación hipotecaria te resultó clara y útil para conocer las necesidades del comprador?
+8. ¿La plataforma te informó correctamente cuando realizaste una actualización?
+9. ¿Encontraste errores o inconsistencias en la interfaz y sus funcionalidades?
+10. ¿Qué funcionalidades o mejoras considerarías necesarias para utilizar HipoSim en tu trabajo?
+
+Las respuestas obtenidas permitirán identificar oportunidades de mejora relacionadas con las heurísticas de usabilidad y evaluar si las funcionalidades implementadas responden a las necesidades de ambos segmentos objetivo.
+
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.2. Registro de entrevistas**
+
+En esta sección se registrarán las entrevistas de validación correspondientes a los segmentos objetivo de HipoSim, con la finalidad de evaluar la usabilidad, claridad y utilidad de las funcionalidades implementadas.
+
+#### **Segmento 1: Comprador de Primera Vivienda**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Carlos Alexander </td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pebe Dueñas</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center">
+    <img src="../assets/10-chapter-6/entrevistas-av2/seg2-carlos-pebe.png" width="350">
+</div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>  <a href="https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link">
+        Entrevista Carlos Pebe
+    </a></td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>05:29 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+La entrevista con Carlos Pebe, de 31 años, asesor inmobiliario de Interbank, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de un profesional con experiencia en el sector inmobiliario. El entrevistado destacó que la plataforma es **intuitiva, presenta funcionalidades simplificadas y facilita la interacción con los clientes**. Asimismo, identificó fácilmente las opciones del menú, el dashboard, la gestión de leads y las notificaciones.
+
+Respecto a la gestión de solicitudes, señaló que resulta sencillo **consultar la información de los compradores, acceder a sus simulaciones hipotecarias, actualizar los estados y registrar notas de seguimiento**. No presentó dificultades durante estas actividades y confirmó que las actualizaciones de estado se reflejan correctamente en la plataforma. Además, consideró que la información financiera de las simulaciones es **clara y útil para conocer las necesidades del comprador antes de establecer una primera comunicación**.
+
+El entrevistado considera que **HipoSim sería una herramienta de apoyo para facilitar el seguimiento de potenciales compradores y mejorar la comunicación con los clientes**. Durante la evaluación no identificó errores ni dificultades significativas, destacando que la información presentada es concisa, clara y suficiente para iniciar el contacto con el comprador. Finalmente, manifestó conformidad con el diseño visual y los colores utilizados, sin proponer cambios específicos en la interfaz.
+
+#### Hallazgos importantes
+
+- **Usabilidad:** la plataforma es intuitiva y sus funcionalidades son fáciles de identificar.
+- **Navegación:** el dashboard, la gestión de leads y las notificaciones presentan una estructura sencilla.
+- **Gestión de leads:** permite consultar fácilmente la información de los compradores y sus simulaciones hipotecarias.
+- **Seguimiento de solicitudes:** no presentó dificultades al **actualizar estados o registrar notas de seguimiento**.
+- **Información financiera:** los datos de las simulaciones permiten conocer las necesidades del comprador antes de establecer contacto.
+- **Actualización de información:** los cambios de estado se reflejan correctamente en la plataforma.
+- **Diseño visual:** manifestó conformidad con los colores y la presentación de la interfaz.
+- **Errores identificados:** no reportó errores ni dificultades significativas durante la evaluación.
+- **Validación de HipoSim:** considera que la plataforma facilita la **gestión de potenciales compradores, el seguimiento de solicitudes y la comunicación entre el asesor inmobiliario y el cliente**.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+#### **Segmento 2: Inmobiliarias**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.3. Evaluaciones según heurísticas**
+
+La evaluación heurística de HipoSim tiene como finalidad identificar problemas de usabilidad que puedan afectar la experiencia de los compradores de primera vivienda y los asesores inmobiliarios.
+
+Para esta evaluación se consideran los principios de usabilidad de Jakob Nielsen, con el propósito de identificar oportunidades de mejora en la navegación, presentación de información, consistencia visual y prevención de errores.
+
+**Aplicación para evaluar:** HipoSim.
+
+**Tareas por evaluar:**
+
+- Realizar una simulación hipotecaria.
+- Interpretar los indicadores financieros.
+- Consultar el cronograma de pagos.
+- Guardar diferentes escenarios hipotecarios.
+- Comparar dos o tres escenarios guardados.
+- Identificar las alternativas con menor cuota mensual y menor costo total.
+- Descargar el reporte de una simulación.
+- Consultar y gestionar las solicitudes de compradores interesados desde la plataforma web.
+
+**Escala de severidad**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Escala de severidad</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No tan grave</td>
+            <td>Leve</td>
+            <td>Moderado</td>
+            <td>Grave</td>
+            <td>Muy grave</td>
+        </tr>
+    </tbody>
+</table>
+
+**Tabla de resumen**
+
+La siguiente tabla presenta los problemas preliminares identificados durante las pruebas técnicas de la aplicación móvil. La severidad asignada corresponde a una valoración inicial del equipo y podrá actualizarse después de las entrevistas de validación.
+
+| #Orden | Problema | Escala de severidad | Heurística evaluada | Estado |
+|---|---|---|---|---|
+| #1 | Redondeo de los importes monetarios en la comparación de escenarios. | 3 | Consistencia y estándares | Corregido |
+| #2 | Resaltado de un único escenario cuando existen valores mínimos empatados. | 3 | Consistencia y estándares | Corregido |
+| #3 | Distribución de importes extensos en varias líneas al comparar tres escenarios. | 2 | Diseño estético y minimalista | Pendiente |
+| #4 | Diferencia de precisión monetaria entre la lista de escenarios y la pantalla de comparación. | 2 | Consistencia y estándares | Pendiente |
+
+<div style="page-break-after: always;"></div>
+
+**Heurísticas y recomendaciones**
+
+**Problema #1: Redondeo de los importes monetarios en la comparación de escenarios.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Los importes correspondientes a las cuotas mensuales, costos totales y diferencias monetarias se presentaban redondeados, dificultando la identificación de diferencias pequeñas entre escenarios hipotecarios.
+- **Recomendación:** Presentar los importes monetarios con dos decimales para facilitar una comparación precisa.
+- **Solución implementada:** Se modificó el formato monetario de la pantalla de comparación para conservar los céntimos en las cuotas mensuales, costos totales y diferencias.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica1.png" width="350">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+**Problema #2: Resaltado de un único escenario cuando existen valores mínimos empatados.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Cuando dos escenarios presentaban el mismo valor mínimo, la interfaz resaltaba únicamente uno de ellos. Esto podía generar una interpretación incorrecta sobre cuál era la alternativa más conveniente.
+- **Recomendación:** Resaltar todos los escenarios que compartan el menor valor de un indicador. Cuando todos los escenarios presenten el mismo valor, evitar destacar alguno de ellos.
+- **Solución implementada:** Se actualizó la lógica de comparación para reconocer los valores mínimos empatados y conservar una presentación neutral cuando todos los valores sean iguales.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
+**Problema #3: Distribución de importes extensos en varias líneas.**
+
+- **Heurística evaluada:** Diseño estético y minimalista.
+- **Descripción del problema:** Al comparar tres escenarios hipotecarios, algunos importes monetarios ocupan varias líneas debido al espacio disponible en las columnas de la pantalla.
+- **Recomendación:** Mejorar la distribución de las columnas y adaptar el tamaño de los textos para mantener la legibilidad de los resultados.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+**Problema #4: Diferencia de precisión monetaria entre pantallas.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** La lista de escenarios guardados presenta importes monetarios redondeados, mientras que la pantalla de comparación presenta los valores con dos decimales.
+- **Recomendación:** Unificar el formato monetario utilizado en ambas pantallas para mantener la consistencia de la información financiera.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica4.png" width="350">
+</div>
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
