@@ -161,7 +161,7 @@ Desarrollamos los servicios con ASP.NET Core y organizamos la persistencia con E
 
 <div style="text-align:justify; line-height:1.6;">
 
-Desarrollamos la experiencia nativa para Android y la ejecutamos en emulador o dispositivo de prueba. El proyecto incorpora verificaciones automatizadas y una configuración de integración continua en GitHub Actions. Distinguimos esta ejecución de desarrollo de una distribución pública: en la etapa documentada no se registra la entrega de una APK de producción ni una publicación en una tienda de aplicaciones. La implementación nativa de iOS tampoco forma parte de las evidencias técnicas de este capítulo.
+Desarrollamos la experiencia nativa para Android y la ejecutamos en emulador o dispositivo de prueba. El proyecto incorpora verificaciones automatizadas y una configuración de integración continua en GitHub Actions. El repositorio incluye la firma de la versión release y una guía para distribuirla de forma interna con Firebase App Distribution. Distinguimos esa distribución de prueba de una publicación pública: en la etapa documentada no registramos una publicación en una tienda de aplicaciones. La implementación nativa de iOS tampoco forma parte de las evidencias técnicas de este capítulo.
 
 </div>
 
@@ -169,8 +169,8 @@ Desarrollamos la experiencia nativa para Android y la ejecutamos en emulador o d
 |:--|:--|:--|
 | Landing Page | Publicada en GitHub Pages mediante HTTPS. | [Sitio público de HipoSim](https://auracode-exp-design-1asi0732-2620-9104.github.io/hiposim-LandingPage/) |
 | Aplicación Web Frontend | Disponible como proyecto de desarrollo; sin URL productiva acreditada. | [Repositorio web](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp) |
-| API RESTful | Componentes desarrollados e integración en curso; sin URL productiva acreditada. | [Repositorio backend](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd) |
-| Aplicación Móvil Android | Código y pruebas en el repositorio; sin distribución pública acreditada. | [Repositorio móvil](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
+| API RESTful | Despliegue de demostración en Render (plan gratuito) con Swagger y comprobación de salud disponibles; no acreditamos un entorno de producción. | [Servicio desplegado](https://hiposim-api.onrender.com/) / [Repositorio backend](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd) |
+| Aplicación Móvil Android | Código, pruebas y guía de distribución interna con Firebase App Distribution en el repositorio; sin publicación en tienda ni distribución pública acreditada. | [Repositorio móvil](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
 
 <div style="page-break-before:always;"></div>
 
@@ -228,7 +228,7 @@ Distribuimos las historias funcionales y técnicas entre los integrantes de acue
 | Sprint Goal | Nos enfocamos en vincular las simulaciones del comprador con el motor financiero y en hacer posible el envío autorizado de interesados a las inmobiliarias, con seguimiento desde el portal del asesor. |
 | Story Points planificados | **56** |
 | Historias y actividades | SP02, TS02, TS07, TS06, TS05, TS08, US13, US26, US01, US04, US05, US02, US21, US22, US23, US24 y US25. |
-| Estado del alcance | El motor financiero, la infraestructura inicial del backend y los servicios de autenticación y simulación registran avances; la integración completa de leads entre Android y la web permanece en desarrollo en la documentación de TB1. |
+| Estado del alcance | La API está desplegada como servicio de demostración y la aplicación móvil integra con ella el registro, el inicio de sesión, la simulación, el cronograma y el envío consentido a una inmobiliaria. La aplicación web consume los endpoints de inicio de sesión, leads e inmobiliarias; falta incorporar a este capítulo las capturas de su verificación sobre la API. |
 
 **Sprint Backlog 2**
 
@@ -269,7 +269,7 @@ Implementamos la Landing Page como primer punto de contacto con el comprador de 
 
 Utilizamos HTML, CSS y JavaScript, con recursos de estilo responsivo y una identidad visual basada en verde azulado (`#0E5C63`), turquesa (`#3AAFA9`) y ámbar (`#F5A524`). Definimos Outfit para títulos y Roboto Flex para el contenido. La versión pública incorpora navegación, selector de idioma y accesos a la simulación desde escritorio y móvil.
 
-La tasa anual del **8,85 %** utilizada como referencia en el cálculo de la Landing Page corresponde a una **TEA**, no a una TCEA comprobada, porque el cálculo público descrito no incorpora todos los seguros y gastos asociados al crédito. Detectamos diferencias con los valores referenciales utilizados en la aplicación móvil y la API, por lo que distinguimos expresamente la cuota financiera de cualquier cuota total que incluya cargos adicionales. El formulario de contacto utiliza validación de entrada, pero no cuenta con envío real conectado a un backend en la etapa documentada.
+La tasa anual del **8,85 %** utilizada como referencia en el cálculo de la Landing Page corresponde a una **TEA**, no a una TCEA comprobada, porque el cálculo público descrito no incorpora todos los seguros y gastos asociados al crédito. La aplicación móvil envía esa misma tasa a la API; distinguimos expresamente la cuota financiera de cualquier cuota total que incluya cargos adicionales. El formulario de contacto utiliza validación de entrada, pero no cuenta con envío real conectado a un backend en la etapa documentada.
 
 </div>
 
@@ -299,24 +299,24 @@ La tasa anual del **8,85 %** utilizada como referencia en el cálculo de la Land
 
 <div style="text-align:justify; line-height:1.6;">
 
-Desarrollamos la aplicación web como portal de atención para el asesor inmobiliario. Utilizamos Vue 3, Vite, PrimeVue, Pinia y Axios para organizar la navegación, el estado y la comunicación con los servicios. En la fase documentada disponemos de vistas de inicio de sesión, registro de inmobiliaria, bandeja y ficha de leads, resumen, notificaciones y configuración, con datos de ejemplo. Este estado nos permitió avanzar en la experiencia del asesor antes de completar los endpoints del backend.
+Desarrollamos la aplicación web como portal de atención para el asesor inmobiliario. Utilizamos Vue 3, Vite, PrimeVue, Pinia y Axios para organizar la navegación, el estado y la comunicación con los servicios. El portal incluye el inicio de sesión del asesor, la bandeja de leads con filtro por estado, la ficha del lead con cambio de estado y notas de seguimiento, un resumen construido a partir de la bandeja, las solicitudes nuevas, la consulta de la inmobiliaria, la configuración de la cuenta y la exportación de la bandeja a un archivo CSV. El registro de inmobiliarias no forma parte de esta entrega: su ruta redirige al inicio de sesión y las cuentas de asesor las provee el equipo.
 
-El flujo funcional relaciona la autenticación del asesor con la consulta de los interesados que autorizaron compartir su simulación, el acceso a su ficha y la actualización del seguimiento. La conexión de estas vistas con los datos reales de la API continúa siendo parte de la integración del Sprint 2; por ello no consideramos que la existencia de una pantalla con datos de ejemplo demuestre la integración definitiva.
+El flujo funcional relaciona la autenticación del asesor con la consulta de los interesados que autorizaron compartir su simulación, el acceso a su ficha y la actualización del seguimiento. La aplicación consume `POST /api/auth/login`, `GET /api/leads`, `GET /api/leads/{id}`, `PATCH /api/leads/{id}/status`, `POST /api/leads/{id}/notes` y `GET /api/agencies`. Por defecto, el entorno de desarrollo usa datos de ejemplo en el navegador y se cambia a la API real mediante una variable de entorno. El repositorio registra la verificación de US22 a US25 contra la API; las capturas de esa verificación están pendientes de incorporarse a este capítulo.
 
 </div>
 
 | Módulo | Requerimiento | Estado documentado |
 |:--|:--|:--|
-| Autenticación del asesor | US22 | Vista disponible; conexión con JWT de la API en desarrollo. |
-| Bandeja de leads | US23 | Interfaz con datos de ejemplo; consulta a backend asociada a TS08. |
-| Ficha del lead | US24 | Vista del interesado; integración de datos compartidos dependiente de los endpoints de leads. |
-| Estado y notas | US25 | Flujo de seguimiento definido; persistencia real dependiente del servicio de leads. |
-| Registro de inmobiliaria | Soporte del portal | Pantalla de interfaz existente; gestión real de cuentas delimitada por el backend. |
-| Resumen, notificaciones y configuración | Vistas complementarias | Presentación inicial sin cobertura completa de servicios productivos. |
+| Autenticación del asesor | US22 | Conectada a `POST /api/auth/login` con JWT; solo ingresan cuentas de asesor. |
+| Bandeja de leads | US23 | Consume `GET /api/leads` con filtro por estado. |
+| Ficha del lead | US24 | Consume `GET /api/leads/{id}`: datos de contacto, simulación compartida e historial. |
+| Estado y notas | US25 | Consume `PATCH /api/leads/{id}/status` y `POST /api/leads/{id}/notes`. |
+| Registro de inmobiliaria | Soporte del portal | Fuera de esta entrega: la ruta redirige al inicio de sesión. |
+| Resumen, notificaciones y configuración | Vistas complementarias | Vistas construidas con los datos que ya entrega la API, sin endpoints adicionales. |
 
 <div style="text-align:justify; line-height:1.6;">
 
-Mantenemos el código del portal en [hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp). En la entrega documentada la aplicación web se ejecuta en desarrollo local y no presenta una URL productiva acreditada.
+Mantenemos el código del portal en [hiposim-webApp](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-webApp). En la entrega documentada la aplicación web se ejecuta en desarrollo local; el repositorio incluye la configuración para publicarla en Vercel, pero no acreditamos una URL pública.
 
 </div>
 
@@ -328,7 +328,7 @@ Mantenemos el código del portal en [hiposim-webApp](https://github.com/auracode
 
 Construimos la aplicación Android nativa como experiencia principal del comprador. Seleccionamos Kotlin, Jetpack Compose y Material 3, junto con Hilt, Navigation Compose y ViewModel con StateFlow, conforme a la decisión técnica registrada para SP03. En el primer Sprint desarrollamos la presentación de resultados hipotecarios y el registro contextual con datos de ejemplo; en el segundo Sprint concentramos el trabajo en la comunicación con la API mediante Retrofit y en los flujos de simulación, autenticación y envío consentido a una inmobiliaria.
 
-El alcance funcional contempla la validación de una cuota inicial mínima del 10 %, la consulta de la cuota y de los indicadores financieros (TCEA, VAN y TIR), la visualización del cronograma y el uso opcional del Bono del Buen Pagador. Distinguimos las pantallas existentes de las historias cuya integración depende de servicios aún no integrados, especialmente la creación de leads y su recepción en el portal del asesor.
+El alcance funcional contempla la validación de una cuota inicial mínima del 10 %, la consulta de la cuota y de los indicadores financieros (TCEA, VAN y TIR), la visualización del cronograma y el uso opcional del Bono del Buen Pagador. Integramos la aplicación con la API para el registro, el inicio de sesión, la simulación y la creación de leads, y verificamos ese recorrido de punta a punta, como se muestra más abajo. La recepción de esos leads en el portal del asesor se documenta en la sección 5.2.3.
 
 </div>
 
@@ -338,9 +338,9 @@ El alcance funcional contempla la validación de una cuota inicial mínima del 1
 | Plataforma | Android nativo, `minSdk 26` y `targetSdk 36`. |
 | Integración | Kotlin, Jetpack Compose, Retrofit y arquitectura de presentación basada en ViewModel. |
 | Historias vinculadas | SP03, US13, US26, US01, US04, US05, US02 y US21. |
-| Verificación reportada | 35 pruebas unitarias y 4 pruebas de interfaz en emulador, además de comprobaciones con ktlint y Android lint. |
-| Integración continua | Flujo de GitHub Actions descrito para el repositorio móvil. |
-| Distribución | Ejecución de desarrollo en emulador/dispositivo; sin distribución pública acreditada. |
+| Verificación reportada | 202 pruebas unitarias y 19 pruebas de interfaz (conteo de métodos de prueba en `develop`), además de comprobaciones con ktlint y Android lint. |
+| Integración continua | Flujo de GitHub Actions en el repositorio móvil; los cambios entran a `develop` mediante Pull Request. |
+| Distribución | Ejecución en emulador o dispositivo; guía de distribución interna con Firebase App Distribution en `docs/firebase-app-distribution.md`, sin publicación en tienda. |
 
 <div align="center">
   <img src="../assets/09-chapter-5/native-mobile/01-resultados.png" width="30%" alt="Pantalla de resultados del crédito en la aplicación Android">
@@ -376,6 +376,49 @@ Integramos la navegación mediante `HipoSimNavHost`, incorporando la ruta `Sched
   <p><em>Figura 4. Cronograma de amortización hipotecaria implementado en la aplicación Android de HipoSim (US02).</em></p>
 </div>
 
+**End-to-End Evidence Against the API (US01, US02, US13, US21, US26)**
+
+<div style="text-align:justify; line-height:1.6;">
+
+Recorrimos la aplicación móvil contra la API real con una simulación de **S/ 280 000**, una inicial de **S/ 42 000**, **20 años** y el Bono del Buen Pagador. Obtuvimos una cuota de **S/ 1 909**, una TCEA de **8,85 %** y un bono de **S/ 18 200**. Con la sesión iniciada, enviamos la simulación a la inmobiliaria de demostración y la API respondió con un lead en estado `New`.
+
+</div>
+
+| Paso | Endpoint | Resultado | Historia |
+|:--|:--|:--|:--:|
+| Formulario y resultados | `POST /api/simulations` | Cuota, TCEA, VAN, TIR y bono | US01, US04, US05 |
+| Cronograma completo | Ninguno (usa la simulación ya calculada) | 240 cuotas | US02 |
+| Registro del comprador | `POST /api/auth/register` | 201 y sesión iniciada | US13 |
+| Inicio de sesión | `POST /api/auth/login` | 401 con mensaje genérico y luego 200 | US26 |
+| Envío a la inmobiliaria | `GET /api/agencies`, `POST /api/leads` | 201 con lead en estado `New` | US21 |
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-01-formulario.png" width="22%" alt="Formulario de simulación">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-02-resultados.png" width="22%" alt="Resultados de la simulación">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-03-cronograma.png" width="22%" alt="Cronograma completo">
+  <p><em>Figura 5. Formulario de simulación, resultados y cronograma completo (US01, US04, US05 y US02).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-04-requiere-cuenta.png" width="22%" alt="Hoja que solicita una cuenta">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-05-registro.png" width="22%" alt="Registro del comprador">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-06-registro-exitoso.png" width="22%" alt="Sesión iniciada tras el registro">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-07-perfil.png" width="22%" alt="Perfil de la cuenta">
+  <p><em>Figura 6. Registro del comprador y sesión iniciada (US13).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-08-login-credenciales-invalidas.png" width="22%" alt="Inicio de sesión con credenciales inválidas">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-09-login.png" width="22%" alt="Inicio de sesión del comprador">
+  <p><em>Figura 7. Inicio de sesión del comprador, con y sin credenciales válidas (US26).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-10-enviar-a-inmobiliaria.png" width="22%" alt="Hoja para enviar la simulación a una inmobiliaria">
+  <img src="../assets/09-chapter-5/native-mobile/e2e-11-envio-exitoso.png" width="22%" alt="Confirmación del envío">
+  <p><em>Figura 8. Envío consentido de la simulación a una inmobiliaria (US21).</em></p>
+</div>
+
 <div style="page-break-after: always;"></div>
 
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
@@ -384,17 +427,17 @@ Integramos la navegación mediante `HipoSimNavHost`, incorporando la ruta `Sched
 
 Desarrollamos el backend sobre ASP.NET Core, Entity Framework Core y PostgreSQL, con responsabilidades separadas para autenticación, simulación y administración de interesados. Establecimos una base de datos relacional para los usuarios, las inmobiliarias, las simulaciones y los leads, y utilizamos JWT para representar la identidad y los permisos de comprador y asesor.
 
-Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulations` como servicio central para obtener la cuota, los indicadores y el cronograma de amortización. La adaptación y la validación del motor (SP02), junto con el endpoint de simulación (TS06), figuran entre los trabajos reportados como realizados por el equipo. La autenticación requiere cerrar correcciones de pruebas e integración, mientras que la gestión de leads y la conexión completa entre aplicaciones forman parte del trabajo todavía abierto del Sprint 2.
+Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulations` como servicio central para obtener la cuota, los indicadores y el cronograma de amortización. La adaptación y la validación del motor (SP02), junto con el endpoint de simulación (TS06), figuran entre los trabajos reportados como realizados por el equipo. La autenticación, la simulación y la creación de leads ya se consumen desde la aplicación móvil, y los endpoints de leads y de inmobiliarias se consumen desde el código de la aplicación web.
 
 </div>
 
 | Componente | Responsabilidad | Alcance documentado |
 |:--|:--|:--|
-| `AuthController` / `AuthService` | Registro, inicio de sesión y autorización JWT. | Base implementada; validación e integración en revisión. |
-| `SimulationController` / `SimulationService` | Validaciones y cálculo hipotecario a través del motor financiero. | Desarrollo del servicio reportado para TS06. |
+| `AuthController` / `AuthService` | Registro, inicio de sesión y autorización JWT. | Implementado e integrado con la aplicación móvil (US13 y US26). |
+| `SimulationController` / `SimulationService` | Validaciones y cálculo hipotecario a través del motor financiero. | Implementado e integrado con la aplicación móvil (TS06). |
 | `FinancialEngine` | Amortización francesa, tasas e indicadores VAN, TIR y TCEA. | Port a C# y contraste financiero registrados en SP02. |
 | `BenefitsEngine` | Evaluación y aplicación del Bono del Buen Pagador. | Lógica asociada a simulación y a US05. |
-| `LeadController` / `LeadService` | Envío autorizado, listado, ficha, estados y notas. | Integración funcional en desarrollo durante TS08. |
+| `LeadController` / `LeadService` | Envío autorizado, listado, ficha, estados y notas. | Implementado (TS08); creación integrada con la aplicación móvil (US21) y consulta consumida por la aplicación web. |
 | Persistencia con Entity Framework Core | Entidades y migraciones sobre PostgreSQL. | Base del servicio definida en TS02. |
 | `ScenarioController` / `ScenarioService` | Guardado y comparación de escenarios. | Funcionalidad reservada a una iteración posterior. |
 | `ReportController` / `ReportGenerationService` | Exportación de simulaciones a PDF. | Funcionalidad reservada a una iteración posterior. |
@@ -402,7 +445,7 @@ Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulation
 
 <div style="text-align:justify; line-height:1.6;">
 
-Centralizamos el trabajo del backend en [hiposim-backEnd](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd). Para esta entrega no contamos con evidencias consolidadas de una URL pública de producción, una ejecución completa de la batería de pruebas del backend ni la operación del flujo comprador–asesor en un entorno desplegado. Esta distinción nos permite documentar el avance técnico sin atribuir al producto una cobertura que todavía no hemos demostrado.
+Centralizamos el trabajo del backend en [hiposim-backEnd](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd). Publicamos un despliegue de demostración en Render, en `https://hiposim-api.onrender.com/`, con Swagger en `/swagger`, la comprobación de salud en `/health` y el listado de inmobiliarias en `/api/agencies`, que verificamos el 10 de octubre de 2026. Es el plan gratuito del servicio, que se suspende tras un periodo sin uso y puede tardar cerca de un minuto en responder la primera petición. No lo presentamos como un entorno de producción ni acreditamos la operación del flujo comprador y asesor completo sobre ese despliegue.
 
 </div>
 
@@ -433,7 +476,7 @@ Para la seguridad de los servicios se utiliza autenticación JWT y autorización
 
 La implementación también fue sometida a pruebas automatizadas de los endpoints REST. En la última ejecución registrada, el backend obtuvo **188 pruebas satisfactorias**, incluyendo **10 pruebas correspondientes a TS08**. Estas verificaciones abarcan las operaciones principales y las restricciones de acceso del módulo.
 
-La evidencia corresponde a la implementación y validación del backend; no constituye evidencia de un despliegue público en producción ni de una integración completa entre las aplicaciones móvil y web.
+La evidencia de esta sección corresponde a la implementación y validación del backend. La integración desde la aplicación móvil se documenta en la sección 5.2.4 y el despliegue de demostración se describe en la sección 5.2.5; no acreditamos aún la operación del flujo completo entre las aplicaciones móvil y web sobre la API desplegada.
 
 </div>
 
@@ -449,16 +492,16 @@ Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el 
 
 | Método | Recurso | Propósito | Requerimiento | Situación en TB1 |
 |:--:|:--|:--|:--:|:--|
-| `POST` | `/api/auth/register` | Registrar una cuenta de comprador. | US13, TS07 | Servicio desarrollado; integración móvil en revisión. |
-| `POST` | `/api/auth/login` | Autenticar compradores y asesores. | US22, US26, TS07 | Servicio desarrollado; ajustes de pruebas y respuesta de asesor en proceso de corrección. |
-| `POST` | `/api/simulations` | Calcular una simulación hipotecaria. | US01, US04, US05, TS06 | Implementación reportada; homologación de parámetros entre clientes en revisión. |
-| `GET` | `/api/agencies` | Consultar inmobiliarias disponibles. | US21 | Integración necesaria para el envío consentido. |
-| `POST` | `/api/leads` | Crear un lead a partir de una simulación autorizada. | US21, TS08 | Desarrollo e integración de leads. |
-| `GET` | `/api/leads` | Listar los leads de la inmobiliaria del asesor. | US23, TS08 | Desarrollo e integración de leads. |
-| `GET` | `/api/leads/{id}` | Consultar la ficha de un lead. | US24, TS08 | Desarrollo e integración de leads. |
-| `PATCH` | `/api/leads/{id}/status` | Actualizar el estado del interesado. | US25, TS08 | Desarrollo e integración de leads. |
-| `POST` | `/api/leads/{id}/notes` | Registrar notas del asesor. | US25, TS08 | Desarrollo e integración de leads. |
-| `GET` | `/health` | Consultar el estado del servicio. | TS02 | Endpoint identificado en la documentación técnica del backend. |
+| `POST` | `/api/auth/register` | Registrar una cuenta de comprador. | US13, TS07 | Implementado; integrado con la aplicación móvil (US13). |
+| `POST` | `/api/auth/login` | Autenticar compradores y asesores. | US22, US26, TS07 | Implementado; integrado con la aplicación móvil (US26) y consumido por la aplicación web (US22). |
+| `POST` | `/api/simulations` | Calcular una simulación hipotecaria. | US01, US04, US05, TS06 | Implementado; integrado con la aplicación móvil con la tasa de referencia de 8,85 % TEA. |
+| `GET` | `/api/agencies` | Consultar inmobiliarias disponibles. | US21 | Implementado; responde en el despliegue de demostración y lo consume la aplicación móvil (US21). |
+| `POST` | `/api/leads` | Crear un lead a partir de una simulación autorizada. | US21, TS08 | Implementado; integrado con la aplicación móvil (US21) con evidencia contra la API. |
+| `GET` | `/api/leads` | Listar los leads de la inmobiliaria del asesor. | US23, TS08 | Implementado; consumido por la aplicación web (US23). |
+| `GET` | `/api/leads/{id}` | Consultar la ficha de un lead. | US24, TS08 | Implementado; consumido por la aplicación web (US24). |
+| `PATCH` | `/api/leads/{id}/status` | Actualizar el estado del interesado. | US25, TS08 | Implementado; consumido por la aplicación web (US25). |
+| `POST` | `/api/leads/{id}/notes` | Registrar notas del asesor. | US25, TS08 | Implementado; consumido por la aplicación web (US25). |
+| `GET` | `/health` | Consultar el estado del servicio. | TS02 | Implementado; responde en el despliegue de demostración. |
 | `GET` | `/api/simulations/{id}` | Recuperar una simulación autorizada. | US02, US06 | Alcance asociado a consulta e historial. |
 | `GET` | `/api/simulations` | Obtener simulaciones guardadas. | US06 | Iteración posterior. |
 | `POST` | `/api/comparisons` | Comparar escenarios de crédito. | US07 | Iteración posterior. |
@@ -474,7 +517,7 @@ Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el 
 
 <div style="text-align:justify; line-height:1.6;">
 
-Definimos la solicitud de simulación mediante el precio de la vivienda, la cuota inicial, la tasa anual efectiva, el plazo expresado en meses y la decisión de aplicar el Bono del Buen Pagador. Como caso de contraste entre productos tomamos una vivienda de **S/ 280 000**, una inicial de **S/ 42 000** y un plazo de **240 meses**. La tasa de **8,85 % TEA** corresponde a la referencia visible en la Landing Page y constituye el valor que identificamos para homogeneizar los cálculos, sin afirmar que todas las aplicaciones ya estén utilizando la misma configuración.
+Definimos la solicitud de simulación mediante el precio de la vivienda, la cuota inicial, la tasa anual efectiva, el plazo expresado en meses y la decisión de aplicar el Bono del Buen Pagador. Como caso de contraste entre productos tomamos una vivienda de **S/ 280 000**, una inicial de **S/ 42 000** y un plazo de **240 meses**. La tasa de **8,85 % TEA** corresponde a la referencia visible en la Landing Page y constituye el valor que usamos para homogeneizar los cálculos: la aplicación móvil envía esa misma tasa a la API, mientras que la Landing Page la calcula por separado en JavaScript.
 
 </div>
 
@@ -492,7 +535,7 @@ Definimos la solicitud de simulación mediante el precio de la vivienda, la cuot
 
 <div style="text-align:justify; line-height:1.6;">
 
-La respuesta del motor financiero se organiza alrededor del capital financiado, la cuota mensual, el cronograma de amortización, los indicadores financieros y el beneficio aplicado. En el contraste entre la Landing Page, la aplicación Android y la API identificamos discrepancias en las tasas de referencia y el tratamiento de seguros. Por ese motivo, documentamos los campos funcionales del resultado sin atribuirles una cuota numérica única que todavía no haya sido reconciliada. Diferenciamos **TEA** de **TCEA** y separamos la cuota financiera de los gastos adicionales al comparar los tres productos.
+La respuesta del motor financiero se organiza alrededor del capital financiado, la cuota mensual, el cronograma de amortización, los indicadores financieros y el beneficio aplicado. Con esos datos, la API calcula una cuota de **S/ 1 909**, una TCEA de **8,85 %** y un bono de **S/ 18 200**, que son los valores que muestra la aplicación móvil. La cuota corresponde al capital y los intereses, sin seguros. Diferenciamos **TEA** de **TCEA** y separamos la cuota financiera de los gastos adicionales al comparar los productos.
 
 </div>
 

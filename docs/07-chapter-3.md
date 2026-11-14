@@ -459,7 +459,7 @@
 ## **3.3. Product Backlog**
 
 <p style="text-align: justify; line-height: 1.6;">
-  El Product Backlog completo, con las 36 historias del proyecto, se mantiene en Jira. Esta tabla presenta únicamente las historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial, ordenadas según su valor para el negocio: primero el Landing Page, por ser obligatorio desde el primer sprint, luego las bases técnicas de la API y finalmente el flujo de simulación en la aplicación móvil y el flujo de leads en la aplicación web. Las historias de guardar y comparar escenarios, de exportar PDF, de Administrador y otras funciones adicionales quedan registradas en Jira para sprints posteriores a esta entrega. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
+  El Product Backlog completo, con las 37 historias del proyecto, se mantiene en Jira. Esta tabla presenta únicamente las historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial, ordenadas según su valor para el negocio: primero el Landing Page, por ser obligatorio desde el primer sprint, luego las bases técnicas de la API y finalmente el flujo de simulación en la aplicación móvil y el flujo de leads en la aplicación web. Las historias de guardar y comparar escenarios, de exportar PDF, de Administrador y otras funciones adicionales quedan registradas en Jira para sprints posteriores a esta entrega. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
 </p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 16px 0 22px 0; font-size: 9pt; page-break-inside: auto; table-layout: fixed;">
