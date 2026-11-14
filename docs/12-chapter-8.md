@@ -1,71 +1,494 @@
 # **Chapter VIII: Experiment-Driven Development**
 
-En este capítulo planificamos y diseñamos los experimentos con los que validamos las hipótesis de negocio del Capítulo I sobre el producto ya implementado. Partimos de lo que HipoSim hace hoy (sección 8.1.1), convertimos los supuestos y vacíos de conocimiento en preguntas que un experimento puede responder (secciones 8.1.2 a 8.1.5) y definimos para cada experimento la hipótesis, las métricas, las condiciones y el plan de registro de datos (sección 8.2). La ejecución, el análisis de resultados y el aprendizaje (secciones 8.3 a 8.6) se documentan en la entrega final.
-
-<div style="page-break-after: always;"></div>
-
 ## **8.1. Experiment Planning**
 
 ### **8.1.1. As-Is Summary**
 
-Al cierre del Sprint 3, HipoSim cuenta con cuatro productos publicados que comparten una misma API:
+HipoSim es una plataforma digital orientada a facilitar la evaluación de créditos hipotecarios para compradores de primera vivienda y mejorar la gestión de potenciales clientes para las inmobiliarias.
 
-| Producto | Usuario | Funciones disponibles | Publicación |
-|---|---|---|---|
-| Landing Page | Visitante | Propuesta de valor, simulación sin registro con Bono del Buen Pagador y cronograma completo, beneficios, FAQ, Términos y Privacidad, contacto y selector ES/EN | GitHub Pages |
-| Aplicación Android | Comprador | Registro e inicio de sesión, simulación con periodo de gracia, indicadores TCEA, VAN y TIR, cronograma, guardado y comparación de escenarios, reporte PDF y envío consentido a una inmobiliaria | Firebase App Distribution |
-| Portal web | Asesor | Bandeja y ficha de leads, estados y notas de seguimiento | Vercel |
-| API RESTful | Todos | Autenticación, motor financiero, leads, escenarios, reporte PDF, contacto y eventos de uso | Render |
+Actualmente, la solución está conformada por cuatro componentes:
 
-Para los experimentos ya existe la recolección de datos: el Landing Page y la aplicación móvil envían eventos de uso anónimos a `POST /api/events`, que los guarda en la tabla `usage_events` con un identificador de sesión aleatorio, el producto de origen, el nombre del evento, la fecha y propiedades sin datos personales. Además, la API guarda las simulaciones, los escenarios y los leads de cada Comprador, y el equipo cuenta con herramientas para exportar los eventos a CSV y calcular indicadores (tarea EXP2). Lo que todavía no sabemos es si estas funciones cambian el comportamiento de los compradores, que es lo que buscan responder los experimentos.
+- **Landing Page:** presenta la propuesta de valor de HipoSim y permite realizar simulaciones hipotecarias básicas.
+- **Native Mobile Application:** permite realizar simulaciones hipotecarias, consultar indicadores financieros y cronogramas de pagos, aplicar beneficios estatales, guardar y comparar escenarios hipotecarios y exportar reportes PDF.
+- **Web Application:** permite a los asesores inmobiliarios consultar solicitudes, revisar simulaciones hipotecarias, actualizar estados y realizar el seguimiento de potenciales compradores.
+- **RESTful API:** centraliza las operaciones de autenticación, simulación hipotecaria, persistencia de escenarios, gestión de leads y registro de eventos de uso.
+
+#### Situación actual por segmento objetivo
+
+| Segmento objetivo | Situación actual | Necesidad de validación |
+|---|---|---|
+| Compradores de primera vivienda | Disponen de herramientas para simular créditos, consultar cronogramas y comparar escenarios hipotecarios. | Evaluar si comprenden los resultados financieros y pueden identificar alternativas convenientes. |
+| Inmobiliarias | Disponen de una plataforma para gestionar leads, consultar simulaciones y realizar el seguimiento comercial. | Evaluar si las funcionalidades se ajustan a sus procesos de atención y seguimiento de compradores. |
+
+#### Hallazgos preliminares
+
+A partir de las evaluaciones heurísticas y las entrevistas de validación realizadas durante el desarrollo de HipoSim, se identificaron los siguientes hallazgos:
+
+- La precisión monetaria es importante para comparar escenarios hipotecarios.
+- El resaltado de valores mínimos debe representar correctamente los escenarios empatados.
+- La distribución de información al comparar tres escenarios presenta oportunidades de mejora.
+- Los asesores inmobiliarios valoran positivamente la facilidad de navegación y la gestión de leads.
+- La información financiera de los compradores resulta útil para orientar el seguimiento comercial.
+- Existe interés en retomar el seguimiento de solicitudes previamente descartadas.
+- Los asesores inmobiliarios mostraron interés en el acceso desde dispositivos móviles.
+- La demostración del aplicativo móvil para compradores recibió una valoración favorable por parte de los asesores entrevistados.
+
+Asimismo, se han incorporado mecanismos de registro de eventos anónimos para complementar las evaluaciones cualitativas mediante información sobre el comportamiento de los usuarios.
+
+#### Justificación de la experimentación
+
+Aunque las funcionalidades implementadas permiten atender las principales necesidades identificadas durante el desarrollo, todavía existen incertidumbres relacionadas con la facilidad de uso, la comprensión de los resultados financieros, la utilidad de las funcionalidades y su contribución a los objetivos de los usuarios.
+
+Por ello, se aplicará Experiment-Driven Development (XDPD) para identificar incertidumbres, formular preguntas experimentales, priorizar oportunidades de aprendizaje y diseñar experimentos que permitan obtener evidencia para orientar las siguientes decisiones de desarrollo.
 
 ### **8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims**
 
-| Tipo | Contenido | Origen |
+A partir del análisis de la situación actual de HipoSim, las entrevistas de validación, las evaluaciones heurísticas y las funcionalidades implementadas, se identificaron las siguientes premisas que servirán como punto de partida para el planeamiento experimental.
+
+#### Assumptions (Supuestos)
+
+| ID | Premisa | Segmento objetivo |
 |---|---|---|
-| Supuesto | El comprador primerizo desconfía de los simuladores de los bancos y prefiere una herramienta independiente y transparente. | Entrevistas del Capítulo II |
-| Supuesto | Ver la TCEA y el cronograma completo antes de ir al banco aumenta la intención de solicitar un crédito. | Hipótesis H1 |
-| Supuesto | Una decisión hipotecaria se toma en varias sesiones, comparando alternativas de plazo, cuota inicial y gracia. | Hipótesis H3 y H4 |
-| Vacío de conocimiento | No sabemos qué porcentaje de quienes empiezan una simulación la terminan, ni en qué paso abandonan. | Métrica de abandono del Capítulo I |
-| Vacío de conocimiento | No sabemos si los compradores usan el periodo de gracia ni cómo cambia su elección. | US03 |
-| Vacío de conocimiento | No sabemos si el comprador acepta compartir su simulación con una inmobiliaria cuando se le pide consentimiento explícito. | US21 y Ley 29733 |
-| Idea | Sugerir guardar el escenario justo después de ver los resultados aumentaría las comparaciones. | Equipo |
-| Idea | Mostrar la diferencia de cuota y de total a pagar entre escenarios ayudaría a decidir. | US07 |
-| Afirmación | El simulador del Landing Page, sin registro, es la puerta de entrada principal del producto. | Estrategia del Capítulo I |
+| AS-01 | Los compradores de primera vivienda pueden completar una simulación hipotecaria sin asistencia especializada. | Compradores |
+| AS-02 | Los compradores comprenden mejor sus obligaciones financieras cuando consultan el cronograma de pagos. | Compradores |
+| AS-03 | La comparación de escenarios hipotecarios facilita la identificación de alternativas de financiamiento convenientes. | Compradores |
+| AS-04 | Los compradores consideran útil descargar un reporte PDF para revisar o compartir los resultados de una simulación. | Compradores |
+| AS-05 | Los asesores inmobiliarios pueden gestionar y realizar el seguimiento de potenciales compradores utilizando HipoSim. | Inmobiliarias |
+| AS-06 | El periodo de gracia ayuda a los compradores cuyas primeras cuotas no caben en su presupuesto. | Compradores |
+| AS-07 | Una decisión hipotecaria toma varias sesiones, y guardar escenarios hace que el comprador vuelva a la aplicación (hipótesis H4 del Capítulo I). | Compradores |
+| AS-08 | Un simulador transparente hace que más compradores busquen contacto después de simular (hipótesis H1 del Capítulo I). | Compradores |
+
+#### Knowledge Gaps (Vacíos de conocimiento)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| KG-01 | Se desconoce qué proporción de compradores logra completar una simulación hipotecaria después de iniciarla. | Compradores |
+| KG-02 | Se desconoce si los compradores interpretan correctamente indicadores financieros como la TCEA, el VAN y la TIR. | Compradores |
+| KG-03 | No se ha determinado si los compradores identifican correctamente el escenario con menor cuota mensual y menor costo total. | Compradores |
+| KG-04 | Se desconoce con qué frecuencia los compradores utilizan la exportación de reportes PDF después de realizar una simulación. | Compradores |
+| KG-05 | No se ha determinado cuánto tiempo necesitan los asesores inmobiliarios para consultar y actualizar una solicitud. | Inmobiliarias |
+
+#### Ideas (Ideas de mejora)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| ID-01 | Incorporar explicaciones breves de los indicadores financieros para facilitar su comprensión. | Compradores |
+| ID-02 | Mejorar la distribución visual de los importes monetarios al comparar tres escenarios hipotecarios. | Compradores |
+| ID-03 | Unificar la precisión monetaria entre la lista de escenarios guardados y la pantalla de comparación. | Compradores |
+| ID-04 | Evaluar la incorporación de una opción para retomar el seguimiento de solicitudes previamente descartadas. | Inmobiliarias |
+| ID-05 | Evaluar la adaptación de la plataforma de asesores para facilitar su acceso desde dispositivos móviles. | Inmobiliarias |
+
+#### Claims (Afirmaciones)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| CL-01 | HipoSim simplifica el proceso de simulación de créditos hipotecarios para compradores de primera vivienda. | Compradores |
+| CL-02 | La presentación del cronograma de pagos permite comprender mejor la distribución del capital y los intereses. | Compradores |
+| CL-03 | El resaltado de valores mínimos y la presentación precisa de importes facilitan la comparación de escenarios hipotecarios. | Compradores |
+| CL-04 | La exportación de reportes PDF facilita la consulta posterior y el intercambio de información financiera. | Compradores |
+| CL-05 | La gestión centralizada de leads facilita el seguimiento comercial de potenciales compradores por parte de los asesores inmobiliarios. | Inmobiliarias |
+
+Las premisas identificadas representan incertidumbres, oportunidades de mejora y afirmaciones que requieren evidencia adicional. Las valoraciones favorables obtenidas durante las entrevistas constituyen evidencia cualitativa preliminar, pero no permiten generalizar los resultados a todos los usuarios de HipoSim.
+
+Estas premisas serán utilizadas para formular las preguntas experimentales, priorizar el Question Backlog y elaborar las correspondientes tarjetas de experimentos.
 
 ### **8.1.3. Experiment-Ready Questions**
 
-1. **Q1.** ¿Qué porcentaje de las simulaciones iniciadas en el Landing Page y en la aplicación móvil se completan?
-2. **Q2.** ¿Los compradores que guardan dos o más escenarios completan más simulaciones por sesión que los que no guardan ninguno?
-3. **Q3.** ¿Qué porcentaje de las sesiones con una simulación completada termina en una solicitud de contacto: mensaje en el Landing Page o envío consentido a una inmobiliaria en la aplicación?
-4. **Q4.** ¿Los compradores que guardan escenarios vuelven a usar la aplicación en días distintos?
-5. **Q5.** ¿Cuánto tiempo tarda un visitante, desde que entra, en completar su primera simulación?
-6. **Q6.** ¿Qué parte de los compradores descarga el reporte PDF de su simulación?
+A partir de las premisas identificadas en la sección Raw Material, se formularon preguntas experimentales orientadas a reducir las incertidumbres relacionadas con la usabilidad, comprensión financiera y utilidad de las funcionalidades de HipoSim.
+
+Las preguntas se plantearon considerando los segmentos objetivo, las funcionalidades implementadas y la posibilidad de obtener evidencia mediante pruebas con usuarios, entrevistas de validación y registros de eventos de uso.
+
+#### Preguntas experimentales principales
+
+| ID | Experiment-Ready Question | Raw Material relacionado | Segmento objetivo | Evidencia requerida |
+|---|---|---|---|---|
+| ERQ-01 | ¿Qué proporción de compradores de primera vivienda logra completar una simulación hipotecaria sin asistencia? | AS-01, KG-01, CL-01 | Compradores | Simulaciones iniciadas y completadas, observación de usuarios y dificultades identificadas. |
+| ERQ-02 | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? | AS-02, KG-02, ID-01, CL-02 | Compradores | Respuestas correctas a preguntas de comprensión financiera y consulta del cronograma de pagos. |
+| ERQ-03 | ¿Qué proporción de compradores identifica correctamente los escenarios con menor cuota mensual y menor costo total utilizando la funcionalidad de comparación? | AS-03, KG-03, CL-03 | Compradores | Resultados de tareas de comparación, respuestas correctas y dificultades observadas. |
+| ERQ-04 | ¿En qué proporción de sesiones móviles con simulaciones completadas se exporta posteriormente un reporte PDF y qué utilidad le atribuyen los compradores? | AS-04, KG-04, CL-04 | Compradores | Eventos de exportación de PDF y valoraciones de los participantes. |
+| ERQ-05 | ¿Con qué nivel de éxito y en cuánto tiempo los asesores inmobiliarios pueden consultar y actualizar solicitudes de potenciales compradores utilizando HipoSim? | AS-05, KG-05, CL-05 | Inmobiliarias | Tareas completadas, tiempo de ejecución, errores y valoraciones de los asesores. |
+
+#### Preguntas experimentales complementarias
+
+| ID | Experiment-Ready Question | Raw Material relacionado | Segmento objetivo | Evidencia requerida |
+|---|---|---|---|---|
+| ERQ-06 | ¿Una distribución visual mejorada de los importes facilita la lectura y comparación de tres escenarios hipotecarios? | ID-02 | Compradores | Comparación de tiempos, errores de interpretación y percepción de legibilidad entre alternativas de diseño. |
+| ERQ-07 | ¿La presentación de importes con la misma precisión monetaria en todas las pantallas reduce las inconsistencias percibidas por los compradores? | ID-03 | Compradores | Errores de interpretación y valoraciones de consistencia antes y después de la mejora. |
+| ERQ-08 | ¿La posibilidad de reactivar solicitudes descartadas facilita el seguimiento comercial de los asesores inmobiliarios? | ID-04 | Inmobiliarias | Pruebas con prototipos y valoraciones sobre la utilidad de la reactivación de solicitudes. |
+| ERQ-09 | ¿Una interfaz adaptada a dispositivos móviles facilita la consulta y el seguimiento de solicitudes por parte de los asesores inmobiliarios? | ID-05 | Inmobiliarias | Pruebas de navegación móvil, tareas completadas y percepción de facilidad de uso. |
+| ERQ-10 | ¿Qué proporción de las simulaciones completadas usa periodo de gracia, y las simulaciones con gracia terminan más veces en un envío a una inmobiliaria? | AS-06 | Compradores | Propiedades `graceType` y `graceMonths` de los eventos `simulation_completed` y `lead_sent`. |
+| ERQ-11 | ¿Qué proporción de las sesiones móviles con una simulación completada guarda un escenario, y los compradores con escenarios vuelven en días distintos? | AS-07 | Compradores | Eventos `simulation_completed` y `scenario_saved`, y fechas de los escenarios guardados por Comprador en la API. |
+| ERQ-12 | ¿Qué proporción de las sesiones con una simulación completada termina en un mensaje de contacto en el Landing Page o en un envío consentido a una inmobiliaria en la aplicación? | AS-08 | Compradores | Eventos `simulation_completed`, `contact_message_sent` y `lead_sent` por sesión. |
+
+Las preguntas principales se relacionan con funcionalidades implementadas y permiten evaluar el estado actual del producto. Las preguntas complementarias exploran oportunidades de mejora identificadas durante las evaluaciones heurísticas y las entrevistas de validación.
+
+Las entrevistas realizadas a los asesores inmobiliarios proporcionan evidencia cualitativa preliminar para ERQ-05, ERQ-08 y ERQ-09. Sin embargo, será necesario realizar mediciones adicionales para responder completamente estas preguntas.
+
+Las preguntas formuladas serán incorporadas al Question Backlog, donde se priorizarán considerando su importancia para los segmentos objetivo, el impacto potencial sobre el producto y los criterios de priorización definidos en el Question Backlog.
+
+#### Clasificación de las preguntas experimentales
+
+De acuerdo con XDPD, las preguntas experimentales se clasifican en dos tipos:
+
+- **Belief-led Questions:** preguntas orientadas a contrastar creencias, suposiciones o afirmaciones previamente identificadas sobre el producto y sus usuarios.
+- **Exploratory Questions:** preguntas orientadas a obtener conocimiento sobre aspectos cuyo comportamiento todavía se desconoce, sin establecer necesariamente una hipótesis inicial.
+
+| ID | Tipo de pregunta | Justificación |
+|---|---|---|
+| ERQ-01 | Belief-led | Contrasta la creencia de que los compradores pueden completar una simulación sin asistencia. |
+| ERQ-02 | Belief-led | Contrasta la creencia de que la información financiera facilita la comprensión del crédito. |
+| ERQ-03 | Belief-led | Contrasta la creencia de que la comparación de escenarios facilita la identificación de alternativas convenientes. |
+| ERQ-04 | Exploratory | Busca conocer la frecuencia de exportación y los motivos de uso de los reportes PDF. |
+| ERQ-05 | Belief-led | Contrasta la creencia de que HipoSim facilita la gestión de solicitudes inmobiliarias. |
+| ERQ-06 | Belief-led | Contrasta la premisa de que una distribución visual diferente mejora la legibilidad. |
+| ERQ-07 | Belief-led | Contrasta la premisa de que una precisión monetaria uniforme reduce inconsistencias percibidas. |
+| ERQ-08 | Belief-led | Contrasta la premisa de que retomar solicitudes descartadas aporta valor al seguimiento comercial. |
+| ERQ-09 | Belief-led | Contrasta la premisa de que el acceso móvil facilita el seguimiento comercial. |
+| ERQ-10 | Belief-led | Contrasta la premisa de que la gracia es útil para el comprador y no lo aleja del contacto con una inmobiliaria. |
+| ERQ-11 | Belief-led | Contrasta la hipótesis H4 de que guardar escenarios favorece el retorno. |
+| ERQ-12 | Belief-led | Contrasta la hipótesis H1 de que el simulador lleva a buscar contacto. |
+
+#### Aplicación de la técnica 5W1H
+
+Para delimitar las preguntas experimentales se consideran los siguientes elementos:
+
+| Elemento | Aplicación en HipoSim |
+|---|---|
+| Who (Quién) | Compradores de primera vivienda y asesores inmobiliarios. |
+| What (Qué) | Usabilidad, comprensión financiera y utilidad de las funcionalidades. |
+| Where (Dónde) | Landing Page, aplicación móvil y aplicación web. |
+| When (Cuándo) | Durante la realización de tareas y el periodo de experimentación. |
+| Why (Por qué) | Reducir incertidumbres y orientar las decisiones de desarrollo. |
+| How (Cómo) | Mediante observación, pruebas con usuarios, entrevistas y registros de eventos anónimos. |
+
+Esta clasificación permite distinguir las preguntas que requieren formular hipótesis de aquellas cuya finalidad principal es obtener conocimiento exploratorio.
+
 
 ### **8.1.4. Question Backlog**
 
-Priorizamos las preguntas por su impacto en las hipótesis de negocio y por la facilidad de medirlas con los eventos que ya se registran (escala de 1 a 5).
+El Question Backlog de HipoSim reúne las preguntas experimentales identificadas durante la fase de planeamiento. Su finalidad es priorizar las oportunidades de aprendizaje considerando la importancia de obtener evidencia antes de tomar decisiones sobre el producto.
 
-| Prioridad | Pregunta | Hipótesis | Impacto | Facilidad de medición | Datos disponibles |
-|---:|---|---|---:|---:|---|
-| 1 | Q1. Tasa de finalización de la simulación | H2 | 5 | 5 | `simulation_started` y `simulation_completed` del Landing y del móvil |
-| 2 | Q3. Conversión a contacto | H1 | 5 | 4 | `simulation_completed`, `contact_message_sent` y `lead_sent` |
-| 3 | Q2. Escenarios y simulaciones por sesión | H3 | 4 | 4 | `scenario_saved`, `scenarios_compared` y `simulation_completed` |
-| 4 | Q5. Tiempo hasta la primera simulación | H2 | 3 | 5 | `page_viewed` o `app_opened` y `simulation_completed` |
-| 5 | Q4. Retorno de compradores con escenarios | H4 | 4 | 2 | Fechas de los escenarios guardados por Comprador en la API |
-| 6 | Q6. Descargas del reporte PDF | Ninguna directa | 2 | 5 | `pdf_exported` |
+A diferencia del Product Backlog, este artefacto organiza preguntas e incertidumbres que requieren investigación, en lugar de funcionalidades pendientes de implementación.
+
+#### Criterios de priorización
+
+Para establecer el orden de las preguntas experimentales se utilizan cuatro criterios:
+
+- **Confidence (C):** nivel de confianza actual en el conocimiento o las creencias relacionadas con la pregunta.
+- **Risk (R):** consecuencias negativas que podrían producirse si las premisas relacionadas con la pregunta fueran incorrectas.
+- **Impact (IM):** impacto potencial de responder la pregunta sobre los usuarios y los objetivos del producto.
+- **Interest (IN):** relevancia e interés de obtener la respuesta para los usuarios y stakeholders.
+
+Para HipoSim se propone una escala de valoración del 1 al 5.
+
+| Puntuación | Confidence | Risk | Impact | Interest |
+|---|---|---|---|---|
+| 1 | Muy baja | Muy bajo | Muy bajo | Muy bajo |
+| 2 | Baja | Bajo | Bajo | Bajo |
+| 3 | Moderada | Moderado | Moderado | Moderado |
+| 4 | Alta | Alto | Alto | Alto |
+| 5 | Muy alta | Muy alto | Muy alto | Muy alto |
+
+Con la finalidad de priorizar las preguntas que presentan mayor necesidad de aprendizaje, se utiliza la siguiente expresión:
+
+**Total Score = (6 - C) + R + IM + IN**
+
+La confianza se incorpora de forma inversa, de modo que las preguntas con menor confianza inicial reciban mayor prioridad de investigación.
+
+| Total Score | Prioridad |
+|---|---|
+| 17 - 20 | Alta |
+| 12 - 16 | Media |
+| 4 - 11 | Baja |
+
+En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empate persiste, se considera el impacto potencial y posteriormente el interés. Si todos estos criterios coinciden, se consideran las dependencias entre las preguntas.
+
+#### Question Backlog priorizado
+
+| Orden | ID | Pregunta experimental resumida | Why | C | R | IM | IN | Total | Prioridad |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | ERQ-01 | ¿Los compradores completan una simulación sin asistencia? | La simulación constituye el núcleo de la propuesta de valor. | 2 | 5 | 5 | 5 | 19 | Alta |
+| 2 | ERQ-03 | ¿Los compradores identifican correctamente las alternativas hipotecarias de menor costo? | Una interpretación incorrecta puede afectar las decisiones financieras. | 2 | 5 | 5 | 5 | 19 | Alta |
+| 3 | ERQ-05 | ¿Los asesores gestionan eficientemente las solicitudes? | La gestión comercial constituye la propuesta de valor para las inmobiliarias. | 3 | 5 | 5 | 5 | 18 | Alta |
+| 4 | ERQ-02 | ¿Los compradores comprenden el cronograma y los indicadores financieros? | La comprensión financiera es fundamental para evaluar un crédito. | 2 | 5 | 5 | 4 | 18 | Alta |
+| 5 | ERQ-04 | ¿Los compradores utilizan y consideran útiles los reportes PDF? | Permite determinar la relevancia de conservar los resultados financieros. | 1 | 3 | 4 | 5 | 17 | Alta |
+| 6 | ERQ-06 | ¿Una mejor distribución visual facilita la comparación de tres escenarios? | Permite evaluar oportunidades de mejora en la legibilidad. | 3 | 3 | 4 | 4 | 14 | Media |
+| 7 | ERQ-07 | ¿La precisión monetaria uniforme reduce inconsistencias percibidas? | Busca mejorar la consistencia de la información financiera. | 4 | 3 | 4 | 4 | 13 | Media |
+| 8 | ERQ-08 | ¿La reactivación de solicitudes descartadas mejora el seguimiento comercial? | Permite evaluar una necesidad identificada durante las entrevistas. | 2 | 2 | 3 | 4 | 13 | Media |
+| 9 | ERQ-09 | ¿Una interfaz móvil facilita la gestión de solicitudes por parte de los asesores? | Permite conocer el valor de acceder a la plataforma desde dispositivos móviles. | 2 | 2 | 3 | 3 | 12 | Media |
+| 10 | ERQ-11 | ¿Los compradores guardan escenarios y vuelven a la aplicación? | Valida la hipótesis H4 de retención del Capítulo I. | 2 | 4 | 4 | 4 | 16 | Media |
+| 11 | ERQ-12 | ¿Las simulaciones completadas terminan en contacto? | Valida la hipótesis H1 de conversión del Capítulo I. | 3 | 4 | 5 | 4 | 16 | Media |
+| 12 | ERQ-10 | ¿Se usa el periodo de gracia y cómo se relaciona con el envío a inmobiliarias? | Permite decidir si la gracia merece más protagonismo en el formulario. | 2 | 3 | 3 | 3 | 13 | Media |
+
+#### Justificación de la priorización
+
+Las preguntas ERQ-01, ERQ-02 y ERQ-03 presentan niveles elevados de riesgo e impacto debido a su relación con la evaluación de créditos hipotecarios y la comprensión de las condiciones financieras.
+
+Las preguntas ERQ-01 y ERQ-03 presentan la misma puntuación. Se establece inicialmente ERQ-01 como primera pregunta debido a que completar una simulación constituye un requisito previo para comparar escenarios hipotecarios.
+
+Ante el empate de ERQ-05 y ERQ-02, se prioriza ERQ-05 por su mayor interés, dado que ambas presentan el mismo riesgo e impacto.
+
+La pregunta ERQ-05 presenta una confianza inicial moderada debido a las valoraciones favorables obtenidas durante las entrevistas con asesores inmobiliarios. Sin embargo, todavía se requiere evidencia cuantitativa sobre la ejecución de tareas.
+
+La pregunta ERQ-04 presenta una confianza inicial muy baja debido a que no se dispone de resultados suficientes sobre la frecuencia de uso de los reportes PDF. Su carácter exploratorio permite obtener información que contribuya a orientar futuras decisiones.
+
+Las preguntas complementarias conservan una prioridad media y podrán ser abordadas durante posteriores iteraciones de experimentación.
+
+#### Estructura del Question Backlog
+
+El Question Backlog de HipoSim se organiza considerando dos perspectivas complementarias:
+
+- **Broad Question Backlog:** comprende las doce preguntas experimentales, permitiendo mantener una visión amplia de las incertidumbres y oportunidades de aprendizaje relacionadas con ambos segmentos objetivo.
+- **Deep Question Backlog:** comprende las seis preguntas seleccionadas para desarrollar sus tarjetas de experimentos y profundizar en sus hipótesis, medidas, condiciones y métodos de evaluación.
+
+#### Preguntas seleccionadas para experimentación
+
+| Experiment ID | Question ID | Funcionalidad evaluada | Total Score | Prioridad |
+|---|---|---|---|---|
+| E01 | ERQ-01 | Simulación hipotecaria | 19 | Alta |
+| E02 | ERQ-02 | Comprensión financiera | 18 | Alta |
+| E03 | ERQ-03 | Comparación de escenarios hipotecarios | 19 | Alta |
+| E04 | ERQ-04 | Exportación de reportes PDF | 17 | Alta |
+| E05 | ERQ-05 | Gestión de leads inmobiliarios | 18 | Alta |
+| E06 | ERQ-11 | Guardado de escenarios y retorno | 16 | Media |
+
+La valoración presentada corresponde a una priorización inicial basada en los conocimientos disponibles durante la planificación experimental. Las puntuaciones no representan resultados obtenidos mediante mediciones con usuarios.
+
+Después de ejecutar los experimentos, el Question Backlog deberá actualizarse considerando la evidencia recopilada y los nuevos aprendizajes. Esta actualización será documentada en la sección 8.4.2. Re-scored and Re-prioritized Question Backlog.
 
 ### **8.1.5. Experiment Cards**
 
-| Campo | EXP-A: Finalización y conversión | EXP-B: Comparación de escenarios |
-|---|---|---|
-| Hipótesis | H1 y H2 | H3 |
-| Pregunta | Q1, Q3 y Q5 | Q2 |
-| Qué hacemos | Medimos el embudo de la simulación sin registro del Landing y de la aplicación hasta el contacto o el envío a una inmobiliaria. | Comparamos las sesiones de compradores que guardan dos o más escenarios con las que no guardan ninguno. |
-| Qué medimos | Tasa de finalización, conversión a contacto y tiempo hasta la primera simulación. | Simulaciones completadas por sesión y uso de la comparación. |
-| Criterio de éxito | Al menos 60 % de las simulaciones iniciadas se completan y al menos 10 % de las sesiones con simulación completada termina en contacto. | Las sesiones con dos o más escenarios guardados completan en promedio al menos 1,5 veces más simulaciones que las demás. |
-| Participantes | Personas reales que cada integrante invita a probar el Landing y el APK (EXP1), más el tráfico del Landing publicado. | Compradores registrados en la aplicación móvil. |
-| Duración | Dos semanas desde la publicación de la versión 0.1.0 (110). | Dos semanas, en paralelo con EXP-A. |
+Las tarjetas de experimentos permiten estructurar las preguntas seleccionadas del Question Backlog y establecer los elementos necesarios para obtener evidencia que contribuya a la toma de decisiones sobre HipoSim.
+
+Cada tarjeta presenta un lado frontal, que contiene la pregunta experimental, su motivación, la hipótesis y la Simplest Useful Thing (SUT), y un lado posterior, que establece las medidas, condiciones y escala del experimento.
+
+Las hipótesis, condiciones y criterios de éxito establecidos corresponden a propuestas iniciales que serán desarrolladas durante la fase de Experiment Design.
+
+#### Experiment Card E01: Simulación hipotecaria
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E01 |
+| Question ID | ERQ-01 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de compradores logra completar una simulación hipotecaria sin asistencia? |
+| Why | La simulación hipotecaria constituye la funcionalidad principal de HipoSim. Es necesario determinar si los compradores pueden utilizarla sin depender de conocimientos financieros avanzados o asistencia especializada. |
+| Hypothesis | Al menos el 80 % de los compradores participantes completará una simulación hipotecaria sin asistencia. |
+| What (SUT) | Utilizar el formulario de simulación hipotecaria implementado en HipoSim y solicitar a los participantes que generen una simulación con datos de referencia. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización, tiempo de ejecución, errores y solicitudes de ayuda. |
+| Conditions | Los participantes recibirán los mismos datos de referencia y deberán completar la simulación sin instrucciones sobre el uso de la interfaz. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro de los cinco participantes completan correctamente la simulación sin asistencia. |
+| Evidence | Registro de observaciones y eventos simulation_started y simulation_completed, cuando estén disponibles. |
+
+**Estado:** Pendiente de ejecución y medición experimental.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E02: Comprensión financiera
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E02 |
+| Question ID | ERQ-02 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? |
+| Why | Presentar resultados financieros no garantiza que los compradores comprendan sus obligaciones económicas. Es necesario evaluar si la información permite interpretar correctamente las condiciones del crédito hipotecario. |
+| Hypothesis | Al menos el 80 % de los participantes responderá correctamente al menos cinco de seis preguntas de comprensión financiera después de consultar los resultados y el cronograma de pagos. |
+| What (SUT) | Utilizar la pantalla de resultados y el cronograma de pagos de una simulación hipotecaria previamente definida. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Número de respuestas correctas, porcentaje de participantes que alcanza el criterio de comprensión y dificultades identificadas. |
+| Conditions | Todos los participantes consultarán la misma simulación y responderán seis preguntas sobre amortización, intereses, TCEA, VAN, TIR y costo total, sin recibir explicaciones adicionales durante la evaluación. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro de los cinco participantes responden correctamente cinco o más de las seis preguntas. |
+| Evidence | Cuestionarios de comprensión, registro de observaciones y evento schedule_opened, cuando esté disponible. |
+
+**Estado:** Pendiente de ejecución y medición experimental.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E03: Comparación de escenarios hipotecarios
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E03 |
+| Question ID | ERQ-03 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de compradores identifica correctamente los escenarios con menor cuota mensual y menor costo total utilizando la funcionalidad de comparación? |
+| Why | Los compradores necesitan comparar alternativas de financiamiento antes de tomar una decisión. La identificación incorrecta de los valores mínimos podría generar interpretaciones equivocadas sobre las condiciones del crédito. |
+| Hypothesis | Al menos el 80 % de los participantes identificará correctamente los escenarios con menor cuota mensual y menor costo total. |
+| What (SUT) | Utilizar la pantalla de comparación de escenarios hipotecarios implementada en la aplicación móvil de HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de respuestas correctas, tiempo de comparación, errores de interpretación y percepción de facilidad de uso. |
+| Conditions | Los participantes compararán dos y tres escenarios previamente definidos. Se incluirán casos donde la menor cuota y el menor costo total correspondan a diferentes escenarios, así como casos con valores mínimos empatados. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro participantes identifican correctamente ambas alternativas y reconocen los empates cuando se presentan. |
+| Evidence | Registro de respuestas, capturas de la comparación, observaciones y evento scenarios_compared, cuando esté disponible. |
+
+**Estado:** Cuenta con evidencia técnica preliminar documentada en el Capítulo VI. Pendiente de medición experimental con compradores.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E04: Exportación de reportes PDF
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E04 |
+| Question ID | ERQ-04 |
+| Question Type | Exploratory |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿En qué proporción de sesiones móviles con simulaciones completadas se exporta posteriormente un reporte PDF y qué utilidad le atribuyen los compradores? |
+| Why | Es necesario conocer si los compradores consideran relevante conservar o compartir los resultados financieros fuera de la aplicación. |
+| Hypothesis | No aplica inicialmente, debido al carácter exploratorio de la pregunta. |
+| What (SUT) | Utilizar la funcionalidad de exportación de reportes PDF disponible en la aplicación móvil de HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Proporción de sesiones móviles con al menos una exportación de PDF posterior a una simulación completada en la misma sesión, respecto al total de sesiones móviles con simulaciones completadas durante el periodo experimental. Se registrarán también los motivos de uso y la valoración de utilidad de los participantes. Las sesiones no equivalen necesariamente a personas únicas. |
+| Conditions | Los participantes realizarán una simulación y podrán explorar libremente los resultados. No se les solicitará explícitamente descargar el PDF durante la medición de uso espontáneo. Posteriormente se consultará su percepción sobre la funcionalidad. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda y registros anónimos de uso disponibles durante el periodo experimental. |
+| Success Criteria | Obtener evidencia suficiente para describir la frecuencia de exportación y los principales motivos de uso o desuso. |
+| Evidence | Eventos simulation_completed y pdf_exported, entrevistas breves y registros de observación. |
+
+**Estado:** Pendiente de ejecución y análisis de eventos.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E05: Gestión de leads inmobiliarios
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E05 |
+| Question ID | ERQ-05 |
+| Question Type | Belief-led |
+| Segmento objetivo | Asesores inmobiliarios |
+| Question | ¿Con qué nivel de éxito y en cuánto tiempo los asesores inmobiliarios pueden consultar y actualizar solicitudes de potenciales compradores utilizando HipoSim? |
+| Why | La gestión de leads constituye una funcionalidad fundamental para las inmobiliarias. Es necesario determinar si la plataforma facilita la consulta de solicitudes y el seguimiento comercial de los compradores. |
+| Hypothesis | Los dos asesores de la prueba piloto podrán consultar y actualizar una solicitud correctamente en un tiempo máximo de tres minutos por participante, sin asistencia. |
+| What (SUT) | Utilizar el dashboard, la bandeja de leads, la ficha de una solicitud y la funcionalidad de actualización de estados implementados en HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización de tareas, tiempo de ejecución, número de errores, solicitudes de ayuda y percepción de facilidad de uso. |
+| Conditions | Los participantes recibirán una solicitud de referencia con datos ficticios y deberán localizarla, consultar su información financiera y actualizar su estado sin asistencia durante la tarea. |
+| Scale | Prueba piloto propuesta con dos asesores inmobiliarios. |
+| Success Criteria | Ambos participantes completan correctamente las tareas de consulta y actualización en un máximo de tres minutos por participante. |
+| Evidence | Registro de observaciones, tiempos de ejecución, capturas y entrevistas de validación. |
+
+**Estado:** Cuenta con evidencia cualitativa preliminar obtenida durante las entrevistas realizadas a Carlos Pebe y Selene Carhuayo. Las pruebas funcionales y valoraciones favorables se encuentran documentadas en el Capítulo VI. Los tiempos de ejecución y el cumplimiento de los criterios de éxito todavía requieren medición específica.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E06: Guardado de escenarios y retorno
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E06 |
+| Question ID | ERQ-11 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de las sesiones móviles con una simulación completada guarda un escenario, y los compradores con escenarios vuelven en días distintos? |
+| Why | La hipótesis H4 del Capítulo I sostiene que una decisión hipotecaria se toma en varias sesiones. Si los compradores no guardan escenarios ni vuelven, el historial no aporta retención y conviene replantearlo. |
+| Hypothesis | Al menos el 25 % de las sesiones móviles con una simulación completada guarda un escenario, y al menos el 20 % de los compradores con escenarios los guarda en dos o más días distintos. |
+| What (SUT) | Utilizar el botón Guardar escenario de la pantalla de resultados y la pantalla Mis escenarios de la aplicación móvil. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Sesiones con `scenario_saved` respecto a las sesiones con `simulation_completed`, y número de días distintos con escenarios guardados por Comprador. |
+| Conditions | Uso libre de la versión distribuida por Firebase App Distribution. No se pide a los participantes que guarden escenarios: se mide el uso espontáneo. Las cuentas de demostración y las sesiones del equipo se excluyen. |
+| Scale | Sesiones móviles registradas durante dos semanas, con un mínimo de 15 sesiones con simulación completada. |
+| Success Criteria | Se cumplen los dos umbrales de la hipótesis. |
+| Evidence | Eventos `simulation_completed` y `scenario_saved`, y fechas de creación de la tabla `scenarios`. |
+
+**Estado:** Pendiente de ejecución y análisis de eventos.
+
+<div style="page-break-after: always;"></div>
+
+#### Resumen de experimentos
+
+| ID | Pregunta | Segmento | Funcionalidad | Estado |
+|---|---|---|---|---|
+| E01 | ERQ-01 | Compradores | Simulación hipotecaria | Planificado |
+| E02 | ERQ-02 | Compradores | Comprensión financiera | Planificado |
+| E03 | ERQ-03 | Compradores | Comparación de escenarios | Evidencia técnica preliminar |
+| E04 | ERQ-04 | Compradores | Exportación de reportes PDF | Planificado |
+| E05 | ERQ-05 | Inmobiliarias | Gestión de leads | Evidencia cualitativa preliminar |
+| E06 | ERQ-11 | Compradores | Guardado de escenarios y retorno | Planificado |
+
+Las seis tarjetas establecen una base para la fase de Experiment Design. Las escalas propuestas corresponden a pruebas piloto exploratorias de alcance reducido y no permiten generalizar los resultados a toda la población objetivo.
+
+Las hipótesis, medidas, condiciones, escalas y métodos de evaluación se desarrollan en la sección 8.2. Las preguntas ERQ-10 y ERQ-12 se miden con los mismos eventos de uso como indicadores de seguimiento (sección 8.2.7), sin una tarjeta propia en esta iteración.
+
+#### Evidencia preliminar de experimentación
+
+Como parte de las actividades de validación de HipoSim, se realizaron sesiones con dos profesionales del sector inmobiliario, quienes interactuaron con la plataforma de asesores y conocieron las funcionalidades de la aplicación móvil dirigida a compradores.
+
+| Participante | Organización | Segmento | Fecha | Entorno | Evidencia |
+|---|---|---|---|---|---|
+| Carlos Pebe | Interbank | Inmobiliarias | Pendiente de confirmar | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link) |
+| Selene Carhuayo | RE/MAX | Inmobiliarias | Pendiente de confirmar | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing) |
+
+**Actividades realizadas**
+
+- Exploración del dashboard de asesores inmobiliarios.
+- Consulta de la bandeja de leads.
+- Revisión de información financiera de potenciales compradores.
+- Actualización de estados de solicitudes.
+- Revisión de las funcionalidades de seguimiento comercial.
+- Pruebas de envío de informes.
+- Demostración de la aplicación móvil para compradores y del proceso de simulación hipotecaria.
+
+**Hallazgos preliminares**
+
+| Hallazgo | Pregunta relacionada |
+|---|---|
+| Valoración favorable de la facilidad de navegación y gestión de solicitudes. | ERQ-05 |
+| Utilidad de la información financiera para conocer las necesidades del comprador. | ERQ-05 |
+| Interés en retomar solicitudes previamente descartadas. | ERQ-08 |
+| Interés en acceder a la plataforma desde dispositivos móviles. | ERQ-09 |
+| Valoración favorable de la aplicación móvil para compradores durante su demostración. | ERQ-01, como evidencia indirecta |
+
+Las actividades realizadas proporcionan evidencia cualitativa preliminar relacionada principalmente con el experimento E05. Asimismo, permiten identificar oportunidades de mejora que podrán evaluarse en futuras iteraciones.
+
+Estas sesiones no sustituyen las mediciones experimentales planificadas, debido a que no se cuenta con registros específicos de tiempos de ejecución ni resultados cuantitativos obtenidos bajo las condiciones definidas en las tarjetas de experimentos.
+
+La demostración de la aplicación móvil tampoco constituye una prueba de usabilidad realizada con compradores de primera vivienda, dado que los participantes pertenecen al segmento inmobiliario.
+
+Las grabaciones, capturas y resúmenes completos se encuentran documentados en la sección 6.3.2. Registro de entrevistas del Capítulo VI. Las fechas de las sesiones están pendientes de confirmación y no se cuenta con evidencia de pruebas del Landing Page en estas sesiones.
 
 <div style="page-break-after: always;"></div>
 
@@ -73,68 +496,86 @@ Priorizamos las preguntas por su impacto en las hipótesis de negocio y por la f
 
 ### **8.2.1. Hypotheses**
 
-| ID | Hipótesis nula (H0) | Hipótesis alternativa (H1) |
+| Experimento | Hipótesis nula (H0) | Hipótesis alternativa (H1) |
 |---|---|---|
-| EXP-A | Ver la simulación completa con TCEA, bono y cronograma no se asocia con el contacto: menos del 10 % de las sesiones con simulación completada termina en contacto. | Al menos el 10 % de las sesiones con simulación completada termina en un mensaje de contacto o en un envío consentido a una inmobiliaria. |
-| EXP-B | Las sesiones con dos o más escenarios guardados completan en promedio el mismo número de simulaciones que las que no guardan escenarios. | Las sesiones con dos o más escenarios guardados completan en promedio al menos 1,5 veces más simulaciones. |
+| E01 | Menos del 80 % de los compradores participantes completa una simulación sin asistencia. | Al menos el 80 % de los compradores participantes completa una simulación sin asistencia. |
+| E02 | Menos del 80 % de los participantes responde correctamente cinco o más de las seis preguntas de comprensión financiera. | Al menos el 80 % de los participantes responde correctamente cinco o más de las seis preguntas. |
+| E03 | Menos del 80 % de los participantes identifica correctamente los escenarios de menor cuota y de menor costo total. | Al menos el 80 % de los participantes identifica correctamente ambos escenarios. |
+| E04 | No aplica: la pregunta es exploratoria. Se describe la proporción de sesiones con exportación y sus motivos. | No aplica. |
+| E05 | Al menos uno de los dos asesores no completa la consulta y actualización de una solicitud en tres minutos sin asistencia. | Ambos asesores completan la consulta y actualización en tres minutos o menos sin asistencia. |
+| E06 | Menos del 25 % de las sesiones con simulación guarda un escenario, o menos del 20 % de los compradores con escenarios los guarda en días distintos. | Al menos el 25 % de las sesiones con simulación guarda un escenario y al menos el 20 % de los compradores con escenarios los guarda en dos o más días distintos. |
 
 ### **8.2.2. Domain Business Metrics**
 
-| Métrica | Definición | Relación con el negocio |
-|---|---|---|
-| Tasa de finalización de la simulación | Simulaciones completadas entre simulaciones iniciadas | Indica si la herramienta es comprensible para un comprador sin experiencia (H2). |
-| Conversión a contacto | Sesiones con contacto o lead enviado entre sesiones con una simulación completada | Mide el valor del simulador para las inmobiliarias (H1). |
-| Simulaciones por sesión | Promedio de simulaciones completadas en cada sesión | Mide la exploración de alternativas (H3). |
-| Retorno de compradores | Compradores con escenarios guardados en dos o más días distintos entre compradores con escenarios | Mide la retención (H4). |
-| Tiempo hasta la primera simulación | Mediana de segundos entre la entrada y la primera simulación completada | Mide la facilidad de uso. |
+| Métrica | Definición | Relación con el negocio | Experimentos |
+|---|---|---|---|
+| Tasa de finalización de la simulación | Simulaciones completadas entre simulaciones iniciadas | Indica si la herramienta es comprensible para un comprador sin experiencia (H2). | E01 |
+| Nivel de comprensión financiera | Participantes con cinco o más respuestas correctas entre participantes | Mide si la transparencia del simulador se traduce en comprensión. | E02 |
+| Exactitud en la comparación | Participantes que identifican ambos escenarios correctos entre participantes | Mide el valor de la comparación para decidir (H3). | E03 |
+| Uso del reporte PDF | Sesiones con `pdf_exported` entre sesiones móviles con simulación completada | Indica si el comprador lleva su resultado fuera de la aplicación. | E04 |
+| Eficiencia del asesor | Tiempo y éxito al consultar y actualizar una solicitud | Mide el valor del producto para las inmobiliarias. | E05 |
+| Guardado y retorno | Sesiones con escenario guardado y compradores que vuelven en días distintos | Mide la retención (H4). | E06 |
+| Conversión a contacto | Sesiones con contacto o lead enviado entre sesiones con simulación completada | Mide el valor del simulador como canal hacia las inmobiliarias (H1). | Seguimiento (ERQ-12) |
 
 ### **8.2.3. Measurements**
 
-| Medida | Cálculo con los datos registrados |
-|---|---|
-| Simulaciones iniciadas | Número de eventos `simulation_started` por producto (`source`) |
-| Simulaciones completadas | Número de eventos `simulation_completed` por producto |
-| Sesiones con simulación completada | Sesiones (`session_id`) con al menos un `simulation_completed` |
-| Sesiones con contacto | Sesiones con `contact_message_sent` (Landing) o `lead_sent` (móvil) |
-| Escenarios por sesión | Número de `scenario_saved` por sesión |
-| Comparaciones | Número de `scenarios_compared` |
-| Tiempo hasta la primera simulación | Segundos entre el primer evento de la sesión y su primer `simulation_completed` |
-| Retorno | Días distintos de `created_at` en la tabla `scenarios` por Comprador |
+| Medida | Fuente | Cálculo |
+|---|---|---|
+| Simulaciones iniciadas y completadas | Eventos de uso | Número de `simulation_started` y `simulation_completed` por producto (`source`) |
+| Tareas completadas sin asistencia | Observación de las pruebas piloto | Participantes que terminan la tarea sin pedir ayuda |
+| Tiempo de ejecución | Observación de las pruebas piloto | Segundos desde la indicación de la tarea hasta su término |
+| Respuestas correctas | Cuestionario de comprensión de E02 y tareas de E03 | Número de respuestas correctas por participante |
+| Exportaciones de PDF | Eventos de uso | Sesiones con `pdf_exported` después de un `simulation_completed` en la misma sesión |
+| Escenarios guardados | Eventos de uso | Sesiones con `scenario_saved` entre sesiones con `simulation_completed` |
+| Retorno | Base de datos de la API | Días distintos de `created_at` en la tabla `scenarios` por Comprador |
+| Uso del periodo de gracia | Eventos de uso | Simulaciones con `graceType` distinto de `none` (seguimiento de ERQ-10) |
+| Contacto | Eventos de uso | Sesiones con `contact_message_sent` o `lead_sent` (seguimiento de ERQ-12) |
 
-Los indicadores se calculan con `tools/compute_kpis.py` sobre el CSV que exporta `tools/export_usage_events.py`, con la configuración `tools/kpi_config.json` del repositorio de la API.
+Los indicadores basados en eventos se calculan con `tools/compute_kpis.py` sobre el CSV que exporta `tools/export_usage_events.py`, con la configuración `tools/kpi_config.json` del repositorio de la API.
 
 ### **8.2.4. Conditions**
 
-- **Productos:** Landing Page publicado y versión 0.1.0 (110) de la aplicación Android, conectados a la API desplegada en Render.
-- **Participantes:** solo personas reales. Cada integrante invita al menos a dos personas y anota quién, cuándo y qué hizo (EXP1). Las cuentas y pruebas del equipo se excluyen del análisis por su identificador de sesión y por la fecha.
-- **Privacidad:** los eventos no contienen nombre, correo, teléfono, DNI ni el nombre del escenario. La API rechaza propiedades con nombres de datos personales y el pie legal de las aplicaciones informa el registro anónimo.
-- **Periodo:** dos semanas desde la publicación de la versión, sin cambiar las funciones medidas durante ese tiempo.
-- **Exclusiones:** sesiones con un solo evento `page_viewed` o `app_opened` cuentan como visitas, pero no entran en las tasas de finalización.
+- **Productos:** Landing Page publicado, aplicación Android distribuida por Firebase App Distribution y portal web del asesor en Vercel, todos conectados a la API desplegada en Render.
+- **Pruebas piloto (E01, E02, E03 y E05):** cinco compradores de primera vivienda y dos asesores inmobiliarios reales. Todos reciben los mismos datos de referencia y las mismas indicaciones, sin explicación sobre el uso de la interfaz durante la tarea.
+- **Medición por eventos (E04, E06 y seguimiento):** uso libre durante dos semanas desde la publicación de la versión 0.1.0 (110). No se pide a los participantes que usen una función concreta.
+- **Exclusiones:** las cuentas de demostración (`@hiposim.test`) y las sesiones de prueba del equipo se excluyen por cuenta, por identificador de sesión y por fecha.
+- **Privacidad:** los eventos no contienen nombre, correo, teléfono, DNI ni el nombre del escenario. La API rechaza propiedades con nombres de datos personales, y el pie legal de las aplicaciones informa el registro anónimo.
+- **Estabilidad:** las funciones medidas no cambian durante el periodo de experimentación.
 
 ### **8.2.5. Scale Calculations and Decisions**
 
-| Experimento | Muestra mínima | Decisión si se cumple | Decisión si no se cumple |
+| Experimento | Escala | Decisión si se cumple | Decisión si no se cumple |
 |---|---|---|---|
-| EXP-A | 30 sesiones con una simulación iniciada | Mantener el flujo y priorizar mejoras en el envío a inmobiliarias (Sprint 4). | Revisar el formulario: el paso con más abandono se rediseña y se vuelve a medir. |
-| EXP-B | 10 compradores registrados con al menos un escenario | Promover el guardado desde Resultados y mantener la comparación. | Evaluar con entrevistas si la comparación se entiende antes de seguir invirtiendo en ella. |
+| E01 | 5 compradores en prueba piloto, más las sesiones registradas por eventos | Mantener el flujo de simulación sin registro. | Rediseñar el paso del formulario con más abandono o más solicitudes de ayuda y volver a medir. |
+| E02 | 5 compradores | Mantener la presentación actual de indicadores. | Incorporar explicaciones breves de TCEA, VAN y TIR (idea ID-01). |
+| E03 | 5 compradores | Mantener la comparación y el resaltado de valores mínimos. | Aplicar las ideas ID-02 e ID-03 y repetir la prueba. |
+| E04 | Sesiones móviles con simulación completada durante dos semanas | Describir la frecuencia y los motivos; si es alta, mejorar el diseño del reporte. | Reducir su protagonismo en Resultados. |
+| E05 | 2 asesores | Mantener el flujo de la bandeja y la ficha del lead. | Simplificar la actualización de estado y revisar las ideas ID-04 e ID-05. |
+| E06 | Mínimo de 15 sesiones móviles con simulación completada | Agregar recordatorios para volver a los escenarios guardados (Sprint 4). | Reforzar la invitación a guardar desde Resultados y volver a medir. |
 
-Con un equipo de seis integrantes y al menos dos personas por integrante, esperamos entre 12 y 20 participantes directos además del tráfico del Landing. Si no se alcanza la muestra mínima, los resultados se reportan como exploratorios y se complementan con las entrevistas de validación.
+Con cinco participantes por prueba piloto los resultados son exploratorios: permiten detectar problemas de uso, pero no generalizar a toda la población objetivo. Si los experimentos por eventos no alcanzan su escala mínima, se reportan como exploratorios y se complementan con las entrevistas de validación.
 
 ### **8.2.6. Methods Selection**
 
-- **Análisis de embudo** con los eventos de uso, para EXP-A.
-- **Comparación de grupos** (sesiones con y sin escenarios guardados), para EXP-B, con la diferencia de medias y su intervalo de confianza si la muestra lo permite.
-- **Entrevistas cortas** con algunos participantes, para explicar los resultados del embudo (sección 8.3.4).
+- **Pruebas de usabilidad moderadas** con tareas y observación, para E01, E02, E03 y E05.
+- **Cuestionario de comprensión** de seis preguntas, para E02.
+- **Análisis de embudo** con los eventos de uso, para E01 y el seguimiento de ERQ-12.
+- **Análisis descriptivo** de proporciones, para E04 y el seguimiento de ERQ-10.
+- **Análisis de cohortes** por Comprador con las fechas de los escenarios guardados, para E06.
+- **Entrevistas breves** posteriores a cada prueba, para explicar los resultados (sección 8.3.4).
 
 ### **8.2.7. Data Analytics: Goals, KPIs and Metrics Selection**
 
-| Objetivo | KPI | Meta |
-|---|---|---|
-| Que el comprador termine su simulación | Tasa de finalización de la simulación | 60 % o más |
-| Que la simulación genere contacto | Conversión a contacto | 10 % o más |
-| Que el comprador compare alternativas | Simulaciones por sesión con dos o más escenarios guardados frente a sin escenarios | 1,5 veces o más |
-| Que el producto sea fácil de usar | Mediana del tiempo hasta la primera simulación | 120 segundos o menos |
-| Que el comprador lleve su resultado al banco | Descargas del reporte PDF | Indicador de seguimiento, sin meta |
+| Objetivo | KPI | Meta | Experimento |
+|---|---|---|---|
+| Que el comprador termine su simulación | Tasa de finalización de la simulación | 80 % en la prueba piloto y 60 % o más en los eventos | E01 |
+| Que el comprador entienda su crédito | Participantes con cinco o más respuestas correctas | 80 % o más | E02 |
+| Que el comprador compare alternativas correctamente | Participantes que identifican ambos escenarios | 80 % o más | E03 |
+| Que el comprador lleve su resultado al banco | Sesiones con exportación de PDF | Indicador exploratorio, sin meta | E04 |
+| Que el asesor gestione sus leads con rapidez | Tiempo de consulta y actualización | 3 minutos o menos | E05 |
+| Que el comprador vuelva | Sesiones con escenario guardado y compradores que vuelven | 25 % y 20 % | E06 |
+| Que la simulación genere contacto | Conversión a contacto | 10 % o más (seguimiento) | ERQ-12 |
+| Que la gracia sea útil | Simulaciones con gracia | 15 % o más (seguimiento) | ERQ-10 |
 
 ### **8.2.8. Web and Mobile Tracking Plan**
 
@@ -152,7 +593,7 @@ Con un equipo de seis integrantes y al menos dos personas por integrante, espera
 | `pdf_exported` | No | Sí | Al descargar el reporte PDF | Plazo y tipo de gracia |
 | `lead_sent` | No | Sí | Al enviar la simulación a una inmobiliaria con consentimiento | Plazo y tipo de gracia |
 
-Cada evento lleva un identificador de sesión aleatorio, que se crea al abrir el Landing o la aplicación, y el producto de origen (`landing` o `mobile`). Los eventos se envían en segundo plano: si el envío falla, se descartan sin afectar al usuario.
+Cada evento lleva un identificador de sesión aleatorio, que se crea al abrir el Landing o la aplicación, y el producto de origen (`landing` o `mobile`). Los eventos se envían en segundo plano: si el envío falla, se descartan sin afectar al usuario. El portal web del asesor no envía eventos; E05 se mide por observación.
 
 <div style="page-break-after: always;"></div>
 
