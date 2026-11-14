@@ -119,82 +119,126 @@ Las preguntas principales se relacionan con funcionalidades implementadas y perm
 Las entrevistas realizadas a los asesores inmobiliarios proporcionan evidencia cualitativa preliminar para ERQ-05, ERQ-08 y ERQ-09. Sin embargo, será necesario realizar mediciones adicionales para responder completamente estas preguntas.
 
 Las preguntas formuladas serán incorporadas al Question Backlog, donde se priorizarán considerando su importancia para los segmentos objetivo, el impacto potencial sobre el producto y los recursos necesarios para obtener evidencia.
+#### Clasificación de las preguntas experimentales
+
+De acuerdo con XDPD, las preguntas experimentales se clasifican en dos tipos:
+
+- **Belief-led Questions:** preguntas orientadas a contrastar creencias, suposiciones o afirmaciones previamente identificadas sobre el producto y sus usuarios.
+- **Exploratory Questions:** preguntas orientadas a obtener conocimiento sobre aspectos cuyo comportamiento todavía se desconoce, sin establecer necesariamente una hipótesis inicial.
+
+| ID | Tipo de pregunta | Justificación |
+|---|---|---|
+| ERQ-01 | Belief-led | Contrasta la creencia de que los compradores pueden completar una simulación sin asistencia. |
+| ERQ-02 | Belief-led | Contrasta la creencia de que la información financiera facilita la comprensión del crédito. |
+| ERQ-03 | Belief-led | Contrasta la creencia de que la comparación de escenarios facilita la identificación de alternativas convenientes. |
+| ERQ-04 | Exploratory | Busca conocer la frecuencia de exportación y los motivos de uso de los reportes PDF. |
+| ERQ-05 | Belief-led | Contrasta la creencia de que HipoSim facilita la gestión de solicitudes inmobiliarias. |
+| ERQ-06 | Belief-led | Contrasta la premisa de que una distribución visual diferente mejora la legibilidad. |
+| ERQ-07 | Belief-led | Contrasta la premisa de que una precisión monetaria uniforme reduce inconsistencias percibidas. |
+| ERQ-08 | Belief-led | Contrasta la premisa de que retomar solicitudes descartadas aporta valor al seguimiento comercial. |
+| ERQ-09 | Belief-led | Contrasta la premisa de que el acceso móvil facilita el seguimiento comercial. |
+
+#### Aplicación de la técnica 5W1H
+
+Para delimitar las preguntas experimentales se consideran los siguientes elementos:
+
+| Elemento | Aplicación en HipoSim |
+|---|---|
+| Who (Quién) | Compradores de primera vivienda y asesores inmobiliarios. |
+| What (Qué) | Usabilidad, comprensión financiera y utilidad de las funcionalidades. |
+| Where (Dónde) | Landing Page, aplicación móvil y aplicación web. |
+| When (Cuándo) | Durante la realización de tareas y el periodo de experimentación. |
+| Why (Por qué) | Reducir incertidumbres y orientar las decisiones de desarrollo. |
+| How (Cómo) | Mediante observación, pruebas con usuarios, entrevistas y registros de eventos anónimos. |
+
+Esta clasificación permite distinguir las preguntas que requieren formular hipótesis de aquellas cuya finalidad principal es obtener conocimiento exploratorio.
+
 
 ### **8.1.4. Question Backlog**
 
-El Question Backlog de HipoSim reúne las preguntas experimentales identificadas durante la fase de planeamiento, organizándolas según su prioridad para orientar la ejecución de experimentos y la toma de decisiones sobre el producto.
+El Question Backlog de HipoSim reúne las preguntas experimentales identificadas durante la fase de planeamiento. Su finalidad es priorizar las oportunidades de aprendizaje considerando la importancia de obtener evidencia antes de tomar decisiones sobre el producto.
+
+A diferencia del Product Backlog, este artefacto organiza preguntas e incertidumbres que requieren investigación, en lugar de funcionalidades pendientes de implementación.
 
 #### Criterios de priorización
 
-Para establecer el orden de las preguntas experimentales se consideran tres criterios:
+Para establecer el orden de las preguntas experimentales se utilizan cuatro criterios:
 
-- **Impacto (I):** importancia de responder la pregunta para mejorar la experiencia de los usuarios y alcanzar los objetivos del producto.
-- **Incertidumbre (U):** nivel de desconocimiento existente respecto a la pregunta experimental.
-- **Factibilidad (F):** disponibilidad de funcionalidades, participantes, herramientas y recursos necesarios para realizar el experimento.
+- **Confidence (C):** nivel de confianza actual en el conocimiento o las creencias relacionadas con la pregunta.
+- **Risk (R):** consecuencias negativas que podrían producirse si las premisas relacionadas con la pregunta fueran incorrectas.
+- **Impact (IM):** impacto potencial de responder la pregunta sobre los usuarios y los objetivos del producto.
+- **Interest (IN):** relevancia e interés de obtener la respuesta para los usuarios y stakeholders.
 
-Cada criterio se evalúa mediante una escala del 1 al 5.
+Para HipoSim se propone una escala de valoración del 1 al 5.
 
-| Puntuación | Impacto | Incertidumbre | Factibilidad |
-|---|---|---|---|
-| 1 | Muy bajo | Muy baja | Muy difícil |
-| 2 | Bajo | Baja | Difícil |
-| 3 | Moderado | Moderada | Moderada |
-| 4 | Alto | Alta | Fácil |
-| 5 | Muy alto | Muy alta | Muy fácil |
+| Puntuación | Confidence | Risk | Impact | Interest |
+|---|---|---|---|---|
+| 1 | Muy baja | Muy bajo | Muy bajo | Muy bajo |
+| 2 | Baja | Bajo | Bajo | Bajo |
+| 3 | Moderada | Moderado | Moderado | Moderado |
+| 4 | Alta | Alto | Alto | Alto |
+| 5 | Muy alta | Muy alto | Muy alto | Muy alto |
 
-La puntuación total se obtiene mediante la siguiente expresión:
+Con la finalidad de priorizar las preguntas que presentan mayor necesidad de aprendizaje, se utiliza la siguiente expresión:
 
-**Prioridad = I + U + F**
+**Total Score = (6 - C) + R + IM + IN**
 
-Se establecen los siguientes niveles de prioridad:
+La confianza se incorpora de forma inversa, de modo que las preguntas con menor confianza inicial reciban mayor prioridad de investigación.
 
-| Puntuación total | Nivel de prioridad |
+| Total Score | Prioridad |
 |---|---|
-| 13 - 15 | Alta |
-| 9 - 12 | Media |
-| 3 - 8 | Baja |
+| 17 - 20 | Alta |
+| 12 - 16 | Media |
+| 4 - 11 | Baja |
 
-En caso de empate, se prioriza la pregunta con mayor impacto. Si el empate persiste, se consideran la factibilidad y las dependencias entre las funcionalidades.
+En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empate persiste, se considera el impacto potencial y posteriormente el interés.
 
 #### Question Backlog priorizado
 
-| Orden | ID | Pregunta experimental resumida | I | U | F | Total | Prioridad |
-|---|---|---|---|---|---|---|---|
-| 1 | ERQ-01 | ¿Los compradores completan una simulación sin asistencia? | 5 | 5 | 5 | 15 | Alta |
-| 2 | ERQ-03 | ¿Los compradores identifican correctamente las alternativas hipotecarias de menor costo? | 5 | 5 | 4 | 14 | Alta |
-| 3 | ERQ-02 | ¿Los compradores comprenden el cronograma y los indicadores financieros? | 5 | 4 | 4 | 13 | Alta |
-| 4 | ERQ-05 | ¿Los asesores gestionan eficientemente las solicitudes de los compradores? | 5 | 3 | 5 | 13 | Alta |
-| 5 | ERQ-04 | ¿Los compradores utilizan y consideran útiles los reportes PDF? | 4 | 4 | 5 | 13 | Alta |
-| 6 | ERQ-06 | ¿Una mejor distribución visual facilita la comparación de tres escenarios? | 4 | 4 | 4 | 12 | Media |
-| 7 | ERQ-07 | ¿La precisión monetaria uniforme reduce inconsistencias percibidas? | 4 | 3 | 4 | 11 | Media |
-| 8 | ERQ-08 | ¿La reactivación de solicitudes descartadas mejora el seguimiento comercial? | 3 | 4 | 3 | 10 | Media |
-| 9 | ERQ-09 | ¿Una interfaz móvil para asesores facilita la gestión de solicitudes? | 3 | 4 | 2 | 9 | Media |
+| Orden | ID | Pregunta experimental resumida | Why | C | R | IM | IN | Total | Prioridad |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | ERQ-01 | ¿Los compradores completan una simulación sin asistencia? | La simulación constituye el núcleo de la propuesta de valor. | 2 | 5 | 5 | 5 | 19 | Alta |
+| 2 | ERQ-03 | ¿Los compradores identifican correctamente las alternativas hipotecarias de menor costo? | Una interpretación incorrecta puede afectar las decisiones financieras. | 2 | 5 | 5 | 5 | 19 | Alta |
+| 3 | ERQ-02 | ¿Los compradores comprenden el cronograma y los indicadores financieros? | La comprensión financiera es fundamental para evaluar un crédito. | 2 | 5 | 5 | 4 | 18 | Alta |
+| 4 | ERQ-05 | ¿Los asesores gestionan eficientemente las solicitudes? | La gestión comercial constituye la propuesta de valor para las inmobiliarias. | 3 | 5 | 5 | 5 | 18 | Alta |
+| 5 | ERQ-04 | ¿Los compradores utilizan y consideran útiles los reportes PDF? | Permite determinar la relevancia de conservar los resultados financieros. | 1 | 3 | 4 | 5 | 17 | Alta |
+| 6 | ERQ-06 | ¿Una mejor distribución visual facilita la comparación de tres escenarios? | Permite evaluar oportunidades de mejora en la legibilidad. | 3 | 3 | 4 | 4 | 14 | Media |
+| 7 | ERQ-07 | ¿La precisión monetaria uniforme reduce inconsistencias percibidas? | Busca mejorar la consistencia de la información financiera. | 4 | 3 | 4 | 4 | 13 | Media |
+| 8 | ERQ-08 | ¿La reactivación de solicitudes descartadas mejora el seguimiento comercial? | Permite evaluar una necesidad identificada durante las entrevistas. | 2 | 2 | 3 | 4 | 13 | Media |
+| 9 | ERQ-09 | ¿Una interfaz móvil facilita la gestión de solicitudes por parte de los asesores? | Permite conocer el valor de acceder a la plataforma desde dispositivos móviles. | 2 | 2 | 3 | 3 | 12 | Media |
 
 #### Justificación de la priorización
 
-Las preguntas ERQ-01, ERQ-03 y ERQ-02 se consideran prioritarias debido a su relación directa con la propuesta de valor de HipoSim para los compradores de primera vivienda. Estas preguntas permiten evaluar la capacidad de realizar simulaciones, interpretar información financiera y comparar alternativas de financiamiento.
+Las preguntas ERQ-01, ERQ-02 y ERQ-03 presentan niveles elevados de riesgo e impacto debido a su relación con la evaluación de créditos hipotecarios y la comprensión de las condiciones financieras.
 
-La pregunta ERQ-05 presenta un impacto elevado para el segmento inmobiliario. Su nivel de incertidumbre inicial es menor debido a las valoraciones favorables obtenidas durante las entrevistas de validación, aunque todavía se requieren mediciones cuantitativas sobre la ejecución de tareas.
+Las preguntas ERQ-01 y ERQ-03 presentan la misma puntuación. Se establece inicialmente ERQ-01 como primera pregunta debido a que completar una simulación constituye un requisito previo para comparar escenarios hipotecarios.
 
-La pregunta ERQ-04 permite evaluar la utilidad de los reportes PDF como mecanismo de consulta posterior y apoyo a las decisiones financieras.
+La pregunta ERQ-05 presenta una confianza inicial moderada debido a las valoraciones favorables obtenidas durante las entrevistas con asesores inmobiliarios. Sin embargo, todavía se requiere evidencia cuantitativa sobre la ejecución de tareas.
 
-Las preguntas ERQ-06, ERQ-07, ERQ-08 y ERQ-09 se mantienen como oportunidades de experimentación complementarias, debido a que requieren evaluar alternativas de diseño, modificaciones funcionales o prototipos adicionales.
+La pregunta ERQ-04 presenta una confianza inicial muy baja debido a que no se dispone de resultados suficientes sobre la frecuencia de uso de los reportes PDF. Su carácter exploratorio permite obtener información que contribuya a orientar futuras decisiones.
 
-#### Selección de preguntas para experimentación
+Las preguntas complementarias conservan una prioridad media y podrán ser abordadas durante posteriores iteraciones de experimentación.
 
-De acuerdo con la priorización inicial, se seleccionan cinco preguntas principales para elaborar las tarjetas de experimentos.
+#### Estructura del Question Backlog
 
-| ID del experimento | Pregunta seleccionada | Funcionalidad evaluada | Prioridad |
-|---|---|---|---|
-| E01 | ERQ-01 | Simulación hipotecaria | Alta |
-| E02 | ERQ-02 | Comprensión financiera | Alta |
-| E03 | ERQ-03 | Comparación de escenarios hipotecarios | Alta |
-| E04 | ERQ-04 | Exportación de reportes PDF | Alta |
-| E05 | ERQ-05 | Gestión de leads inmobiliarios | Alta |
+El Question Backlog de HipoSim se organiza considerando dos perspectivas complementarias:
 
-Las preguntas complementarias permanecerán en el Question Backlog para futuras iteraciones del producto.
+- **Broad Question Backlog:** comprende las nueve preguntas experimentales, permitiendo mantener una visión amplia de las incertidumbres y oportunidades de aprendizaje relacionadas con ambos segmentos objetivo.
+- **Deep Question Backlog:** comprende las cinco preguntas seleccionadas para desarrollar sus tarjetas de experimentos y profundizar en sus hipótesis, medidas, condiciones y métodos de evaluación.
 
-La priorización presentada corresponde a una valoración inicial y deberá revisarse después de la ejecución de los experimentos, considerando la evidencia obtenida y los nuevos aprendizajes. Esta actualización será documentada en la sección 8.4.2. Re-scored and Re-prioritized Question Backlog.
+#### Preguntas seleccionadas para experimentación
+
+| Experiment ID | Question ID | Funcionalidad evaluada | Total Score | Prioridad |
+|---|---|---|---|---|
+| E01 | ERQ-01 | Simulación hipotecaria | 19 | Alta |
+| E02 | ERQ-02 | Comprensión financiera | 18 | Alta |
+| E03 | ERQ-03 | Comparación de escenarios hipotecarios | 19 | Alta |
+| E04 | ERQ-04 | Exportación de reportes PDF | 17 | Alta |
+| E05 | ERQ-05 | Gestión de leads inmobiliarios | 18 | Alta |
+
+La valoración presentada corresponde a una priorización inicial basada en los conocimientos disponibles durante la planificación experimental. Las puntuaciones no representan resultados obtenidos mediante mediciones con usuarios.
+
+Después de ejecutar los experimentos, el Question Backlog deberá actualizarse considerando la evidencia recopilada y los nuevos aprendizajes. Esta actualización será documentada en la sección 8.4.2. Re-scored and Re-prioritized Question Backlog.
 
 ### **8.1.5. Experiment Cards**
 
