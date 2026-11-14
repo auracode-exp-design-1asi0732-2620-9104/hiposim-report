@@ -313,15 +313,15 @@ En esta sección se registrarán las entrevistas de validación correspondientes
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>Carlos Alexander </td>
+            <td>Pendiente </td>
         </tr>
         <tr>
             <td>Apellido</td>
-            <td>Pebe Dueñas</td>
+            <td>Pendiente</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td>31</td>
+            <td>Pendiente</td>
         </tr>
         <tr>
             <td>Evidencia</td>
@@ -337,28 +337,11 @@ En esta sección se registrarán las entrevistas de validación correspondientes
         </tr>
         <tr>
             <td>Duración de la entrevista</td>
-            <td>05:29 min</td>
+            <td> Pendiente </td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>
-La entrevista con Carlos Pebe, de 31 años, asesor inmobiliario de Interbank, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de un profesional con experiencia en el sector inmobiliario. El entrevistado destacó que la plataforma es **intuitiva, presenta funcionalidades simplificadas y facilita la interacción con los clientes**. Asimismo, identificó fácilmente las opciones del menú, el dashboard, la gestión de leads y las notificaciones.
-
-Respecto a la gestión de solicitudes, señaló que resulta sencillo **consultar la información de los compradores, acceder a sus simulaciones hipotecarias, actualizar los estados y registrar notas de seguimiento**. No presentó dificultades durante estas actividades y confirmó que las actualizaciones de estado se reflejan correctamente en la plataforma. Además, consideró que la información financiera de las simulaciones es **clara y útil para conocer las necesidades del comprador antes de establecer una primera comunicación**.
-
-El entrevistado considera que **HipoSim sería una herramienta de apoyo para facilitar el seguimiento de potenciales compradores y mejorar la comunicación con los clientes**. Durante la evaluación no identificó errores ni dificultades significativas, destacando que la información presentada es concisa, clara y suficiente para iniciar el contacto con el comprador. Finalmente, manifestó conformidad con el diseño visual y los colores utilizados, sin proponer cambios específicos en la interfaz.
-
-#### Hallazgos importantes
-
-- **Usabilidad:** la plataforma es intuitiva y sus funcionalidades son fáciles de identificar.
-- **Navegación:** el dashboard, la gestión de leads y las notificaciones presentan una estructura sencilla.
-- **Gestión de leads:** permite consultar fácilmente la información de los compradores y sus simulaciones hipotecarias.
-- **Seguimiento de solicitudes:** no presentó dificultades al **actualizar estados o registrar notas de seguimiento**.
-- **Información financiera:** los datos de las simulaciones permiten conocer las necesidades del comprador antes de establecer contacto.
-- **Actualización de información:** los cambios de estado se reflejan correctamente en la plataforma.
-- **Diseño visual:** manifestó conformidad con los colores y la presentación de la interfaz.
-- **Errores identificados:** no reportó errores ni dificultades significativas durante la evaluación.
-- **Validación de HipoSim:** considera que la plataforma facilita la **gestión de potenciales compradores, el seguimiento de solicitudes y la comunicación entre el asesor inmobiliario y el cliente**.</td>
+            <td> Pendiente</td>
         </tr>
     </tbody>
 </table>
@@ -416,32 +399,53 @@ El entrevistado considera que **HipoSim sería una herramienta de apoyo para fac
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>Pendiente</td>
+            <td>Carlos Alexander </td>
         </tr>
         <tr>
             <td>Apellido</td>
-            <td>Pendiente</td>
+            <td>Pebe Dueñas</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td>Pendiente</td>
+            <td>31</td>
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td>Pendiente</td>
+            <td><div align="center">
+    <img src="../assets/10-chapter-6/entrevistas-av2/seg2-carlos-pebe.png" width="350">
+</div></td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Pendiente</td>
+            <td>  <a href="https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link">
+        Entrevista Carlos Pebe
+    </a></td>
         </tr>
         <tr>
             <td>Duración de la entrevista</td>
-            <td>Pendiente</td>
+            <td>05:29 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Pendiente</td>
-        </tr>
+            <td>
+La entrevista con Carlos Pebe, de 31 años, asesor inmobiliario de Interbank, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de un profesional con experiencia en el sector inmobiliario. El entrevistado destacó que la plataforma es **intuitiva, presenta funcionalidades simplificadas y facilita la interacción con los clientes**. Asimismo, identificó fácilmente las opciones del menú, el dashboard, la gestión de leads y las notificaciones.
+
+Respecto a la gestión de solicitudes, señaló que resulta sencillo **consultar la información de los compradores, acceder a sus simulaciones hipotecarias, actualizar los estados y registrar notas de seguimiento**. No presentó dificultades durante estas actividades y confirmó que las actualizaciones de estado se reflejan correctamente en la plataforma. Además, consideró que la información financiera de las simulaciones es **clara y útil para conocer las necesidades del comprador antes de establecer una primera comunicación**.
+
+El entrevistado considera que **HipoSim sería una herramienta de apoyo para facilitar el seguimiento de potenciales compradores y mejorar la comunicación con los clientes**. Durante la evaluación no identificó errores ni dificultades significativas, destacando que la información presentada es concisa, clara y suficiente para iniciar el contacto con el comprador. Finalmente, manifestó conformidad con el diseño visual y los colores utilizados, sin proponer cambios específicos en la interfaz.
+
+#### Hallazgos importantes
+
+- **Usabilidad:** la plataforma es intuitiva y sus funcionalidades son fáciles de identificar.
+- **Navegación:** el dashboard, la gestión de leads y las notificaciones presentan una estructura sencilla.
+- **Gestión de leads:** permite consultar fácilmente la información de los compradores y sus simulaciones hipotecarias.
+- **Seguimiento de solicitudes:** no presentó dificultades al **actualizar estados o registrar notas de seguimiento**.
+- **Información financiera:** los datos de las simulaciones permiten conocer las necesidades del comprador antes de establecer contacto.
+- **Actualización de información:** los cambios de estado se reflejan correctamente en la plataforma.
+- **Diseño visual:** manifestó conformidad con los colores y la presentación de la interfaz.
+- **Errores identificados:** no reportó errores ni dificultades significativas durante la evaluación.
+- **Validación de HipoSim:** considera que la plataforma facilita la **gestión de potenciales compradores, el seguimiento de solicitudes y la comunicación entre el asesor inmobiliario y el cliente**.</td>
+  </tr>
     </tbody>
 </table>
 
@@ -456,32 +460,59 @@ El entrevistado considera que **HipoSim sería una herramienta de apoyo para fac
     <tbody>
         <tr>
             <td>Nombre</td>
-            <td>Pendiente</td>
+            <td>Selene</td>
         </tr>
         <tr>
             <td>Apellido</td>
-            <td>Pendiente</td>
+            <td>Carhuayo</td>
         </tr>
         <tr>
             <td>Edad</td>
-            <td>Pendiente</td>
+            <td>28</td>
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td>Pendiente</td>
+            <td>
+                <div align="center">
+                    <img src="../assets/10-chapter-6/entrevistas-av2/seg2-selene-carhuayo.png" width="350">
+                </div>
+            </td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>Pendiente</td>
+            <td>
+                <a href="https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing">
+                    Entrevista Selene
+                </a>
+            </td>
         </tr>
         <tr>
             <td>Duración de la entrevista</td>
-            <td>Pendiente</td>
+            <td>08:08 min</td>
         </tr>
         <tr>
             <td>Resumen</td>
-            <td>Pendiente</td>
-        </tr>
+            <td>
+
+La entrevista con Selene, de 31 años, asesora inmobiliaria de RE/MAX, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de una profesional del sector inmobiliario. La entrevistada destacó que la plataforma es **intuitiva, fácil de utilizar y presenta información detallada y organizada**. Asimismo, identificó fácilmente las funcionalidades del dashboard, la gestión de leads y las notificaciones, resaltando la facilidad para consultar el historial de cada comprador y conocer el estado de sus solicitudes.
+
+Respecto al seguimiento comercial, consideró que los **estados disponibles se ajustan al proceso real de atención de clientes**, destacando la importancia de poder retomar el contacto con compradores previamente descartados. Además, señaló que la información de las simulaciones hipotecarias es **clara y suficientemente detallada**, especialmente en aspectos como el valor de la vivienda, las cuotas, los porcentajes y los bonos, facilitando su comprensión para compradores con conocimientos financieros básicos. También valoró las actualizaciones de estado y las notificaciones, debido a que permiten organizar el seguimiento de varios clientes simultáneamente.
+
+La entrevistada considera que **HipoSim sería una herramienta útil para simplificar la gestión comercial y mejorar la atención de los compradores**. Comparó favorablemente su facilidad de uso con otros portales inmobiliarios que utiliza en RE/MAX, los cuales presentan mayores dificultades tanto para asesores como para clientes. Durante la evaluación no identificó errores específicos, aunque mostró interés en el acceso desde dispositivos móviles y en el funcionamiento de las notificaciones. Finalmente, destacó la importancia de mantener un **dashboard sencillo e intuitivo que facilite la atención y reduzca las dificultades de uso**.
+
+#### Hallazgos importantes
+
+- **Usabilidad:** la plataforma es intuitiva, sencilla y fácil de comprender desde el primer ingreso.
+- **Navegación:** identificó fácilmente el dashboard, la gestión de leads y las notificaciones.
+- **Gestión de leads:** la información y el historial de cada comprador se presentan de manera detallada y organizada.
+- **Seguimiento comercial:** los estados disponibles se ajustan al proceso de atención utilizado por los asesores inmobiliarios.
+- **Reactivación de solicitudes:** destacó la importancia de **retomar el seguimiento de clientes previamente descartados**.
+- **Información financiera:** las simulaciones presentan información clara sobre el valor de la vivienda, las cuotas, los porcentajes y los bonos.
+- **Actualizaciones y notificaciones:** considera que son útiles para gestionar y realizar el seguimiento de varios compradores simultáneamente.
+- **Accesibilidad:** mostró interés en el acceso desde dispositivos móviles y en las notificaciones asociadas.
+- **Ventaja competitiva:** considera que HipoSim es **más sencillo de utilizar que otros portales inmobiliarios con los que trabaja actualmente**.
+- **Errores identificados:** no reportó errores ni inconsistencias específicas durante la evaluación.
+- **Validación de HipoSim:** considera que la plataforma facilita la **gestión comercial, el seguimiento de potenciales compradores y la comprensión de las simulaciones hipotecarias**, beneficiando tanto a los asesores como a los clientes.
     </tbody>
 </table>
 
