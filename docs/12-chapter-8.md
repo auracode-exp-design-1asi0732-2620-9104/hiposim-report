@@ -407,6 +407,43 @@ Las cinco tarjetas establecen una base para la fase de Experiment Design. Las es
 
 Las hipótesis, medidas, condiciones, escalas y métodos de evaluación deberán ser revisados y desarrollados en la sección 8.2 antes de la ejecución formal de los experimentos.
 
+#### Evidencia preliminar de experimentación
+
+Como parte de las actividades de validación de HipoSim, se realizaron sesiones con dos profesionales del sector inmobiliario, quienes interactuaron con la plataforma de asesores y conocieron las funcionalidades de la aplicación móvil dirigida a compradores.
+
+| Participante | Organización | Segmento | Entorno | Evidencia |
+|---|---|---|---|---|
+| Carlos Pebe | Interbank | Inmobiliarias | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link) |
+| Selene Carhuayo | RE/MAX | Inmobiliarias | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing) |
+
+**Actividades realizadas**
+
+- Exploración del dashboard de asesores inmobiliarios.
+- Consulta de la bandeja de leads.
+- Revisión de información financiera de potenciales compradores.
+- Actualización de estados de solicitudes.
+- Revisión de las funcionalidades de seguimiento comercial.
+- Pruebas de envío de informes.
+- Demostración de la aplicación móvil para compradores y del proceso de simulación hipotecaria.
+
+**Hallazgos preliminares**
+
+| Hallazgo | Pregunta relacionada |
+|---|---|
+| Valoración favorable de la facilidad de navegación y gestión de solicitudes. | ERQ-05 |
+| Utilidad de la información financiera para conocer las necesidades del comprador. | ERQ-05 |
+| Interés en retomar solicitudes previamente descartadas. | ERQ-08 |
+| Interés en acceder a la plataforma desde dispositivos móviles. | ERQ-09 |
+| Valoración favorable de la aplicación móvil para compradores durante su demostración. | ERQ-01, como evidencia indirecta |
+
+Las actividades realizadas proporcionan evidencia cualitativa preliminar relacionada principalmente con el experimento E05. Asimismo, permiten identificar oportunidades de mejora que podrán evaluarse en futuras iteraciones.
+
+Estas sesiones no sustituyen las mediciones experimentales planificadas, debido a que no se cuenta con registros específicos de tiempos de ejecución ni resultados cuantitativos obtenidos bajo las condiciones definidas en las tarjetas de experimentos.
+
+La demostración de la aplicación móvil tampoco constituye una prueba de usabilidad realizada con compradores de primera vivienda, dado que los participantes pertenecen al segmento inmobiliario.
+
+Las grabaciones, capturas y resúmenes completos se encuentran documentados en la sección 6.3.2. Registro de entrevistas del Capítulo VI.
+
 ## **8.2. Experiment Design**
 ### **8.2.1. Hypotheses**
 ### **8.2.2. Domain Business Metrics**
