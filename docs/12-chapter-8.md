@@ -102,7 +102,7 @@ Las preguntas se plantearon considerando los segmentos objetivo, las funcionalid
 | ERQ-01 | ¿Qué proporción de compradores de primera vivienda logra completar una simulación hipotecaria sin asistencia? | AS-01, KG-01, CL-01 | Compradores | Simulaciones iniciadas y completadas, observación de usuarios y dificultades identificadas. |
 | ERQ-02 | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? | AS-02, KG-02, ID-01, CL-02 | Compradores | Respuestas correctas a preguntas de comprensión financiera y consulta del cronograma de pagos. |
 | ERQ-03 | ¿Qué proporción de compradores identifica correctamente los escenarios con menor cuota mensual y menor costo total utilizando la funcionalidad de comparación? | AS-03, KG-03, CL-03 | Compradores | Resultados de tareas de comparación, respuestas correctas y dificultades observadas. |
-| ERQ-04 | ¿Qué proporción de compradores exporta un reporte PDF después de completar una simulación y qué utilidad le atribuye? | AS-04, KG-04, CL-04 | Compradores | Eventos de exportación de PDF y valoraciones de los participantes. |
+| ERQ-04 | ¿En qué proporción de sesiones móviles con simulaciones completadas se exporta posteriormente un reporte PDF y qué utilidad le atribuyen los compradores? | AS-04, KG-04, CL-04 | Compradores | Eventos de exportación de PDF y valoraciones de los participantes. |
 | ERQ-05 | ¿Con qué nivel de éxito y en cuánto tiempo los asesores inmobiliarios pueden consultar y actualizar solicitudes de potenciales compradores utilizando HipoSim? | AS-05, KG-05, CL-05 | Inmobiliarias | Tareas completadas, tiempo de ejecución, errores y valoraciones de los asesores. |
 
 #### Preguntas experimentales complementarias
@@ -118,7 +118,8 @@ Las preguntas principales se relacionan con funcionalidades implementadas y perm
 
 Las entrevistas realizadas a los asesores inmobiliarios proporcionan evidencia cualitativa preliminar para ERQ-05, ERQ-08 y ERQ-09. Sin embargo, será necesario realizar mediciones adicionales para responder completamente estas preguntas.
 
-Las preguntas formuladas serán incorporadas al Question Backlog, donde se priorizarán considerando su importancia para los segmentos objetivo, el impacto potencial sobre el producto y los recursos necesarios para obtener evidencia.
+Las preguntas formuladas serán incorporadas al Question Backlog, donde se priorizarán considerando su importancia para los segmentos objetivo, el impacto potencial sobre el producto y los criterios de priorización definidos en el Question Backlog.
+
 #### Clasificación de las preguntas experimentales
 
 De acuerdo con XDPD, las preguntas experimentales se clasifican en dos tipos:
@@ -191,7 +192,7 @@ La confianza se incorpora de forma inversa, de modo que las preguntas con menor 
 | 12 - 16 | Media |
 | 4 - 11 | Baja |
 
-En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empate persiste, se considera el impacto potencial y posteriormente el interés.
+En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empate persiste, se considera el impacto potencial y posteriormente el interés. Si todos estos criterios coinciden, se consideran las dependencias entre las preguntas.
 
 #### Question Backlog priorizado
 
@@ -199,8 +200,8 @@ En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empa
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | ERQ-01 | ¿Los compradores completan una simulación sin asistencia? | La simulación constituye el núcleo de la propuesta de valor. | 2 | 5 | 5 | 5 | 19 | Alta |
 | 2 | ERQ-03 | ¿Los compradores identifican correctamente las alternativas hipotecarias de menor costo? | Una interpretación incorrecta puede afectar las decisiones financieras. | 2 | 5 | 5 | 5 | 19 | Alta |
-| 3 | ERQ-02 | ¿Los compradores comprenden el cronograma y los indicadores financieros? | La comprensión financiera es fundamental para evaluar un crédito. | 2 | 5 | 5 | 4 | 18 | Alta |
-| 4 | ERQ-05 | ¿Los asesores gestionan eficientemente las solicitudes? | La gestión comercial constituye la propuesta de valor para las inmobiliarias. | 3 | 5 | 5 | 5 | 18 | Alta |
+| 3 | ERQ-05 | ¿Los asesores gestionan eficientemente las solicitudes? | La gestión comercial constituye la propuesta de valor para las inmobiliarias. | 3 | 5 | 5 | 5 | 18 | Alta |
+| 4 | ERQ-02 | ¿Los compradores comprenden el cronograma y los indicadores financieros? | La comprensión financiera es fundamental para evaluar un crédito. | 2 | 5 | 5 | 4 | 18 | Alta |
 | 5 | ERQ-04 | ¿Los compradores utilizan y consideran útiles los reportes PDF? | Permite determinar la relevancia de conservar los resultados financieros. | 1 | 3 | 4 | 5 | 17 | Alta |
 | 6 | ERQ-06 | ¿Una mejor distribución visual facilita la comparación de tres escenarios? | Permite evaluar oportunidades de mejora en la legibilidad. | 3 | 3 | 4 | 4 | 14 | Media |
 | 7 | ERQ-07 | ¿La precisión monetaria uniforme reduce inconsistencias percibidas? | Busca mejorar la consistencia de la información financiera. | 4 | 3 | 4 | 4 | 13 | Media |
@@ -212,6 +213,8 @@ En caso de empate, se prioriza la pregunta que presenta mayor riesgo. Si el empa
 Las preguntas ERQ-01, ERQ-02 y ERQ-03 presentan niveles elevados de riesgo e impacto debido a su relación con la evaluación de créditos hipotecarios y la comprensión de las condiciones financieras.
 
 Las preguntas ERQ-01 y ERQ-03 presentan la misma puntuación. Se establece inicialmente ERQ-01 como primera pregunta debido a que completar una simulación constituye un requisito previo para comparar escenarios hipotecarios.
+
+Ante el empate de ERQ-05 y ERQ-02, se prioriza ERQ-05 por su mayor interés, dado que ambas presentan el mismo riesgo e impacto.
 
 La pregunta ERQ-05 presenta una confianza inicial moderada debido a las valoraciones favorables obtenidas durante las entrevistas con asesores inmobiliarios. Sin embargo, todavía se requiere evidencia cuantitativa sobre la ejecución de tareas.
 
@@ -289,7 +292,7 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 | Segmento objetivo | Compradores de primera vivienda |
 | Question | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? |
 | Why | Presentar resultados financieros no garantiza que los compradores comprendan sus obligaciones económicas. Es necesario evaluar si la información permite interpretar correctamente las condiciones del crédito hipotecario. |
-| Hypothesis | Al menos el 80 % de los participantes responderá correctamente tres de cuatro preguntas de comprensión financiera después de consultar los resultados y el cronograma de pagos. |
+| Hypothesis | Al menos el 80 % de los participantes responderá correctamente al menos cinco de seis preguntas de comprensión financiera después de consultar los resultados y el cronograma de pagos. |
 | What (SUT) | Utilizar la pantalla de resultados y el cronograma de pagos de una simulación hipotecaria previamente definida. |
 
 **Lado posterior**
@@ -297,9 +300,9 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 | Campo | Descripción |
 |---|---|
 | Measures | Número de respuestas correctas, porcentaje de participantes que alcanza el criterio de comprensión y dificultades identificadas. |
-| Conditions | Todos los participantes consultarán la misma simulación y responderán preguntas sobre amortización, intereses, TCEA y costo total, sin recibir explicaciones adicionales durante la evaluación. |
+| Conditions | Todos los participantes consultarán la misma simulación y responderán seis preguntas sobre amortización, intereses, TCEA, VAN, TIR y costo total, sin recibir explicaciones adicionales durante la evaluación. |
 | Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
-| Success Criteria | Al menos cuatro participantes responden correctamente tres o más de las cuatro preguntas. |
+| Success Criteria | Al menos cuatro de los cinco participantes responden correctamente cinco o más de las seis preguntas. |
 | Evidence | Cuestionarios de comprensión, registro de observaciones y evento schedule_opened, cuando esté disponible. |
 
 **Estado:** Pendiente de ejecución y medición experimental.
@@ -345,7 +348,7 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 | Question ID | ERQ-04 |
 | Question Type | Exploratory |
 | Segmento objetivo | Compradores de primera vivienda |
-| Question | ¿Qué proporción de compradores exporta un reporte PDF después de completar una simulación y qué utilidad le atribuye? |
+| Question | ¿En qué proporción de sesiones móviles con simulaciones completadas se exporta posteriormente un reporte PDF y qué utilidad le atribuyen los compradores? |
 | Why | Es necesario conocer si los compradores consideran relevante conservar o compartir los resultados financieros fuera de la aplicación. |
 | Hypothesis | No aplica inicialmente, debido al carácter exploratorio de la pregunta. |
 | What (SUT) | Utilizar la funcionalidad de exportación de reportes PDF disponible en la aplicación móvil de HipoSim. |
@@ -354,7 +357,7 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 
 | Campo | Descripción |
 |---|---|
-| Measures | Proporción de sesiones con exportación de reportes respecto a las sesiones con simulaciones completadas, motivos de uso y valoración de utilidad. |
+| Measures | Proporción de sesiones móviles con al menos una exportación de PDF posterior a una simulación completada en la misma sesión, respecto al total de sesiones móviles con simulaciones completadas durante el periodo experimental. Se registrarán también los motivos de uso y la valoración de utilidad de los participantes. Las sesiones no equivalen necesariamente a personas únicas. |
 | Conditions | Los participantes realizarán una simulación y podrán explorar libremente los resultados. No se les solicitará explícitamente descargar el PDF durante la medición de uso espontáneo. Posteriormente se consultará su percepción sobre la funcionalidad. |
 | Scale | Prueba piloto propuesta con cinco compradores de primera vivienda y registros anónimos de uso disponibles durante el periodo experimental. |
 | Success Criteria | Obtener evidencia suficiente para describir la frecuencia de exportación y los principales motivos de uso o desuso. |
@@ -411,10 +414,10 @@ Las hipótesis, medidas, condiciones, escalas y métodos de evaluación deberán
 
 Como parte de las actividades de validación de HipoSim, se realizaron sesiones con dos profesionales del sector inmobiliario, quienes interactuaron con la plataforma de asesores y conocieron las funcionalidades de la aplicación móvil dirigida a compradores.
 
-| Participante | Organización | Segmento | Entorno | Evidencia |
-|---|---|---|---|---|
-| Carlos Pebe | Interbank | Inmobiliarias | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link) |
-| Selene Carhuayo | RE/MAX | Inmobiliarias | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing) |
+| Participante | Organización | Segmento | Fecha | Entorno | Evidencia |
+|---|---|---|---|---|---|
+| Carlos Pebe | Interbank | Inmobiliarias | Pendiente de confirmar | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link) |
+| Selene Carhuayo | RE/MAX | Inmobiliarias | Pendiente de confirmar | Ejecución local | [Entrevista de validación](https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing) |
 
 **Actividades realizadas**
 
@@ -442,7 +445,7 @@ Estas sesiones no sustituyen las mediciones experimentales planificadas, debido 
 
 La demostración de la aplicación móvil tampoco constituye una prueba de usabilidad realizada con compradores de primera vivienda, dado que los participantes pertenecen al segmento inmobiliario.
 
-Las grabaciones, capturas y resúmenes completos se encuentran documentados en la sección 6.3.2. Registro de entrevistas del Capítulo VI.
+Las grabaciones, capturas y resúmenes completos se encuentran documentados en la sección 6.3.2. Registro de entrevistas del Capítulo VI. Las fechas de las sesiones están pendientes de confirmación y no se cuenta con evidencia de pruebas del Landing Page en estas sesiones.
 
 ## **8.2. Experiment Design**
 ### **8.2.1. Hypotheses**
