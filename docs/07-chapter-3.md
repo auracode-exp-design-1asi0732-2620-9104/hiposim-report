@@ -150,7 +150,7 @@
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP02</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Visualizar TCEA, VAN y TIR</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Comprador, quiero ver el cálculo automático del TCEA, el VAN y la TIR de mi simulación, para conocer el costo real efectivo más allá de la tasa nominal.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Indicadores calculados.</strong> Dado que la simulación es exitosa; Cuando el sistema presenta los resultados; Entonces se muestran el TCEA, calculado con el seguro de desgravamen y los seguros estimados, junto con el VAN y la TIR.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Indicadores calculados.</strong> Dado que la simulación es exitosa; Cuando el sistema presenta los resultados; Entonces se muestran el TCEA, calculado con los seguros y gastos que configura el servicio, junto con el VAN y la TIR. En esta entrega esos seguros se configuran en cero, por lo que el TCEA coincide con la TEA.</td>
     </tr>
     <tr style="page-break-inside: avoid;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US05</strong></td>
@@ -276,7 +276,7 @@
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">EP07</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Ver propuesta de valor</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Como Visitante, quiero ver en la página de inicio qué es HipoSim y en qué se diferencia de los simuladores bancarios, para entender su propuesta antes de simular.</td>
-      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Propuesta de valor visible.</strong> Dado que el Visitante accede al Landing Page; Cuando se carga la página de inicio; Entonces el sistema presenta la propuesta de valor de HipoSim, su comparación con los simuladores bancarios tradicionales y la invitación a simular.<br><br><strong>Escenario 2: Navegación por secciones.</strong> Dado que el Visitante se encuentra en cualquier sección del sitio; Cuando utiliza la navegación principal; Entonces accede a las secciones Inicio, Producto, Beneficios y Términos.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>Escenario 1: Propuesta de valor visible.</strong> Dado que el Visitante accede al Landing Page; Cuando se carga la página de inicio; Entonces el sistema presenta la propuesta de valor de HipoSim, su comparación con los simuladores bancarios tradicionales y la invitación a simular.<br><br><strong>Escenario 2: Navegación por secciones.</strong> Dado que el Visitante se encuentra en cualquier sección del sitio; Cuando utiliza la navegación principal; Entonces accede a las secciones Inicio, Producto, Beneficios y Preguntas, y a los Términos y la Privacidad desde el pie de la página.</td>
     </tr>
     <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US15</strong></td>
@@ -459,7 +459,7 @@
 ## **3.3. Product Backlog**
 
 <p style="text-align: justify; line-height: 1.6;">
-  El Product Backlog completo, con las 37 historias del proyecto, se mantiene en Jira. Esta tabla presenta únicamente las historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial, ordenadas según su valor para el negocio: primero el Landing Page, por ser obligatorio desde el primer sprint, luego las bases técnicas de la API y finalmente el flujo de simulación en la aplicación móvil y el flujo de leads en la aplicación web. Las historias de guardar y comparar escenarios, de exportar PDF, de Administrador y otras funciones adicionales quedan registradas en Jira para sprints posteriores a esta entrega. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
+  El Product Backlog completo, con las 37 historias del proyecto, se mantiene en Jira. Esta tabla presenta únicamente las historias que el equipo se compromete a implementar y evidenciar hasta la entrega parcial, ordenadas según su valor para el negocio: primero el Landing Page, por ser obligatorio desde el primer sprint, luego las bases técnicas de la API y finalmente el flujo de simulación en la aplicación móvil y el flujo de leads en la aplicación web. Las historias del Administrador (US09 a US12) quedan registradas en Jira para el Sprint 4, posterior a esta entrega. La estimación utiliza la escala de Story Points 1, 2, 3, 5 y 8.
 </p>
 
 <table style="width: 100%; border-collapse: collapse; margin: 16px 0 22px 0; font-size: 9pt; page-break-inside: auto; table-layout: fixed;">
@@ -718,11 +718,65 @@
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Web</td>
       <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 2</td>
     </tr>
+    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">28</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US03</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Aplicar periodo de gracia</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Gracia total o parcial con el cronograma recalculado.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil y API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
+    <tr style="page-break-inside: avoid;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">29</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>SP01</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Investigar bibliotecas de generación de PDF en C#</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparación de librerías y prototipo mínimo del cronograma en PDF.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">2</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
+    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">30</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>TS03</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Generar reportes PDF desde la API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Endpoint que devuelve el resumen, los indicadores y el cronograma en PDF.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
+    <tr style="page-break-inside: avoid;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">31</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US08</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Exportar reporte en PDF</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Descarga del reporte de la simulación desde la aplicación móvil.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil y API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
+    <tr style="page-break-inside: avoid; background-color: #F8FAFC;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">32</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US06</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Guardar escenario de simulación</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Guardar una simulación con nombre en el perfil del Comprador.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">3</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil y API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
+    <tr style="page-break-inside: avoid;">
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">33</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;"><strong>US07</strong></td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparar escenarios guardados</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: justify; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Comparar de dos a tres escenarios guardados lado a lado, resaltando las diferencias.</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">5</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Móvil y API</td>
+      <td style="border: 1px solid #94A3B8; padding: 7px; text-align: center; vertical-align: top; line-height: 1.35; overflow-wrap: anywhere;">Sprint 3</td>
+    </tr>
   </tbody>
 </table>
 
 <p style="text-align: justify; line-height: 1.6;">
-  El Sprint 1 sumó 26 Story Points y ya está implementado y publicado. El Sprint 2, en curso, suma 56 Story Points sobre la API, la aplicación móvil del Comprador y la aplicación web del Asesor; su alcance final se ajusta durante el Sprint Planning según la capacidad real del equipo, priorizando el flujo completo (simular, enviar la simulación y darle seguimiento como Asesor) sobre funciones adicionales como guardar o comparar escenarios y exportar en PDF, que quedan en el Backlog de Jira para una siguiente entrega.
+  El Sprint 1 sumó 26 Story Points y el Sprint 2, 56. El Sprint 3 suma 25 Story Points y agrega el periodo de gracia, el guardado y la comparación de escenarios y la exportación del reporte en PDF; las dos primeras funciones respaldan las hipótesis H3 y H4 del Capítulo I. La administración de parámetros (US09 a US12) queda en el Backlog de Jira para el Sprint 4 y no forma parte de esta entrega.
 </p>
 
 <div style="page-break-after: always;"></div>

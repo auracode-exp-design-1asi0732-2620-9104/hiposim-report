@@ -254,7 +254,34 @@ Distribuimos las historias funcionales y técnicas entre los integrantes de acue
 
 <div style="text-align:justify; line-height:1.6;">
 
-Registramos el seguimiento individual de las actividades en Jira y trabajamos las integraciones por repositorio y Pull Request. En esta entrega mantenemos fuera del alcance implementado el guardado y comparación de escenarios (US06 y US07), la exportación de informes PDF (US08), el periodo de gracia avanzado (US03) y las funciones administrativas de parámetros (US09 a US12).
+Registramos el seguimiento individual de las actividades en Jira y trabajamos las integraciones por repositorio y Pull Request.
+
+</div>
+
+#### **Sprint 3 - Grace Period, Saved Scenarios, PDF Report and Usage Events**
+
+| Campo | Descripción |
+|:--|:--|
+| Sprint | Sprint 3 |
+| Sprint Goal | Nos enfocamos en que el comprador pueda simular con periodo de gracia, guardar y comparar sus escenarios y descargar un resumen en PDF, y en recolectar eventos de uso anónimos para los experimentos del Capítulo VIII. |
+| Story Points planificados | **25** |
+| Historias y actividades | US03, SP01, TS03, US08, US06 y US07, más las tareas técnicas de recolección de eventos (TS09 y TS10). |
+| Estado del alcance | Las seis historias están integradas en las ramas `develop` y `main` de la API y de la aplicación móvil. La versión 0.1.0 (10) de la aplicación se distribuyó a los probadores mediante Firebase App Distribution. |
+
+**Sprint Backlog 3**
+
+| ID | Historia o elemento | SP | Producto | Trabajo asociado |
+|:---:|:--|---:|:--|:--|
+| US03 | Simular con periodo de gracia | 5 | API y Android | Gracia parcial (solo intereses) y total (intereses capitalizados) de 1 a 12 meses en el motor y en `POST /api/simulations`; selector, validaciones, nota en Resultados y meses de gracia marcados en el cronograma. |
+| SP01 | Evaluar bibliotecas de PDF para C# | 2 | API | Comparación de alternativas y recomendación de QuestPDF. |
+| TS03 | Generar el reporte PDF desde la API | 5 | API | `GET /api/simulations/{id}/report` con respuestas 200, 403 y 404 y pruebas del contenido. |
+| US08 | Exportar el resumen en PDF | 5 | Android | Botón "Descargar resumen PDF" en Resultados que consume el reporte de la API. |
+| US06 | Guardar escenario | 3 | API y Android | `POST` y `GET /api/scenarios` para el Comprador autenticado; botón "Guardar escenario", diálogo con nombre y pantalla Mis escenarios. |
+| US07 | Comparar escenarios | 5 | Android | Selección de dos o tres escenarios guardados y tabla comparativa con las diferencias resaltadas. |
+
+<div style="text-align:justify; line-height:1.6;">
+
+Además de las historias, implementamos `POST /api/events` (TS09), que guarda eventos de uso anónimos en la tabla `usage_events`, y la instrumentación de la aplicación móvil (TS10b) y del Landing Page (TS10a y TS10c). La administración de parámetros (US09 a US12) queda en el Backlog de Jira para el Sprint 4.
 
 </div>
 
@@ -337,7 +364,7 @@ El alcance funcional contempla la validación de una cuota inicial mínima del 1
 | Repositorio | [hiposim-app-mobile](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile) |
 | Plataforma | Android nativo, `minSdk 26` y `targetSdk 36`. |
 | Integración | Kotlin, Jetpack Compose, Retrofit y arquitectura de presentación basada en ViewModel. |
-| Historias vinculadas | SP03, US13, US26, US01, US04, US05, US02 y US21. |
+| Historias vinculadas | SP03, US13, US26, US01, US04, US05, US02 y US21 (Sprints 1 y 2); US03, US06, US07, US08 y TS10b (Sprint 3). |
 | Verificación reportada | 202 pruebas unitarias y 19 pruebas de interfaz (conteo de métodos de prueba en `develop`), además de comprobaciones con ktlint y Android lint. |
 | Integración continua | Flujo de GitHub Actions en el repositorio móvil; los cambios entran a `develop` mediante Pull Request. |
 | Distribución | Ejecución en emulador o dispositivo; guía de distribución interna con Firebase App Distribution en `docs/firebase-app-distribution.md`, sin publicación en tienda. |
@@ -417,6 +444,46 @@ Recorrimos la aplicación móvil contra la API real con una simulación de **S/ 
   <img src="../assets/09-chapter-5/native-mobile/e2e-10-enviar-a-inmobiliaria.png" width="22%" alt="Hoja para enviar la simulación a una inmobiliaria">
   <img src="../assets/09-chapter-5/native-mobile/e2e-11-envio-exitoso.png" width="22%" alt="Confirmación del envío">
   <p><em>Figura 8. Envío consentido de la simulación a una inmobiliaria (US21).</em></p>
+</div>
+
+**Sprint 3 Evidence: Grace Period, Saved Scenarios and Usage Events (US03, US06, TS10b)**
+
+<div style="text-align:justify; line-height:1.6;">
+
+En el Sprint 3 agregamos al formulario de simulación el **periodo de gracia** (US03). El comprador elige entre Ninguno, Parcial y Total; con gracia parcial paga solo los intereses durante esos meses, y con gracia total no paga nada y los intereses se suman al saldo. La aplicación acepta de 1 a 12 meses y muestra el error junto al campo cuando el valor está fuera de ese rango. Resultados indica el tipo y la duración de la gracia, y el cronograma marca cada cuota de gracia.
+
+También incorporamos **Guardar escenario** (US06). Con la sesión iniciada, el comprador pone nombre a la simulación que tiene en pantalla y la consulta luego en **Mis escenarios**, desde la pestaña Historial, con su cuota, TCEA, total a pagar y periodo de gracia. La aplicación consume `POST /api/scenarios` y `GET /api/scenarios`; si la simulación se calculó antes de iniciar sesión, se vuelve a calcular con la sesión antes de guardarla.
+
+Para los experimentos del Capítulo VIII, la aplicación envía eventos de uso anónimos a `POST /api/events` (TS10b): `app_opened`, `simulation_started`, `simulation_completed`, `schedule_opened`, `scenario_saved`, `scenarios_compared`, `pdf_exported` y `lead_sent`. Cada evento lleva un identificador de sesión aleatorio, creado en cada apertura de la aplicación, y propiedades sin datos personales (plazo, tipo y meses de gracia, uso del bono y porcentaje de cuota inicial). Si el envío falla, el evento se descarta sin afectar al usuario. El pie legal informa este registro anónimo.
+
+Las capturas se tomaron en el emulador con la variante de demostración, que usa la API en memoria con las mismas reglas del contrato.
+
+</div>
+
+| Aspecto | Información documentada |
+|:--|:--|
+| Pull Requests | US03 [#19](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile/pull/19), US06 [#20](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile/pull/20) y TS10b [#21](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-app-mobile/pull/21) en el repositorio móvil; TS09 [#14](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd/pull/14) y US06 [#15](https://github.com/auracode-exp-design-1asi0732-2620-9104/hiposim-backEnd/pull/15) en la API. |
+| Verificación | 292 pruebas unitarias en `develop`, además de ktlint y Android lint, en verde en la integración continua de cada Pull Request. |
+| Distribución | Versión 0.1.0 (10) firmada, conectada a la API desplegada y distribuida al grupo de probadores en Firebase App Distribution. |
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/us03-01-selector-gracia.png" width="22%" alt="Selector del periodo de gracia">
+  <img src="../assets/09-chapter-5/native-mobile/us03-02-meses-gracia.png" width="22%" alt="Meses de gracia y aviso de datos anónimos">
+  <img src="../assets/09-chapter-5/native-mobile/us03-03-validacion.png" width="22%" alt="Validación de los meses de gracia">
+  <p><em>Figura 9. Selector del periodo de gracia, meses de gracia con el aviso de datos anónimos y validación del rango de 1 a 12 meses (US03 y TS10b).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/us03-04-resultados.png" width="22%" alt="Resultados con nota de gracia parcial">
+  <img src="../assets/09-chapter-5/native-mobile/us03-05-cronograma-gracia.png" width="22%" alt="Cronograma con las cuotas de gracia marcadas">
+  <p><em>Figura 10. Resultados con la nota de gracia parcial de 3 meses y cronograma con las cuotas de gracia marcadas (US03).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/us06-01-dialogo-guardar.png" width="22%" alt="Diálogo para nombrar el escenario">
+  <img src="../assets/09-chapter-5/native-mobile/us06-02-guardado.png" width="22%" alt="Confirmación de escenario guardado">
+  <img src="../assets/09-chapter-5/native-mobile/us06-03-mis-escenarios.png" width="22%" alt="Pantalla Mis escenarios">
+  <p><em>Figura 11. Guardado de un escenario con nombre y pantalla Mis escenarios con dos escenarios (US06).</em></p>
 </div>
 
 <div style="page-break-after: always;"></div>
