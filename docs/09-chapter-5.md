@@ -486,6 +486,28 @@ Las capturas se tomaron en el emulador con la variante de demostración, que usa
   <p><em>Figura 11. Guardado de un escenario con nombre y pantalla Mis escenarios con dos escenarios (US06).</em></p>
 </div>
 
+**Sprint 3 Evidence: Scenario Comparison and PDF Report (US07, US08, SP01, TS03)**
+
+<div style="text-align:justify; line-height:1.6;">
+
+En **Mis escenarios**, el comprador marca dos o tres escenarios guardados y pulsa "Comparar escenarios" (US07). La comparación los presenta lado a lado y resalta la cifra más baja de cuota, TCEA y total a pagar, con la diferencia frente a los demás; en el ejemplo, el plazo de 25 años baja la cuota en S/ 148,88 pero eleva el total a pagar en S/ 79 352,40. La aplicación calcula la comparación con los escenarios que devuelve `GET /api/scenarios`.
+
+Desde Resultados, el botón "Descargar resumen PDF" (US08) descarga el reporte que genera `GET /api/simulations/{id}/report` (TS03) y lo abre o comparte con las aplicaciones del teléfono. La API lo construye con QuestPDF, la biblioteca recomendada en SP01 por su licencia comunitaria, su soporte de tablas con encabezado repetido en cada página y su integración con .NET. El reporte incluye los datos de la simulación, los resultados, los supuestos del cálculo y el cronograma completo, con los meses de gracia sombreados. La API responde 404 si la simulación no existe y 403 si pertenece a otro comprador; ambos casos están cubiertos por sus pruebas, y el 404 se verificó también contra el servicio desplegado.
+
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/us07-01-seleccion.png" width="22%" alt="Selección de escenarios para comparar">
+  <img src="../assets/09-chapter-5/native-mobile/us07-02-comparacion.png" width="22%" alt="Comparación de escenarios lado a lado">
+  <p><em>Figura 12. Selección de dos escenarios y comparación con la cifra más baja resaltada (US07).</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/09-chapter-5/native-mobile/us08-01-resultados-pdf.png" width="22%" alt="Botón Descargar resumen PDF en Resultados">
+  <img src="../assets/09-chapter-5/native-mobile/us08-03-reporte-pdf.png" width="40%" alt="Primera página del reporte PDF generado por la API">
+  <p><em>Figura 13. Botón "Descargar resumen PDF" y primera página del reporte generado por la API desplegada, con gracia parcial de 3 meses (US08, TS03 y SP01).</em></p>
+</div>
+
 <div style="page-break-after: always;"></div>
 
 ### **5.2.5. Implemented RESTful API and/or Serverless Backend Evidence**
@@ -506,9 +528,10 @@ Adaptamos el motor de cálculo financiero a C# y definimos `POST /api/simulation
 | `BenefitsEngine` | Evaluación y aplicación del Bono del Buen Pagador. | Lógica asociada a simulación y a US05. |
 | `LeadController` / `LeadService` | Envío autorizado, listado, ficha, estados y notas. | Implementado (TS08); creación integrada con la aplicación móvil (US21) y consulta consumida por la aplicación web. |
 | Persistencia con Entity Framework Core | Entidades y migraciones sobre PostgreSQL. | Base del servicio definida en TS02. |
-| `ScenarioController` / `ScenarioService` | Guardado y comparación de escenarios. | Funcionalidad reservada a una iteración posterior. |
-| `ReportController` / `ReportGenerationService` | Exportación de simulaciones a PDF. | Funcionalidad reservada a una iteración posterior. |
-| `AdminController` / `AdminParameterService` | Mantenimiento de parámetros y auditoría. | Funcionalidad reservada a una iteración posterior. |
+| `ScenariosController` | Guardado con nombre de una simulación del Comprador y listado de sus escenarios. | Implementado en el Sprint 3 (US06); consumido por la aplicación móvil, que también compara los escenarios guardados (US07). |
+| `SimulationReportService` / `QuestPdfSimulationReportGenerator` | Generación del reporte PDF con el resumen, los indicadores y el cronograma completo. | Implementado en el Sprint 3 (SP01 y TS03) con QuestPDF; consumido por la aplicación móvil (US08). |
+| `UsageEventsController` | Registro de eventos de uso anónimos para los experimentos. | Implementado en el Sprint 3 (TS09); lo usan el Landing Page y la aplicación móvil. |
+| `ContactMessagesController` | Mensajes del formulario de contacto del Landing Page. | Implementado (US19), con límite de solicitudes por IP. |
 
 <div style="text-align:justify; line-height:1.6;">
 
@@ -557,7 +580,7 @@ Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el 
 
 </div>
 
-| Método | Recurso | Propósito | Requerimiento | Situación en TB1 |
+| Método | Recurso | Propósito | Requerimiento | Situación al Avance 2 |
 |:--:|:--|:--|:--:|:--|
 | `POST` | `/api/auth/register` | Registrar una cuenta de comprador. | US13, TS07 | Implementado; integrado con la aplicación móvil (US13). |
 | `POST` | `/api/auth/login` | Autenticar compradores y asesores. | US22, US26, TS07 | Implementado; integrado con la aplicación móvil (US26) y consumido por la aplicación web (US22). |
@@ -569,14 +592,11 @@ Organizamos los recursos REST de acuerdo con los casos de uso del comprador, el 
 | `PATCH` | `/api/leads/{id}/status` | Actualizar el estado del interesado. | US25, TS08 | Implementado; consumido por la aplicación web (US25). |
 | `POST` | `/api/leads/{id}/notes` | Registrar notas del asesor. | US25, TS08 | Implementado; consumido por la aplicación web (US25). |
 | `GET` | `/health` | Consultar el estado del servicio. | TS02 | Implementado; responde en el despliegue de demostración. |
-| `GET` | `/api/simulations/{id}` | Recuperar una simulación autorizada. | US02, US06 | Alcance asociado a consulta e historial. |
-| `GET` | `/api/simulations` | Obtener simulaciones guardadas. | US06 | Iteración posterior. |
-| `POST` | `/api/comparisons` | Comparar escenarios de crédito. | US07 | Iteración posterior. |
-| `GET` | `/api/simulations/{id}/report` | Obtener un informe PDF. | US08, TS03 | Iteración posterior. |
-| `GET` | `/api/admin/parameters` | Consultar parámetros financieros. | US09, US10 | Iteración posterior. |
-| `PUT` | `/api/admin/parameters/{key}` | Modificar un parámetro autorizado. | US09, US10 | Iteración posterior. |
-| `POST` | `/api/admin/parameters/{key}/preview` | Previsualizar un cambio. | US11 | Iteración posterior. |
-| `GET` | `/api/admin/parameters/{key}/history` | Consultar cambios históricos. | US12 | Iteración posterior. |
+| `GET` | `/api/simulations/{id}/report` | Obtener el reporte PDF de una simulación (200, 403 si pertenece a otro comprador, 404 si no existe). | US08, TS03 | Implementado en el Sprint 3; consumido por la aplicación móvil (US08). |
+| `POST` | `/api/scenarios` | Guardar con nombre una simulación del Comprador autenticado. | US06 | Implementado en el Sprint 3; consumido por la aplicación móvil. |
+| `GET` | `/api/scenarios` | Listar los escenarios del Comprador, del más reciente al más antiguo, con sus cifras. | US06, US07 | Implementado en el Sprint 3; la aplicación móvil lo usa para Mis escenarios y para la comparación, que calcula sobre los escenarios recibidos. |
+| `POST` | `/api/events` | Registrar un evento de uso anónimo (sin datos personales). | TS09 | Implementado en el Sprint 3; lo usan el Landing Page (TS10a) y la aplicación móvil (TS10b). |
+| `POST` | `/api/contact-messages` | Registrar un mensaje del formulario de contacto. | US19 | Implementado; consumido por el Landing Page. |
 
 <div style="page-break-after: always;"></div>
 
