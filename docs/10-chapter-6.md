@@ -325,15 +325,11 @@ En esta sección se registrarán las entrevistas de validación correspondientes
         </tr>
         <tr>
             <td>Evidencia</td>
-            <td><div align="center">
-    <img src="../assets/10-chapter-6/entrevistas-av2/seg2-carlos-pebe.png" width="350">
-</div></td>
+            <td>Pendiente</td>
         </tr>
         <tr>
             <td>Link</td>
-            <td>  <a href="https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link">
-        Entrevista Carlos Pebe
-    </a></td>
+            <td>Pendiente</td>
         </tr>
         <tr>
             <td>Duración de la entrevista</td>
@@ -417,7 +413,7 @@ En esta sección se registrarán las entrevistas de validación correspondientes
         </tr>
         <tr>
             <td>Link</td>
-            <td>  <a href="https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link">
+            <td>  <a href="<https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link>">
         Entrevista Carlos Pebe
     </a></td>
         </tr>
@@ -481,7 +477,7 @@ El entrevistado considera que **HipoSim sería una herramienta de apoyo para fac
         <tr>
             <td>Link</td>
             <td>
-                <a href="https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing">
+                <a href="<https://drive.google.com/file/d/1cDnaxrUroIwLSk7pDJxnPiv8eSgKwPRx/view?usp=sharing>">
                     Entrevista Selene
                 </a>
             </td>
@@ -494,7 +490,7 @@ El entrevistado considera que **HipoSim sería una herramienta de apoyo para fac
             <td>Resumen</td>
             <td>
 
-La entrevista con Selene, de 31 años, asesora inmobiliaria de RE/MAX, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de una profesional del sector inmobiliario. La entrevistada destacó que la plataforma es **intuitiva, fácil de utilizar y presenta información detallada y organizada**. Asimismo, identificó fácilmente las funcionalidades del dashboard, la gestión de leads y las notificaciones, resaltando la facilidad para consultar el historial de cada comprador y conocer el estado de sus solicitudes.
+La entrevista con Selene, de 28 años, asesora inmobiliaria de RE/MAX, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de una profesional del sector inmobiliario. La entrevistada destacó que la plataforma es **intuitiva, fácil de utilizar y presenta información detallada y organizada**. Asimismo, identificó fácilmente las funcionalidades del dashboard, la gestión de leads y las notificaciones, resaltando la facilidad para consultar el historial de cada comprador y conocer el estado de sus solicitudes.
 
 Respecto al seguimiento comercial, consideró que los **estados disponibles se ajustan al proceso real de atención de clientes**, destacando la importancia de poder retomar el contacto con compradores previamente descartados. Además, señaló que la información de las simulaciones hipotecarias es **clara y suficientemente detallada**, especialmente en aspectos como el valor de la vivienda, las cuotas, los porcentajes y los bonos, facilitando su comprensión para compradores con conocimientos financieros básicos. También valoró las actualizaciones de estado y las notificaciones, debido a que permiten organizar el seguimiento de varios clientes simultáneamente.
 
@@ -513,8 +509,14 @@ La entrevistada considera que **HipoSim sería una herramienta útil para simpli
 - **Ventaja competitiva:** considera que HipoSim es **más sencillo de utilizar que otros portales inmobiliarios con los que trabaja actualmente**.
 - **Errores identificados:** no reportó errores ni inconsistencias específicas durante la evaluación.
 - **Validación de HipoSim:** considera que la plataforma facilita la **gestión comercial, el seguimiento de potenciales compradores y la comprensión de las simulaciones hipotecarias**, beneficiando tanto a los asesores como a los clientes.
+  </td>
+  </tr>
     </tbody>
 </table>
+
+**Validación complementaria de los productos**
+
+Durante las entrevistas, ambos asesores interactuaron con la plataforma de gestión inmobiliaria de HipoSim, ejecutada en un entorno local. Se evaluaron el dashboard, la consulta de leads, los cambios de estado y el envío de informes. También se presentó la aplicación móvil dirigida a los compradores de primera vivienda, mostrando el proceso de simulación hipotecaria y la información financiera disponible. Ambos asesores manifestaron una valoración favorable de esta aplicación. Esta demostración complementó la validación de la plataforma inmobiliaria y permitió conocer su percepción sobre la solución integral de HipoSim.
 
 
 <div style="page-break-after: always;"></div>
