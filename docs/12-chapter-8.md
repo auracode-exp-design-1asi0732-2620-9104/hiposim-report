@@ -90,6 +90,36 @@ Las premisas identificadas representan incertidumbres, oportunidades de mejora y
 Estas premisas serán utilizadas para formular las preguntas experimentales, priorizar el Question Backlog y elaborar las correspondientes tarjetas de experimentos.
 
 ### **8.1.3. Experiment-Ready Questions**
+
+A partir de las premisas identificadas en la sección Raw Material, se formularon preguntas experimentales orientadas a reducir las incertidumbres relacionadas con la usabilidad, comprensión financiera y utilidad de las funcionalidades de HipoSim.
+
+Las preguntas se plantearon considerando los segmentos objetivo, las funcionalidades implementadas y la posibilidad de obtener evidencia mediante pruebas con usuarios, entrevistas de validación y registros de eventos de uso.
+
+#### Preguntas experimentales principales
+
+| ID | Experiment-Ready Question | Raw Material relacionado | Segmento objetivo | Evidencia requerida |
+|---|---|---|---|---|
+| ERQ-01 | ¿Qué proporción de compradores de primera vivienda logra completar una simulación hipotecaria sin asistencia? | AS-01, KG-01, CL-01 | Compradores | Simulaciones iniciadas y completadas, observación de usuarios y dificultades identificadas. |
+| ERQ-02 | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? | AS-02, KG-02, ID-01, CL-02 | Compradores | Respuestas correctas a preguntas de comprensión financiera y consulta del cronograma de pagos. |
+| ERQ-03 | ¿Qué proporción de compradores identifica correctamente los escenarios con menor cuota mensual y menor costo total utilizando la funcionalidad de comparación? | AS-03, KG-03, CL-03 | Compradores | Resultados de tareas de comparación, respuestas correctas y dificultades observadas. |
+| ERQ-04 | ¿Qué proporción de compradores exporta un reporte PDF después de completar una simulación y qué utilidad le atribuye? | AS-04, KG-04, CL-04 | Compradores | Eventos de exportación de PDF y valoraciones de los participantes. |
+| ERQ-05 | ¿Con qué nivel de éxito y en cuánto tiempo los asesores inmobiliarios pueden consultar y actualizar solicitudes de potenciales compradores utilizando HipoSim? | AS-05, KG-05, CL-05 | Inmobiliarias | Tareas completadas, tiempo de ejecución, errores y valoraciones de los asesores. |
+
+#### Preguntas experimentales complementarias
+
+| ID | Experiment-Ready Question | Raw Material relacionado | Segmento objetivo | Evidencia requerida |
+|---|---|---|---|---|
+| ERQ-06 | ¿Una distribución visual mejorada de los importes facilita la lectura y comparación de tres escenarios hipotecarios? | ID-02 | Compradores | Comparación de tiempos, errores de interpretación y percepción de legibilidad entre alternativas de diseño. |
+| ERQ-07 | ¿La presentación de importes con la misma precisión monetaria en todas las pantallas reduce las inconsistencias percibidas por los compradores? | ID-03 | Compradores | Errores de interpretación y valoraciones de consistencia antes y después de la mejora. |
+| ERQ-08 | ¿La posibilidad de reactivar solicitudes descartadas facilita el seguimiento comercial de los asesores inmobiliarios? | ID-04 | Inmobiliarias | Pruebas con prototipos y valoraciones sobre la utilidad de la reactivación de solicitudes. |
+| ERQ-09 | ¿Una interfaz adaptada a dispositivos móviles facilita la consulta y el seguimiento de solicitudes por parte de los asesores inmobiliarios? | ID-05 | Inmobiliarias | Pruebas de navegación móvil, tareas completadas y percepción de facilidad de uso. |
+
+Las preguntas principales se relacionan con funcionalidades implementadas y permiten evaluar el estado actual del producto. Las preguntas complementarias exploran oportunidades de mejora identificadas durante las evaluaciones heurísticas y las entrevistas de validación.
+
+Las entrevistas realizadas a los asesores inmobiliarios proporcionan evidencia cualitativa preliminar para ERQ-05, ERQ-08 y ERQ-09. Sin embargo, será necesario realizar mediciones adicionales para responder completamente estas preguntas.
+
+Las preguntas formuladas serán incorporadas al Question Backlog, donde se priorizarán considerando su importancia para los segmentos objetivo, el impacto potencial sobre el producto y los recursos necesarios para obtener evidencia.
+
 ### **8.1.4. Question Backlog**
 ### **8.1.5. Experiment Cards**
 ## **8.2. Experiment Design**
