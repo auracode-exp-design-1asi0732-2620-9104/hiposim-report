@@ -6,7 +6,7 @@ Para garantizar la confiabilidad de HipoSim, estructuramos nuestra estrategia de
 
 Distinguimos cuatro niveles de prueba complementarios. Las **pruebas unitarias** se concentran en reglas y componentes aislados; las **pruebas de integración** examinan la comunicación entre capas y productos; los escenarios de **Behavior-Driven Development (BDD)** traducen los criterios de aceptación en comportamientos verificables; y las **pruebas de sistema** evalúan los recorridos completos que experimentan los usuarios. Este enfoque mantiene la trazabilidad con las historias de usuario y las historias técnicas del Capítulo III, la arquitectura del Capítulo IV y los avances de implementación del Capítulo V.
 
-La solución abarca una Landing Page desarrollada con HTML5, CSS3 y JavaScript; el portal web del asesor, desarrollado con Vue 3, Vite, PrimeVue, Pinia y axios; una aplicación Android nativa con Kotlin, Jetpack Compose, Hilt, Navigation Compose y ViewModel con StateFlow; y una API diseñada con ASP.NET Core, Entity Framework Core y PostgreSQL. El Landing Page ya está publicado en GitHub Pages y ejecuta un simulador básico en el navegador. El portal web utiliza datos de ejemplo, mientras que la integración del móvil y de la web con la API forma parte del Sprint 2.
+La solución abarca una Landing Page desarrollada con HTML5, CSS3 y JavaScript; el portal web del asesor, desarrollado con Vue 3, Vite, PrimeVue, Pinia y axios; una aplicación Android nativa con Kotlin, Jetpack Compose, Hilt, Navigation Compose y ViewModel con StateFlow; y una API diseñada con ASP.NET Core, Entity Framework Core y PostgreSQL. Al cierre del Sprint 3 los cuatro productos están publicados: el Landing Page en GitHub Pages, el portal del asesor en Vercel, la API con PostgreSQL en Render y la aplicación Android en Firebase App Distribution. El móvil y el portal web consumen la API desplegada.
 
 <div style="page-break-after: always;"></div>
 
@@ -17,7 +17,17 @@ La solución abarca una Landing Page desarrollada con HTML5, CSS3 y JavaScript; 
 | Behavior-Driven Development | Simulación sin registro, validación de cuota inicial, aplicación del BBP y gestión autorizada de leads | US01, US05, US15, US21, US23–US25 | Cumplimiento de escenarios expresados en lenguaje del dominio |
 | System Testing | Navegación del sitio, resultados hipotecarios, acceso móvil y recorrido comprador–asesor | US14–US20, US13, US26, US21–US25 | Recorridos funcionales y seguros, con manejo comprensible de errores |
 
-El registro técnico disponible consigna **35 pruebas unitarias, 4 pruebas de interfaz ejecutadas en emulador y un flujo de integración continua mediante GitHub Actions para la aplicación Android**, junto con verificaciones de `ktlint` y Android Lint. Para la API y la integración completa con PostgreSQL contamos con el alcance funcional y los contratos previstos, pero no con un registro de ejecución que permita declarar sus pruebas aprobadas. Por ello presentamos sus casos y resultados esperados como especificación verificable, sin confundirlos con resultados obtenidos.
+Al cierre del Sprint 3 contamos con los siguientes resultados de ejecución, todos en verde:
+
+| Producto | Suite | Pruebas | Ejecución |
+|---|---|---:|---|
+| API | `HipoSim.FinancialEngine.Tests` (motor financiero) | 109 | `dotnet test` sobre `develop` |
+| API | `HipoSim.Simulations.Tests` (simulación, gracia y reporte PDF) | 118 | `dotnet test` sobre `develop` |
+| API | `HipoSim.Api.Tests` (endpoints, autenticación, leads, escenarios, eventos y conformidad con OpenAPI) | 76 | `dotnet test` sobre `develop` |
+| Aplicación Android | Pruebas unitarias (`testDebugUnitTest`) | 292 | GitHub Actions en cada Pull Request, junto con `ktlint` y Android Lint |
+| Portal web | Pruebas unitarias y de componentes (`npm test`) | Suite del repositorio | GitHub Actions en cada Pull Request, junto con lint y verificación de tipos |
+
+En total, la API suma **303 pruebas** y la aplicación Android **292 pruebas unitarias**, además de sus pruebas de interfaz instrumentadas.
 
 <div style="page-break-after: always;"></div>
 
@@ -63,7 +73,7 @@ Para establecer un caso de referencia reproducible empleamos los datos de simula
 
 También utilizamos pruebas de límites: cuota inicial exactamente igual al mínimo, precio de vivienda en los extremos de un rango de beneficio, tasas válidas muy bajas, plazos en sus valores extremos admitidos y redondeo de centavos. En las verificaciones del cronograma comprobamos las invariantes `cuota = interés + amortización`, `saldo final = saldo inicial - amortización` y la conservación del capital amortizado. La comparación con el proyecto de referencia **AutoFinance Pro** forma parte de la historia técnica SP02 y permite detectar diferencias introducidas al portar las fórmulas financieras a C#.
 
-En la aplicación Android, el Capítulo V documenta 35 pruebas unitarias, además de verificaciones de estilo y análisis estático. Esa cifra describe el conjunto de pruebas informado para dicho producto; no la extendemos al backend, al portal web ni a la Landing Page sin los respectivos registros de ejecución.
+Los casos UT-01 a UT-12 están cubiertos por las suites `HipoSim.FinancialEngine.Tests` y `HipoSim.Simulations.Tests` de la API, incluidos los de gracia parcial y total (UT-11 y UT-12), que fijan la cuota esperada de los ejemplos del contrato. Los casos UT-13 y UT-14 están cubiertos por las pruebas unitarias de la aplicación Android, donde los casos de uso de envío a inmobiliarias y de guardado de escenarios rechazan la operación sin sesión o sin consentimiento.
 
 <div style="page-break-after: always;"></div>
 
@@ -106,7 +116,7 @@ La respuesta satisfactoria debe identificar la simulación, informar el capital 
 
 El flujo de integración más importante combina el envío voluntario de una simulación por parte del Comprador con la consulta posterior del Asesor. Verificamos este contrato en dos sentidos: un consentimiento válido habilita la creación del lead y su visualización dentro del ámbito autorizado; la ausencia de consentimiento impide el registro y la divulgación. Asimismo, una inmobiliaria no debe acceder a contactos pertenecientes a otra organización mediante el cambio de identificadores o la modificación de parámetros en la solicitud.
 
-Durante esta versión, el simulador básico del Landing Page realiza sus operaciones en JavaScript dentro del navegador; no corresponde presentarlo como un cliente de la API desplegada. De igual forma, el portal del asesor todavía utiliza datos de ejemplo y la conexión efectiva con los servicios se encuentra comprendida en el Sprint 2. Las verificaciones IT-01 a IT-12 establecen criterios de integración para esa etapa, pero su aprobación depende de la disponibilidad de la API, de la base de datos y de los clientes conectados.
+Las verificaciones IT-01 a IT-12 están automatizadas en `HipoSim.Api.Tests`, que levanta la API completa con `WebApplicationFactory` y comprueba los códigos de respuesta, la autorización por rol y la conformidad de cada respuesta con el contrato OpenAPI. Además, en el Sprint 3 agregamos pruebas para `POST /api/scenarios` y `GET /api/scenarios` (US06), `POST /api/events` (TS09) y `GET /api/simulations/{id}/report` (TS03, con respuestas 200, 403 y 404). Los recorridos de la aplicación móvil contra la API desplegada se documentan en el Capítulo V.
 
 <div style="page-break-after: always;"></div>
 
@@ -243,12 +253,413 @@ Las pruebas de sistema abarcan el comportamiento completo de los productos digit
 | ST-01 | Landing Page | Acceder al sitio publicado y recorrer Inicio, Producto, Beneficios y Preguntas | Navegación disponible mediante HTTPS, enlaces operativos y contenido responsivo | Landing Page publicada |
 | ST-02 | Landing Page | Ejecutar una simulación básica sin registrarse | Presentación de cuota, préstamo neto y TCEA referencial sin solicitar cuenta | Función descrita en Sprint 1 |
 | ST-03 | Landing Page | Cambiar entre español e inglés y navegar por las secciones | Traducciones visibles y conservación de la preferencia mediante `localStorage` | Función descrita en Sprint 1 |
-| ST-04 | Landing Page | Enviar datos incompletos al formulario de contacto | Validación del formulario sin atribuirle envío a un backend real | Envío simulado documentado |
+| ST-04 | Landing Page + API | Enviar el formulario de contacto, primero incompleto y luego completo | Validación de los campos y registro del mensaje con `POST /api/contact-messages` | Verificado contra la API desplegada (US19) |
 | ST-05 | Android | Consultar resultados y abrir el registro contextual | Estados y navegación coherentes, incluso con sesión simulada | Pantallas implementadas en Sprint 1 |
-| ST-06 | Android + API | Registrarse, autenticarse y simular desde el móvil | Sesión real, cálculo devuelto por la API y resultados consistentes | Integración del Sprint 2 |
-| ST-07 | Android + API | Compartir una simulación tras aceptar el consentimiento | Lead generado solamente después de la autorización expresa | Integración del Sprint 2 |
-| ST-08 | Portal web + API | Iniciar sesión como asesor y consultar bandeja y ficha | Visualización de leads autorizados provenientes de la API | Integración del Sprint 2 |
-| ST-09 | Portal web + API | Actualizar el estado de un lead y consultar el seguimiento | Cambio persistente sin afectar leads de otras inmobiliarias | Integración del Sprint 2 |
+| ST-06 | Android + API | Registrarse, autenticarse y simular desde el móvil | Sesión real, cálculo devuelto por la API y resultados consistentes | Verificado contra la API desplegada |
+| ST-07 | Android + API | Compartir una simulación tras aceptar el consentimiento | Lead generado solamente después de la autorización expresa | Verificado contra la API desplegada |
+| ST-08 | Portal web + API | Iniciar sesión como asesor y consultar bandeja y ficha | Visualización de leads autorizados provenientes de la API | Verificado contra la API desplegada |
+| ST-09 | Portal web + API | Actualizar el estado de un lead y consultar el seguimiento | Cambio persistente sin afectar leads de otras inmobiliarias | Verificado contra la API desplegada |
 | ST-10 | Recorrido transversal | Intentar compartir sin consentimiento o consultar leads sin token | Operaciones rechazadas y ausencia de exposición de datos | Criterio de seguridad transversal |
 | ST-11 | Web y Android | Interrumpir o hacer fallar una solicitud de servicio | Error comprensible y estado de interfaz coherente, sin confirmar una operación fallida | Criterio de robustez |
-| ST-12 | Android | Ejecutar pruebas automatizadas de interfaz en emulador | Verificación de los flujos de interfaz incluidos en la suite móvil | Cuatro pruebas de interfaz consignadas |
+| ST-12 | Android | Ejecutar pruebas automatizadas de interfaz en emulador | Verificación de los flujos de interfaz incluidos en la suite móvil | Pruebas de interfaz instrumentadas de la suite móvil |
+| ST-13 | Android + API | Simular con gracia parcial y total, guardar dos escenarios, compararlos y descargar el PDF | Cronograma con los meses de gracia marcados, escenarios listados, diferencias resaltadas y PDF con resumen y cronograma | Sprint 3 (US03, US06, US07 y US08) |
+| ST-14 | Landing Page y Android | Usar los productos y revisar la tabla `usage_events` | Eventos anónimos registrados, sin datos personales | Sprint 3 (TS09, TS10a y TS10b) |
+
+
+
+<div style="page-break-after: always;"></div>
+
+## **6.2. Static Code Analysis & Verification**
+
+Complementamos las pruebas con análisis estático en cada producto. En la aplicación Android y en el portal web, el análisis se ejecuta en cada Pull Request dentro de la integración continua; en la API lo ejecutamos sobre la integración de las ramas del Sprint 3 con las herramientas del SDK de .NET 9.
+
+### **6.2.1. Coding Standard & Code Conventions**
+
+| Producto | Estándar | Herramienta que lo verifica |
+|---|---|---|
+| Aplicación Android | Convenciones oficiales de Kotlin y reglas de Compose | `ktlint` y Android Lint (`lintDebug`) |
+| Portal web | Reglas de ESLint para Vue 3 y TypeScript | `npm run lint` y `npm run type-check` |
+| API | Convenciones de C# de .NET y reglas de calidad CA | Analizadores de .NET en modo Recommended y `dotnet format` |
+| Todos | Conventional Commits y GitFlow | Revisión de cada Pull Request |
+
+### **6.2.2. Code Quality & Code Security**
+
+Resultados del análisis estático de la API, medidos el 9 de noviembre de 2026 sobre la integración de las ramas de US03 y TS03 (documento `docs/bdd-and-static-analysis.md` del repositorio de la API):
+
+| Revisión | Comando | Resultado |
+|---|---|---|
+| Compilación con analizadores por defecto | `dotnet build` | 0 advertencias y 0 errores |
+| Analizadores de .NET en modo Recommended | `dotnet build -p:AnalysisMode=Recommended` | 179 advertencias y 0 errores |
+| Formato | `dotnet format --verify-no-changes` | 651 hallazgos (621 de espacios en blanco y 30 sugerencias de estilo) |
+| Paquetes con vulnerabilidades conocidas | `dotnet list package --vulnerable --include-transitive` | Ninguno, incluido QuestPDF 2026.9.1 |
+| Paquetes en desuso | `dotnet list package --deprecated` | Solo `xunit 2.9.2`, marcado como Legacy |
+
+| Hallazgo | Cantidad | Decisión |
+|---|---:|---|
+| CA1707, guiones bajos en nombres de pruebas | 166 | Aceptado: es la convención `Metodo_Cuando_Resultado` de las pruebas. |
+| CA1305, conversión de texto sin cultura | 7 | Pendiente de riesgo bajo: se corrige con `CultureInfo.InvariantCulture` en las pruebas afectadas. |
+| CA1822, CA1859, CA1869 y CA1050 | 6 | Aceptados: sugerencias de estilo o rendimiento sin efecto funcional. |
+| Espacios en blanco en `HipoSim.Api` y sus pruebas | 621 | Se corrigen con `dotnet format whitespace`; ninguno está en el motor financiero. |
+
+No se encontraron vulnerabilidades en las dependencias. Entre las medidas de seguridad verificadas por las pruebas están el rechazo de solicitudes sin token (401) o de otro rol (403), el límite de solicitudes por IP en el formulario de contacto y en los eventos de uso, y el rechazo de propiedades con nombres de datos personales en `POST /api/events`. Como limitación, no ejecutamos un analizador de seguridad dedicado (por ejemplo CodeQL); queda como mejora para el Sprint 4, junto con la ejecución de estos análisis en la integración continua de la API.
+
+<div style="page-break-after: always;"></div>
+
+## **6.3. Validation Interviews**
+
+Las entrevistas de validación tienen como finalidad evaluar la experiencia de los usuarios al interactuar con las funcionalidades implementadas en HipoSim. Mediante estas entrevistas buscamos identificar dificultades de navegación, problemas de comprensión de los resultados financieros y oportunidades de mejora en la plataforma.
+
+### **6.3.1. Diseño de entrevistas**
+
+Para las entrevistas de validación se han elaborado preguntas dirigidas a los dos segmentos objetivo de HipoSim: compradores de primera vivienda y representantes de inmobiliarias.
+
+Los participantes interactuarán con las funcionalidades correspondientes a su segmento y posteriormente responderán preguntas relacionadas con la facilidad de uso, claridad de la información, navegación y utilidad de la plataforma.
+
+**Segmento objetivo: Compradores de primera vivienda**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a HipoSim? ¿Comprendiste el propósito de la plataforma?
+2. ¿Qué tan sencillo te resultó ingresar los datos para realizar una simulación hipotecaria?
+3. ¿La aplicación te informó claramente cuando realizaste una simulación o guardaste un escenario?
+4. ¿Qué términos financieros comprendiste y cuáles te resultaron difíciles de interpretar?
+5. ¿Tuviste dificultades para regresar a una pantalla anterior, modificar los datos o realizar una nueva simulación?
+6. ¿Encontraste fácilmente el cronograma de pagos y comprendiste la información presentada?
+7. ¿Qué tan sencillo te resultó guardar y comparar diferentes escenarios hipotecarios?
+8. Al comparar escenarios, ¿cómo identificaste cuál tenía la menor cuota mensual y cuál tenía el menor costo total?
+9. ¿Encontraste errores, mensajes confusos o elementos visuales que dificultaran el uso de la aplicación?
+10. ¿Qué mejorarías o agregarías en HipoSim para evaluar la compra de una vivienda?
+
+**Segmento objetivo: Inmobiliarias**
+
+1. ¿Qué impresión tuviste al ingresar por primera vez a la plataforma web de HipoSim?
+2. ¿Te resultó sencillo identificar las funcionalidades disponibles en el menú de navegación?
+3. ¿Qué tan fácil fue encontrar y revisar las solicitudes de los compradores interesados?
+4. ¿La información presentada en cada solicitud te pareció suficiente para realizar un seguimiento comercial?
+5. ¿Comprendiste los estados disponibles para gestionar las solicitudes de los compradores?
+6. ¿Encontraste dificultades al actualizar el estado de una solicitud o registrar una nota de seguimiento?
+7. ¿La información de la simulación hipotecaria te resultó clara y útil para conocer las necesidades del comprador?
+8. ¿La plataforma te informó correctamente cuando realizaste una actualización?
+9. ¿Encontraste errores o inconsistencias en la interfaz y sus funcionalidades?
+10. ¿Qué funcionalidades o mejoras considerarías necesarias para utilizar HipoSim en tu trabajo?
+
+Las respuestas obtenidas permitirán identificar oportunidades de mejora relacionadas con las heurísticas de usabilidad y evaluar si las funcionalidades implementadas responden a las necesidades de ambos segmentos objetivo.
+
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.2. Registro de entrevistas**
+
+En esta sección se registrarán las entrevistas de validación correspondientes a los segmentos objetivo de HipoSim, con la finalidad de evaluar la usabilidad, claridad y utilidad de las funcionalidades implementadas.
+
+#### **Segmento 1: Comprador de Primera Vivienda**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Carlos Alexander </td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pebe Dueñas</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td><div align="center">
+    <img src="../assets/10-chapter-6/entrevistas-av2/seg2-carlos-pebe.png" width="350">
+</div></td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>  <a href="https://drive.google.com/file/d/1lBARHJ5aXndSZkgL7pgg14L03eFD84jq/view?usp=drive_link">
+        Entrevista Carlos Pebe
+    </a></td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>05:29 min</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>
+La entrevista con Carlos Pebe, de 31 años, asesor inmobiliario de Interbank, permitió evaluar la usabilidad y funcionalidad de la plataforma web **HipoSim** desde la perspectiva de un profesional con experiencia en el sector inmobiliario. El entrevistado destacó que la plataforma es **intuitiva, presenta funcionalidades simplificadas y facilita la interacción con los clientes**. Asimismo, identificó fácilmente las opciones del menú, el dashboard, la gestión de leads y las notificaciones.
+
+Respecto a la gestión de solicitudes, señaló que resulta sencillo **consultar la información de los compradores, acceder a sus simulaciones hipotecarias, actualizar los estados y registrar notas de seguimiento**. No presentó dificultades durante estas actividades y confirmó que las actualizaciones de estado se reflejan correctamente en la plataforma. Además, consideró que la información financiera de las simulaciones es **clara y útil para conocer las necesidades del comprador antes de establecer una primera comunicación**.
+
+El entrevistado considera que **HipoSim sería una herramienta de apoyo para facilitar el seguimiento de potenciales compradores y mejorar la comunicación con los clientes**. Durante la evaluación no identificó errores ni dificultades significativas, destacando que la información presentada es concisa, clara y suficiente para iniciar el contacto con el comprador. Finalmente, manifestó conformidad con el diseño visual y los colores utilizados, sin proponer cambios específicos en la interfaz.
+
+#### Hallazgos importantes
+
+- **Usabilidad:** la plataforma es intuitiva y sus funcionalidades son fáciles de identificar.
+- **Navegación:** el dashboard, la gestión de leads y las notificaciones presentan una estructura sencilla.
+- **Gestión de leads:** permite consultar fácilmente la información de los compradores y sus simulaciones hipotecarias.
+- **Seguimiento de solicitudes:** no presentó dificultades al **actualizar estados o registrar notas de seguimiento**.
+- **Información financiera:** los datos de las simulaciones permiten conocer las necesidades del comprador antes de establecer contacto.
+- **Actualización de información:** los cambios de estado se reflejan correctamente en la plataforma.
+- **Diseño visual:** manifestó conformidad con los colores y la presentación de la interfaz.
+- **Errores identificados:** no reportó errores ni dificultades significativas durante la evaluación.
+- **Validación de HipoSim:** considera que la plataforma facilita la **gestión de potenciales compradores, el seguimiento de solicitudes y la comunicación entre el asesor inmobiliario y el cliente**.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+#### **Segmento 2: Inmobiliarias**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Nombre</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Evidencia</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Duración de la entrevista</td>
+            <td>Pendiente</td>
+        </tr>
+        <tr>
+            <td>Resumen</td>
+            <td>Pendiente</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div style="page-break-after: always;"></div>
+
+### **6.3.3. Evaluaciones según heurísticas**
+
+La evaluación heurística de HipoSim tiene como finalidad identificar problemas de usabilidad que puedan afectar la experiencia de los compradores de primera vivienda y los asesores inmobiliarios.
+
+Para esta evaluación se consideran los principios de usabilidad de Jakob Nielsen, con el propósito de identificar oportunidades de mejora en la navegación, presentación de información, consistencia visual y prevención de errores.
+
+**Aplicación para evaluar:** HipoSim.
+
+**Tareas por evaluar:**
+
+- Realizar una simulación hipotecaria.
+- Interpretar los indicadores financieros.
+- Consultar el cronograma de pagos.
+- Guardar diferentes escenarios hipotecarios.
+- Comparar dos o tres escenarios guardados.
+- Identificar las alternativas con menor cuota mensual y menor costo total.
+- Descargar el reporte de una simulación.
+- Consultar y gestionar las solicitudes de compradores interesados desde la plataforma web.
+
+**Escala de severidad**
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Escala de severidad</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No tan grave</td>
+            <td>Leve</td>
+            <td>Moderado</td>
+            <td>Grave</td>
+            <td>Muy grave</td>
+        </tr>
+    </tbody>
+</table>
+
+**Tabla de resumen**
+
+La siguiente tabla presenta los problemas preliminares identificados durante las pruebas técnicas de la aplicación móvil. La severidad asignada corresponde a una valoración inicial del equipo y podrá actualizarse después de las entrevistas de validación.
+
+| #Orden | Problema | Escala de severidad | Heurística evaluada | Estado |
+|---|---|---|---|---|
+| #1 | Redondeo de los importes monetarios en la comparación de escenarios. | 3 | Consistencia y estándares | Corregido |
+| #2 | Resaltado de un único escenario cuando existen valores mínimos empatados. | 3 | Consistencia y estándares | Corregido |
+| #3 | Distribución de importes extensos en varias líneas al comparar tres escenarios. | 2 | Diseño estético y minimalista | Pendiente |
+| #4 | Diferencia de precisión monetaria entre la lista de escenarios y la pantalla de comparación. | 2 | Consistencia y estándares | Pendiente |
+
+<div style="page-break-after: always;"></div>
+
+**Heurísticas y recomendaciones**
+
+**Problema #1: Redondeo de los importes monetarios en la comparación de escenarios.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Los importes correspondientes a las cuotas mensuales, costos totales y diferencias monetarias se presentaban redondeados, dificultando la identificación de diferencias pequeñas entre escenarios hipotecarios.
+- **Recomendación:** Presentar los importes monetarios con dos decimales para facilitar una comparación precisa.
+- **Solución implementada:** Se modificó el formato monetario de la pantalla de comparación para conservar los céntimos en las cuotas mensuales, costos totales y diferencias.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica1.png" width="350">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+**Problema #2: Resaltado de un único escenario cuando existen valores mínimos empatados.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** Cuando dos escenarios presentaban el mismo valor mínimo, la interfaz resaltaba únicamente uno de ellos. Esto podía generar una interpretación incorrecta sobre cuál era la alternativa más conveniente.
+- **Recomendación:** Resaltar todos los escenarios que compartan el menor valor de un indicador. Cuando todos los escenarios presenten el mismo valor, evitar destacar alguno de ellos.
+- **Solución implementada:** Se actualizó la lógica de comparación para reconocer los valores mínimos empatados y conservar una presentación neutral cuando todos los valores sean iguales.
+- **Estado:** Corregido y validado mediante pruebas unitarias y de interfaz.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
+**Problema #3: Distribución de importes extensos en varias líneas.**
+
+- **Heurística evaluada:** Diseño estético y minimalista.
+- **Descripción del problema:** Al comparar tres escenarios hipotecarios, algunos importes monetarios ocupan varias líneas debido al espacio disponible en las columnas de la pantalla.
+- **Recomendación:** Mejorar la distribución de las columnas y adaptar el tamaño de los textos para mantener la legibilidad de los resultados.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
+
+<div style="page-break-after: always;"></div>
+
+**Problema #4: Diferencia de precisión monetaria entre pantallas.**
+
+- **Heurística evaluada:** Consistencia y estándares.
+- **Descripción del problema:** La lista de escenarios guardados presenta importes monetarios redondeados, mientras que la pantalla de comparación presenta los valores con dos decimales.
+- **Recomendación:** Unificar el formato monetario utilizado en ambas pantallas para mantener la consistencia de la información financiera.
+- **Estado:** Pendiente de mejora.
+
+**Evidencia:**
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica4.png" width="350">
+</div>
+
+<div align="center">
+    <img src="../assets/10-chapter-6/heuristic-evaluation/Heuristica2.png" width="350">
+</div>
