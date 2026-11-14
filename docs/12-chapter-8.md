@@ -42,6 +42,53 @@ Aunque las funcionalidades implementadas permiten atender las principales necesi
 Por ello, se aplicará Experiment-Driven Development (XDPD) para identificar incertidumbres, formular preguntas experimentales, priorizar oportunidades de aprendizaje y diseñar experimentos que permitan obtener evidencia para orientar las siguientes decisiones de desarrollo.
 
 ### **8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims**
+
+A partir del análisis de la situación actual de HipoSim, las entrevistas de validación, las evaluaciones heurísticas y las funcionalidades implementadas, se identificaron las siguientes premisas que servirán como punto de partida para el planeamiento experimental.
+
+#### Assumptions (Supuestos)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| AS-01 | Los compradores de primera vivienda pueden completar una simulación hipotecaria sin asistencia especializada. | Compradores |
+| AS-02 | Los compradores comprenden mejor sus obligaciones financieras cuando consultan el cronograma de pagos. | Compradores |
+| AS-03 | La comparación de escenarios hipotecarios facilita la identificación de alternativas de financiamiento convenientes. | Compradores |
+| AS-04 | Los compradores consideran útil descargar un reporte PDF para revisar o compartir los resultados de una simulación. | Compradores |
+| AS-05 | Los asesores inmobiliarios pueden gestionar y realizar el seguimiento de potenciales compradores utilizando HipoSim. | Inmobiliarias |
+
+#### Knowledge Gaps (Vacíos de conocimiento)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| KG-01 | Se desconoce qué proporción de compradores logra completar una simulación hipotecaria después de iniciarla. | Compradores |
+| KG-02 | Se desconoce si los compradores interpretan correctamente indicadores financieros como la TCEA, el VAN y la TIR. | Compradores |
+| KG-03 | No se ha determinado si los compradores identifican correctamente el escenario con menor cuota mensual y menor costo total. | Compradores |
+| KG-04 | Se desconoce con qué frecuencia los compradores utilizan la exportación de reportes PDF después de realizar una simulación. | Compradores |
+| KG-05 | No se ha determinado cuánto tiempo necesitan los asesores inmobiliarios para consultar y actualizar una solicitud. | Inmobiliarias |
+
+#### Ideas (Ideas de mejora)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| ID-01 | Incorporar explicaciones breves de los indicadores financieros para facilitar su comprensión. | Compradores |
+| ID-02 | Mejorar la distribución visual de los importes monetarios al comparar tres escenarios hipotecarios. | Compradores |
+| ID-03 | Unificar la precisión monetaria entre la lista de escenarios guardados y la pantalla de comparación. | Compradores |
+| ID-04 | Evaluar la incorporación de una opción para retomar el seguimiento de solicitudes previamente descartadas. | Inmobiliarias |
+| ID-05 | Evaluar la adaptación de la plataforma de asesores para facilitar su acceso desde dispositivos móviles. | Inmobiliarias |
+
+#### Claims (Afirmaciones)
+
+| ID | Premisa | Segmento objetivo |
+|---|---|---|
+| CL-01 | HipoSim simplifica el proceso de simulación de créditos hipotecarios para compradores de primera vivienda. | Compradores |
+| CL-02 | La presentación del cronograma de pagos permite comprender mejor la distribución del capital y los intereses. | Compradores |
+| CL-03 | El resaltado de valores mínimos y la presentación precisa de importes facilitan la comparación de escenarios hipotecarios. | Compradores |
+| CL-04 | La exportación de reportes PDF facilita la consulta posterior y el intercambio de información financiera. | Compradores |
+| CL-05 | La gestión centralizada de leads facilita el seguimiento comercial de potenciales compradores por parte de los asesores inmobiliarios. | Inmobiliarias |
+
+Las premisas identificadas representan incertidumbres, oportunidades de mejora y afirmaciones que requieren evidencia adicional. Las valoraciones favorables obtenidas durante las entrevistas constituyen evidencia cualitativa preliminar, pero no permiten generalizar los resultados a todos los usuarios de HipoSim.
+
+Estas premisas serán utilizadas para formular las preguntas experimentales, priorizar el Question Backlog y elaborar las correspondientes tarjetas de experimentos.
+
 ### **8.1.3. Experiment-Ready Questions**
 ### **8.1.4. Question Backlog**
 ### **8.1.5. Experiment Cards**
