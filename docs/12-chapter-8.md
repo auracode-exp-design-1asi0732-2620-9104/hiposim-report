@@ -197,6 +197,172 @@ Las preguntas complementarias permanecerán en el Question Backlog para futuras 
 La priorización presentada corresponde a una valoración inicial y deberá revisarse después de la ejecución de los experimentos, considerando la evidencia obtenida y los nuevos aprendizajes. Esta actualización será documentada en la sección 8.4.2. Re-scored and Re-prioritized Question Backlog.
 
 ### **8.1.5. Experiment Cards**
+
+Las tarjetas de experimentos permiten estructurar las preguntas seleccionadas del Question Backlog y establecer los elementos necesarios para obtener evidencia que contribuya a la toma de decisiones sobre HipoSim.
+
+Cada tarjeta presenta un lado frontal, que contiene la pregunta experimental, su motivación, la hipótesis y la Simplest Useful Thing (SUT), y un lado posterior, que establece las medidas, condiciones y escala del experimento.
+
+Las hipótesis, condiciones y criterios de éxito establecidos corresponden a propuestas iniciales que serán desarrolladas durante la fase de Experiment Design.
+
+#### Experiment Card E01: Simulación hipotecaria
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E01 |
+| Question ID | ERQ-01 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de compradores logra completar una simulación hipotecaria sin asistencia? |
+| Why | La simulación hipotecaria constituye la funcionalidad principal de HipoSim. Es necesario determinar si los compradores pueden utilizarla sin depender de conocimientos financieros avanzados o asistencia especializada. |
+| Hypothesis | Al menos el 80 % de los compradores participantes completará una simulación hipotecaria sin asistencia. |
+| What (SUT) | Utilizar el formulario de simulación hipotecaria implementado en HipoSim y solicitar a los participantes que generen una simulación con datos de referencia. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización, tiempo de ejecución, errores y solicitudes de ayuda. |
+| Conditions | Los participantes recibirán los mismos datos de referencia y deberán completar la simulación sin instrucciones sobre el uso de la interfaz. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro de los cinco participantes completan correctamente la simulación sin asistencia. |
+| Evidence | Registro de observaciones y eventos simulation_started y simulation_completed, cuando estén disponibles. |
+
+**Estado:** Pendiente de ejecución y medición experimental.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E02: Comprensión financiera
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E02 |
+| Question ID | ERQ-02 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿En qué medida los compradores comprenden la distribución del capital, los intereses y los indicadores financieros presentados en HipoSim? |
+| Why | Presentar resultados financieros no garantiza que los compradores comprendan sus obligaciones económicas. Es necesario evaluar si la información permite interpretar correctamente las condiciones del crédito hipotecario. |
+| Hypothesis | Al menos el 80 % de los participantes responderá correctamente tres de cuatro preguntas de comprensión financiera después de consultar los resultados y el cronograma de pagos. |
+| What (SUT) | Utilizar la pantalla de resultados y el cronograma de pagos de una simulación hipotecaria previamente definida. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Número de respuestas correctas, porcentaje de participantes que alcanza el criterio de comprensión y dificultades identificadas. |
+| Conditions | Todos los participantes consultarán la misma simulación y responderán preguntas sobre amortización, intereses, TCEA y costo total, sin recibir explicaciones adicionales durante la evaluación. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro participantes responden correctamente tres o más de las cuatro preguntas. |
+| Evidence | Cuestionarios de comprensión, registro de observaciones y evento schedule_opened, cuando esté disponible. |
+
+**Estado:** Pendiente de ejecución y medición experimental.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E03: Comparación de escenarios hipotecarios
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E03 |
+| Question ID | ERQ-03 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de compradores identifica correctamente los escenarios con menor cuota mensual y menor costo total utilizando la funcionalidad de comparación? |
+| Why | Los compradores necesitan comparar alternativas de financiamiento antes de tomar una decisión. La identificación incorrecta de los valores mínimos podría generar interpretaciones equivocadas sobre las condiciones del crédito. |
+| Hypothesis | Al menos el 80 % de los participantes identificará correctamente los escenarios con menor cuota mensual y menor costo total. |
+| What (SUT) | Utilizar la pantalla de comparación de escenarios hipotecarios implementada en la aplicación móvil de HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de respuestas correctas, tiempo de comparación, errores de interpretación y percepción de facilidad de uso. |
+| Conditions | Los participantes compararán dos y tres escenarios previamente definidos. Se incluirán casos donde la menor cuota y el menor costo total correspondan a diferentes escenarios, así como casos con valores mínimos empatados. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda. |
+| Success Criteria | Al menos cuatro participantes identifican correctamente ambas alternativas y reconocen los empates cuando se presentan. |
+| Evidence | Registro de respuestas, capturas de la comparación, observaciones y evento scenarios_compared, cuando esté disponible. |
+
+**Estado:** Cuenta con evidencia técnica preliminar documentada en el Capítulo VI. Pendiente de medición experimental con compradores.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E04: Exportación de reportes PDF
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E04 |
+| Question ID | ERQ-04 |
+| Question Type | Exploratory |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de compradores exporta un reporte PDF después de completar una simulación y qué utilidad le atribuye? |
+| Why | Es necesario conocer si los compradores consideran relevante conservar o compartir los resultados financieros fuera de la aplicación. |
+| Hypothesis | No aplica inicialmente, debido al carácter exploratorio de la pregunta. |
+| What (SUT) | Utilizar la funcionalidad de exportación de reportes PDF disponible en la aplicación móvil de HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Proporción de sesiones con exportación de reportes respecto a las sesiones con simulaciones completadas, motivos de uso y valoración de utilidad. |
+| Conditions | Los participantes realizarán una simulación y podrán explorar libremente los resultados. No se les solicitará explícitamente descargar el PDF durante la medición de uso espontáneo. Posteriormente se consultará su percepción sobre la funcionalidad. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda y registros anónimos de uso disponibles durante el periodo experimental. |
+| Success Criteria | Obtener evidencia suficiente para describir la frecuencia de exportación y los principales motivos de uso o desuso. |
+| Evidence | Eventos simulation_completed y pdf_exported, entrevistas breves y registros de observación. |
+
+**Estado:** Pendiente de ejecución y análisis de eventos.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E05: Gestión de leads inmobiliarios
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E05 |
+| Question ID | ERQ-05 |
+| Question Type | Belief-led |
+| Segmento objetivo | Asesores inmobiliarios |
+| Question | ¿Con qué nivel de éxito y en cuánto tiempo los asesores inmobiliarios pueden consultar y actualizar solicitudes de potenciales compradores utilizando HipoSim? |
+| Why | La gestión de leads constituye una funcionalidad fundamental para las inmobiliarias. Es necesario determinar si la plataforma facilita la consulta de solicitudes y el seguimiento comercial de los compradores. |
+| Hypothesis | Los dos asesores de la prueba piloto podrán consultar y actualizar una solicitud correctamente en un tiempo máximo de tres minutos por participante, sin asistencia. |
+| What (SUT) | Utilizar el dashboard, la bandeja de leads, la ficha de una solicitud y la funcionalidad de actualización de estados implementados en HipoSim. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización de tareas, tiempo de ejecución, número de errores, solicitudes de ayuda y percepción de facilidad de uso. |
+| Conditions | Los participantes recibirán una solicitud de referencia con datos ficticios y deberán localizarla, consultar su información financiera y actualizar su estado sin asistencia durante la tarea. |
+| Scale | Prueba piloto propuesta con dos asesores inmobiliarios. |
+| Success Criteria | Ambos participantes completan correctamente las tareas de consulta y actualización en un máximo de tres minutos por participante. |
+| Evidence | Registro de observaciones, tiempos de ejecución, capturas y entrevistas de validación. |
+
+**Estado:** Cuenta con evidencia cualitativa preliminar obtenida durante las entrevistas realizadas a Carlos Pebe y Selene Carhuayo. Las pruebas funcionales y valoraciones favorables se encuentran documentadas en el Capítulo VI. Los tiempos de ejecución y el cumplimiento de los criterios de éxito todavía requieren medición específica.
+
+<div style="page-break-after: always;"></div>
+
+#### Resumen de experimentos
+
+| ID | Pregunta | Segmento | Funcionalidad | Estado |
+|---|---|---|---|---|
+| E01 | ERQ-01 | Compradores | Simulación hipotecaria | Planificado |
+| E02 | ERQ-02 | Compradores | Comprensión financiera | Planificado |
+| E03 | ERQ-03 | Compradores | Comparación de escenarios | Evidencia técnica preliminar |
+| E04 | ERQ-04 | Compradores | Exportación de reportes PDF | Planificado |
+| E05 | ERQ-05 | Inmobiliarias | Gestión de leads | Evidencia cualitativa preliminar |
+
+Las cinco tarjetas establecen una base para la fase de Experiment Design. Las escalas propuestas corresponden a pruebas piloto exploratorias de alcance reducido y no permiten generalizar los resultados a toda la población objetivo.
+
+Las hipótesis, medidas, condiciones, escalas y métodos de evaluación deberán ser revisados y desarrollados en la sección 8.2 antes de la ejecución formal de los experimentos.
+
 ## **8.2. Experiment Design**
 ### **8.2.1. Hypotheses**
 ### **8.2.2. Domain Business Metrics**
