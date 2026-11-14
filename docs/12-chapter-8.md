@@ -1,6 +1,46 @@
 # **Chapter VIII: Experiment-Driven Development**
+
 ## **8.1. Experiment Planning**
+
 ### **8.1.1. As-Is Summary**
+
+HipoSim es una plataforma digital orientada a facilitar la evaluación de créditos hipotecarios para compradores de primera vivienda y mejorar la gestión de potenciales clientes para las inmobiliarias.
+
+Actualmente, la solución está conformada por cuatro componentes:
+
+- **Landing Page:** presenta la propuesta de valor de HipoSim y permite realizar simulaciones hipotecarias básicas.
+- **Native Mobile Application:** permite realizar simulaciones hipotecarias, consultar indicadores financieros y cronogramas de pagos, aplicar beneficios estatales, guardar y comparar escenarios hipotecarios y exportar reportes PDF.
+- **Web Application:** permite a los asesores inmobiliarios consultar solicitudes, revisar simulaciones hipotecarias, actualizar estados y realizar el seguimiento de potenciales compradores.
+- **RESTful API:** centraliza las operaciones de autenticación, simulación hipotecaria, persistencia de escenarios, gestión de leads y registro de eventos de uso.
+
+#### Situación actual por segmento objetivo
+
+| Segmento objetivo | Situación actual | Necesidad de validación |
+|---|---|---|
+| Compradores de primera vivienda | Disponen de herramientas para simular créditos, consultar cronogramas y comparar escenarios hipotecarios. | Evaluar si comprenden los resultados financieros y pueden identificar alternativas convenientes. |
+| Inmobiliarias | Disponen de una plataforma para gestionar leads, consultar simulaciones y realizar el seguimiento comercial. | Evaluar si las funcionalidades se ajustan a sus procesos de atención y seguimiento de compradores. |
+
+#### Hallazgos preliminares
+
+A partir de las evaluaciones heurísticas y las entrevistas de validación realizadas durante el desarrollo de HipoSim, se identificaron los siguientes hallazgos:
+
+- La precisión monetaria es importante para comparar escenarios hipotecarios.
+- El resaltado de valores mínimos debe representar correctamente los escenarios empatados.
+- La distribución de información al comparar tres escenarios presenta oportunidades de mejora.
+- Los asesores inmobiliarios valoran positivamente la facilidad de navegación y la gestión de leads.
+- La información financiera de los compradores resulta útil para orientar el seguimiento comercial.
+- Existe interés en retomar el seguimiento de solicitudes previamente descartadas.
+- Los asesores inmobiliarios mostraron interés en el acceso desde dispositivos móviles.
+- La demostración del aplicativo móvil para compradores recibió una valoración favorable por parte de los asesores entrevistados.
+
+Asimismo, se han incorporado mecanismos de registro de eventos anónimos para complementar las evaluaciones cualitativas mediante información sobre el comportamiento de los usuarios.
+
+#### Justificación de la experimentación
+
+Aunque las funcionalidades implementadas permiten atender las principales necesidades identificadas durante el desarrollo, todavía existen incertidumbres relacionadas con la facilidad de uso, la comprensión de los resultados financieros, la utilidad de las funcionalidades y su contribución a los objetivos de los usuarios.
+
+Por ello, se aplicará Experiment-Driven Development (XDPD) para identificar incertidumbres, formular preguntas experimentales, priorizar oportunidades de aprendizaje y diseñar experimentos que permitan obtener evidencia para orientar las siguientes decisiones de desarrollo.
+
 ### **8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims**
 ### **8.1.3. Experiment-Ready Questions**
 ### **8.1.4. Question Backlog**
