@@ -251,6 +251,12 @@ El Question Backlog de HipoSim se organiza considerando dos perspectivas complem
 | E04 | ERQ-04 | Exportación de reportes PDF | 17 | Alta |
 | E05 | ERQ-05 | Gestión de leads inmobiliarios | 18 | Alta |
 | E06 | ERQ-11 | Guardado de escenarios y retorno | 16 | Media |
+| E07 | ERQ-06 | Distribución visual de la comparación de escenarios | 14 | Media |
+| E08 | ERQ-07 | Precisión monetaria uniforme | 13 | Media |
+| E09 | ERQ-08 | Reactivación de solicitudes descartadas | 13 | Media |
+| E10 | ERQ-09 | Gestión de solicitudes desde el móvil | 12 | Media |
+| E11 | ERQ-10 | Periodo de gracia y envío a inmobiliarias | 13 | Media |
+| E12 | ERQ-12 | Conversión de la simulación a contacto | 16 | Media |
 
 La valoración presentada corresponde a una priorización inicial basada en los conocimientos disponibles durante la planificación experimental. Las puntuaciones no representan resultados obtenidos mediante mediciones con usuarios.
 
@@ -438,6 +444,180 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 
 <div style="page-break-after: always;"></div>
 
+#### Experiment Card E07: Distribución visual de la comparación de escenarios
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E07 |
+| Question ID | ERQ-06 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Una distribución visual mejorada de los importes facilita la lectura y comparación de tres escenarios hipotecarios? |
+| Why | La evaluación heurística del Capítulo VI (problema #3) identificó que, al comparar tres escenarios, los importes extensos ocupan varias líneas por el ancho de las columnas. Antes de rediseñar la pantalla es necesario comprobar si una distribución alternativa reduce el esfuerzo de lectura sin introducir errores de interpretación. |
+| Hypothesis | Con la distribución mejorada, el tiempo medio para identificar el escenario de menor cuota mensual y el de menor costo total entre tres escenarios se reduce al menos en 20 % respecto de la distribución actual, sin que aumenten los errores de interpretación. |
+| What (SUT) | Dos prototipos estáticos de la pantalla de comparación con los mismos tres escenarios: la distribución actual de la aplicación y una distribución alternativa con los importes en una sola línea, columnas de ancho adaptable y tamaño de texto ajustado. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tiempo para identificar los escenarios de menor cuota mensual y menor costo total con cada distribución, número de respuestas incorrectas y legibilidad percibida en una escala de 1 a 5. |
+| Conditions | Cada participante evalúa ambas distribuciones con dos conjuntos de escenarios de dificultad equivalente. El orden de las distribuciones se alterna entre participantes para controlar el efecto de aprendizaje. No se explica la interfaz durante la tarea. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda, con diseño intra-sujeto. |
+| Success Criteria | El tiempo medio con la distribución mejorada es al menos 20 % menor que con la actual, el número de respuestas incorrectas no supera al de la distribución actual y la legibilidad promedio es de 4 o más. |
+| Evidence | Registro de tiempos y respuestas, capturas de ambos prototipos y cuestionario de legibilidad. |
+
+**Estado:** Pendiente de ejecución. Se basa en el problema #3 de la evaluación heurística documentada en el Capítulo VI.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E08: Precisión monetaria uniforme
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E08 |
+| Question ID | ERQ-07 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿La presentación de importes con la misma precisión monetaria en todas las pantallas reduce las inconsistencias percibidas por los compradores? |
+| Why | La lista Mis escenarios presenta importes redondeados, mientras que la pantalla de comparación los muestra con dos decimales (problema #4 del Capítulo VI). Esta diferencia puede llevar al comprador a pensar que una misma cifra cambió entre pantallas y reducir su confianza en los resultados financieros. |
+| Hypothesis | Con la precisión monetaria unificada, menos participantes perciben diferencias entre las cifras de un mismo escenario que con la versión actual: como máximo uno de cinco, con una consistencia percibida promedio de 4 o más en una escala de 1 a 5. |
+| What (SUT) | Una versión de prueba de la aplicación (variante `demo`) en la que Mis escenarios utiliza el mismo formato monetario de dos decimales que la pantalla de comparación, contrastada con la versión actual. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Participantes que reportan diferencias entre las cifras de un mismo escenario en Mis escenarios y en la comparación, respuestas a preguntas de verificación de cifras y consistencia percibida en una escala de 1 a 5. |
+| Conditions | Cada participante revisa los mismos escenarios en la versión actual y en la versión unificada, en orden alternado. En cada versión indica la cuota mensual y el costo total de un escenario en ambas pantallas y si considera que las cifras coinciden. |
+| Scale | Prueba piloto propuesta con cinco compradores de primera vivienda, con diseño intra-sujeto. |
+| Success Criteria | Con la versión unificada, como máximo un participante percibe diferencias, menos que con la versión actual, y la consistencia percibida promedio es de 4 o más. |
+| Evidence | Respuestas de verificación, observaciones, capturas de ambas versiones y cuestionario de consistencia. |
+
+**Estado:** Pendiente de ejecución. Requiere preparar la versión de prueba con el formato monetario unificado.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E09: Reactivación de solicitudes descartadas
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E09 |
+| Question ID | ERQ-08 |
+| Question Type | Belief-led |
+| Segmento objetivo | Asesores inmobiliarios |
+| Question | ¿La posibilidad de reactivar solicitudes descartadas facilita el seguimiento comercial de los asesores inmobiliarios? |
+| Why | En la entrevista de validación, Selene Carhuayo destacó la importancia de retomar el contacto con compradores previamente descartados. Hoy el estado `Discarded` funciona como un cierre: un comprador que desistió por no contar con la cuota inicial puede volver a calificar meses después, y el asesor no dispone de una acción explícita para retomar su seguimiento conservando el historial. |
+| Hypothesis | Al menos dos de tres asesores reactivan una solicitud descartada sin asistencia en un minuto o menos y califican la utilidad de la función con 4 o más en una escala de 1 a 5. |
+| What (SUT) | Un prototipo navegable de la ficha del lead con la acción "Reactivar seguimiento", que devuelve la solicitud al estado `InContact`, solicita una nota con el motivo y conserva el historial de estados. La API no se modifica antes de obtener evidencia. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización de la tarea, tiempo de ejecución, solicitudes de ayuda, utilidad percibida en una escala de 1 a 5 y situaciones de uso mencionadas por los asesores. |
+| Conditions | Cada asesor recibe una solicitud ficticia en estado descartado y la indicación de retomar su seguimiento, sin explicación sobre la ubicación de la acción. Al terminar, describe en qué casos utilizaría la función. |
+| Scale | Prueba piloto propuesta con tres asesores inmobiliarios. |
+| Success Criteria | Al menos dos de los tres asesores completan la reactivación sin asistencia en un minuto o menos y califican la utilidad con 4 o más. |
+| Evidence | Grabación de la sesión, tiempos de ejecución, capturas del prototipo y respuestas de la entrevista breve. |
+
+**Estado:** Cuenta con evidencia cualitativa preliminar obtenida en la entrevista de validación de Selene Carhuayo (Capítulo VI). Pendiente de prueba con prototipo.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E10: Gestión de solicitudes desde el móvil
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E10 |
+| Question ID | ERQ-09 |
+| Question Type | Belief-led |
+| Segmento objetivo | Asesores inmobiliarios |
+| Question | ¿Una interfaz adaptada a dispositivos móviles facilita la consulta y el seguimiento de solicitudes por parte de los asesores inmobiliarios? |
+| Why | Las entrevistas del Capítulo II muestran que los asesores gestionan a sus clientes principalmente desde el celular y por WhatsApp, y en la validación Selene Carhuayo mostró interés en el acceso móvil. Es necesario saber si el portal responsivo actual basta para trabajar desde el teléfono o si se requiere una adaptación específica. |
+| Hypothesis | Al menos dos de tres asesores completan desde un smartphone la consulta y la actualización de una solicitud en tres minutos o menos sin asistencia, y califican la facilidad de uso móvil con 4 o más en una escala de 1 a 5. |
+| What (SUT) | El portal web del asesor publicado en Vercel, abierto desde el navegador del smartphone de cada participante, sin desarrollar una aplicación nativa. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Tasa de finalización, tiempo de ejecución, errores, solicitudes de ayuda, facilidad de uso móvil en una escala de 1 a 5 y pantallas con dificultades (desplazamiento horizontal, controles pequeños o texto truncado). |
+| Conditions | Los participantes realizan las mismas tareas de E05 desde su teléfono con la cuenta de asesor de demostración: localizar una solicitud ficticia, consultar su información financiera, actualizar su estado y registrar una nota. Si el participante también realizó E05, se utiliza una solicitud distinta. |
+| Scale | Prueba piloto propuesta con tres asesores inmobiliarios. |
+| Success Criteria | Al menos dos de los tres asesores completan las tareas desde el smartphone en tres minutos o menos sin asistencia y califican la facilidad de uso móvil con 4 o más. |
+| Evidence | Grabación de la pantalla del teléfono, tiempos de ejecución, capturas y entrevista breve. |
+
+**Estado:** Cuenta con evidencia cualitativa preliminar (entrevistas de los Capítulos II y VI). Pendiente de medición experimental.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E11: Periodo de gracia y envío a inmobiliarias
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E11 |
+| Question ID | ERQ-10 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de las simulaciones completadas usa periodo de gracia, y las simulaciones con gracia terminan más veces en un envío a una inmobiliaria? |
+| Why | El periodo de gracia (US03) se incorporó en el Sprint 3 para los compradores cuyas primeras cuotas no caben en su presupuesto. Si casi nadie lo utiliza, o si las simulaciones con gracia conducen a menos envíos a inmobiliarias, conviene reducir su protagonismo en el formulario; si se usa y acompaña el envío, merece mayor visibilidad. |
+| Hypothesis | Al menos el 15 % de las simulaciones completadas en la aplicación móvil usa periodo de gracia, y la tasa de envío a inmobiliarias de las simulaciones con gracia es igual o mayor que la de las simulaciones sin gracia. |
+| What (SUT) | El selector de periodo de gracia del formulario de simulación de la aplicación móvil, implementado en el Sprint 3. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Proporción de eventos `simulation_completed` con `graceType` distinto de `none`, y tasa de envío (eventos `lead_sent` entre eventos `simulation_completed`) separada por simulaciones con y sin gracia. |
+| Conditions | Uso libre de la aplicación distribuida por Firebase App Distribution durante dos semanas. Solo se consideran eventos con origen `mobile`, porque el simulador del Landing Page no ofrece periodo de gracia. Se excluyen las cuentas de demostración y las sesiones del equipo. |
+| Scale | Mínimo de 30 simulaciones completadas en la aplicación móvil durante el periodo. Si no se alcanza, el resultado se reporta como exploratorio. |
+| Success Criteria | Se cumplen las dos condiciones de la hipótesis. |
+| Evidence | Eventos `simulation_completed` y `lead_sent` con sus propiedades de gracia, procesados con `tools/compute_kpis.py`. |
+
+**Estado:** Pendiente de ejecución y análisis de eventos.
+
+<div style="page-break-after: always;"></div>
+
+#### Experiment Card E12: Conversión de la simulación a contacto
+
+**Lado frontal**
+
+| Campo | Descripción |
+|---|---|
+| Experiment ID | E12 |
+| Question ID | ERQ-12 |
+| Question Type | Belief-led |
+| Segmento objetivo | Compradores de primera vivienda |
+| Question | ¿Qué proporción de las sesiones con una simulación completada termina en un mensaje de contacto en el Landing Page o en un envío consentido a una inmobiliaria en la aplicación? |
+| Why | La hipótesis H1 del Capítulo I sostiene que un simulador transparente lleva a más compradores a buscar contacto después de simular. Esta conversión sustenta la propuesta de valor para las inmobiliarias: si los compradores no comparten su simulación, el portal del asesor no recibe leads. |
+| Hypothesis | Al menos el 10 % de las sesiones con una simulación completada termina en un mensaje de contacto (`contact_message_sent`) o en un envío consentido a una inmobiliaria (`lead_sent`) dentro de la misma sesión. |
+| What (SUT) | El formulario de contacto del Landing Page y la opción de envío a una inmobiliaria desde la pantalla de resultados de la aplicación móvil, ya implementados. |
+
+**Lado posterior**
+
+| Campo | Descripción |
+|---|---|
+| Measures | Sesiones con `contact_message_sent` o `lead_sent` posteriores a un `simulation_completed`, respecto del total de sesiones con simulación completada, reportadas en total y por origen (`landing` y `mobile`). |
+| Conditions | Uso libre durante dos semanas, sin pedir a los participantes que se contacten ni que envíen su simulación. Se excluyen las cuentas de demostración y las sesiones del equipo. El mensaje de contacto del Landing Page se considera un indicador indirecto, porque se dirige al equipo de HipoSim y no a una inmobiliaria. |
+| Scale | Mínimo de 30 sesiones con simulación completada, sumando ambos productos. Si no se alcanza, el resultado se reporta como exploratorio. |
+| Success Criteria | La proporción global de sesiones con contacto alcanza el 10 %. |
+| Evidence | Eventos `simulation_completed`, `contact_message_sent` y `lead_sent` por sesión, procesados con `tools/compute_kpis.py`. |
+
+**Estado:** Pendiente de ejecución y análisis de eventos.
+
+<div style="page-break-after: always;"></div>
+
 #### Resumen de experimentos
 
 | ID | Pregunta | Segmento | Funcionalidad | Estado |
@@ -448,8 +628,14 @@ Las hipótesis, condiciones y criterios de éxito establecidos corresponden a pr
 | E04 | ERQ-04 | Compradores | Exportación de reportes PDF | Planificado |
 | E05 | ERQ-05 | Inmobiliarias | Gestión de leads | Evidencia cualitativa preliminar |
 | E06 | ERQ-11 | Compradores | Guardado de escenarios y retorno | Planificado |
+| E07 | ERQ-06 | Compradores | Distribución visual de la comparación | Planificado |
+| E08 | ERQ-07 | Compradores | Precisión monetaria uniforme | Planificado |
+| E09 | ERQ-08 | Inmobiliarias | Reactivación de solicitudes descartadas | Evidencia cualitativa preliminar |
+| E10 | ERQ-09 | Inmobiliarias | Gestión de solicitudes desde el móvil | Evidencia cualitativa preliminar |
+| E11 | ERQ-10 | Compradores | Periodo de gracia y envío a inmobiliarias | Planificado |
+| E12 | ERQ-12 | Compradores | Conversión de la simulación a contacto | Planificado |
 
-Las seis tarjetas establecen una base para la fase de Experiment Design. Las escalas propuestas corresponden a pruebas piloto exploratorias de alcance reducido y no permiten generalizar los resultados a toda la población objetivo.
+Las doce tarjetas establecen una base para la fase de Experiment Design. Las escalas propuestas corresponden a pruebas piloto exploratorias de alcance reducido y no permiten generalizar los resultados a toda la población objetivo.
 
 Las hipótesis, medidas, condiciones, escalas y métodos de evaluación se desarrollan en la sección 8.2. Las preguntas ERQ-10 y ERQ-12 se miden con los mismos eventos de uso como indicadores de seguimiento (sección 8.2.7), sin una tarjeta propia en esta iteración.
 
@@ -504,6 +690,12 @@ Las grabaciones, capturas y resúmenes completos se encuentran documentados en l
 | E04 | No aplica: la pregunta es exploratoria. Se describe la proporción de sesiones con exportación y sus motivos. | No aplica. |
 | E05 | Al menos uno de los dos asesores no completa la consulta y actualización de una solicitud en tres minutos sin asistencia. | Ambos asesores completan la consulta y actualización en tres minutos o menos sin asistencia. |
 | E06 | Menos del 25 % de las sesiones con simulación guarda un escenario, o menos del 20 % de los compradores con escenarios los guarda en días distintos. | Al menos el 25 % de las sesiones con simulación guarda un escenario y al menos el 20 % de los compradores con escenarios los guarda en dos o más días distintos. |
+| E07 | Con la precisión unificada, dos o más de los cinco participantes siguen percibiendo diferencias entre las cifras de un mismo escenario, ese número no disminuye respecto de la versión actual, o la consistencia percibida promedio es menor que 4. | Con la precisión unificada, como máximo uno de los cinco participantes percibe diferencias entre las cifras de un mismo escenario, menos que con la versión actual, y la consistencia percibida promedio es de 4 o más. |
+| E08 | Con la precisión unificada, dos o más de los cinco participantes siguen percibiendo diferencias entre las cifras de un mismo escenario, ese número no disminuye respecto de la versión actual, o la consistencia percibida promedio es menor que 4. | Con la precisión unificada, como máximo uno de los cinco participantes percibe diferencias entre las cifras de un mismo escenario, menos que con la versión actual, y la consistencia percibida promedio es de 4 o más. |
+| E09 | Menos de dos de los tres asesores reactivan una solicitud descartada sin asistencia en un minuto o menos y califican la utilidad de la función con 4 o más. | Al menos dos de los tres asesores reactivan una solicitud descartada sin asistencia en un minuto o menos y califican la utilidad de la función con 4 o más. |
+| E10 | Menos de dos de los tres asesores completan desde un smartphone la consulta y la actualización de una solicitud en tres minutos o menos sin asistencia y califican la facilidad de uso móvil con 4 o más. | Al menos dos de los tres asesores completan desde un smartphone la consulta y la actualización de una solicitud en tres minutos o menos sin asistencia y califican la facilidad de uso móvil con 4 o más. |
+| E11 | Menos del 15 % de las simulaciones completadas en la aplicación móvil usa periodo de gracia, o la tasa de envío a inmobiliarias de las simulaciones con gracia es menor que la de las simulaciones sin gracia. | Al menos el 15 % de las simulaciones completadas en la aplicación móvil usa periodo de gracia, y la tasa de envío a inmobiliarias de las simulaciones con gracia es igual o mayor que la de las simulaciones sin gracia. |
+| E12 | Menos del 10 % de las sesiones con una simulación completada termina en un mensaje de contacto o en un envío consentido a una inmobiliaria. | Al menos el 10 % de las sesiones con una simulación completada termina en un mensaje de contacto o en un envío consentido a una inmobiliaria. |
 
 ### **8.2.2. Domain Business Metrics**
 
@@ -552,6 +744,13 @@ Los indicadores basados en eventos se calculan con `tools/compute_kpis.py` sobre
 | E04 | Sesiones móviles con simulación completada durante dos semanas | Describir la frecuencia y los motivos; si es alta, mejorar el diseño del reporte. | Reducir su protagonismo en Resultados. |
 | E05 | 2 asesores | Mantener el flujo de la bandeja y la ficha del lead. | Simplificar la actualización de estado y revisar las ideas ID-04 e ID-05. |
 | E06 | Mínimo de 15 sesiones móviles con simulación completada | Agregar recordatorios para volver a los escenarios guardados (Sprint 4). | Reforzar la invitación a guardar desde Resultados y volver a medir. |
+| E07 | 5 compradores, con diseño intra-sujeto | Implementar la distribución mejorada en la aplicación y cerrar el problema #3 de la evaluación heurística. | Probar otra alternativa, como presentar los escenarios en filas, antes de modificar la aplicación. |
+| E08 | 5 compradores, con diseño intra-sujeto | Aplicar el formato de dos decimales en Mis escenarios y cerrar el problema #4 de la evaluación heurística. | Revisar si las diferencias percibidas provienen de otros elementos de la pantalla, como etiquetas o el redondeo de la TCEA, antes de cambiar el formato. |
+| E09 | 3 asesores | Agregar la acción "Reactivar seguimiento" al portal y permitir en la API la transición de `Discarded` a `InContact`. | Mantener los estados actuales y registrar la reactivación como nota de seguimiento. |
+| E10 | 3 asesores | Mantener el portal responsivo y priorizar las notificaciones de nuevos interesados en el móvil. | Adaptar la bandeja y la ficha al móvil, con tarjetas en lugar de tabla y acciones fijas, y volver a medir. |
+| E11 | Mínimo de 30 simulaciones completadas en la aplicación móvil | Dar mayor visibilidad a la gracia en el formulario y explicar su efecto sobre el costo total. | Mover la gracia a una opción avanzada del formulario. |
+| E12 | Mínimo de 30 sesiones con simulación completada | Mantener el flujo actual y ampliar la oferta de inmobiliarias disponibles. | Hacer más visible el envío a inmobiliarias en Resultados, agregar un acceso a la aplicación desde los resultados del Landing Page y volver a medir. |
+
 
 Con cinco participantes por prueba piloto los resultados son exploratorios: permiten detectar problemas de uso, pero no generalizar a toda la población objetivo. Si los experimentos por eventos no alcanzan su escala mínima, se reportan como exploratorios y se complementan con las entrevistas de validación.
 
